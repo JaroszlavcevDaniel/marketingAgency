@@ -1,0 +1,11 @@
+.space-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  /* background: #000; */
+}
+
+canvas {
+  display: block;
+}

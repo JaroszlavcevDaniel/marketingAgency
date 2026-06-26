@@ -1,0 +1,340 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.heroTwo {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: absolute;
+  top: 15vh;        
+  left: 3vw;       
+  width: 100%;       
+  z-index: 5;       
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;        
+}
+.heroTwo-content {
+  position: absolute;
+  top: 4vh;        
+  left: 3vw;       
+  width: 100%;       
+  z-index: 5;       
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;  
+}
+
+.cormorant-garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.card {
+  backdrop-filter: blur(6px);
+}
+
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero-title-massive {
+
+  font-size: clamp(1.8rem, 5vw, 4.5rem);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  font-weight: 900;
+  line-height: 1.2; 
+}
+
+.backCol {
+  background-color: antiquewhite; 
+  margin-top: 200px;
+}
+.backColTwo {
+  background-color: rgb(17, 18, 18);
+}
+
+.cta {
+  background-color: none;
+  font-weight:900;
+  border: solid lightcyan 2px;
+}
+
+.hovi:hover {
+  transform: scale(1.01);
+}
+
+.firstRow {
+  background-color: antiquewhite; 
+  color: #0e0e0e;
+}
+
+.secondRow {
+  background-color:aliceblue ;
+  color: #0e0e0e;
+}
+
+.thirdRow {
+  background-color:rgb(11, 11, 11) ;
+  color: #ffffff;
+}
+
+
+.hero-matrix {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 4vh 4vw; 
+  box-sizing: border-box;
+}
+
+.matrix-item {
+  position: absolute;
+}
+
+.matrix-item h5 {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  margin-bottom: 0.4rem;
+}
+
+.matrix-item h6 {
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .hero-matrix {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    margin-top: 45px;
+  }
+  .matrix-item {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+  }
+
+  #ctaTwo {
+    font-size: medium !important;
+  }
+}
+
+.hoviCta:hover {
+  border: solid 2px rgb(114, 97, 2);
+}
+
+.hoviCtaTwo:hover {
+  box-shadow: 
+    inset 0 0 0 5px #ffffff, 
+    6px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+.magazine-section {
+    padding: 60px 0;
+    background: none;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.magazine-section h4 {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    margin-bottom: 10px;
+    padding-left: 40px;
+    font-weight: 700;
+}
+
+.magazine-section h5 {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    margin-bottom: 40px;
+    padding-left: 40px;
+    opacity: 0.8;
+}
+
+.magazine-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 40px;
+    scrollbar-width: none; 
+}
+
+.magazine-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.page {
+    flex: 0 0 550px;
+    width: 550px;
+    min-height: 700px;
+    height: auto; 
+
+    background: rgba(13, 14, 45, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+    padding: 40px; 
+    box-sizing: border-box;
+
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.page:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.page-number {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+.page h3 {
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.page p {
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+.page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.15), transparent);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .magazine-section {
+        padding: 40px 0;
+    }
+    
+    .magazine-section h4, 
+    .magazine-section h5 {
+        padding-left: 20px;
+    }
+
+    .magazine-slider {
+        padding: 10px 20px;
+        gap: 20px;
+    }
+
+    .page {
+        flex: 0 0 calc(100vw - 40px);
+        width: calc(100vw - 40px);
+        min-height: 400px;
+        padding: 25px; 
+    }
+}
+
+
+.ctaMain:hover {
+  border: solid red 2px;
+}
+
+.typewriter {
+  display: inline-block; 
+  overflow: hidden; 
+  border-right: 3px solid orange; 
+  white-space: nowrap; 
+  letter-spacing: .05em; 
+  
+  animation: 
+    typing 3.5s steps(40, end) forwards,
+    blink-caret .75s step-end infinite;
+}
+
+h1.typewriter {
+  font-size: clamp(1.2rem, 3.2vw, 3.2rem) !important; /* 4rem-ről levéve 3.2-re */
+  max-width: 100%;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+@media (max-width: 768px) {
+  h1.typewriter {
+    /* Nagyon pici alapméret, maximum 1.3rem (kb. 20px) */
+    font-size: clamp(0.85rem, 4.5vw, 1.3rem) !important;
+    letter-spacing: -0.03em !important; /* Összébb húzzuk a betűket */
+  }
+}
+
+@media (max-width: 375px) {
+  h1.typewriter {
+    font-size: 0.8rem !important;
+    letter-spacing: -0.04em !important;
+  }
+}
+
+.ctaSmall {
+  border: solid 2px white;
+  &:hover {
+    border: none;
+    border: solid 2px rgb(107, 87, 8);
+   
+  }
+}
+

@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body {
+     background: black !important;
+}
+
+.cormorant-garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.sotet-gomb {
+    color: #ffffff;
+    border: none;
+    /* padding: 12px 24px; */
+    cursor: pointer;
+    
+    /* Ez kell, hogy az animáció lágy legyen */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* HOVER EFFEKT */
+.sotet-gomb:hover {
+    transform: translateY(-2px); /* Picit megemelkedik */
+    /* Finom, sötétszürke/neon izzás a gomb körül (a színét átírhatod pl. a lila neonodra is: rgba(155, 38, 182, 0.5)) */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15); 
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img-uniform {
+  height: 200px;        /* 1. Fix magasság beállítása (ízlés szerint módosíthatod pl. 250px-re) */
+  width: 100%;          /* 2. Teljes szélesség kitöltése */
+  object-fit: cover;    /* 3. A legfontosabb: Körbevágja a képet torzítás nélkül, mint a háttérképeknél */
+  object-position: center; /* 4. Opcionális: Mindig a kép közepe maradjon fókuszban */
+}
+
+
+.clickable-card:hover .card-img-uniform {
+
+  filter: grayscale(100%) blur(4px) brightness(0.6);
+}
+
+
+.clickable-card:hover .card-title {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.clickable-card:hover .card-text {
+  color: #605f5f !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+.clickable-card:hover {
+  transform: scale(1.03);
+  
+}

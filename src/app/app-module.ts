@@ -3,14 +3,28 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { Navbar } from './components/navbar/navbar';
+import { Hero } from './components/hero/hero';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { SpaceBackground } from './components/space-background/space-background';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Navbar,
+    Hero,
+    SpaceBackground
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot([])
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

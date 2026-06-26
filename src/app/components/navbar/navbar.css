@@ -1,0 +1,287 @@
+.my-cta {
+    display: inline-block !important;
+    position: relative !important;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    margin-left: 20px;
+    border: solid rgb(81, 70, 4) 2px;
+    color: rgb(241, 235, 205) !important;
+}
+
+.my-cta:hover {
+    background-color: #0d0e2d !important; 
+    color: #ffffff !important;           
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    
+   
+}
+
+.my-cta:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 12px rgba(13, 14, 45, 0.2) !important;
+}
+
+.premium-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.brand-icon {
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block !important; 
+    transform-origin: center center; 
+    font-size: 0.9em;
+    line-height: 1;
+    animation: slowRotate 12s linear infinite;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.brand-text {
+    position: relative;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 
+        0 0 10px rgba(111, 66, 193, 0.3), 
+        0 0 20px rgba(0, 123, 255, 0.2);  
+        
+    animation: premiumGlow 8s ease-in-out infinite alternate;
+}
+
+.brand-text {
+    position: relative;
+    font-weight: 600;
+    color: #f3c739;
+    
+    text-shadow: 
+        0 0 4px rgba(255, 255, 255, 0.8),   /* Fehér mag, hogy olvasható legyen */
+        0 0 10px rgba(0, 198, 255, 0.5),   /* Közeli kék izzás */
+        0 0 20px rgba(111, 66, 193, 0.4),  /* Középtávoli lila aura */
+        0 0 40px rgba(0, 123, 255, 0.2);   /* Nagyon lágy, tág kék háttérfény */
+        
+    animation: premiumGlow 8s ease-in-out infinite alternate;
+}
+
+/* HOVER EFFECT: Ha réezközöl az egér, a neon aura picit összeszűkül és felerősödik */
+.premium-brand:hover .brand-text {
+    color: #ffffff;
+    text-shadow: 
+        0 0 4px rgba(255, 255, 255, 0.9),
+        0 0 12px rgba(0, 198, 255, 0.8), 
+        0 0 22px rgba(138, 75, 245, 0.7),
+        0 0 35px rgba(0, 198, 255, 0.5);
+    transform: scale(1.01);
+}
+
+/* ==========================================================================
+   MÓDOSÍTOTT LÁGY NEON ANIMÁCIÓ
+   ========================================================================== */
+@keyframes premiumGlow {
+    0% {
+        text-shadow: 
+            0 0 4px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(0, 198, 255, 0.5),
+            0 0 20px rgba(111, 66, 193, 0.4),
+            0 0 40px rgba(0, 123, 255, 0.2);
+    }
+    50% {
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 14px rgba(138, 75, 245, 0.6),   /* Itt a lila neon dominál és picit tágul */
+            0 0 25px rgba(0, 198, 255, 0.4),
+            0 0 50px rgba(138, 75, 245, 0.3);
+    }
+    100% {
+        text-shadow: 
+            0 0 4px rgba(255, 255, 255, 0.8),
+            0 0 12px rgba(0, 123, 255, 0.4),
+            0 0 18px rgba(138, 75, 245, 0.3),
+            0 0 35px rgba(0, 198, 255, 0.2);
+    }
+}
+
+/* A virágok elegáns, finom pörgése */
+@keyframes slowRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.social-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+    background: #1b1b1b;
+    color: #fff;
+}
+
+.social-icon-nav {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+    background: #1b1b1b;
+    color: #fff;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.08);
+}
+
+.social-icon.facebook:hover {
+    background: #1877f2;
+}
+
+.social-icon-nav.facebook:hover {
+    background: #1877f2;
+}
+
+.social-icon.instagram:hover {
+    background: linear-gradient(45deg,
+            #f09433,
+            #e6683c,
+            #dc2743,
+            #cc2366,
+            #bc1888);
+}
+
+.social-icon-nav.instagram:hover {
+    background: linear-gradient(45deg,
+            #f09433,
+            #e6683c,
+            #dc2743,
+            #cc2366,
+            #bc1888);
+}
+
+.social-icon.tiktok:hover {
+    background: #000;
+    color: #25f4ee;
+}
+
+.social-icon-nav.tiktok:hover {
+    background: #000;
+    color: #25f4ee;
+}
+
+@media(max-width:768px) {
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .social-icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* A szavakat befogadó konténer */
+/* A szavakat befogadó konténer */
+.animated-words {
+  position: relative;
+  display: inline-flex; /* inline-block helyett flex, hogy könnyebb legyen a függőleges igazítás */
+  align-items: center;  /* Függőlegesen tökéletesen középre teszi a szavakat */
+  height: 100%;         /* Kitölti a szülő gomb magasságát */
+  min-width: 160px;     
+  text-align: left;
+  margin-left: 4px;     /* Egy pici fix távolság a kettőspont után */
+}
+
+/* Az összes belső szó alapbeállítása */
+/* Az összes belső szó alapbeállítása */
+.animated-words span {
+  position: absolute;
+  left: 0;
+  top: auto;
+  opacity: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 1;
+  transform: translateY(10px);
+  /* 12s helyett 15s kell az 5 szóhoz, hogy kényelmesen körbeérjen */
+  animation: wordCarousel 15s linear infinite; 
+}
+
+/* Időzítések eltolása (Staggering) - 5 szóhoz igazítva */
+.animated-words span:nth-child(1) {
+  animation-delay: 0s;
+}
+.animated-words span:nth-child(2) {
+  animation-delay: 3s;
+}
+.animated-words span:nth-child(3) {
+  animation-delay: 6s;
+}
+.animated-words span:nth-child(4) {
+  animation-delay: 9s;
+}
+.animated-words span:nth-child(5) {
+  animation-delay: 12s; /* Itt volt a hiba, ez is 9s volt */
+}
+
+/* Az animáció logikája az új, 15 másodperces ciklushoz igazítva (százalékosan) */
+@keyframes wordCarousel {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  /* Beúszás (a 15 másodperc 4%-a kb. 0.6 másodperc) */
+  4% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  /* Látszódás vége (a 15 másodperc 16%-a kb. 2.4 másodperc) */
+  16% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  /* Kiúszás */
+  20% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* ==========================================================================
+   KIZÁRÓLAG MOBIL ÉS TABLET NÉZETBEN (991px és alatta)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .navbar {
+        background-color: #000000 !important; /* Teljesen tiszta fekete háttér */
+    }
+    
+    /* Opcionális: Ha a lenyíló mobilmenü hátterét is külön biztosítani szeretnéd */
+    .navbar-collapse {
+        background-color: #000000 !important;
+        padding: 15px; /* Szép szellős elrendezés mobilon a menüelemeknek */
+        border-radius: 8px;
+    }
+    
+    /* Mobilon a közösségi ikonok és a nyelvválasztó ne folyjon össze, kapjon egy kis helyet */
+    .navbar .d-flex, 
+    .navbar button.sotet-gomb {
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+}
