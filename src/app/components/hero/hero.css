@@ -12,13 +12,36 @@
 
 .hero-content {
   position: absolute;
-  top: 15vh;        
-  left: 3vw;       
+  top: 0;
+  left: 0;
   width: 100%;       
+  height: 100%; /* Kitölti a teljes hero szekciót */
   z-index: 5;       
   display: flex;
   flex-direction: column;
-  gap: 2rem;        
+}
+
+/* Mobilos finomhangolás, hogy ne csússzanak össze a szövegek */
+@media (max-width: 991px) {
+  .hero-content {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    padding-top: 100px !important;
+  }
+  
+  .hero-content .container-fluid {
+    height: auto !important;
+    gap: 3rem; /* Mobilon szellős távolság egymás alatt */
+  }
+
+  /* Mobilon minden szöveg igazodjon középre a jobb olvashatóságért */
+  .text-lg-end {
+    text-align: center !important;
+  }
+  .col-12 h4, .col-12 h1 {
+    text-align: center !important;
+  }
 }
 .heroTwo-content {
   position: absolute;

@@ -9,6 +9,8 @@ import { LanguageService } from '../../services/language-service';
 })
 export class Navbar implements OnInit {
 
+  isMenuCollapsed: boolean = true;
+
     currentLang: 'hu' | 'en' = 'hu';
 
     isScrolled = false;

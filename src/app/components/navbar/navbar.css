@@ -1,26 +1,21 @@
-.my-cta {
-    display: inline-block !important;
-    position: relative !important;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
-    margin-left: 20px;
-    border: solid rgb(81, 70, 4) 2px;
-    color: rgb(241, 235, 205) !important;
+/* ==========================================================================
+   1. NAVBAR ALAPOK ÉS ELRENDEZÉS (ASZTALI NÉZET)
+   ========================================================================== */
+.double-nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: background-color 0.3s ease-in-out;
+    width: 100% !important;
 }
 
-.my-cta:hover {
-    background-color: #0d0e2d !important; 
-    color: #ffffff !important;           
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    
-   
+.nav-top-row a:hover {
+    opacity: 1 !important;
+    color: #ffffff !important;
 }
 
-.my-cta:active {
-    transform: translateY(-1px) !important;
-    box-shadow: 0 6px 12px rgba(13, 14, 45, 0.2) !important;
-}
-
+/* ==========================================================================
+   2. BRAND / LOGÓ STÍLUSOK (PREMIUM BRAND - ASZTALI)
+   ========================================================================== */
 .premium-brand {
     display: flex !important;
     align-items: center !important;
@@ -44,29 +39,15 @@
 .brand-text {
     position: relative;
     font-weight: 600;
-    color: #ffffff;
-    text-shadow: 
-        0 0 10px rgba(111, 66, 193, 0.3), 
-        0 0 20px rgba(0, 123, 255, 0.2);  
-        
-    animation: premiumGlow 8s ease-in-out infinite alternate;
-}
-
-.brand-text {
-    position: relative;
-    font-weight: 600;
     color: #f3c739;
-    
     text-shadow: 
-        0 0 4px rgba(255, 255, 255, 0.8),   /* Fehér mag, hogy olvasható legyen */
-        0 0 10px rgba(0, 198, 255, 0.5),   /* Közeli kék izzás */
-        0 0 20px rgba(111, 66, 193, 0.4),  /* Középtávoli lila aura */
-        0 0 40px rgba(0, 123, 255, 0.2);   /* Nagyon lágy, tág kék háttérfény */
-        
+        0 0 4px rgba(255, 255, 255, 0.8),  
+        0 0 10px rgba(0, 198, 255, 0.5),   
+        0 0 20px rgba(111, 66, 193, 0.4),  
+        0 0 40px rgba(0, 123, 255, 0.2);   
     animation: premiumGlow 8s ease-in-out infinite alternate;
 }
 
-/* HOVER EFFECT: Ha réezközöl az egér, a neon aura picit összeszűkül és felerősödik */
 .premium-brand:hover .brand-text {
     color: #ffffff;
     text-shadow: 
@@ -77,211 +58,397 @@
     transform: scale(1.01);
 }
 
-/* ==========================================================================
-   MÓDOSÍTOTT LÁGY NEON ANIMÁCIÓ
-   ========================================================================== */
-@keyframes premiumGlow {
-    0% {
-        text-shadow: 
-            0 0 4px rgba(255, 255, 255, 0.8),
-            0 0 10px rgba(0, 198, 255, 0.5),
-            0 0 20px rgba(111, 66, 193, 0.4),
-            0 0 40px rgba(0, 123, 255, 0.2);
-    }
-    50% {
-        text-shadow: 
-            0 0 5px rgba(255, 255, 255, 0.8),
-            0 0 14px rgba(138, 75, 245, 0.6),   /* Itt a lila neon dominál és picit tágul */
-            0 0 25px rgba(0, 198, 255, 0.4),
-            0 0 50px rgba(138, 75, 245, 0.3);
-    }
-    100% {
-        text-shadow: 
-            0 0 4px rgba(255, 255, 255, 0.8),
-            0 0 12px rgba(0, 123, 255, 0.4),
-            0 0 18px rgba(138, 75, 245, 0.3),
-            0 0 35px rgba(0, 198, 255, 0.2);
-    }
-}
-
-/* A virágok elegáns, finom pörgése */
 @keyframes slowRotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-
-.social-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: 0.3s ease;
-    background: #1b1b1b;
-    color: #fff;
+@keyframes premiumGlow {
+    0% { text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 10px rgba(0, 198, 255, 0.5), 0 0 20px rgba(111, 66, 193, 0.4), 0 0 40px rgba(0, 123, 255, 0.2); }
+    50% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 14px rgba(138, 75, 245, 0.6), 0 0 25px rgba(0, 198, 255, 0.4), 0 0 50px rgba(138, 75, 245, 0.3); }
+    100% { text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 12px rgba(0, 123, 255, 0.4), 0 0 18px rgba(138, 75, 245, 0.3), 0 0 35px rgba(0, 198, 255, 0.2); }
 }
 
-.social-icon-nav {
+/* ==========================================================================
+   3. KÖZÖSSÉGI IKONOK (ASZTALI)
+   ========================================================================== */
+.social-icon, .social-icon-nav {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    align-self: center;
     justify-content: center;
     text-decoration: none;
     transition: 0.3s ease;
     background: #1b1b1b;
-    color: #fff;
+    color: #ffffff;
 }
 
-.social-icon:hover {
-    transform: translateY(-5px) scale(1.08);
-}
+.social-icon.facebook:hover, .social-icon-nav.facebook:hover { background: #1877f2 !important; }
+.social-icon.instagram:hover, .social-icon-nav.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; }
+.social-icon.tiktok:hover, .social-icon-nav.tiktok:hover { background: #000000 !important; color: #25f4ee !important; }
 
-.social-icon.facebook:hover {
-    background: #1877f2;
-}
-
-.social-icon-nav.facebook:hover {
-    background: #1877f2;
-}
-
-.social-icon.instagram:hover {
-    background: linear-gradient(45deg,
-            #f09433,
-            #e6683c,
-            #dc2743,
-            #cc2366,
-            #bc1888);
-}
-
-.social-icon-nav.instagram:hover {
-    background: linear-gradient(45deg,
-            #f09433,
-            #e6683c,
-            #dc2743,
-            #cc2366,
-            #bc1888);
-}
-
-.social-icon.tiktok:hover {
-    background: #000;
-    color: #25f4ee;
-}
-
-.social-icon-nav.tiktok:hover {
-    background: #000;
-    color: #25f4ee;
-}
-
-@media(max-width:768px) {
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .social-icon {
-        width: 48px;
-        height: 48px;
-    }
-}
-
-/* A szavakat befogadó konténer */
-/* A szavakat befogadó konténer */
-.animated-words {
-  position: relative;
-  display: inline-flex; /* inline-block helyett flex, hogy könnyebb legyen a függőleges igazítás */
-  align-items: center;  /* Függőlegesen tökéletesen középre teszi a szavakat */
-  height: 100%;         /* Kitölti a szülő gomb magasságát */
-  min-width: 160px;     
-  text-align: left;
-  margin-left: 4px;     /* Egy pici fix távolság a kettőspont után */
-}
-
-/* Az összes belső szó alapbeállítása */
-/* Az összes belső szó alapbeállítása */
-.animated-words span {
-  position: absolute;
-  left: 0;
-  top: auto;
-  opacity: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 1;
-  transform: translateY(10px);
-  /* 12s helyett 15s kell az 5 szóhoz, hogy kényelmesen körbeérjen */
-  animation: wordCarousel 15s linear infinite; 
-}
-
-/* Időzítések eltolása (Staggering) - 5 szóhoz igazítva */
-.animated-words span:nth-child(1) {
-  animation-delay: 0s;
-}
-.animated-words span:nth-child(2) {
-  animation-delay: 3s;
-}
-.animated-words span:nth-child(3) {
-  animation-delay: 6s;
-}
-.animated-words span:nth-child(4) {
-  animation-delay: 9s;
-}
-.animated-words span:nth-child(5) {
-  animation-delay: 12s; /* Itt volt a hiba, ez is 9s volt */
-}
-
-/* Az animáció logikája az új, 15 másodperces ciklushoz igazítva (százalékosan) */
-@keyframes wordCarousel {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  /* Beúszás (a 15 másodperc 4%-a kb. 0.6 másodperc) */
-  4% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  /* Látszódás vége (a 15 másodperc 16%-a kb. 2.4 másodperc) */
-  16% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  /* Kiúszás */
-  20% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 0;
-  }
-}
 /* ==========================================================================
-   KIZÁRÓLAG MOBIL ÉS TABLET NÉZETBEN (991px és alatta)
+   4. SZOLGÁLTATÁSOK SZALAG (ASZTALI)
+   ========================================================================== */
+.service-horizontal-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    min-width: 0;
+}
+
+.horizontal-scroller-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 540px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.scroller-lead-top {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 4px;
+    font-weight: 400;
+}
+
+.scroller-viewport-horizontal {
+    width: 540px; 
+    height: 36px;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 100%);
+}
+
+.scroller-track-horizontal {
+    display: flex;
+    flex-direction: row;
+    width: calc(180px * 8); 
+    animation: jumpScrollInfinite 15s cubic-bezier(0.85, 0, 0.15, 1) infinite;
+}
+
+.word-step-hz {
+    width: 180px; 
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0.25; 
+    transform: scale(0.85); 
+}
+
+@keyframes jumpScrollInfinite {
+    0%, 15% { transform: translateX(0px); }
+    20%, 35% { transform: translateX(-180px); }
+    40%, 55% { transform: translateX(-360px); }
+    60%, 75% { transform: translateX(-540px); }
+    80%, 95% { transform: translateX(-720px); }
+    99.999% { transform: translateX(-900px); }
+    100% { transform: translateX(0px); }
+}
+
+.scroller-track-horizontal .word-step-hz:nth-child(2) { animation: hl-infinite-1 15s infinite; }
+.scroller-track-horizontal .word-step-hz:nth-child(3) { animation: hl-infinite-2 15s infinite; }
+.scroller-track-horizontal .word-step-hz:nth-child(4) { animation: hl-infinite-3 15s infinite; }
+.scroller-track-horizontal .word-step-hz:nth-child(5) { animation: hl-infinite-4 15s infinite; }
+.scroller-track-horizontal .word-step-hz:nth-child(6) { animation: hl-infinite-5 15s infinite; }
+.scroller-track-horizontal .word-step-hz:nth-child(7) { animation: hl-infinite-1 15s infinite; } 
+.scroller-track-horizontal .word-step-hz:nth-child(8) { animation: hl-infinite-2 15s infinite; } 
+
+@keyframes hl-infinite-1 { 0%, 15%, 99.999%, 100% { color: #f3c739; opacity: 1; transform: scale(1.15); } }
+@keyframes hl-infinite-2 { 20%, 35% { color: #f3c739; opacity: 1; transform: scale(1.15); } }
+@keyframes hl-infinite-3 { 40%, 55% { color: #f3c739; opacity: 1; transform: scale(1.15); } }
+@keyframes hl-infinite-4 { 60%, 75% { color: #f3c739; opacity: 1; transform: scale(1.15); } }
+@keyframes hl-infinite-5 { 80%, 95% { color: #f3c739; opacity: 1; transform: scale(1.15); } }
+
+/* ==========================================================================
+   5. PREMIUM CTA GOMB (ASZTALI)
+   ========================================================================== */
+.my-cta-btn {
+    display: inline-block !important;
+    border: solid rgb(81, 70, 4) 2px !important;
+    background: transparent !important;
+    color: rgb(241, 235, 205) !important;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-radius: 0 !important; 
+    padding: 8px 16px;
+    transition: all 0.4s ease !important;
+}
+
+.my-cta-btn:hover {
+    background-color: #0d0e2d !important; 
+    color: #ffffff !important;           
+}
+
+/* Kisebb asztali kijelzők finomhangolása */
+@media (max-width: 1199.98px) {
+    .horizontal-scroller-container, .scroller-viewport-horizontal { width: 390px !important; }
+    .scroller-track-horizontal { width: calc(130px * 8) !important; animation-name: jumpScrollInfiniteMD !important; }
+    .word-step-hz { width: 130px !important; font-size: 0.95rem; }
+}
+
+@keyframes jumpScrollInfiniteMD {
+    0%, 15% { transform: translateX(0px); }
+    20%, 35% { transform: translateX(-130px); }
+    40%, 55% { transform: translateX(-260px); }
+    60%, 75% { transform: translateX(-390px); }
+    80%, 95% { transform: translateX(-520px); }
+    99.999% { transform: translateX(-650px); }
+    100% { transform: translateX(0px); }
+}
+
+
+/* ==========================================================================
+   MOBIL NÉZET - EGYSZERŰ BOOTSTRAP NAVBAR
+   ========================================================================== */
+/* ==========================================================================
+   MOBIL NÉZET - EGYSZERŰ BOOTSTRAP NAVBAR
    ========================================================================== */
 @media (max-width: 991.98px) {
-    .navbar {
-        background-color: #000000 !important; /* Teljesen tiszta fekete háttér */
+
+    *{
+        animation: none !important;
+        transition: none !important;
     }
-    
-    /* Opcionális: Ha a lenyíló mobilmenü hátterét is külön biztosítani szeretnéd */
-    .navbar-collapse {
-        background-color: #000000 !important;
-        padding: 15px; /* Szép szellős elrendezés mobilon a menüelemeknek */
-        border-radius: 8px;
+
+    html,
+    body{
+        overflow-x: hidden;
     }
-    
-    /* Mobilon a közösségi ikonok és a nyelvválasztó ne folyjon össze, kapjon egy kis helyet */
-    .navbar .d-flex, 
-    .navbar button.sotet-gomb {
-        margin-top: 15px;
-        margin-bottom: 10px;
+
+    .double-nav{
+        background:#111 !important;
+        padding:.5rem 0 !important;
+        width:100% !important;
+    }
+
+    .container-fluid{
+        display:block !important;
+        width:100% !important;
+        max-width:100% !important;
+        padding:0 15px !important;
+        margin:0 !important;
+    }
+
+    .nav-bottom-row{
+        display:flex !important;
+        justify-content:space-between !important;
+        align-items:center !important;
+        width:100%;
+        padding:.5rem 0 !important;
+    }
+
+    /* =======================
+       LOGÓ
+    ======================= */
+
+    .premium-brand{
+        display:flex !important;
+        align-items:center;
+        gap:6px;
+        max-width:75%;
+        overflow:hidden;
+    }
+
+    .brand-icon{
+        animation:none !important;
+        transform:none !important;
+        text-shadow:none !important;
+    }
+
+    .brand-text{
+        animation:none !important;
+        transform:none !important;
+        text-shadow:none !important;
+        color:#f3c739;
+        font-size:1rem;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+
+    /* =======================
+       HAMBURGER
+    ======================= */
+
+    .navbar-toggler{
+        margin-left:auto;
+    }
+
+    /* =======================
+       LENYÍLÓ MENÜ
+    ======================= */
+
+    .navbar-collapse{
+        width:100% !important;
+        max-width:100% !important;
+        margin-top:1rem;
+        padding:1rem 0;
+        text-align:center;
+    }
+
+    .navbar-nav{
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+        justify-content:center !important;
+        width:100% !important;
+        margin:0 !important;
+        padding:0 !important;
+        gap:1rem;
+    }
+
+    .nav-item{
+        width:100%;
+        text-align:center;
+    }
+
+    /* =======================
+       SZOLGÁLTATÁS
+    ======================= */
+
+    .service-horizontal-center{
+        display:block;
+        width:100%;
+    }
+
+    .horizontal-scroller-container{
+        width:100% !important;
+        max-width:100% !important;
+        margin:0 auto !important;
+    }
+
+    .scroller-lead-top{
+        margin-bottom:.5rem;
+        color:#999;
+    }
+
+    .scroller-viewport-horizontal,
+    .scroller-track-horizontal{
+        display:none !important;
+    }
+
+    .mobile-scroller-viewport{
+        width:100% !important;
+        height:auto !important;
+        overflow:visible !important;
+    }
+
+    .mobile-scroller-track{
+        transform:none !important;
+    }
+
+  .mobile-scroller-viewport{
+    height:32px;
+    overflow:hidden;
+    position:relative;
+}
+
+.mobile-scroller-track{
+    display:flex;
+    flex-direction:column;
+    animation: mobileWords 12s infinite;
+}
+
+.mobile-word-step{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:32px;
+    color:#fff;
+    font-family:'Cormorant Garamond', serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:1rem;
+}
+
+@keyframes mobileWords{
+
+    /* marketing */
+    0%,16%{
+        transform:translateY(0);
+    }
+
+    /* management */
+    20%,36%{
+        transform:translateY(-32px);
+    }
+
+    /* SEO */
+    40%,56%{
+        transform:translateY(-64px);
+    }
+
+    /* videó gyártás */
+    60%,76%{
+        transform:translateY(-96px);
+    }
+
+    /* webfejlesztés */
+    80%,96%{
+        transform:translateY(-128px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+    /* =======================
+       CTA
+    ======================= */
+
+    .my-cta-btn{
+        display:block !important;
+        width:100%;
+        max-width:330px;
+        margin:0 auto;
+    }
+
+    /* =======================
+       SOCIAL
+    ======================= */
+
+    .social-icon,
+    .social-icon-nav{
+        width:36px;
+        height:36px;
+    }
+
+    .social-icon:hover,
+    .social-icon-nav:hover{
+        background:#1b1b1b !important;
+        color:#fff !important;
+        transform:none !important;
+    }
+}
+
+@media (max-width:991.98px){
+
+    .nav-bottom-row:has(.navbar-collapse.show){
+        flex-direction:column !important;
+        align-items:center !important;
+    }
+
+    .nav-bottom-row:has(.navbar-collapse.show) .premium-brand{
+        margin-bottom:.75rem;
+    }
+
+    .nav-bottom-row:has(.navbar-collapse.show) .navbar-toggler{
+        margin:0 0 1rem 0 !important;
     }
 }

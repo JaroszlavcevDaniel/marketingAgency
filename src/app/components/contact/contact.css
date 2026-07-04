@@ -1,0 +1,129 @@
+.contact-section {
+    background-color: #0e0e0e; 
+    min-height: 100vh;
+    padding: 100px 0;
+    color: #ffffff;
+}
+
+.section-title {
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    letter-spacing: -0.01em;
+}
+
+.cormorant-garamond {
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* Premium Form Input mezők stílusai */
+.contact-form-container {
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+        color: #ffffff;
+        padding: 12px 15px;
+        transition: all 0.4s ease;
+
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.06);
+            border-bottom-color: #f3c739; 
+            box-shadow: none;
+        }
+
+        &.is-invalid {
+            border-bottom-color: #dc3545 !important;
+            box-shadow: none;
+        }
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+    }
+}
+
+/* Captcha mező méretezése */
+.captcha-input {
+    max-width: 100px;
+}
+
+/* Premium Checkbox */
+.checkbox-premium {
+    background-color: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    cursor: pointer;
+    
+    &:checked {
+        background-color: #f3c739 !important;
+        border-color: #f3c739 !important;
+    }
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+/* Premium Küldés Gomb */
+.btn-premium-submit {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &:hover:not([disabled]) {
+        background: #ffffff;
+        color: #0e0e0e;
+    }
+
+    &:disabled {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.2);
+        cursor: not-allowed;
+    }
+}
+
+/* Jobb oldali közösségi ikonok */
+.social-icon-nav {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+    background: #1b1b1b;
+    color: #ffffff;
+
+    &.facebook:hover { background: #1877f2 !important; }
+    &.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; }
+    &.tiktok:hover { background: #000000 !important; color: #25f4ee !important; }
+}
+
+.info-link {
+    transition: color 0.3s ease;
+    &:hover {
+        color: #f3c739 !important;
+    }
+}
+
+/* Térkép konténer */
+.map-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 991px) {
+    .contact-section {
+        min-height: auto;
+    }
+    .map-container {
+        margin-top: 40px;
+    }
+}

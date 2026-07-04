@@ -10,13 +10,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SpaceBackground } from './components/space-background/space-background';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Footer } from './components/footer/footer';
+import { Services } from './components/services/services';
+import { Contact } from './components/contact/contact';
 
 @NgModule({
   declarations: [
     App,
     Navbar,
     Hero,
-    SpaceBackground
+    SpaceBackground,
+    Footer,
+    Services,
+    Contact
   ],
   imports: [
     BrowserModule,

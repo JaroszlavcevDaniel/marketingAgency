@@ -1,0 +1,139 @@
+<section class="contact-section mt-5 pt-5 d-flex align-items-center">
+    <div class="container-fluid px-md-5 my-auto">
+        <div class="row gy-2 justify-content-between">
+
+            <!-- BAL OLDAL: KAPCSOLATFELVÉTELI FORM -->
+            <div class="col-lg-6 col-12">
+                <div class="contact-form-container">
+                    <h4 class="fs-4 cormorant-garamond text-uppercase mb-1 text-light section-title">Kapcsolatfelvétel
+                    </h4>
+                    <p class="text-light mb-1 fs-6">Írjon nekünk, és szakértőnk 24 órán belül felveszi Önnel a
+                        kapcsolatot.</p>
+
+                    <form [formGroup]="contactForm" #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)" novalidate>
+
+                        <!-- Név -->
+                        <div class="mb-4 position-relative">
+                            <label class="form-label text-uppercase text-light cormorant-garamond">Teljes Név *</label>
+                            <input type="text" formControlName="name" name="name" class="form-control"
+                                placeholder="Minta János"
+                                [ngClass]="{'is-invalid': contactForm.get('name')?.touched && contactForm.get('name')?.invalid}">
+                        </div>
+
+                        <div class="row">
+                            <!-- Email -->
+                            <div class="col-md-6 col-12 mb-4">
+                                <label class="form-label text-uppercase text-light cormorant-garamond">Email cím
+                                    *</label>
+                                <input type="email" formControlName="email" name="email" class="form-control"
+                                    placeholder="janos@minta.hu"
+                                    [ngClass]="{'is-invalid': contactForm.get('email')?.touched && contactForm.get('email')?.invalid}">
+                            </div>
+
+                            <!-- Telefonszám -->
+                            <div class="col-md-6 col-12 mb-1">
+                                <label
+                                    class="form-label text-uppercase text-light cormorant-garamond">Telefonszám</label>
+                                <input type="tel" formControlName="phone" name="phone" class="form-control"
+                                    placeholder="+36 30 123 4567">
+                            </div>
+                        </div>
+
+                        <!-- Üzenet -->
+                        <div class="mb-4">
+                            <label class="form-label text-uppercase text-light cormorant-garamond">Üzenet *</label>
+                            <textarea formControlName="message" name="message" class="form-control" rows="3"
+                                placeholder="Miben segíthetünk Önnek?"
+                                [ngClass]="{'is-invalid': contactForm.get('message')?.touched && contactForm.get('message')?.invalid}"></textarea>
+                        </div>
+
+                        <!-- MATEMATIKAI CAPTCHA -->
+                        <div
+                            class="mb-1 captcha-wrapper p-1 d-flex align-items-center gap-1 bg-dark bg-opacity-50 border border-secondary border-opacity-20 rounded-0">
+                            <span class="captcha-question cormorant-garamond text-light fs-5">
+                                Biztonsági kérdés: {{ captchaNum1 }} + {{ captchaNum2 }} =
+                            </span>
+                            <input type="number" formControlName="captcha"
+                                class="form-control captcha-input text-center ms-auto" placeholder="?"
+                                [ngClass]="{'is-invalid': contactForm.get('captcha')?.touched && (contactForm.get('captcha')?.invalid || !isCaptchaCorrect())}">
+                        </div>
+
+                        <!-- ÁSZF Checkbox -->
+                        <div class="form-check mb-1 d-flex align-items-start gap-1">
+                            <input class="form-check-input mt-1 rounded-0 checkbox-premium" type="checkbox"
+                                formControlName="acceptTerms" id="flexCheckDefault"
+                                [ngClass]="{'is-invalid': contactForm.get('acceptTerms')?.touched && contactForm.get('acceptTerms')?.invalid}">
+                            <label class="form-check-label text-light small user-select-none" for="flexCheckDefault">
+                                Elfogadom az <a href="#aszf" class="text-decoration-underline text-warning">ÁSZF</a>-et
+                                és hozzájárulok az adataim kezeléséhez. *
+                            </label>
+                        </div>
+
+                        <!-- Küldés Gomb -->
+                        <button type="submit" [disabled]="contactForm.invalid || !isCaptchaCorrect() || isSending"
+                            class="btn btn-premium-submit w-100 text-uppercase cormorant-garamond py-3 fs-5">
+                            {{ isSending ? 'Küldés folyamatban...' : 'Üzenet elküldése' }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- JOBB OLDAL: INFÓK & GOOGLE MAPS -->
+            <div class="col-lg-5 col-12 d-flex flex-column justify-content-between">
+                <div class="contact-info-block mb-1">
+                    <h4 class="fs-4 cormorant-garamond text-uppercase mb-4 text-light section-title">Elérhetőségeink
+                    </h4>
+
+                    <h5 class="text-warning cormorant-garamond mb-1">Marketing Ügynökség</h5>
+                    <p class="text-light mb-1 fs-6">Budapest, 17. kerület, 534. utca 19, Hungary</p>
+
+                    <div class="d-flex flex-column gap-1 mb-1 fs-5">
+                        <a href="tel:+36301234567"
+                            class="info-link cormorant-garamond text-light text-decoration-none">+36 30 123 4567</a>
+                        <a href="mailto:info@ugynokseg.hu"
+                            class="info-link cormorant-garamond text-light text-decoration-none">info@ugynokseg.hu</a>
+                    </div>
+
+                    <!-- Social Ikonok -->
+                    <div class="social-icons-wrapper d-flex gap-1">
+                        <a href="https://www.facebook.com/profile.php?id=61590437648284" target="_blank"
+                            class="social-icon-nav facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049C16 3.603 12.418 0 8 0S0 3.603 0 8.049c0 4.017 2.926 7.347 6.75 7.951v-5.625H4.719V8.049H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/olahthommywood/" target="_blank"
+                            class="social-icon-nav instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.087 3.269.222 2.76.42a5.92 5.92 0 0 0-2.14 1.4A5.92 5.92 0 0 0 .42 2.76c-.198.509-.333 1.09-.372 1.943C.01 5.556 0 5.829 0 8c0 2.171.01 2.444.048 3.297.039.853.174 1.434.372 1.943a5.92 5.92 0 0 0 1.4 2.14 5.92 5.92 0 0 0 2.14 1.4c.509.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16c2.171 0 2.444-.01 3.297-.048.853-.039 1.434-.174 1.943-.372a5.92 5.92 0 0 0 2.14-1.4 5.92 5.92 0 0 0 1.4-2.14c.198-.509.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8c0-2.171-.01-2.444-.048-3.297-.039-.853-.174-1.434-.372-1.943a5.92 5.92 0 0 0-1.4-2.14 5.92 5.92 0 0 0-2.14-1.4c-.509-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0m0 1.441c2.136 0 2.389.008 3.232.046.78.036 1.204.166 1.486.276.374.145.64.319.92.599.28.28.454.546.599.92.11.282.24.706.276 1.486.038.843.046 1.096.046 3.232s-.008 2.389-.046 3.232c-.036.78-.166 1.204-.276 1.486a4.48 4.48 0 0 1-.599.92 4.48 4.48 0 0 1-.92.599c-.282.11-.706.24-1.486.276-.843.038-1.096.046-3.232.046s-2.389-.008-3.232-.046c-.78-.036-1.204-.166-1.486-.276a4.48 4.48 0 0 1-.92-.599 4.48 4.48 0 0 1-.599-.92c-.11-.282-.24-.706-.276-1.486C1.449 10.389 1.441 10.136 1.441 8s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.374.319-.64.599-.92.28-.28.546-.454.92-.599.282-.11.706-.24 1.486-.276C5.611 1.449 5.864 1.441 8 1.441" />
+                                <path
+                                    d="M8 3.892A4.108 4.108 0 1 0 8 12.108 4.108 4.108 0 0 0 8 3.892m0 6.765A2.657 2.657 0 1 1 8 5.343a2.657 2.657 0 0 1 0 5.314m4.271-6.845a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0" />
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@thommy_wood_house" target="_blank"
+                            class="social-icon-nav tiktok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.204V2h-3.193v13.766c0 1.303-1.066 2.363-2.372 2.363a2.37 2.37 0 0 1-2.369-2.363 2.37 2.37 0 0 1 2.369-2.363c.288 0 .563.051.818.144V10.3a5.61 5.61 0 0 0-.818-.059A5.567 5.567 0 0 0 4.69 15.8 5.567 5.567 0 0 0 10.254 21a5.567 5.567 0 0 0 5.565-5.2V8.687a8.018 8.018 0 0 0 4.691 1.516V7.014a4.782 4.782 0 0 1-.921-.328" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GOOGLE TÉRKÉP BEÁGYAZÁS -->
+                <div class="map-container border border-secondary border-opacity-20">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.499753250754!2d19.213782076503048!3d47.48017697117859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c392ad4817fd%3A0x6660a9a5adc9c5c6!2sBudapest%2C%20534.%20u.%2019%2C%201173!5e0!3m2!1shu!2shu!4v1783198319680!5m2!1shu!2shu"
+                        width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div> <!-- col-lg-5 lezárása -->
+
+        </div> <!-- row lezárása -->
+    </div> <!-- container-fluid lezárása -->
+</section>

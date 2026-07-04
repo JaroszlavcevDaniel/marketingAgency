@@ -1,0 +1,145 @@
+/* --- Monumentális Footer Alapok --- */
+.massive-footer {
+    background-color: #0d0d0d; /* Sötét, prémium háttér */
+    min-height: 70vh;          /* A képernyő 70%-a magasság asztali gépen */
+    padding: 80px 0 40px 0;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Tipográfia és Linkek --- */
+.footer-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    border-left: 2px solid #f3c739; /* Finom arany/sárga accent vonal a címek mellett */
+    padding-left: 12px;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links li a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links li a:hover {
+    color: #f3c739;
+    transform: translateX(5px); /* Finom elmozdulás hoverre */
+}
+
+/* --- Kapcsolati elemek kiemelése --- */
+.letter-spacing-wide {
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+}
+
+.footer-mail, .footer-phone {
+    font-size: clamp(1.4rem, 2vw, 2.2rem);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.footer-mail:hover, .footer-phone:hover {
+    color: #f3c739;
+}
+
+/* --- Meglévő Social Ikonok Stílusai (Megtartva/Beépítve) --- */
+.social-icon, .social-icon-nav {
+    width: 36px; /* Kicsit megnövelve a monumentális footerhez */
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+    background: #1b1b1b;
+    color: #ffffff;
+}
+
+.social-icon.facebook:hover, .social-icon-nav.facebook:hover { background: #1877f2 !important; }
+.social-icon.instagram:hover, .social-icon-nav.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; }
+.social-icon.tiktok:hover, .social-icon-nav.tiktok:hover { background: #000000 !important; color: #25f4ee !important; }
+
+/* --- Meglévő Prémium Logó Animációk és Stílusok (Megtartva) --- */
+.cormorant-garamond {
+    font-family: "Cormorant Garamond", serif;
+}
+
+.premium-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.brand-icon {
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block !important; 
+    transform-origin: center center; 
+    font-size: 0.9em;
+    line-height: 1;
+    animation: slowRotate 12s linear infinite;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.brand-text {
+    position: relative;
+    font-weight: 600;
+    color: #f3c739;
+    text-shadow: 
+        0 0 4px rgba(255, 255, 255, 0.8),  
+        0 0 10px rgba(0, 198, 255, 0.5),   
+        0 0 20px rgba(111, 66, 193, 0.4),  
+        0 0 40px rgba(0, 123, 255, 0.2);   
+    animation: premiumGlow 8s ease-in-out infinite alternate;
+}
+
+.premium-brand:hover .brand-text {
+    color: #ffffff;
+    text-shadow: 
+        0 0 4px rgba(255, 255, 255, 0.9),
+        0 0 12px rgba(0, 198, 255, 0.8), 
+        0 0 22px rgba(138, 75, 245, 0.7),
+        0 0 35px rgba(0, 198, 255, 0.5);
+    transform: scale(1.01);
+}
+
+@keyframes slowRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes premiumGlow {
+    0% { text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 10px rgba(0, 198, 255, 0.5), 0 0 20px rgba(111, 66, 193, 0.4), 0 0 40px rgba(0, 123, 255, 0.2); }
+    50% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 14px rgba(138, 75, 245, 0.6), 0 0 25px rgba(0, 198, 255, 0.4), 0 0 50px rgba(138, 75, 245, 0.3); }
+    100% { text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 12px rgba(0, 123, 255, 0.4), 0 0 18px rgba(138, 75, 245, 0.3), 0 0 35px rgba(0, 198, 255, 0.2); }
+}
+
+/* --- Reszponzív Finomhangolás (Mobil) --- */
+@media (max-width: 991px) {
+    .massive-footer {
+        min-height: auto; /* Mobilon ne erőltessük a vh-t, folyjon a tartalom szerint */
+        padding: 60px 0 30px 0;
+    }
+    .footer-title {
+        margin-top: 15px;
+    }
+    .footer-mail, .footer-phone {
+        font-size: 1.6rem; /* Mobilon picit kisebb betűméret az overflow ellen */
+    }
+}

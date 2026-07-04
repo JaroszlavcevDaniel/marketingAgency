@@ -5,8 +5,10 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content text-light" [@heroAnimation]>
-
-        <div class="mb-5 animate-item">
+    <div class="container-fluid px-md-5 h-100 d-flex flex-column justify-content-between py-5">
+        
+        <!-- 1. Első felirat: Teljesen az oldal közepén (fent/középen flex-növekedéssel) -->
+        <div class="text-center my-auto animate-item">
             <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter" *ngIf="currentLang === 'hu'">
                 A világot rendszerek mozgatják
             </h1>
@@ -15,37 +17,43 @@
             </h1>
         </div>
 
-        <div class="mb-5 animate-item">
-            <h4 class="col-5 p-2 text-uppercase cormorant-garamond" *ngIf="currentLang === 'hu'">
-                Minden sikeres rendszer mögött törvényszerűségek állnak
-            </h4>
-            <h1 class="p-2 text-uppercase cormorant-garamond" *ngIf="currentLang === 'en'">
-                From confusion to growth
-            </h1>
+        <!-- 2. és 3. felirat: Egy szinten, bal és jobb oldalon, közöttük hely a földgömbnek -->
+        <div class="row justify-content-between align-items-end gy-4 mb-5 animate-item">
+            <!-- Bal oldali szöveg -->
+            <div class="col-lg-4 col-12">
+                <h4 class="p-2 text-uppercase cormorant-garamond text-start m-0" *ngIf="currentLang === 'hu'">
+                    Minden sikeres rendszer mögött törvényszerűségek állnak
+                </h4>
+                <h1 class="p-2 text-uppercase cormorant-garamond text-start m-0" *ngIf="currentLang === 'en'">
+                    From confusion to growth
+                </h1>
+            </div>
+
+            <!-- Jobb oldali szöveg (A szöveg jobbra igazítva text-end-del) -->
+            <div class="col-lg-4 col-12 text-lg-end">
+                <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0" *ngIf="currentLang === 'hu'">
+                    A növekedés nem véletlen
+                </h4>
+                <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0" *ngIf="currentLang === 'en'">
+                    We bring order to your business's marketing, communication and content production.
+                </h4>
+            </div>
         </div>
 
-        <div class="mb-5 d-flex animate-item">
-            <h4 class="text-light p-3 text-uppercase cormorant-garamond" *ngIf="currentLang === 'hu'">
-                A növekedés nem véletlen.
-            </h4>
-            <h4 class="text-light p-3 text-uppercase cormorant-garamond" *ngIf="currentLang === 'en'">
-                We bring order to your business's marketing, communication and content production. A complex
-                management approach and a measurable system - for a strategically clear online presence.
-            </h4>
-        </div>
-
-        <div class="animate-item">
-            <a class="cta fs-4 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta"
+        <!-- 4. CTA Gomb: Sokkal lejjebb, teljesen középen -->
+        <div class="animate-item d-flex justify-content-center mt-3">
+            <a class="cta fs-4 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
                 *ngIf="currentLang === 'hu'" href="#answer">
-                A változás itt kezdődik<br>
+                A változás itt kezdődik
             </a>
-            <a class="cta fs-4 text-dark btn rounded-0 text-uppercase cormorant-garamond"
+            <a class="cta fs-4 text-dark btn rounded-0 text-uppercase cormorant-garamond px-4 py-2"
                 *ngIf="currentLang === 'en'" href="#answer">
-                How do we put order in the system? <br>
+                How do we put order in the system?
             </a>
         </div>
 
     </div>
+</div>
 </section>
 
     <section class="snap-section heroTwo" id="answer">
@@ -73,13 +81,14 @@
                                 <!-- <span class="page-number">01</span> -->
                                 <p class="cormorant-garamond fs-4 fw-bold text-start">1. Helyzetfelmérés – „Mi van most valójában?”</p>
                                 <p class="cormorant-garamond fs-5"> 
-                                    Megnézzük:<br> <br>
+                                    Megnézzük:<br> 
                                     – milyen marketingcsatornák futnak jelenleg<br>
                                     – mi hoz eredményt és mi nem<br>
                                     – hol szivárog el a költség és az energia<br>
-                                    – mennyire koherens a kommunikáció<br> <br>
+                                    – mennyire koherens a kommunikáció<br> 
                                     Itt még nem javítunk. Csak látunk. Tisztán.
                                 </p>
+                                <h2>→</h2>
                             </article>
 
                             <article class="page">
@@ -87,29 +96,31 @@
                                 <p class="cormorant-garamond fs-4 fw-bold">2. Célrendszer kialakítása – „Hová kell eljutni?”</p>
                                 <p class="cormorant-garamond fs-5">
                                     Minden rend a célokkal kezdődik.
-                                    Közösen meghatározzuk: <br><br>
+                                    Közösen meghatározzuk: <br>
                                     – üzleti célokat <br>
                                     – marketing célokat <br>
                                     – rövid és hosszú távú irányokat <br>
-                                    – mérhető KPI-okat <br><br>
+                                    – mérhető KPI-okat <br>
                                     Ez az a pont, ahol a marketing végre nem „érzésből” működik, hanem irányított
                                     rendszerré válik.
                                 </p>
+                                 <h2>→</h2>
                             </article>
 
                             <article class="page">
                                 <!-- <span class="page-number">03</span> -->
                                 <p class="cormorant-garamond fs-4 fw-bold">3. Stratégiai terv – „Mi lesz a haditerv?”</p>
                                 <p class="cormorant-garamond fs-5">
-                                    Itt készül el a teljes marketingstratégia. <br><br>
+                                    Itt készül el a teljes marketingstratégia. <br>
                                     Összerakjuk: <br>
                                     – csatorna-struktúrát <br>
                                     – tartalomirányt <br>
                                     – kampánylogikát <br>
                                     – hirdetési és organikus egyensúlyt <br>
-                                    – márkaüzeneti rendszert <br><br>
+                                    – márkaüzeneti rendszert <br>
                                     Ez a marketing működésének térképe. Minden későbbi lépés innen indul. <br>
                                 </p>
+                                 <h2>→</h2>
                             </article>
 
                             <article class="page">
@@ -117,15 +128,16 @@
                                 <p class="cormorant-garamond fs-4 fw-bold ">4. Rendszerépítés – „Minden a helyére kerül”</p>
                                 <p class="cormorant-garamond fs-5">
                                     A stratégia után következik a kivitelezés alapjainak lerakása. <br>
-                                    Itt történhet: <br> <br>
+                                    Itt történhet: <br> 
                                     – weboldal vagy landing struktúra kialakítása <br>
                                     – SEO alapok rendezése <br>
                                     – hirdetési rendszerek beállítása <br>
                                     – tartalomgyártási folyamatok felépítése <br>
-                                    – social media struktúra kialakítása <br> <br>
+                                    – social media struktúra kialakítása <br> 
                                     Nem kampányt indítunk. Rendszert építünk, ami kampányokat tud futtatni.
 
                                 </p>
+                                 <h2>→</h2>
                             </article>
 
                             <article class="page">
@@ -139,10 +151,11 @@
                                     – szöveges kommunikáció <br>
                                     – kampány kreatívok <br>
                                     – social media jelenlét <br>
-                                    – márkaépítő anyagok <br><br>
+                                    – márkaépítő anyagok <br>
                                     Ebben a fázisban kapcsolódik be a kamera előtti felkészítés is, hogy az üzenet ne
                                     csak szép legyen, hanem hiteles is.
                                 </p>
+                                 <h2>→</h2>
                             </article>
 
                             <article class="page">
@@ -158,6 +171,7 @@
                                     – rendben tartjuk a teljes marketing működést <br> 
                                     A cél nem az egyszeri eredmény, hanem a stabil, kiszámítható működés.
                                 </p>
+                                 <h2>→</h2>
                                 <a class="btn bg-transparent text-light ctaSmall" href="wfefwe">Jelentkezem a díjmentes konzultációra</a>
                             </article>
 

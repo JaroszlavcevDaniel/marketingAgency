@@ -1,162 +1,167 @@
-<nav class="navbar bg-dark navbar-expand-lg navbar-dark fixed-top" [class.bg-dark]="isScrolled">
-    <div class="container-fluid ">
-        <a class="navbar-brand text-warning fs-5 cormorant-garamond text-uppercase sotet-gomb premium-brand"
-            href="#heroFirst">
-            <span class="brand-icon">✾</span>
-            <span class="brand-text">Marketing Ügynökség</span>
-            <span class="brand-icon">✾</span>
-        </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto ">
-
-                <li class="nav-item ">
-                    <a class="text-light nav-link active cormorant-garamond text-uppercase sotet-gomb d-inline-flex align-items-center"
-   aria-current="page" *ngIf="currentLang === 'hu'" routerLink="about">
-   <span class="me-1">Szolgáltatásaink:</span>
-   <span class="animated-words">
-       <span>marketing</span>
-       <span>management</span>
-       <span>SEO</span>
-       <span>videó gyártás</span>
-       <span>webfejlesztés</span>
-   </span>
-</a>
-
-<a class="text-light nav-link active cormorant-garamond text-uppercase sotet-gomb d-inline-flex align-items-center"
-   aria-current="page" *ngIf="currentLang === 'en'" routerLink="about">
-   <span class="me-1">Methods:</span>
-   <span class="animated-words">
-       <span>marketing</span>
-       <span>management</span>
-       <span>SEO</span>
-       <span>video production</span>
-       <span>web development</span>
-   </span>
-</a>
-                </li>
-
-
-
-                <li class="nav-item">
-                    <a class=" fw-bold nav-link active cormorant-garamond text-uppercase my-cta"
-                        aria-current="page" *ngIf="currentLang === 'hu'" routerLink="contact">
-                        Jelentkezem a díjmentes konzultációra
-                    </a>
-
-                    <a class="text-light nav-link active cormorant-garamond text-uppercase " aria-current="page"
-                        *ngIf="currentLang === 'en'" routerLink="contact">
-                        appointment for structure
-                    </a>
-                </li>
-
-
-
-
-<!-- wefw -->
-
-            </ul>
-            <div class="d-flex">
-                <a href="https://www.facebook.com/profile.php?id=61590437648284" target="_blank"
-                    class="social-icon-nav facebook ">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
-                        viewBox="0 0 16 16">
-
-                        <path d="M16 8.049C16 3.603 12.418 0 8 0S0 
-            3.603 0 8.049c0 4.017 2.926 7.347 
-            6.75 7.951v-5.625H4.719V8.049H6.75V6.275
-            c0-2.017 1.195-3.131 3.022-3.131.876 0 
-            1.791.157 1.791.157v1.98h-1.009c-.994 0-1.303.621-1.303 
-            1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 
-            6.75-3.934 6.75-7.951" />
-                    </svg>
-
-                </a>
-                <a href="https://www.instagram.com/olahthommywood/" target="_blank" class="social-icon-nav instagram">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
-                        viewBox="0 0 16 16">
-
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 
-            3.85.087 3.269.222 2.76.42a5.92 5.92 
-            0 0 0-2.14 1.4A5.92 5.92 0 0 0 .42 
-            2.76c-.198.509-.333 1.09-.372 1.943C.01 
-            5.556 0 5.829 0 8c0 2.171.01 2.444.048 
-            3.297.039.853.174 1.434.372 1.943a5.92 
-            5.92 0 0 0 1.4 2.14 5.92 5.92 0 0 0 
-            2.14 1.4c.509.198 1.09.333 1.943.372C5.556 
-            15.99 5.829 16 8 16c2.171 0 2.444-.01 
-            3.297-.048.853-.039 1.434-.174 1.943-.372a5.92 
-            5.92 0 0 0 2.14-1.4 5.92 5.92 0 0 0 
-            1.4-2.14c.198-.509.333-1.09.372-1.943C15.99 
-            10.444 16 10.171 16 8c0-2.171-.01-2.444-.048-3.297-.039-.853-.174-1.434-.372-1.943a5.92 
-            5.92 0 0 0-1.4-2.14 5.92 5.92 0 0 
-            0-2.14-1.4c-.509-.198-1.09-.333-1.943-.372C10.444.01 
-            10.171 0 8 0m0 1.441c2.136 0 2.389.008 
-            3.232.046.78.036 1.204.166 1.486.276.374.145.64.319.92.599.28.28.454.546.599.92.11.282.24.706.276 
-            1.486.038.843.046 1.096.046 3.232s-.008 
-            2.389-.046 3.232c-.036.78-.166 1.204-.276 
-            1.486a4.48 4.48 0 0 1-.599.92 4.48 4.48 
-            0 0 1-.92.599c-.282.11-.706.24-1.486.276-.843.038-1.096.046-3.232.046s-2.389-.008-3.232-.046c-.78-.036-1.204-.166-1.486-.276a4.48 
-            4.48 0 0 1-.92-.599 4.48 4.48 0 0 
-            1-.599-.92c-.11-.282-.24-.706-.276-1.486C1.449 
-            10.389 1.441 10.136 1.441 8s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.374.319-.64.599-.92.28-.28.546-.454.92-.599.282-.11.706-.24 1.486-.276C5.611 
-            1.449 5.864 1.441 8 1.441" />
-                        <path d="M8 3.892A4.108 4.108 0 1 0 8 
-            12.108 4.108 4.108 0 0 0 8 3.892m0 
-            6.765A2.657 2.657 0 1 1 8 5.343a2.657 
-            2.657 0 0 1 0 5.314m4.271-6.845a.96.96 
-            0 1 1-1.92 0 .96.96 0 0 1 1.92 0" />
-                    </svg>
-
-                </a>
-                <a href="https://www.tiktok.com/@thommy_wood_house?is_from_webapp=1&sender_device=pc" target="_blank"
-                    class="social-icon-nav tiktok">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
-                        viewBox="0 0 24 24">
-
-                        <path d="M19.589 6.686a4.793 4.793 0 0 
-            1-3.77-4.204V2h-3.193v13.766c0 
-            1.303-1.066 2.363-2.372 2.363a2.37 
-            2.37 0 0 1-2.369-2.363 2.37 2.37 
-            0 0 1 2.369-2.363c.288 0 .563.051.818.144V10.3a5.61 
-            5.61 0 0 0-.818-.059A5.567 5.567 
-            0 0 0 4.69 15.8 5.567 5.567 0 0 0 
-            10.254 21a5.567 5.567 0 0 0 5.565-5.2V8.687a8.018 
-            8.018 0 0 0 4.691 1.516V7.014a4.782 
-            4.782 0 0 1-.921-.328" />
-                    </svg>
-
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top double-nav" [class.bg-dark]="isScrolled">
+    <div class="container-fluid d-flex flex-column align-items-stretch">
+        
+        <!-- FELSŐ SOR (Asztali nézet, mobilon rejtve) -->
+        <div class="nav-top-row w-100 d-none d-lg-flex justify-content-between align-items-center py-2 border-bottom border-secondary border-opacity-25">
+            <div class="top-left-info">
+                <a href="mailto:info@ugynokseg.hu" class="text-light text-decoration-none small cormorant-garamond">
+                    <span class="me-1">✉</span> info@ugynokseg.hu
                 </a>
             </div>
-            <button (click)="changeLanguage()" class="text-light btn cormorant-garamond sotet-gomb d-flex align-items-center">
-    
-    <svg *ngIf="currentLang === 'hu'" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 900 450">
-        <rect width="900" height="470" fill="#012169"/>
-        <polygon points="0,0 90,0 900,360 900,450 810,450 0,90" fill="#FFFFFF"/>
-        <polygon points="900,0 810,0 0,360 0,450 90,450 900,90" fill="#FFFFFF"/>
-        <polygon points="0,0 45,0 900,405 900,450 855,450 0,45" fill="#C8102E"/>
-        <polygon points="900,0 855,0 0,405 0,450 45,450 900,45" fill="#C8102E"/>
-        <rect x="360" y="0" width="180" height="450" fill="#FFFFFF"/>
-        <rect x="0" y="135" width="900" height="180" fill="#FFFFFF"/>
-        <rect x="390" y="0" width="120" height="450" fill="#C8102E"/>
-        <rect x="0" y="165" width="900" height="120" fill="#C8102E"/>
-    </svg> 
+            
+            <div class="top-right-actions d-flex align-items-center gap-3">
+                <div class="social-icons-wrapper d-flex gap-2">
+                    <a href="https://www.facebook.com/profile.php?id=61590437648284" target="_blank" class="social-icon-nav facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049C16 3.603 12.418 0 8 0S0 3.603 0 8.049c0 4.017 2.926 7.347 6.75 7.951v-5.625H4.719V8.049H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/olahthommywood/" target="_blank" class="social-icon-nav instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.087 3.269.222 2.76.42a5.92 5.92 0 0 0-2.14 1.4A5.92 5.92 0 0 0 .42 2.76c-.198.509-.333 1.09-.372 1.943C.01 5.556 0 5.829 0 8c0 2.171.01 2.444.048 3.297.039.853.174 1.434.372 1.943a5.92 5.92 0 0 0 1.4 2.14 5.92 5.92 0 0 0 2.14 1.4c.509.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16c2.171 0 2.444-.01 3.297-.048.853-.039 1.434-.174 1.943-.372a5.92 5.92 0 0 0 2.14-1.4 5.92 5.92 0 0 0 1.4-2.14c.198-.509.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8c0-2.171-.01-2.444-.048-3.297-.039-.853-.174-1.434-.372-1.943a5.92 5.92 0 0 0-1.4-2.14 5.92 5.92 0 0 0-2.14-1.4c-.509-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0m0 1.441c2.136 0 2.389.008 3.232.046.78.036 1.204.166 1.486.276.374.145.64.319.92.599.28.28.454.546.599.92.11.282.24.706.276 1.486.038.843.046 1.096.046 3.232s-.008 2.389-.046 3.232c-.036.78-.166 1.204-.276 1.486a4.48 4.48 0 0 1-.599.92 4.48 4.48 0 0 1-.92.599c-.282.11-.706.24-1.486.276-.843.038-1.096.046-3.232.046s-2.389-.008-3.232-.046c-.78-.036-1.204-.166-1.486-.276a4.48 4.48 0 0 1-.92-.599 4.48 4.48 0 0 1-.599-.92c-.11-.282-.24-.706-.276-1.486C1.449 10.389 1.441 10.136 1.441 8s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.374.319-.64.599-.92.28-.28.546-.454.92-.599.282-.11.706-.24 1.486-.276C5.611 1.449 5.864 1.441 8 1.441"/><path d="M8 3.892A4.108 4.108 0 1 0 8 12.108 4.108 4.108 0 0 0 8 3.892m0 6.765A2.657 2.657 0 1 1 8 5.343a2.657 2.657 0 0 1 0 5.314m4.271-6.845a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@thommy_wood_house?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon-nav tiktok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.204V2h-3.193v13.766c0 1.303-1.066 2.363-2.372 2.363a2.37 2.37 0 0 1-2.369-2.363 2.37 2.37 0 0 1 2.369-2.363c.288 0 .563.051.818.144V10.3a5.61 5.61 0 0 0-.818-.059A5.567 5.567 0 0 0 4.69 15.8 5.567 5.567 0 0 0 10.254 21a5.567 5.567 0 0 0 5.565-5.2V8.687a8.018 8.018 0 0 0 4.691 1.516V7.014a4.782 4.782 0 0 1-.921-.328"/></svg>
+                    </a>
+                </div>
 
-    <svg *ngIf="currentLang === 'en'" xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 900 600">
-        <rect width="900" height="200" y="0" fill="#CE2939"/>
-        <rect width="900" height="200" y="200" fill="#FFFFFF"/>
-        <rect width="900" height="200" y="400" fill="#477050"/>
-    </svg>
+                <button (click)="changeLanguage()" class="text-light btn btn-sm p-0 cormorant-garamond sotet-gomb d-flex align-items-center">
+                    <svg *ngIf="currentLang === 'hu'" xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 900 450"><rect width="900" height="470" fill="#012169"/><polygon points="0,0 90,0 900,360 900,450 810,450 0,90" fill="#FFFFFF"/><polygon points="900,0 810,0 0,360 0,450 90,450 900,90" fill="#FFFFFF"/><polygon points="0,0 45,0 900,405 900,450 855,450 0,45" fill="#C8102E"/><polygon points="900,0 855,0 0,405 0,450 45,450 900,45" fill="#C8102E"/><rect x="360" y="0" width="180" height="450" fill="#FFFFFF"/><rect x="0" y="135" width="900" height="180" fill="#FFFFFF"/><rect x="390" y="0" width="120" height="450" fill="#C8102E"/><rect x="0" y="165" width="900" height="120" fill="#C8102E"/></svg> 
+                    <svg *ngIf="currentLang === 'en'" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 900 600"><rect width="900" height="200" y="0" fill="#CE2939"/><rect width="900" height="200" y="200" fill="#FFFFFF"/><rect width="900" height="200" y="400" fill="#477050"/></svg>
+                </button>
 
-</button>
-            <a target="_blank" href="http://localhost:3000/articles.php" class="fs-4 text-decoration-none text-light">
-                ⬥
-            </a>
+                <a target="_blank" href="http://localhost:3000/articles.php" class="small text-decoration-none text-light border border-secondary px-2 py-0.5 rounded opacity-75 hover-opacity-100">Admin ⬥</a>
+            </div>
         </div>
+
+        <!-- ALSÓ SOR -->
+        <div class="nav-bottom-row w-100 d-flex justify-content-between align-items-center py-2">
+            
+            <a class="navbar-brand text-light fs-5 cormorant-garamond text-uppercase sotet-gomb premium-brand" href="#heroFirst">
+                <span class="brand-icon">%</span>
+                <span class="brand-text">Marketing Ügynökség</span>
+                <span class="brand-icon">%</span>
+            </a>
+
+            <!-- Angular Klikk alapú lenyitó gomb -->
+            <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed" [aria-expanded]="!isMenuCollapsed">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- A JAVÍTOTT LENYÍLÓ MOBIL MENÜ -->
+            <div class="collapse navbar-collapse" [class.show]="!isMenuCollapsed" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center w-100 justify-content-between px-lg-4">
+                    
+                    <!-- KÖZÉPSŐ SZOLGÁLTATÁS SZEKCIÓ -->
+                    <li class="nav-item service-horizontal-center my-3 my-lg-0" routerLink="services">
+                        
+                        <!-- MAGYAR VERZIÓ -->
+                        <div class="horizontal-scroller-container" *ngIf="currentLang === 'hu'">
+                            <div class="scroller-lead-top cormorant-garamond text-uppercase">Szolgáltatásaink:</div>
+                            
+                            <!-- Asztali vízszintes szalag -->
+                            <div class="scroller-viewport-horizontal d-none d-lg-block">
+                                <div class="scroller-track-horizontal">
+                                    <div class="word-step-hz">&nbsp;</div>
+                                    <div class="word-step-hz">marketing</div>
+                                    <div class="word-step-hz">management</div>
+                                    <div class="word-step-hz">SEO</div>
+                                    <div class="word-step-hz">videó gyártás</div>
+                                    <div class="word-step-hz">webfejlesztés</div>
+                                    <div class="word-step-hz">marketing</div>
+                                    <div class="word-step-hz">management</div>
+                                </div>
+                            </div>
+                            
+                            <!-- MOBIL FÜGGŐLEGES LÉPTETŐ (Kompakt, 1 szavas hely) -->
+                            <div class="mobile-scroller-viewport d-lg-none">
+                                <div class="mobile-scroller-track">
+                                    <div class="mobile-word-step">marketing</div>
+                                    <div class="mobile-word-step">management</div>
+                                    <div class="mobile-word-step">SEO</div>
+                                    <div class="mobile-word-step">videó gyártás</div>
+                                    <div class="mobile-word-step">webfejlesztés</div>
+                                    <div class="mobile-word-step">marketing</div> <!-- puffer az átmenethez -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ANGOL VERZIÓ -->
+                        <div class="horizontal-scroller-container" *ngIf="currentLang === 'en'">
+                            <div class="scroller-lead-top cormorant-garamond text-uppercase">Methods:</div>
+                            
+                            <!-- Asztali vízszintes szalag -->
+                            <div class="scroller-viewport-horizontal d-none d-lg-block">
+                                <div class="scroller-track-horizontal">
+                                    <div class="word-step-hz">&nbsp;</div>
+                                    <div class="word-step-hz">marketing</div>
+                                    <div class="word-step-hz">management</div>
+                                    <div class="word-step-hz">SEO</div>
+                                    <div class="word-step-hz">video prod.</div>
+                                    <div class="word-step-hz">web dev.</div>
+                                    <div class="word-step-hz">marketing</div>
+                                    <div class="word-step-hz">management</div>
+                                </div>
+                            </div>
+                            
+                            <!-- MOBIL FÜGGŐLEGES LÉPTETŐ -->
+                            <div class="mobile-scroller-viewport d-lg-none">
+                                <div class="mobile-scroller-track">
+                                    <div class="mobile-word-step">marketing</div>
+                                    <div class="mobile-word-step">management</div>
+                                    <div class="mobile-word-step">SEO</div>
+                                    <div class="mobile-word-step">video prod.</div>
+                                    <div class="mobile-word-step">web dev.</div>
+                                    <div class="mobile-word-step">marketing</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- CTA gomb -->
+                    <li class="nav-item text-center text-lg-end my-2 my-lg-0">
+                        <a class="fw-bold nav-link active cormorant-garamond text-uppercase my-cta-btn btn-premium px-4 py-2"
+                           *ngIf="currentLang === 'hu'" routerLink="contact">
+                            Kontakt
+                        </a>
+                        <a class="text-light nav-link active cormorant-garamond text-uppercase my-cta-btn btn-premium px-4 py-2" 
+                           *ngIf="currentLang === 'en'" routerLink="contact">
+                            appointment for structure
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- JAVÍTOTT MOBIL ALSÓ SZEKCIÓ (Itt jelennek meg a közösségi elemek) -->
+                <div class="d-flex flex-column gap-3 mt-4 pt-3 border-top border-secondary d-lg-none text-center align-items-center">
+                    <a href="mailto:info@ugynokseg.hu" class="text-light text-decoration-none small cormorant-garamond">✉ info@ugynokseg.hu</a>
+                    
+                    <!-- Ide kerültek a gombok és ikonok mobilon -->
+                    <div class="d-flex justify-content-center align-items-center gap-4 my-2">
+                        <!-- Nyelvválasztó -->
+                        <button (click)="changeLanguage()" class="text-light btn btn-sm p-0 cormorant-garamond d-flex align-items-center gap-1">
+                            <span class="small opacity-50">LANG:</span>
+                            <svg *ngIf="currentLang === 'hu'" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 900 450"><rect width="900" height="470" fill="#012169"/><polygon points="0,0 90,0 900,360 900,450 810,450 0,90" fill="#FFFFFF"/><polygon points="900,0 810,0 0,360 0,450 90,450 900,90" fill="#FFFFFF"/><polygon points="0,0 45,0 900,405 900,450 855,450 0,45" fill="#C8102E"/><polygon points="900,0 855,0 0,405 0,450 45,450 900,45" fill="#C8102E"/><rect x="360" y="0" width="180" height="450" fill="#FFFFFF"/><rect x="0" y="135" width="900" height="180" fill="#FFFFFF"/><rect x="390" y="0" width="120" height="450" fill="#C8102E"/><rect x="0" y="165" width="900" height="120" fill="#C8102E"/></svg> 
+                            <svg *ngIf="currentLang === 'en'" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 900 600"><rect width="900" height="200" y="0" fill="#CE2939"/><rect width="900" height="200" y="200" fill="#FFFFFF"/><rect width="900" height="200" y="400" fill="#477050"/></svg>
+                        </button>
+
+                        <!-- Admin link -->
+                        <a target="_blank" href="http://localhost:3000/articles.php" class="small text-decoration-none text-light border border-secondary px-2 rounded opacity-75">Admin</a>
+                    </div>
+
+                    <!-- Social Ikonok -->
+                    <div class="d-flex justify-content-center gap-3 mt-2">
+                        <a href="https://www.facebook.com/profile.php?id=61590437648284" target="_blank" class="social-icon-nav facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049C16 3.603 12.418 0 8 0S0 3.603 0 8.049c0 4.017 2.926 7.347 6.75 7.951v-5.625H4.719V8.049H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/olahthommywood/" target="_blank" class="social-icon-nav instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.087 3.269.222 2.76.42a5.92 5.92 0 0 0-2.14 1.4A5.92 5.92 0 0 0 .42 2.76c-.198.509-.333 1.09-.372 1.943C.01 5.556 0 5.829 0 8c0 2.171.01 2.444.048 3.297.039.853.174 1.434.372 1.943a5.92 5.92 0 0 0 1.4 2.14 5.92 5.92 0 0 0 2.14 1.4c.509.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16c2.171 0 2.444-.01 3.297-.048.853-.039 1.434-.174 1.943-.372a5.92 5.92 0 0 0 2.14-1.4 5.92 5.92 0 0 0 1.4-2.14c.198-.509.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8c0-2.171-.01-2.444-.048-3.297-.039-.853-.174-1.434-.372-1.943a5.92 5.92 0 0 0-1.4-2.14 5.92 5.92 0 0 0-2.14-1.4c-.509-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0m0 1.441c2.136 0 2.389.008 3.232.046.78.036 1.204.166 1.486.276.374.145.64.319.92.599.28.28.454.546.599.92.11.282.24.706.276 1.486.038.843.046 1.096.046 3.232s-.008 2.389-.046 3.232c-.036.78-.166 1.204-.276 1.486a4.48 4.48 0 0 1-.599.92 4.48 4.48 0 0 1-.92.599c-.282.11-.706.24-1.486.276-.843.038-1.096.046-3.232.046s-2.389-.008-3.232-.046c-.78-.036-1.204-.166-1.486-.276a4.48 4.48 0 0 1-.92-.599 4.48 4.48 0 0 1-.599-.92c-.11-.282-.24-.706-.276-1.486C1.449 10.389 1.441 10.136 1.441 8s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.374.319-.64.599-.92.28-.28.546-.454.92-.599.282-.11.706-.24 1.486-.276C5.611 1.449 5.864 1.441 8 1.441"/><path d="M8 3.892A4.108 4.108 0 1 0 8 12.108 4.108 4.108 0 0 0 8 3.892m0 6.765A2.657 2.657 0 1 1 8 5.343a2.657 2.657 0 0 1 0 5.314m4.271-6.845a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@thommy_wood_house?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon-nav tiktok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.204V2h-3.193v13.766c0 1.303-1.066 2.363-2.372 2.363a2.37 2.37 0 0 1-2.369-2.363 2.37 2.37 0 0 1 2.369-2.363c.288 0 .563.051.818.144V10.3a5.61 5.61 0 0 0-.818-.059A5.567 5.567 0 0 0 4.69 15.8 5.567 5.567 0 0 0 10.254 21a5.567 5.567 0 0 0 5.565-5.2V8.687a8.018 8.018 0 0 0 4.691 1.516V7.014a4.782 4.782 0 0 1-.921-.328"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </nav>
