@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SpaceBackground } from './components/space-background/space-background';
@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Footer } from './components/footer/footer';
 import { Services } from './components/services/services';
 import { Contact } from './components/contact/contact';
+import { HttpClientModule } from '@angular/common/http';
+import { Login } from './components/login/login';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { Contact } from './components/contact/contact';
     SpaceBackground,
     Footer,
     Services,
-    Contact
+    Contact,
+    Login
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,8 @@ import { Contact } from './components/contact/contact';
     ReactiveFormsModule,
     NgbModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([])
   ],
   providers: [

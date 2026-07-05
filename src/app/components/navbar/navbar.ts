@@ -1,5 +1,8 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language-service';
+import { NavbarService } from '../../services/navbar-service';
+import { NavbarModel } from '../../models/navbarModel';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,20 +10,102 @@ import { LanguageService } from '../../services/language-service';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar implements OnInit {
+export class Navbar implements  OnInit {
 
   isMenuCollapsed: boolean = true;
 
-    currentLang: 'hu' | 'en' = 'hu';
+  currentLang: 'hu' | 'en' = 'hu';
 
-    isScrolled = false;
+  isScrolled = false;
 
-  constructor(private languageService: LanguageService) {}
+  navbar?: NavbarModel;
+
+  isAdmin = false;
+
+  editModel?: NavbarModel;
+
+  constructor(
+    private languageService: LanguageService,
+    private navbarService: NavbarService,
+    private authService: AuthService,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
+    // Feliratkozunk a nyelvi változásokra
     this.languageService.lang$.subscribe(lang => {
       this.currentLang = lang;
+      this.cdr.detectChanges();
     });
+
+    // Feliratkozunk a bejelentkezési állapotra
+    this.authService.isLoggedIn$.subscribe(logged => {
+      this.isAdmin = logged;
+      this.cdr.detectChanges();
+    });
+
+    if (typeof this.authService.loadSession === 'function') {
+      this.authService.loadSession();
+    }
+    this.loadNavbar();
+  }
+
+  loadNavbar() {
+    this.navbarService.getNavbar().subscribe({
+      next: (response) => {
+        this.navbar = response.data;
+        this.cdr.detectChanges();
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
+
+  openEditModal() {
+    if (this.navbar) {
+      this.editModel = { ...this.navbar };
+    }
+  }
+
+  saveNavbar() {
+    if (!this.editModel) return;
+
+    this.navbarService.saveNavbar(this.editModel).subscribe({
+      next: (response) => {
+        if (response && response.success) {
+          
+          // 1. Elsőként bezárjuk a modalt, amíg a DOM még érintetlen
+          const closeBtn = document.getElementById('closeEditModalBtn') as HTMLButtonElement;
+          if (closeBtn) {
+            closeBtn.click();
+          }
+
+          // 2. Frissítjük a lokális modellt az editModel alapján az azonnali reakcióért
+          this.navbar = { ...this.editModel } as NavbarModel;
+
+          // 3. Várunk egy kicsit a Bootstrap animációra, mielőtt újratöltenénk az adatokat a szerverről
+          setTimeout(() => {
+            this.loadNavbar();
+          }, 300);
+
+        } else {
+          alert('Hiba történt a mentés során.');
+        }
+      },
+      error: (err) => {
+        console.error(err);
+        alert('Szerver hiba a mentéskor.');
+      }
+    });
+  }
+
+  logout(): void {
+    if (typeof this.authService.logout === 'function') {
+      this.authService.logout();
+    } else {
+      console.warn('Az AuthService-ben nem található logout() funkció.');
+    }
   }
 
   changeLanguage(): void {
@@ -30,9 +115,8 @@ export class Navbar implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.isScrolled = scrollPosition > 50;
+    this.cdr.detectChanges();
   }
-
 }

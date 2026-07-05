@@ -1,181 +1,333 @@
 <div class="scroll-container trab">
 
-   <section class="snap-section hero" id="heroFirst">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
+    <!-- HERO ONE SZEKCIÓ -->
+    <section class="snap-section hero" id="heroFirst">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
 
-    <div class="hero-content text-light" [@heroAnimation]>
-    <div class="container-fluid px-md-5 h-100 d-flex flex-column justify-content-between py-5">
-        
-        <!-- 1. Első felirat: Teljesen az oldal közepén (fent/középen flex-növekedéssel) -->
-        <div class="text-center my-auto animate-item">
-            <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter" *ngIf="currentLang === 'hu'">
-                A világot rendszerek mozgatják
-            </h1>
-            <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter" *ngIf="currentLang === 'en'">
-                A növekedés nem véletlen.
-            </h1>
-        </div>
+        <div class="hero-content text-light" [@heroAnimation]>
+            <div class="container-fluid px-md-5 h-100 d-flex flex-column justify-content-between py-5">
+                
+                <div class="text-center my-auto animate-item">
+                    <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter" *ngIf="currentLang === 'hu'">
+                        {{hero?.ctaTextBigHu}}
+                    </h1>
+                    <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter" *ngIf="currentLang === 'en'">
+                        {{hero?.ctaTextBigEn}}
+                    </h1>
+                </div>
 
-        <!-- 2. és 3. felirat: Egy szinten, bal és jobb oldalon, közöttük hely a földgömbnek -->
-        <div class="row justify-content-between align-items-end gy-4 mb-5 animate-item">
-            <!-- Bal oldali szöveg -->
-            <div class="col-lg-4 col-12">
-                <h4 class="p-2 text-uppercase cormorant-garamond text-start m-0" *ngIf="currentLang === 'hu'">
-                    Minden sikeres rendszer mögött törvényszerűségek állnak
-                </h4>
-                <h1 class="p-2 text-uppercase cormorant-garamond text-start m-0" *ngIf="currentLang === 'en'">
-                    From confusion to growth
-                </h1>
+                <div class="row justify-content-between align-items-end gy-4 mb-5 animate-item">
+                    <div class="col-lg-4 col-12">
+                        <h4 class="p-2 text-uppercase cormorant-garamond text-start m-0" *ngIf="currentLang === 'hu'">
+                            {{hero?.ctaTextSecondHu}}
+                        </h4>
+                        <h1 class="p-2 text-uppercase cormorant-garamond text-start m-0" *ngIf="currentLang === 'en'">
+                            {{hero?.ctaTextSecondEn}}
+                        </h1>
+                    </div>
+
+                    <div class="col-lg-4 col-12 text-lg-end">
+                        <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0" *ngIf="currentLang === 'hu'">
+                             {{hero?.ctaTextThirdHu}}
+                        </h4>
+                        <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0" *ngIf="currentLang === 'en'">
+                             {{hero?.ctaTextThirdEn}}
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="animate-item d-flex justify-content-center mt-3">
+                    <a class="cta fs-4 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
+                        *ngIf="currentLang === 'hu'" href="#answer">
+                        {{hero?.ctaTextButtonHu}}
+                    </a>
+                    <a class="cta fs-4 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
+                        *ngIf="currentLang === 'en'" href="#answer">
+                        {{hero?.ctaTextButtonEn}}
+                    </a>
+                    <!-- <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#editHeroOneModal" (click)="openEditModal()">
+                        ✏️ Hero szerkesztés
+                    </button> -->
+                </div>
+
             </div>
-
-            <!-- Jobb oldali szöveg (A szöveg jobbra igazítva text-end-del) -->
-            <div class="col-lg-4 col-12 text-lg-end">
-                <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0" *ngIf="currentLang === 'hu'">
-                    A növekedés nem véletlen
-                </h4>
-                <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0" *ngIf="currentLang === 'en'">
-                    We bring order to your business's marketing, communication and content production.
-                </h4>
-            </div>
         </div>
+    </section>
 
-        <!-- 4. CTA Gomb: Sokkal lejjebb, teljesen középen -->
-        <div class="animate-item d-flex justify-content-center mt-3">
-            <a class="cta fs-4 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
-                *ngIf="currentLang === 'hu'" href="#answer">
-                A változás itt kezdődik
-            </a>
-            <a class="cta fs-4 text-dark btn rounded-0 text-uppercase cormorant-garamond px-4 py-2"
-                *ngIf="currentLang === 'en'" href="#answer">
-                How do we put order in the system?
-            </a>
-        </div>
-
-    </div>
-</div>
-</section>
-
+    <!-- HERO TWO SZEKCIÓ -->
     <section class="snap-section heroTwo" id="answer">
         <div class="heroTwo-bg"></div>
         <div class="heroTwo-overlay"></div>
 
-        <div class="heroTwo-content text-white hero-matrix">
+        <div class="heroTwo-content text-white">
+            <section class="magazine-section">
+                <div class="mt-5 pt-3">
+                   
+                <h4 *ngIf="currentLang === 'hu'" class="cormorant-garamond text-uppercase"  >{{hero?.heroTwoHeadlineOneHu}}</h4>
+                <h4 *ngIf="currentLang === 'en'" class="cormorant-garamond text-uppercase"  >{{hero?.heroTwoHeadlineOneEn}}</h4>
+                </div>
+                <div>
+                <h5 *ngIf="currentLang === 'hu'" class="cormorant-garamond text-uppercase">{{hero?.heroTwoHeadlineTwoHu}}</h5>
+                <h5 *ngIf="currentLang === 'en'" class="cormorant-garamond text-uppercase">{{hero?.heroTwoHeadlineTwoEn}}</h5>
+                </div>
+                 <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#editHeroTwoModal" (click)="openEditModal()">
+                        ✏️ Hero egy/kettő szerkesztés
+                    </button>
+                <div class="magazine-slider">
+                    <article class="page">
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepOneHeadlineHu}}</p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepOneHeadlineEn}}</p>
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-5">{{hero?.stepOneTextHu}} </p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-5">{{hero?.stepOneTextEn}} </p>
+                        <h2>→</h2>
+                    </article>
 
-            
+                     <article class="page">
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepTwoHeadlineHu}}</p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepTwoHeadlineEn}}</p>
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-5">{{hero?.stepTwoTextHu}} </p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-5">{{hero?.stepTwoTextEn}} </p>
+                        <h2>→</h2>
+                    </article>
 
-            <section class="snap-section heroTwo" id="answer">
-                <div class="heroTwo-bg"></div>
-                <div class="heroTwo-overlay"></div>
+                    <article class="page">
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepThreeHeadlineHu}}</p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepThreeHeadlineEn}}</p>
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-5">{{hero?.stepThreeTextHu}} </p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-5">{{hero?.stepThreeTextEn}} </p>
+                        <h2>→</h2>
+                    </article>
 
-                <div class="heroTwo-content text-white">
+                    <article class="page">
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepFourHeadlineHu}}</p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepFourHeadlineEn}}</p>
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-5">{{hero?.stepFourTextHu}} </p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-5">{{hero?.stepFourTextEn}} </p>
+                        <h2>→</h2>
+                    </article>
 
-                    <section class="magazine-section">
+                    <article class="page">
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepFiveHeadlineHu}}</p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepFiveHeadlineEn}}</p>
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-5">{{hero?.stepFiveTextHu}} </p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-5">{{hero?.stepFiveTextEn}} </p>
+                        <h2>→</h2>
+                    </article>
 
-                        <h4 class="cormorant-garamond text-uppercase">Hogyan teszünk rendet a marketingjében:</h4>
-                        <h5 class="cormorant-garamond text-uppercase">Nem kampányokat dobálunk egymás után. Rendszert építünk.</h5>
-
-                        <div class="magazine-slider">
-
-                            <article class="page">
-                                <!-- <span class="page-number">01</span> -->
-                                <p class="cormorant-garamond fs-4 fw-bold text-start">1. Helyzetfelmérés – „Mi van most valójában?”</p>
-                                <p class="cormorant-garamond fs-5"> 
-                                    Megnézzük:<br> 
-                                    – milyen marketingcsatornák futnak jelenleg<br>
-                                    – mi hoz eredményt és mi nem<br>
-                                    – hol szivárog el a költség és az energia<br>
-                                    – mennyire koherens a kommunikáció<br> 
-                                    Itt még nem javítunk. Csak látunk. Tisztán.
-                                </p>
-                                <h2>→</h2>
-                            </article>
-
-                            <article class="page">
-                                <!-- <span class="page-number">02</span> -->
-                                <p class="cormorant-garamond fs-4 fw-bold">2. Célrendszer kialakítása – „Hová kell eljutni?”</p>
-                                <p class="cormorant-garamond fs-5">
-                                    Minden rend a célokkal kezdődik.
-                                    Közösen meghatározzuk: <br>
-                                    – üzleti célokat <br>
-                                    – marketing célokat <br>
-                                    – rövid és hosszú távú irányokat <br>
-                                    – mérhető KPI-okat <br>
-                                    Ez az a pont, ahol a marketing végre nem „érzésből” működik, hanem irányított
-                                    rendszerré válik.
-                                </p>
-                                 <h2>→</h2>
-                            </article>
-
-                            <article class="page">
-                                <!-- <span class="page-number">03</span> -->
-                                <p class="cormorant-garamond fs-4 fw-bold">3. Stratégiai terv – „Mi lesz a haditerv?”</p>
-                                <p class="cormorant-garamond fs-5">
-                                    Itt készül el a teljes marketingstratégia. <br>
-                                    Összerakjuk: <br>
-                                    – csatorna-struktúrát <br>
-                                    – tartalomirányt <br>
-                                    – kampánylogikát <br>
-                                    – hirdetési és organikus egyensúlyt <br>
-                                    – márkaüzeneti rendszert <br>
-                                    Ez a marketing működésének térképe. Minden későbbi lépés innen indul. <br>
-                                </p>
-                                 <h2>→</h2>
-                            </article>
-
-                            <article class="page">
-                                <!-- <span class="page-number">04</span> -->
-                                <p class="cormorant-garamond fs-4 fw-bold ">4. Rendszerépítés – „Minden a helyére kerül”</p>
-                                <p class="cormorant-garamond fs-5">
-                                    A stratégia után következik a kivitelezés alapjainak lerakása. <br>
-                                    Itt történhet: <br> 
-                                    – weboldal vagy landing struktúra kialakítása <br>
-                                    – SEO alapok rendezése <br>
-                                    – hirdetési rendszerek beállítása <br>
-                                    – tartalomgyártási folyamatok felépítése <br>
-                                    – social media struktúra kialakítása <br> 
-                                    Nem kampányt indítunk. Rendszert építünk, ami kampányokat tud futtatni.
-
-                                </p>
-                                 <h2>→</h2>
-                            </article>
-
-                            <article class="page">
-                                <!-- <span class="page-number">04</span> -->
-                                <p class="cormorant-garamond fs-4 fw-bold">5. Tartalom és megjelenés – „Mit lát ebből a külvilág?”
-                                </p>
-                                <p class="cormorant-garamond fs-5">
-                                    A rendszer akkor él, ha van mit kommunikálnia. <br>
-                                    Itt készül: <br>
-                                    – videós és vizuális tartalom <br>
-                                    – szöveges kommunikáció <br>
-                                    – kampány kreatívok <br>
-                                    – social media jelenlét <br>
-                                    – márkaépítő anyagok <br>
-                                    Ebben a fázisban kapcsolódik be a kamera előtti felkészítés is, hogy az üzenet ne
-                                    csak szép legyen, hanem hiteles is.
-                                </p>
-                                 <h2>→</h2>
-                            </article>
-
-                            <article class="page">
-                                <!-- <span class="page-number">04</span> -->
-                                <p class="cormorant-garamond fs-4 fw-bold">6. Irányítás és finomhangolás – „Rend fenntartása”</p>
-                                <p class="cormorant-garamond fs-5">
-                                    A rendszer nem készül el – működtetni kell. <br>
-                                    Folyamatosan: <br>
-                                    – elemezzük az eredményeket <br>
-                                    – optimalizáljuk a kampányokat <br>
-                                    – finomítjuk az üzeneteket <br>
-                                    – korrigáljuk az irányt <br>
-                                    – rendben tartjuk a teljes marketing működést <br> 
-                                    A cél nem az egyszeri eredmény, hanem a stabil, kiszámítható működés.
-                                </p>
-                                 <h2>→</h2>
-                                <a class="btn bg-transparent text-light ctaSmall" href="wfefwe">Jelentkezem a díjmentes konzultációra</a>
-                            </article>
-
-                        </div>
-                    </section>
+                    <article class="page">
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepSixHeadlineHu}}</p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepSixHeadlineEn}}</p>
+                        <p *ngIf="currentLang === 'hu'" class="cormorant-garamond fs-5">{{hero?.stepSixTextHu}} </p>
+                        <p *ngIf="currentLang === 'en'" class="cormorant-garamond fs-5">{{hero?.stepSixTextEn}} </p>
+                        <h2>→</h2>
+                    </article>
                 </div>
             </section>
+        </div>
+    </section>
+
+</div> <!-- .scroll-container TISZTA LEZÁRÁSA -->
+
+<!-- ========================================== -->
+<!-- MODALOK (Teljesen kívül a scroll-containeren) -->
+<!-- ========================================== -->
+<!-- <div class="modal fade" id="editHeroOneModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg"> 
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title">Hero egy adatok szerkesztése</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnTwo"></button>
+            </div>
+            <div class="modal-body" *ngIf="editModel">
+                <div class="row">
+                   
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                <button type="button" class="btn btn-success" (click)="saveHero()">Mentés</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="modal fade" id="editHeroTwoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg"> 
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Hero egy adatok szerkesztése</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnThree"></button>
+            </div>
+            <div class="modal-body" *ngIf="editModel">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Nagy felírat (első) magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextBigHu">
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label">Nagy felírat (első) angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextBigEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">kisebb felírat (első) magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextSecondHu">
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label">kisebb felírat (első) angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextSecondEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">kisebb felírat (második) magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextThirdHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">kisebb felírat (második) angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextThirdEn">
+                    </div>
+                     <hr>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label">CTA gomb magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextButtonHu">
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label">CTA gomb angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextButtonEn">
+                    </div>
+                    <h5 class="fw-bold">Hero two szerkesztése</h5>
+                     <hr>
+                      <hr>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label">Nagy felírat magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineOneHu">
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label">Nagy felírat angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineOneEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">kisebb felírat magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineTwoHu">
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label">kisebb felírat angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineTwoEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">első kártya címe magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepOneHeadlineHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">első kártya címe angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepOneHeadlineEn">
+                    </div>
+                     <hr>
+                     <div class="col-md-12 mb-3">
+                        <label class="form-label">első kártya szövege magyarul</label>
+                        <textarea rows="3" class="form-control" [(ngModel)]="editModel.stepOneTextHu"></textarea>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">első kártya szövege angolul</label>
+                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepOneTextEn"></textarea>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">második kártya címe magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepTwoHeadlineHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">második kártya címe angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepTwoHeadlineEn">
+                    </div>
+                     <hr>
+                     <div class="col-md-12 mb-3">
+                        <label class="form-label">második kártya szövege magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepTwoTextHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">második kártya szövege angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepTwoTextEn">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">harmadik kártya címe magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepThreeHeadlineHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">harmadik kártya címe angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepThreeHeadlineEn">
+                    </div>
+                     <hr>
+                     <div class="col-md-12 mb-3">
+                        <label class="form-label">harmadik kártya szövege magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepThreeTextHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">harmadik kártya szövege angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepThreeTextEn">
+                    </div>
+                     <div class="col-md-12 mb-3">
+                        <label class="form-label">negyedik kártya címe magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepFourHeadlineHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">negyedik kártya címe angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepFourHeadlineEn">
+                    </div>
+                     <hr>
+                     <div class="col-md-12 mb-3">
+                        <label class="form-label">negyedik kártya szövege magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepFourTextHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">negyedik kártya szövege angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepFourTextEn">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">ötödik kártya címe magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepFiveHeadlineHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">ötödik kártya címe angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepFiveHeadlineEn">
+                    </div>
+                     <hr>
+                     <div class="col-md-12 mb-3">
+                        <label class="form-label">ötödik kártya szövege magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepFiveTextHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">ötödik kártya szövege angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepFiveTextEn">
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">hatodik kártya címe magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepSixHeadlineHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">hatodik kártya címe angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepSixHeadlineEn">
+                    </div>
+                     <hr>
+                     <div class="col-md-12 mb-3">
+                        <label class="form-label">hatodik kártya szövege magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepSixTextHu">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">hatodik kártya szövege angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.stepSixTextEn">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                <button type="button" class="btn btn-success" (click)="saveHero()">Mentés</button>
+            </div>
+        </div>
+    </div>
+</div>
