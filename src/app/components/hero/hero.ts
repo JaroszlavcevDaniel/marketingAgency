@@ -38,7 +38,7 @@ import { AuthService } from '../../services/auth-service';
     ])
   ]
 })
-export class Hero implements OnInit {
+export class Hero implements OnInit, OnDestroy {
 
   currentLang: 'hu' | 'en' = 'hu';
   // private cdr = inject(ChangeDetectorRef);
@@ -154,6 +154,11 @@ export class Hero implements OnInit {
     }
   });
 }
+
+ngOnDestroy(): void {
+    // Minden feliratkozást lezárunk, ha elhagyjuk a komponenst
+    this.subs.forEach(sub => sub.unsubscribe());
+  }
 
 
 }
