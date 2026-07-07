@@ -112,40 +112,40 @@
                     <li class="nav-item service-horizontal-center my-3 my-lg-0" routerLink="services">
 
                         <!-- MAGYAR VERZIÓ -->
-                        <div class="horizontal-scroller-container" *ngIf="currentLang === 'hu'">
+                        <div class="horizontal-scroller-container" *ngIf="currentLang === 'hu' && navbar?.servHu">
                             <div class="scroller-lead-top text-light cormorant-garamond text-uppercase">
                                 {{navbar?.servHu}}:</div>
 
                             <!-- Asztali vízszintes szalag -->
                             <div class="scroller-viewport-horizontal d-none d-lg-block">
                                 <div class="scroller-track-horizontal">
-                                    <div class="word-step-hz">&nbsp;</div>
-                                    <div class="word-step-hz">{{navbar?.servOneHu}}</div>
-                                    <div class="word-step-hz">{{navbar?.servTwoHu}}</div>
-                                    <div class="word-step-hz">{{navbar?.servThreeHu}}</div>
-                                    <div class="word-step-hz">{{navbar?.servFourHu}}</div>
-                                    <div class="word-step-hz">{{navbar?.servFiveHu}}</div>
-                                    <div class="word-step-hz">{{navbar?.servOneHu}}</div>
-                                    <div class="word-step-hz">{{navbar?.servTwoHu}}</div>
+                                    <div *ngIf="" class="word-step-hz">&nbsp;</div>
+                                    <div *ngIf="navbar?.servOneHu" class="word-step-hz">{{navbar?.servOneHu}}</div>
+                                    <div *ngIf="navbar?.servTwoHu" class="word-step-hz">{{navbar?.servTwoHu}}</div>
+                                    <div *ngIf="navbar?.servThreeHu" class="word-step-hz">{{navbar?.servThreeHu}}</div>
+                                    <div *ngIf="navbar?.servFourHu" class="word-step-hz">{{navbar?.servFourHu}}</div>
+                                    <div *ngIf="navbar?.servFiveHu" class="word-step-hz">{{navbar?.servFiveHu}}</div>
+                                    <div *ngIf="navbar?.servOneHu" class="word-step-hz">{{navbar?.servOneHu}}</div>
+                                    <div *ngIf="navbar?.servTwoHu" class="word-step-hz">{{navbar?.servTwoHu}}</div>
                                 </div>
                             </div>
 
                             <!-- MOBIL FÜGGŐLEGES LÉPTETŐ (Kompakt, 1 szavas hely) -->
                             <div class="mobile-scroller-viewport d-lg-none">
                                 <div class="mobile-scroller-track">
-                                    <div class="mobile-word-step">{{navbar?.servOneHu}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servTwoHu}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servThreeHu}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servFourHu}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servFiveHu}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servOneHu}}</div>
+                                    <div *ngIf="navbar?.servOneHu" class="mobile-word-step">{{navbar?.servOneHu}}</div>
+                                    <div *ngIf="navbar?.servTwoHu" class="mobile-word-step">{{navbar?.servTwoHu}}</div>
+                                    <div *ngIf="navbar?.servThreeHu" class="mobile-word-step">{{navbar?.servThreeHu}}</div>
+                                    <div *ngIf="navbar?.servFourHu" class="mobile-word-step">{{navbar?.servFourHu}}</div>
+                                    <div *ngIf="navbar?.servFiveHu" class="mobile-word-step">{{navbar?.servFiveHu}}</div>
+                                    <div *ngIf="navbar?.servOneHu" class="mobile-word-step">{{navbar?.servOneHu}}</div>
                                     <!-- puffer az átmenethez -->
                                 </div>
                             </div>
                         </div>
 
                         <!-- ANGOL VERZIÓ -->
-                        <div class="horizontal-scroller-container" *ngIf="currentLang === 'en'">
+                        <div class="horizontal-scroller-container" *ngIf="currentLang === 'en' && navbar?.servEn">
                             <div class="scroller-lead-top text-light cormorant-garamond text-uppercase">
                                 {{navbar?.servEn}}:</div>
 
@@ -153,25 +153,25 @@
                             <div class="scroller-viewport-horizontal d-none d-lg-block">
                                 <div class="scroller-track-horizontal">
                                     <div class="word-step-hz">&nbsp;</div>
-                                    <div class="word-step-hz">{{navbar?.servOneEn}}</div>
-                                    <div class="word-step-hz">{{navbar?.servTwoEn}}</div>
-                                    <div class="word-step-hz">{{navbar?.servThreeEn}}</div>
-                                    <div class="word-step-hz">{{navbar?.servFourEn}}</div>
-                                    <div class="word-step-hz">{{navbar?.servFiveEn}}</div>
-                                    <div class="word-step-hz">{{navbar?.servOneEn}}</div>
-                                    <div class="word-step-hz">{{navbar?.servTwoEn}}</div>
+                                    <div *ngIf="navbar?.servOneEn" class="word-step-hz">{{navbar?.servOneEn}}</div>
+                                    <div *ngIf="navbar?.servTwoEn" class="word-step-hz">{{navbar?.servTwoEn}}</div>
+                                    <div *ngIf="navbar?.servThreeEn" class="word-step-hz">{{navbar?.servThreeEn}}</div>
+                                    <div *ngIf="navbar?.servFourEn" class="word-step-hz">{{navbar?.servFourEn}}</div>
+                                    <div *ngIf="navbar?.servFiveEn" class="word-step-hz">{{navbar?.servFiveEn}}</div>
+                                    <div *ngIf="navbar?.servOneEn" class="word-step-hz">{{navbar?.servOneEn}}</div>
+                                    <div *ngIf="navbar?.servTwoEn" class="word-step-hz">{{navbar?.servTwoEn}}</div>
                                 </div>
                             </div>
 
                             <!-- MOBIL FÜGGŐLEGES LÉPTETŐ -->
                             <div class="mobile-scroller-viewport d-lg-none">
                                 <div class="mobile-scroller-track">
-                                    <div class="mobile-word-step">{{navbar?.servOneEn}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servTwoEn}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servThreeEn}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servFourEn}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servFiveEn}}</div>
-                                    <div class="mobile-word-step">{{navbar?.servOneEn}}</div>
+                                    <div *ngIf="navbar?.servOneEn" class="mobile-word-step">{{navbar?.servOneEn}}</div>
+                                    <div *ngIf="navbar?.servTwoEn" class="mobile-word-step">{{navbar?.servTwoEn}}</div>
+                                    <div *ngIf="navbar?.servThreeEn" class="mobile-word-step">{{navbar?.servThreeEn}}</div>
+                                    <div *ngIf="navbar?.servFourEn" class="mobile-word-step">{{navbar?.servFourEn}}</div>
+                                    <div *ngIf="navbar?.servFiveEn" class="mobile-word-step">{{navbar?.servFiveEn}}</div>
+                                    <div *ngIf="navbar?.servOneEn" class="mobile-word-step">{{navbar?.servOneEn}}</div>
                                 </div>
                             </div>
                         </div>
