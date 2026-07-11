@@ -46,9 +46,8 @@
                         *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" href="#answer">
                         {{hero?.ctaTextButtonEn}}
                     </a>
-                    <!-- <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#editHeroOneModal" (click)="openEditModal()">
-                        ✏️ Hero szerkesztés
-                    </button> -->
+
+                 
                 </div>
 
             </div>
@@ -125,33 +124,28 @@
                 </div>
             </section>
         </div>
+
     </section>
 
-</div> <!-- .scroll-container TISZTA LEZÁRÁSA -->
 
-<!-- ========================================== -->
-<!-- MODALOK (Teljesen kívül a scroll-containeren) -->
-<!-- ========================================== -->
-<!-- <div class="modal fade" id="editHeroOneModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg"> 
-        <div class="modal-content text-dark">
-            <div class="modal-header">
-                <h5 class="modal-title">Hero egy adatok szerkesztése</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnTwo"></button>
-            </div>
-            <div class="modal-body" *ngIf="editModel">
-                <div class="row">
-                   
-                </div>
+        <section class="snap-section heroThree" id="someId">
+        <div class="heroThree-bg"></div>
+        <div class="heroThree-overlay"></div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
-                <button type="button" class="btn btn-success" (click)="saveHero()">Mentés</button>
-            </div>
-        </div>
+       
+
+            <div class="heroThree-content">
+        <app-feauture class=""></app-feauture>
     </div>
-</div> -->
+
+            
+   
+
+    </section>
+
+    
+
+</div> 
 
 
 <div class="modal fade" id="editHeroTwoModal" tabindex="-1" aria-hidden="true">

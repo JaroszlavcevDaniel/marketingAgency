@@ -16,6 +16,7 @@ import { Contact } from './components/contact/contact';
 import { HttpClientModule } from '@angular/common/http';
 import { Login } from './components/login/login';
 import { SpacePipe } from './components/pipes/space-pipe';
+import { Feauture } from './components/feauture/feauture';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SpacePipe } from './components/pipes/space-pipe';
     Services,
     Contact,
     Login,
-    SpacePipe
+    SpacePipe,
+    Feauture
   ],
   imports: [
     BrowserModule,

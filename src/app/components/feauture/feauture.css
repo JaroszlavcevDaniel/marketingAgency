@@ -1,0 +1,220 @@
+.creative-services-section {
+    background-color: #030712;
+
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+@media (max-height: 900px) {
+    .creative-services-section {
+        height: auto;
+        /* min-height: 100vh; */
+    }
+}
+
+
+.glow-badge {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    color: #c084fc;
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+.text-light-50 {
+    color: #9ca3af;
+}
+
+
+.card-perspective {
+    perspective: 1200px;
+    height: 550px;
+}
+
+@media (max-width: 1400px) {
+    .card-perspective {
+        height: 550px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-perspective {
+        height: 550px;
+
+    }
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* border-radius: 15px; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- ELŐLAP DESIGN --- */
+.card-front {
+    background: linear-gradient(rgba(76, 29, 149, 0.6) 0%,
+            rgba(45, 10, 47, 0.6) 50%,
+            rgba(39, 23, 157, 0.6) 100%);
+    background-size: 150% 150%;
+    background-position: left top;
+    transition: all 0.5s ease;
+}
+
+.card-perspective:hover .card-front {
+    background-position: right bottom;
+    transform: translateY(-6px);
+    border-color: rgba(167, 139, 250, 0.3);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
+}
+
+.icon-wrapper {
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a78bfa;
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.card-perspective:hover .icon-wrapper {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #c084fc;
+    transform: scale(1.05) rotate(5deg);
+}
+
+.card-heading {
+    background: linear-gradient(to right, #ffffff, #e9d5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-text {
+    font-size: 0.7rem;
+    /* line-height: 1.4; */
+}
+
+.text-violet {
+    color: #a78bfa;
+}
+
+.animate-arrow {
+    transition: transform 0.3s ease;
+}
+
+.card-perspective:hover .animate-arrow {
+    transform: translateX(4px);
+}
+
+/* --- HÁTLAP DESIGN --- */
+.card-back {
+    /* Áttetsző színátmenet, hogy látszódjon a blur effekt */
+    background: linear-gradient(135deg,
+            rgba(86, 25, 178, 0.6) 0%,
+            rgba(45, 9, 47, 0.6) 50%,
+            rgba(49, 28, 205, 0.6) 100%);
+
+    /* Ez végzi a mögöttes tartalom elmosását */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari támogatás */
+
+    transform: rotateY(180deg);
+    border-color: rgba(236, 72, 153, 0.3);
+}
+
+.mini-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Al-szolgáltatások listája (Tömörebb padding, hogy biztosan beférjen) */
+.sub-services-list li {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 6px 10px !important;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.sub-services-list li:hover {
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.sub-services-list span {
+    font-size: 0.8rem;
+}
+
+.text-white-75 {
+    color: #e5e7eb;
+}
+
+.text-magenta {
+    color: #f472b6;
+}
+
+/* Kiemelt elem */
+.sub-services-list li.highlight-item {
+    background: linear-gradient(90deg, rgba(236, 72, 153, 0.25) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(236, 72, 153, 0.5);
+}
+
+/* --- Belépési animáció a kártyáknak --- */
+.card-perspective {
+    opacity: 1;
+    transform: translateY(30px);
+
+    animation: cardFadeIn .8s ease forwards;
+    animation-delay: calc(var(--card-index) * .15s);
+
+
+}
+
+
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Finomítás: Amikor a kártya beúszott, engedélyezzük csak az alapértelmezett hover effektet, 
+   hogy ne akadjon össze a két translateY transzformáció */
+.card-perspective {
+    transition: opacity 0.8s ease;
+}

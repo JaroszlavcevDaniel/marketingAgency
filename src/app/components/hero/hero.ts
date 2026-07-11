@@ -119,27 +119,18 @@ export class Hero implements OnInit, OnDestroy {
     next: (response) => {
       if (response && response.success) {
         
-        // 1. Programozottan bezárjuk a modalt, AMÍG a DOM még stabil
-        // const closeBtn = document.getElementById('closeEditModalBtnTwo') as HTMLButtonElement;
-        // if (closeBtn) {
-        //   closeBtn.click();
-        // }
 
          const closeBtnTwo = document.getElementById('closeEditModalBtnThree') as HTMLButtonElement;
         if (closeBtnTwo) {
           closeBtnTwo.click();
         }
 
-        // 2. Ha a PHP-t átírtad és visszaküldi a data-t, használd azt. 
-        // Ha még nem írtad át a PHP-t, a lokális editModel-ből frissítünk.
         if (response.data) {
           this.hero = response.data;
         } else {
           this.hero = { ...this.editModel } as HeroModel;
         }
 
-        // 3. Egy pici egérutat (delay-t) adunk a Bootstrap animációnak, 
-        // hogy eltűnjön a szürke háttér, mielőtt az Angular újrarajzolná a felületet.
         setTimeout(() => {
           this.cdr.detectChanges();
         }, 300);
@@ -156,7 +147,6 @@ export class Hero implements OnInit, OnDestroy {
 }
 
 ngOnDestroy(): void {
-    // Minden feliratkozást lezárunk, ha elhagyjuk a komponenst
     this.subs.forEach(sub => sub.unsubscribe());
   }
 
