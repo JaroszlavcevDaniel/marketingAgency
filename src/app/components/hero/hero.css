@@ -4,14 +4,36 @@
   overflow: hidden;
 }
 
+/* --- Eredeti stílusok megtartása asztali nézetre --- */
 .heroTwo {
   position: relative;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
+}
+
+
+/* --- MOBILOS JAVÍTÁS (991px szélesség alatt) --- */
+@media (max-width: 991px) {
+  .heroTwo {
+    height: auto !important;     /* Engedjük, hogy a tartalom nyújtsa a szekciót */
+    min-height: 100vh;           /* De legalább egy képernyőnyi legyen */
+    overflow: visible !important; /* Ne vágja le a kilógó kártyákat */
+    padding-bottom: 50px;        /* Kis extra hely az alján */
+  }
+
+  .heroTwo-content {
+    position: relative !important; /* Abszolút pozíció helyett kövesse a dokumentum folyamát */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    padding: 20px;               /* Hogy ne érjen ki a telefon szélére a szöveg */
+  }
 }
 
 .heroThree{
     min-height:100vh;
+      width: 100%;
     height:auto;
     display:flex;
     justify-content:center;
@@ -69,6 +91,7 @@
   flex-direction: column;
   gap: 2rem;  
 }
+
 
 .heroThree-content {
   /* position: absolute; */
@@ -388,3 +411,14 @@ h1.typewriter {
   }
 }
 
+.video-holder {
+  width: 100vw;
+  height: 80vh;
+  
+  border-radius: 16px; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.object-cover {
+  object-fit: cover;
+}

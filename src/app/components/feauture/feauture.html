@@ -1,8 +1,8 @@
-<div class="mt-5 pt-5 position-relative overflow-hidden cormorant-garamond" [class.animate-cards]="cardsVisible"   #featureSection>
+<div class=" position-relative overflow-hidden cormorant-garamond" [class.animate-cards]="cardsVisible"   #featureSection>
   <!-- Háttér díszítő elemek a kreatív atmoszféráért -->
 
 
-  <div class="mt-5 pt-5 container position-relative z-1">
+  <div class=" container position-relative z-1">
     
     <!-- Fejléc -->
     <div class="row mb-1 text-center">
@@ -48,12 +48,12 @@
               <!-- Back Fejléc -->
               <div class="d-flex align-items-center mb-4">
                 <div class="mini-icon-wrapper me-1">
-                  <i [class]="service.icon"></i>
+                  <span class="moveMove">✾</span>
                 </div>
                 <h6 class="h6 fw-bold text-white m-0">{{ service.title }}</h6>
               </div>
               
-              <p class="small text-white-75 mb-1">{{ service.longDescription }}</p>
+              <p class="textJust text-white-75 mb-1 p-1">{{ service.longDescription }}</p>
               
               <!-- Al-szolgáltatások listája -->
               <ul class="sub-services-list list-unstyled m-0">
@@ -72,9 +72,9 @@
               <i class="bi bi-arrow-left-circle fs-4"></i>
             </div>
           </div>
-
+<!-- <p>Kattintson a megtekintéshez</p> -->
         </div>
-
+        
       </div>
     </div>
 

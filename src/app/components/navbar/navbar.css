@@ -98,6 +98,9 @@
     align-items: center;
     cursor: pointer;
     min-width: 0;
+    &:hover {
+        border: #f3c739 solid 0.5px;
+    }
 }
 
 .horizontal-scroller-container {
@@ -179,7 +182,7 @@
    ========================================================================== */
 .my-cta-btn {
     display: inline-block !important;
-    border: solid rgb(81, 70, 4) 2px !important;
+    border: solid rgb(115, 98, 5) 2px !important;
     background: transparent !important;
     color: rgb(241, 235, 205) !important;
     font-size: 0.85rem;
@@ -191,7 +194,8 @@
 
 .my-cta-btn:hover {
     background-color: #0d0e2d !important; 
-    color: #ffffff !important;           
+    color: #ffffff !important;    
+    border: solid rgb(246, 210, 7) 2px !important;       
 }
 
 /* Kisebb asztali kijelzők finomhangolása */
@@ -317,9 +321,7 @@
         text-align:center;
     }
 
-    /* =======================
-       SZOLGÁLTATÁS
-    ======================= */
+
 
     .service-horizontal-center{
         display:block;

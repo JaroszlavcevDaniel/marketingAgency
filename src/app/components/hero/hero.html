@@ -7,32 +7,38 @@
 
         <div class="hero-content text-light" [@heroAnimation]>
             <div class="container-fluid px-md-5 h-100 d-flex flex-column justify-content-between py-5">
-                
+
                 <div class="text-center my-auto animate-item">
-                    <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter" *ngIf="currentLang === 'hu' && hero?.ctaTextBigHu">
+                    <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter"
+                        *ngIf="currentLang === 'hu' && hero?.ctaTextBigHu">
                         {{hero?.ctaTextBigHu}}
                     </h1>
-                    <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter" *ngIf="currentLang === 'en' && hero?.ctaTextBigEn">
+                    <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter"
+                        *ngIf="currentLang === 'en' && hero?.ctaTextBigEn">
                         {{hero?.ctaTextBigEn}}
                     </h1>
                 </div>
 
                 <div class="row justify-content-between align-items-end gy-4 mb-5 animate-item">
                     <div class="col-lg-4 col-12">
-                        <h4 class="p-2 text-uppercase cormorant-garamond text-start m-0" *ngIf="currentLang === 'hu' && hero?.ctaTextSecondHu">
+                        <h4 class="p-2 text-uppercase cormorant-garamond text-start m-0"
+                            *ngIf="currentLang === 'hu' && hero?.ctaTextSecondHu">
                             {{hero?.ctaTextSecondHu}}
                         </h4>
-                        <h4 class="p-2 text-uppercase cormorant-garamond text-start m-0" *ngIf="currentLang === 'en' && hero?.ctaTextSecondEn">
+                        <h4 class="p-2 text-uppercase cormorant-garamond text-start m-0"
+                            *ngIf="currentLang === 'en' && hero?.ctaTextSecondEn">
                             {{hero?.ctaTextSecondEn}}
                         </h4>
                     </div>
 
                     <div class="col-lg-4 col-12 text-lg-end">
-                        <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0" *ngIf="currentLang === 'hu' && hero?.ctaTextThirdHu">
-                             {{hero?.ctaTextThirdHu}}
+                        <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0"
+                            *ngIf="currentLang === 'hu' && hero?.ctaTextThirdHu">
+                            {{hero?.ctaTextThirdHu}}
                         </h4>
-                        <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0" *ngIf="currentLang === 'en' && hero?.ctaTextThirdEn">
-                             {{hero?.ctaTextThirdEn}}
+                        <h4 class="text-light p-2 text-uppercase cormorant-garamond m-0"
+                            *ngIf="currentLang === 'en' && hero?.ctaTextThirdEn">
+                            {{hero?.ctaTextThirdEn}}
                         </h4>
                     </div>
                 </div>
@@ -47,7 +53,7 @@
                         {{hero?.ctaTextButtonEn}}
                     </a>
 
-                 
+
                 </div>
 
             </div>
@@ -61,19 +67,24 @@
 
         <div class="heroTwo-content text-white">
             <section class="magazine-section">
-                <div class="mt-5 pt-3">
-                   
-                <h4 *ngIf="currentLang === 'hu' && hero?.heroTwoHeadlineOneHu" class="cormorant-garamond text-uppercase"  >{{hero?.heroTwoHeadlineOneHu}}</h4>
-                <h4 *ngIf="currentLang === 'en' && hero?.heroTwoHeadlineOneEn" class="cormorant-garamond text-uppercase"  >{{hero?.heroTwoHeadlineOneEn}}</h4>
+                <div class="mt-5 pt-6">
+
+                    <h5 *ngIf="currentLang === 'hu' && hero?.heroTwoHeadlineOneHu"
+                        class="cormorant-garamond text-lowercase m-2 fst-italic">{{hero?.heroTwoHeadlineOneHu}}</h5>
+                    <h5 *ngIf="currentLang === 'en' && hero?.heroTwoHeadlineOneEn"
+                        class="cormorant-garamond text-lowercase m-2">{{hero?.heroTwoHeadlineOneEn}}</h5>
                 </div>
                 <div>
-                <h5 *ngIf="currentLang === 'hu' && hero?.heroTwoHeadlineTwoHu" class="cormorant-garamond text-uppercase">{{hero?.heroTwoHeadlineTwoHu}}</h5>
-                <h5 *ngIf="currentLang === 'en' && hero?.heroTwoHeadlineTwoEn" class="cormorant-garamond text-uppercase">{{hero?.heroTwoHeadlineTwoEn}}</h5>
+                    <h5 *ngIf="currentLang === 'hu' && hero?.heroTwoHeadlineTwoHu"
+                        class="cormorant-garamond text-uppercase m-2">{{hero?.heroTwoHeadlineTwoHu}}</h5>
+                    <h5 *ngIf="currentLang === 'en' && hero?.heroTwoHeadlineTwoEn"
+                        class="cormorant-garamond text-uppercase m-2">{{hero?.heroTwoHeadlineTwoEn}}</h5>
                 </div>
-                 <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#editHeroTwoModal" (click)="openEditModal()">
-                        ✏️ Hero egy/kettő szerkesztés
-                    </button>
-                <div class="magazine-slider">
+                <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
+                    data-bs-target="#editHeroTwoModal" (click)="openEditModal()">
+                    ✏️ Hero egy/kettő szerkesztés
+                </button>
+                <!-- <div class="magazine-slider">
                     <article class="page">
                         <p *ngIf="currentLang === 'hu' && hero?.stepOneHeadlineHu" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepOneHeadlineHu}}</p>
                         <p *ngIf="currentLang === 'en' && hero?.stepOneHeadlineEn" class="cormorant-garamond fs-4 fw-bold text-start">{{hero?.stepOneHeadlineEn}}</p>
@@ -121,35 +132,81 @@
                         <p style="white-space: pre-line;"  *ngIf="currentLang === 'en' && hero?.stepSixTextEn" class="cormorant-garamond fs-5">{{hero?.stepSixTextEn }} </p>
                         <h2>→</h2>
                     </article>
+                </div> -->
+                <app-feauture></app-feauture>
+                <div class="text-center">
+                    <div class="animate-item d-flex justify-content-center mt-3">
+                        <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
+                            *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" href="#thirdHero">
+                            Milyen tehnikai eszközöket alkalmazunk?
+                        </a>
+                        <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
+                            *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" href="#thirdHero">
+                            {{hero?.ctaTextButtonEn}}
+                        </a>
+
+
+                    </div>
                 </div>
             </section>
+
         </div>
 
     </section>
 
 
-        <section class="snap-section heroThree" id="someId">
+    <section class="snap-section heroThree" id="someId">
         <div class="heroThree-bg"></div>
         <div class="heroThree-overlay"></div>
 
-       
 
-            <div class="heroThree-content">
-        <app-feauture class=""></app-feauture>
-    </div>
 
-            
-   
+        <div class="heroThree-content mt-5 pt-5" id="thirdHero">
+            <!-- <app-feauture class=""></app-feauture> -->
+            <!-- <div class="mt-5 pt-5 video-holder shadow-lg overflow-hidden mx-auto">
+                <video autoplay muted loop playsinline class="w-100 h-100 object-cover">
+                    <source src="/image/wefwefwefwe.mp4" type="video/mp4">
+                    A böngésződ nem támogatja a videó lejátszást.
+                </video>
+
+            </div>
+            <div class="text-end">
+                <button class="btn btn-dark mt-2 text-uppercase text-warning rounded-0 cormorant-garamond">ismerje meg a
+                    szolgáltatásainkat</button>
+            </div> -->
+            <div class="mt-5 pt-5 mb-5 pb-5">
+            <h5 class="cormorant-garamond text-uppercase m-2 text-light">Technológiai ökoszisztémánk:
+                Eszközök a profizmus mögött</h5>
+            </div>
+            <app-technologies class=""></app-technologies>
+            <div class="animate-item d-flex justify-content-center mt-3">
+                        <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
+                            *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" href="#thirdHero">
+                            Milyen tehnikai eszközöket alkalmazunk?
+                        </a>
+                        <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
+                            *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" href="#thirdHero">
+                            {{hero?.ctaTextButtonEn}}
+                        </a>
+
+
+                    </div>
+        </div>
+
+
+
 
     </section>
 
-    
 
-</div> 
+
+</div>
+
+<!-- <app-services></app-services> -->
 
 
 <div class="modal fade" id="editHeroTwoModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg"> 
+    <div class="modal-dialog modal-lg">
         <div class="modal-content text-dark">
             <div class="modal-header">
                 <h5 class="modal-title fw-bold">Hero egy adatok szerkesztése</h5>
@@ -161,7 +218,7 @@
                         <label class="form-label">Nagy felírat (első) magyarul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextBigHu">
                     </div>
-                     <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Nagy felírat (első) angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextBigEn">
                     </div>
@@ -170,7 +227,7 @@
                         <label class="form-label">kisebb felírat (első) magyarul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextSecondHu">
                     </div>
-                     <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">kisebb felírat (első) angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextSecondEn">
                     </div>
@@ -183,23 +240,23 @@
                         <label class="form-label">kisebb felírat (második) angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextThirdEn">
                     </div>
-                     <hr>
-                     <div class="col-md-6 mb-3">
+                    <hr>
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">CTA gomb magyarul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextButtonHu">
                     </div>
-                     <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">CTA gomb angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextButtonEn">
                     </div>
                     <h5 class="fw-bold">Hero two szerkesztése</h5>
-                     <hr>
-                      <hr>
-                     <div class="col-md-6 mb-3">
+                    <hr>
+                    <hr>
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Nagy felírat magyarul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineOneHu">
                     </div>
-                     <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Nagy felírat angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineOneEn">
                     </div>
@@ -208,7 +265,7 @@
                         <label class="form-label">kisebb felírat magyarul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineTwoHu">
                     </div>
-                     <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">kisebb felírat angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineTwoEn">
                     </div>
@@ -221,100 +278,121 @@
                         <label class="form-label">első kártya címe angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.stepOneHeadlineEn">
                     </div>
-                     <hr>
-                     <div class="col-md-12 mb-3">
+                    <hr>
+                    <div class="col-md-12 mb-3">
                         <label class="form-label">első kártya szövege magyarul</label>
                         <textarea rows="3" class="form-control" [(ngModel)]="editModel.stepOneTextHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">első kártya szövege angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepOneTextEn"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepOneTextEn"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">második kártya címe magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepTwoHeadlineHu"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepTwoHeadlineHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">második kártya címe angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepTwoHeadlineEn"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepTwoHeadlineEn"></textarea>
                     </div>
-                     <hr>
-                     <div class="col-md-12 mb-3">
+                    <hr>
+                    <div class="col-md-12 mb-3">
                         <label class="form-label">második kártya szövege magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepTwoTextHu"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepTwoTextHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">második kártya szövege angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepTwoTextEn"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepTwoTextEn"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">harmadik kártya címe magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepThreeHeadlineHu"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepThreeHeadlineHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">harmadik kártya címe angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepThreeHeadlineEn"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepThreeHeadlineEn"></textarea>
                     </div>
-                     <hr>
-                     <div class="col-md-12 mb-3">
+                    <hr>
+                    <div class="col-md-12 mb-3">
                         <label class="form-label">harmadik kártya szövege magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepThreeTextHu"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepThreeTextHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">harmadik kártya szövege angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepThreeTextEn"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepThreeTextEn"></textarea>
                     </div>
-                     <div class="col-md-12 mb-3">
+                    <div class="col-md-12 mb-3">
                         <label class="form-label">negyedik kártya címe magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepFourHeadlineHu"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepFourHeadlineHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">negyedik kártya címe angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepFourHeadlineEn"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepFourHeadlineEn"></textarea>
                     </div>
-                     <hr>
-                     <div class="col-md-12 mb-3">
+                    <hr>
+                    <div class="col-md-12 mb-3">
                         <label class="form-label">negyedik kártya szövege magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepFourTextHu"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepFourTextHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">negyedik kártya szövege angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepFourTextEn"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepFourTextEn"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">ötödik kártya címe magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepFiveHeadlineHu"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepFiveHeadlineHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">ötödik kártya címe angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepFiveHeadlineEn"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepFiveHeadlineEn"></textarea>
                     </div>
-                     <hr>
-                     <div class="col-md-12 mb-3">
+                    <hr>
+                    <div class="col-md-12 mb-3">
                         <label class="form-label">ötödik kártya szövege magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepFiveTextHu"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepFiveTextHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">ötödik kártya szövege angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepFiveTextEn"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepFiveTextEn"></textarea>
                     </div>
 
                     <div class="col-md-12 mb-3">
                         <label class="form-label">hatodik kártya címe magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepSixHeadlineHu"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepSixHeadlineHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">hatodik kártya címe angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepSixHeadlineEn"></textarea>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepSixHeadlineEn"></textarea>
                     </div>
-                     <hr>
-                     <div class="col-md-12 mb-3">
+                    <hr>
+                    <div class="col-md-12 mb-3">
                         <label class="form-label">hatodik kártya szövege magyarul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepSixTextHu"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepSixTextHu"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label class="form-label">hatodik kártya szövege angolul</label>
-                        <textarea rows="3" type="text" class="form-control" [(ngModel)]="editModel.stepSixTextEn"></textarea>
+                        <textarea rows="3" type="text" class="form-control"
+                            [(ngModel)]="editModel.stepSixTextEn"></textarea>
                     </div>
                 </div>
             </div>

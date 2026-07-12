@@ -50,76 +50,76 @@ ngAfterViewInit() {
     {
       id: 1,
       icon: 'bi bi-pie-chart-fill',
-      title: 'Marketing',
+      title: 'Audit és Stratégia (Management)',
       picture: '/image/111.jpg',
-      shortDescription: 'Nem csak hirdetünk: teljes körű növekedési stratégiákat építünk offline és online téren is.',
-      longDescription: 'A marketing nálunk egy komplex ökoszisztéma, ami a célközönséged pszichológiájára épül.',
+      shortDescription: 'Kattintson a megtekintéshez',
+      longDescription: 'Nem találgatunk, hanem mérünk. Első lépésként átvilágítjuk a jelenlegi működésedet, a munkafolyamatokat és a digitális jelenlétedet. Kiszűrjük a szűk keresztmetszeteket, és felállítunk egy olyan üzleti és management stratégiát, amely tiszta irányt mutat a csapatodnak és mérhető növekedést hoz a cégednek.',
       subServices: [
-        { name: 'Marketing & Márka Stratégia' },
-        { name: 'Digitális & Performance Marketing' },
-        { name: 'Social Media Management' },
-        { name: 'TV, Rádió és Kreatív Offline Kampányok' },
-        { name: 'Influencer & PR Kampányok' }
+        // { name: 'Nem találgatunk, hanem mérünk. Első lépésként átvilágítjuk a jelenlegi működésedet, a munkafolyamatokat és a digitális jelenlétedet. Kiszűrjük a szűk keresztmetszeteket, és felállítunk egy olyan üzleti és management stratégiát, amely tiszta irányt mutat a csapatodnak és mérhető növekedést hoz a cégednek.' },
+        // { name: 'Digitális & Performance Marketing' },
+        // { name: 'Social Media Management' },
+        // { name: 'TV, Rádió és Kreatív Offline Kampányok' },
+        // { name: 'Influencer & PR Kampányok' }
       ]
     },
     {
       id: 2,
       icon: 'bi bi-person-workspace',
-      title: 'Management',
+      title: 'Technikai Háttér (Webfejlesztés)',
       picture: '/image/222.jpg',
-      shortDescription: 'Folyamatok optimalizálása, hogy a céged akkor is működjön, ha te épp pihensz.',
-      longDescription: 'Szervezetfejlesztés és hatékonyság növelés a legújabb agilis módszertanokkal.',
+      shortDescription: 'Kattintson a megtekintéshez',
+      longDescription: 'Egy rosszul működő weboldal olyan, mint egy lyukas zsák: hiába öntöd bele a pénzt, elfolyik. Szakértő fejlesztőcsapatunk gatyába rázza vagy teljesen újraépíti a weboldaladat. Modern, villámgyors, mobilbarát és maximálisan felhasználóbarát (UX) felületet hozunk létre, ami nemcsak szép, de valóban értékesít is.',
       subServices: [
-        { name: 'Üzleti Folyamat Optimalizálás' },
-        { name: 'Projekt- és Portfólió Menedzsment' },
-        { name: 'Agilis Transzformáció & Oktatás' },
-        { name: 'Erőforrás- és Kockázatkezelés' },
-        { name: 'Interim Menedzsment Megoldások' }
+        // { name: 'Üzleti Folyamat Optimalizálás' },
+        // { name: 'Projekt- és Portfólió Menedzsment' },
+        // { name: 'Agilis Transzformáció & Oktatás' },
+        // { name: 'Erőforrás- és Kockázatkezelés' },
+        // { name: 'Interim Menedzsment Megoldások' }
       ]
     },
     {
       id: 3,
       icon: 'bi bi-lightning-charge-fill',
-      title: 'SEO',
+      title: 'Láthatóság és forgalom (SEO)',
       picture: '/image/333.jpg',
-      shortDescription: 'Hosszú távú, organikus láthatóság. Ott vagyunk, ahol a vevőid keresnek.',
-      longDescription: 'Az algoritmusok változnak, de a minőségi, strukturált tartalom és technikai alap örök.',
+      shortDescription: 'Kattintson a megtekintéshez',
+      longDescription: 'Hiába a legjobb szolgáltatás, ha senki sem talál rá. A keresőoptimalizálás (SEO) segítségével elérjük, hogy a potenciális ügyfeleid pont akkor találjanak rád a Google-ben, amikor a legnagyobb szükségük van rád. Rendet teszünk a kulcsszavak között, és hosszú távú, ingyenes látogatóáradatot biztosítunk a megújult weboldaladra.',
       subServices: [
-        { name: 'Technikai SEO Audit & Javítás' },
-        { name: 'Kulcsszókutatás & Konkurenciaelemzés' },
-        { name: 'On-Page SEO & Tartalomstratégia' },
-        { name: 'Prémium Linképítés (Off-Page SEO)' },
-        { name: 'Helyi (Local) SEO vállalkozásoknak' }
+        // { name: 'Technikai SEO Audit & Javítás' },
+        // { name: 'Kulcsszókutatás & Konkurenciaelemzés' },
+        // { name: 'On-Page SEO & Tartalomstratégia' },
+        // { name: 'Prémium Linképítés (Off-Page SEO)' },
+        // { name: 'Helyi (Local) SEO vállalkozásoknak' }
       ]
     },
     {
       id: 4,
       icon: 'bi bi-camera-reels-fill',
-      title: 'Videó Készítés',
+      title: 'Bizalomépítés (Video Production)',
       picture: '/image/444.jpg',
-      shortDescription: 'Mozi minőségű produkciók a koncepciótól a képernyőig, beépített kamera-felkészítéssel.',
-      longDescription: 'Nemcsak leforgatjuk a videót, de felkészítünk, hogy magabiztosan, színészi precizitással beszélj a kamera előtt.',
+      shortDescription: 'Kattintson a megtekintéshez',
+      longDescription: 'A modern piacon a videó a király. Profi gyártócsapatunkkal prémium minőségű imázsfilmeket, termékvideókat és közösségi média tartalmakat készítünk neked. A vizuális történetmeséléssel nemcsak megragadjuk a figyelmet, de azonnali bizalmat építünk a márkád iránt, bemutatva a céged valódi értékeit.',
       subServices: [
-        { name: 'Kamera előtti színészi felkészítés', highlighted: true },
-        { name: 'TikTok, Reels & YouTube formátumok' },
-        { name: 'Céges Imázsvideók & Reklámfilmek' },
-        { name: 'Forgatókönyv & Kreatív Koncepció' },
-        { name: 'Profi Utómunka (Vágás, VFX, Color Grading)' }
+        // { name: 'Kamera előtti színészi felkészítés', highlighted: true },
+        // { name: 'TikTok, Reels & YouTube formátumok' },
+        // { name: 'Céges Imázsvideók & Reklámfilmek' },
+        // { name: 'Forgatókönyv & Kreatív Koncepció' },
+        // { name: 'Profi Utómunka (Vágás, VFX, Color Grading)' }
       ]
     },
     {
       id: 5,
       icon: 'bi bi-cpu-fill',
-      title: 'Webfejlesztés',
+      title: 'Skálázás és Automatizált Értékesítés (Marketing)',
       picture: '/image/555.jpg',
-      shortDescription: 'Gyors, biztonságos és konverzióra optimalizált digitális termékek.',
-      longDescription: 'A legmodernebb technológiákat alkalmazzuk, hogy az oldalad élmény legyen a látogatónak.',
+      shortDescription: 'Kattintson a megtekintéshez',
+      longDescription: 'Miután a rendszer minden eleme a helyére került, ráadjuk a gázt. Célzott, adatvezérelt marketingkampányokkal (PPC, közösségi média, tartalommarketing) megszólítjuk az ideális célközönségedet. Összekötjük a szálakat, automatizáljuk az értékesítési tölcséreket, így a céged kiszámíthatóan és folyamatosan termeli a profitot.',
       subServices: [
-        { name: 'Egyedi Landing Page-ek' },
-        { name: 'Komplex Webáruházak (Webshops)' },
-        { name: 'SaaS & Egyedi Webalkalmazások' },
-        { name: 'Headless CMS & API Integrációk' },
-        { name: 'UI/UX Tervezés & Prototípusgyártás' }
+        // { name: 'Egyedi Landing Page-ek' },
+        // { name: 'Komplex Webáruházak (Webshops)' },
+        // { name: 'SaaS & Egyedi Webalkalmazások' },
+        // { name: 'Headless CMS & API Integrációk' },
+        // { name: 'UI/UX Tervezés & Prototípusgyártás' }
       ]
     }
   ];

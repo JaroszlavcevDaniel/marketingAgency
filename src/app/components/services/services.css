@@ -35,3 +35,10 @@
   object-position: center;
   display: block;       /* Eltünteti az alatta lévő üres réseket */
 }
+
+.lighterBg {
+   background: linear-gradient(135deg,
+            rgba(5, 31, 109, 0.6) 0%,
+            rgba(9, 66, 179, 0.6) 50%,
+            rgba(66, 6, 231, 0.6) 100%);
+}

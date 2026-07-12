@@ -9,14 +9,14 @@
 @media (max-height: 900px) {
     .creative-services-section {
         height: auto;
-        /* min-height: 100vh; */
+    
     }
 }
 
 
 .glow-badge {
     background: rgba(139, 92, 246, 0.15);
-    border: 1px solid rgba(139, 92, 246, 0.4);
+    /* border: 1px solid rgba(139, 92, 246, 0.4); */
     color: #c084fc;
     font-size: 0.85rem;
     letter-spacing: 0.1rem;
@@ -30,18 +30,18 @@
 
 .card-perspective {
     perspective: 1200px;
-    height: 550px;
+    height: 480px;
 }
 
 @media (max-width: 1400px) {
     .card-perspective {
-        height: 550px;
+        height: 480px;
     }
 }
 
 @media (max-width: 576px) {
     .card-perspective {
-        height: 550px;
+        height: 480px;
 
     }
 }
@@ -69,12 +69,12 @@
     backface-visibility: hidden;
     /* border-radius: 15px; */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* border: 1px solid rgba(255, 255, 255, 0.08); */
 }
 
 /* --- ELŐLAP DESIGN --- */
 .card-front {
-    background: linear-gradient(rgba(76, 29, 149, 0.6) 0%,
+    background: linear-gradient(rgba(13, 13, 95, 0.6) 0%,
             rgba(45, 10, 47, 0.6) 50%,
             rgba(39, 23, 157, 0.6) 100%);
     background-size: 150% 150%;
@@ -85,7 +85,7 @@
 .card-perspective:hover .card-front {
     background-position: right bottom;
     transform: translateY(-6px);
-    border-color: rgba(167, 139, 250, 0.3);
+    /* border-color: rgba(167, 139, 250, 0.3); */
     box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
 }
 
@@ -93,7 +93,7 @@
     width: 55px;
     height: 55px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -105,7 +105,7 @@
 
 .card-perspective:hover .icon-wrapper {
     background: rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.4);
+    /* border-color: rgba(139, 92, 246, 0.4); */
     color: #c084fc;
     transform: scale(1.05) rotate(5deg);
 }
@@ -147,7 +147,7 @@
     /* Safari támogatás */
 
     transform: rotateY(180deg);
-    border-color: rgba(236, 72, 153, 0.3);
+    /* border-color: rgba(236, 72, 153, 0.3); */
 }
 
 .mini-icon-wrapper {
@@ -165,7 +165,7 @@
 /* Al-szolgáltatások listája (Tömörebb padding, hogy biztosan beférjen) */
 .sub-services-list li {
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    /* border: 1px solid rgba(255, 255, 255, 0.04); */
     padding: 6px 10px !important;
     transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -190,7 +190,7 @@
 /* Kiemelt elem */
 .sub-services-list li.highlight-item {
     background: linear-gradient(90deg, rgba(236, 72, 153, 0.25) 0%, rgba(255, 255, 255, 0.05) 100%);
-    border: 1px solid rgba(236, 72, 153, 0.5);
+    /* border: 1px solid rgba(236, 72, 153, 0.5); */
 }
 
 /* --- Belépési animáció a kártyáknak --- */
@@ -217,4 +217,17 @@
    hogy ne akadjon össze a két translateY transzformáció */
 .card-perspective {
     transition: opacity 0.8s ease;
+}
+
+.moveMove {
+    animation: slowRotate 12s linear infinite;
+}
+
+@keyframes slowRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.textJust {
+    text-align: justify;
 }
