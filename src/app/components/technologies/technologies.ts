@@ -17,12 +17,12 @@ export class Technologies {
     {
       name: 'Asana',
       icon: 'image/asana.svg',
-      description: 'Az Asana egy felhőalapú projektmenedzsment és feladatkezelő szoftver, amelynek a legfőbb célja, hogy rendet tegyen a napi működési káoszban. Segít abban, hogy a csapatok átlássák, kinek, mit és mikorra kell elvégeznie, így elkerülhető a mikromenedzsment és a végtelen e-mailezés. 1. Projektek és kampányok teljes átláthatósága 2. Feladatok delegálása és felelősök kijelölése 3. Vizuális munkafolyamatok (Kanban, Lista, Idővonal) 4. Belső kommunikáció központosítása'
+      description: 'Az Asana egy felhőalapú projektmenedzsment és feladatkezelő szoftver, amelynek a legfőbb célja, hogy rendet tegyen a napi működési káoszban. Segít abban, hogy a csapatok átlássák, kinek, mit és mikorra kell elvégeznie, így elkerülhető a mikromenedzsment és a végtelen e-mailezés. \n \n 1. Projektek és kampányok teljes átláthatósága \n \n 2. Feladatok delegálása és felelősök kijelölése \n \n 3. Vizuális munkafolyamatok (Kanban, Lista, Idővonal) \n \n 4. Belső kommunikáció központosítása'
     },
     {
       name: 'Jira',
       icon: 'image/jira.svg',
-      description: 'Fejlesztési feladatok és hibajegyek kezelése.'
+      description: 'A Jira egy projektmenedzsment és feladatkövető szoftver, amelyet leggyakrabban az alábbiakra használunk: Szoftverfejlesztés elágazásai: \n Agilis keretrendszerek (Scrum, Kanban) kezelésére, sprinttervezésre és backlogok felügyeletére. \n Hibakövetés (Bug tracking): Szoftverhibák, tesztelési problémák és fejlesztési igények naplózására és nyomon követésére. \n Feladat- és projektkezelés: Munkák kiosztására, határidők, státuszok és felelősök nyilvántartására bármilyen csapatban. \n Folyamatautomatizálás és munkafolyamatok (Workflow): Egyedi lépések beállítására, ahogy egy feladat az elgondolástól a megvalósításig eljut. \n Riportálás és teljesítménymérés: Munkaidő-követésre, csapatkapacitás és haladási ütem (burn-down chartok) elemzésére.'
     },
     {
       name: 'Google Workspace',

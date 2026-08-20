@@ -5,7 +5,7 @@
     <button type="button" class="tool " *ngFor="let tool of tools" (click)="selectedTool = tool">
 
         <img [src]="tool.icon" [alt]="tool.name">
-        <span class="text-warning cormorant-garamond">{{ tool.name }}</span>
+        <span class="text-warning cormorant-garamond fs-5">{{ tool.name }}</span>
 
     </button>
 
@@ -20,9 +20,9 @@
         <button class="btn-close float-end btn-close-white" (click)="selectedTool = null">
         </button>
 
-        <h5 class="text-light fw-bold cormorant-garamond">{{ selectedTool.name }}</h5>
+        <h5 class="text-light fw-bold cormorant-garamond fs-4">{{ selectedTool.name }}</h5>
 
-        <p class="text-light cormorant-garamond">{{ selectedTool.description }}</p>
+        <p class="text-light cormorant-garamond text-justify fs-5">{{ selectedTool.description | space }}</p>
 
     </div>
 

@@ -18,6 +18,7 @@ import { Login } from './components/login/login';
 import { SpacePipe } from './components/pipes/space-pipe';
 import { Feauture } from './components/feauture/feauture';
 import { Technologies } from './components/technologies/technologies';
+import { Needs } from './components/needs/needs';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { Technologies } from './components/technologies/technologies';
     Login,
     SpacePipe,
     Feauture,
-    Technologies
+    Technologies,
+    Needs
   ],
   imports: [
     BrowserModule,

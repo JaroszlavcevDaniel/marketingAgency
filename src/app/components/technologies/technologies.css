@@ -48,3 +48,8 @@
     max-width:420px;
     width:90%;
 }
+
+.text-justify {
+    text-align: justify;
+    white-space: pre-line;
+}

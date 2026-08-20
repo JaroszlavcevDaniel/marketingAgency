@@ -187,6 +187,10 @@
                             *ngIf="currentLang === 'en'" routerLink="contact">
                             {{navbar?.contactEn}}
                         </a>
+                         <a class="text-light nav-link active cormorant-garamond text-uppercase my-cta-btn btn-premium px-4 py-2"
+                             routerLink="needs">
+                            zzz
+                        </a>
                     </li>
                 </ul>
 
@@ -288,10 +292,13 @@
                         <label class="form-label">Szolgáltatások (HU)</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.servHu">
                     </div>
+                    
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Services (EN)</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.servEn">
                     </div>
+
+                    
 
                     <hr>
                     <h5>Szolgáltatás elemek listája</h5>
@@ -327,6 +334,8 @@
                             [(ngModel)]="editModel.contactHu"></div>
                     <div class="col-md-6 mb-2"><label>Contact gomb (EN)</label><input type="text" class="form-control"
                             [(ngModel)]="editModel.contactEn"></div>
+                            <!-- <a routerLink="needs">ZZZ</a> -->
+                            
 
                     <div class="col-md-4 mb-2"><label>Facebook Link</label><input type="text" class="form-control"
                             [(ngModel)]="editModel.facebookLink"></div>
