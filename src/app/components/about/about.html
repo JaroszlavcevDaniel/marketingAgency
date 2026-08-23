@@ -1,0 +1,62 @@
+<section class="about-section d-flex align-items-center mt-5 pt-5 mb-5">
+  <div class="container my-auto">
+    <div class="row align-items-center g-4 g-lg-5 mt-5">
+      
+      <!-- Bal oldal: Kép (kb. 30%-os szélesség desktopon) -->
+      <div class="col-12 col-lg-5 text-center">
+        <div class="about-image-wrapper shadow-lg rounded-3 overflow-hidden border border-secondary border-opacity-25 position-relative">
+          <img src="/image/erverv.jpg" alt="Aetheris Konzorcium" class="img-fluid object-fit-cover w-100 h-100">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Jobb oldal: Szöveges tartalom -->
+      <div class="col-12 col-lg-7 text-light cormorant-garamond">
+        
+        <!-- Magyar nyelvű tartalom -->
+        <ng-container *ngIf="currentLang === 'hu'">
+          <h5 class="text-uppercase text-warning letter-spacing-2 mb-2 text-shadow">Rólunk & Munkásságunk</h5>
+          <!-- <h2 class="display-5 fw-bold mb-3 text-uppercase">Aetheris Konzorcium</h2> -->
+          
+          <p class="fs-5 text-light opacity-90 leading-relaxed mb-3 text-justify text-shadow">
+            Az Aetheris egy éveken át formálódott, több szakterületet átölelő stratégiai konzorcium. Csapatunk cégvezetőket, marketingstratégákat, frontend- és backend-fejlesztőket, filmrendezőket, operatőröket, színészeket és szinkronszínészeket tömörít egyetlen, szervesen együttműködő ökoszisztémába.
+          </p>
+
+          <p class="fs-5 text-light opacity-90 leading-relaxed mb-4 text-justify text-shadow">
+            Munkánk alapját a sziklaszilárd elvek alkotják: a barátság, egyenesség, őszinteség és nyitottság vezérel bennünket minden partnerségben. Ezt a humán értékrendet ötvözzük a legmodernebb technológiai eszköztárral — a vállalatirányítási és stratégiai szoftverektől kezdve, az élenjáró webes keretrendszereken és videógyártási technikákon át, egészen a professzionális beszéd- és színésztréningekig.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-25">
+            <span class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">Vállalatirányítás & Stratégia</span>
+            <span class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">Full-Stack Fejlesztés</span>
+            <span class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">Cinematográfia & Szinkron</span>
+            <span class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">Performance Marketing</span>
+          </div>
+        </ng-container>
+
+        <!-- Angol nyelvű tartalom -->
+        <ng-container *ngIf="currentLang === 'en'">
+          <h5 class="text-uppercase text-warning letter-spacing-2 mb-2">About Us</h5>
+          <h2 class="display-5 fw-bold mb-3 text-uppercase">Aetheris Consortium</h2>
+          
+          <p class="fs-5 text-light opacity-90 leading-relaxed mb-3">
+            **Aetheris** is a multi-disciplinary strategic consortium built over years of close collaboration. We bring together entrepreneurs, marketing strategists, senior full-stack developers, directors, cinematographers, actors, and voice talents into a unified digital ecosystem.
+          </p>
+
+          <p class="fs-5 text-light opacity-90 leading-relaxed mb-4">
+            Our foundation relies on unyielding core values: **friendship, integrity, transparency, and adaptability**. We combine this human-centric ethic with cutting-edge technology — ranging from enterprise strategy software and high-level web frameworks to advanced video production and professional voice and speech training.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-25">
+            <span class="badge bg-dark border border-warning text-warning px-3 py-2 fs-6 fw-normal">Enterprise Strategy</span>
+            <span class="badge bg-dark border border-warning text-warning px-3 py-2 fs-6 fw-normal">Full-Stack Web Tech</span>
+            <span class="badge bg-dark border border-warning text-warning px-3 py-2 fs-6 fw-normal">Cinematography & Voice</span>
+            <span class="badge bg-dark border border-warning text-warning px-3 py-2 fs-6 fw-normal">Marketing Systems</span>
+          </div>
+        </ng-container>
+
+      </div>
+
+    </div>
+  </div>
+</section>

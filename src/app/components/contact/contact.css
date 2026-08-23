@@ -127,3 +127,30 @@
         margin-top: 40px;
     }
 }
+
+/* Általános placeholder stílus az összes input és textarea mezőhöz */
+input::placeholder,
+textarea::placeholder {
+  color: #515626; /* Vagy amilyen színt szeretnél (pl. #e0e0e0) */
+  opacity: 1;     /* Eltávolítja az alapértelmezett elhalványítást/átlátszóságot */
+  font-weight: 500; /* Szükség esetén a betűvastagsággal is növelhető az élesség */
+}
+
+/* Keresztböngészős kompatibilitás (régebbi WebKit / MS böngészőkhöz) */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #515626;
+  opacity: 1;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #515626;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #515626;
+  opacity: 1;
+}

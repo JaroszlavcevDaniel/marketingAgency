@@ -51,7 +51,16 @@ try {
                stepSixHeadlineHu=:stepSixHeadlineHu,
                 stepSixHeadlineEn=:stepSixHeadlineEn,
                  stepSixTextHu=:stepSixTextHu,
-                  stepSixTextEn=:stepSixTextEn
+                  stepSixTextEn=:stepSixTextEn,
+
+                heroTwoHelpTextHu=:heroTwoHelpTextHu,
+                heroTwoHelpTextEn=:heroTwoHelpTextEn,
+                heroTwoHelpTextBackHu=:heroTwoHelpTextBackHu,
+                heroTwoHelpTextBackEn=:heroTwoHelpTextBackEn,
+
+                heroTwoCtaHu=:heroTwoCtaHu,
+                heroTwoCtaEn=:heroTwoCtaEn
+
     WHERE id=1
     ";
 
@@ -102,10 +111,19 @@ try {
         "stepSixHeadlineHu"   => $data["stepSixHeadlineHu"] ?? '',
         "stepSixHeadlineEn"  => $data["stepSixHeadlineEn"] ?? '',
         "stepSixTextHu"  => $data["stepSixTextHu"] ?? '',
-        "stepSixTextEn"     => $data["stepSixTextEn"] ?? ''
+        "stepSixTextEn"     => $data["stepSixTextEn"] ?? '',
+
+        "heroTwoHelpTextHu" => $data["heroTwoHelpTextHu"] ?? '',
+        "heroTwoHelpTextEn" => $data["heroTwoHelpTextEn"] ?? '',
+        "heroTwoHelpTextBackHu" => $data["heroTwoHelpTextBackHu"] ?? '',
+        "heroTwoHelpTextBackEn" => $data["heroTwoHelpTextBackEn"] ?? '',
+
+        "heroTwoCtaHu" => $data["heroTwoCtaHu"] ?? '',
+        "heroTwoCtaEn" => $data["heroTwoCtaEn"] ?? ''
+
     ]);
 
-   $refreshStmt = $pdo->prepare("SELECT * FROM heroOne LIMIT 1");
+    $refreshStmt = $pdo->prepare("SELECT * FROM heroOne LIMIT 1");
     $refreshStmt->execute();
     $updatedHero = $refreshStmt->fetch();
 
@@ -113,11 +131,10 @@ try {
         "success" => true,
         "data" => $updatedHero // <-- Így az Angular azonnal megkapja az új állapotot!
     ]);
-
-} catch(PDOException $e){
+} catch (PDOException $e) {
     http_response_code(500);
     echo json_encode([
-        "success"=>false,
-        "message"=>$e->getMessage()
+        "success" => false,
+        "message" => $e->getMessage()
     ]);
 }

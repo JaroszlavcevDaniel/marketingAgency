@@ -1,11 +1,11 @@
 <section class="contact-section mt-5 pt-5 d-flex align-items-center cormorant-garamond">
-    <div class="container-fluid px-md-5 my-auto">
+    <div class="container-fluid px-md-5 my-auto mt-5">
         <div class="row gy-2 justify-content-between">
 
             <!-- BAL OLDAL: KAPCSOLATFELVÉTELI FORM -->
             <div class="col-lg-6 col-12">
                 <div class="contact-form-container">
-                    <h4 class="fs-4 cormorant-garamond text-uppercase mb-1 text-light section-title">Kapcsolatfelvétel
+                    <h4 class="fs-2 cormorant-garamond text-uppercase mb-1 text-warning section-title fw-bolder">Kapcsolatfelvétel
                     </h4>
                     <p class="text-light mb-1 fs-6">Írjon nekünk, és szakértőnk 24 órán belül felveszi Önnel a
                         kapcsolatot.</p>
@@ -15,7 +15,7 @@
                         <!-- Név -->
                         <div class="mb-4 position-relative">
                             <label class="form-label text-uppercase text-light cormorant-garamond">Teljes Név *</label>
-                            <input type="text" formControlName="name" name="name" class="form-control"
+                            <input type="text" formControlName="name" name="name" class="form-control opacity-100 text-light"
                                 placeholder="Minta János"
                                 [ngClass]="{'is-invalid': contactForm.get('name')?.touched && contactForm.get('name')?.invalid}">
                         </div>
@@ -84,7 +84,7 @@
                     <h4 class="fs-4 cormorant-garamond text-uppercase mb-4 text-light section-title">Elérhetőségeink
                     </h4>
 
-                    <h5 class="text-warning cormorant-garamond mb-1">Marketing Ügynökség</h5>
+                    <h5 class="text-warning cormorant-garamond mb-1">Aetheris</h5>
                     <p class="text-light mb-1 fs-6">Budapest, 17. kerület, 534. utca 19, Hungary</p>
 
                     <div class="d-flex flex-column gap-1 mb-1 fs-5">

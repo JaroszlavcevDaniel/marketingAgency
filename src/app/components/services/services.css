@@ -30,15 +30,14 @@
 
 .custom-service-video {
   width: 100%;
-  height: 180px;        /* <--- Itt állítsd be, milyen alacsony legyen! (pl. 150px vagy 180px) */
+  height: 220px;        /* <--- Itt állítsd be, milyen alacsony legyen! (pl. 150px vagy 180px) */
   object-fit: cover;    /* Nem engedi eltorzulni a videót, levágja a felesleget */
   object-position: center;
   display: block;       /* Eltünteti az alatta lévő üres réseket */
 }
 
-.lighterBg {
-   background: linear-gradient(135deg,
-            rgba(5, 31, 109, 0.6) 0%,
-            rgba(9, 66, 179, 0.6) 50%,
-            rgba(66, 6, 231, 0.6) 100%);
+.hoviCtaThree:hover {
+  box-shadow: 
+    inset 0 0 0 5px rgb(228, 195, 2), 
+    6px 6px 0px rgba(0, 0, 0, 0.15);
 }

@@ -119,4 +119,17 @@ export class Navbar implements  OnInit {
     this.isScrolled = scrollPosition > 50;
     this.cdr.detectChanges();
   }
+
+  scrollToTop(): void {
+  window.scrollTo(0, 0);
+  
+  const container = document.querySelector('.scroll-container');
+  if (container) {
+    container.scrollTop = 0;
+  }
+}
+
+closeMobileMenu(): void {
+  this.isMenuCollapsed = true;
+}
 }

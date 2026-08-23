@@ -1,21 +1,21 @@
-<section class="mt-5 impact-section py-5 bg-dark text-light position-relative overflow-hidden cormorant-garamond">
+<section class="mt-1 impact-section mt-5 pb-0 bg-dark text-light position-relative overflow-hidden cormorant-garamond">
   <div class="container py-5 cormorant-garamond">
     
     <!-- Címsor -->
-    <div class="text-center mb-2 cormorant-garamond">
-      <h4 class="display-5 fw-bold text-gradient mb-1 fs-3">Miért van szüksége erre az Ön cégének?</h4>
-      <p class="lead text-secondary mx-auto" style="max-width: 700px;">
+    <div class="text-start mb-0 cormorant-garamond">
+      <h4 class="display-5 fw-bold text-gradient mb-0 fs-3 text-uppercase">Miért van szüksége erre az Ön cégének?</h4>
+      <p class="lead text-light cormorant-garamond text-uppercase fs-6" style="max-width: 700px;">
         A strukturálatlan működés és a technológia hiánya csendben emészti fel a profitot. Nézze meg, mit jelent a rend a számok nyelvén!
       </p>
     </div>
 
     <!-- 1. Animált Statisztikai Kártyák -->
-    <div class="row g-4 mb-5 text-center cormorant-garamond">
+    <div class="row g-4 mb-0 text-center cormorant-garamond">
       <div class="col-md-4">
         <div class="card stat-card h-100 p-1 bg-dark-subtle  ">
           <div class="card-body">
-            <h3 class="display-3 fw-bold text-success mb-1">+{{ statConversion }}%</h3>
-            <h5 class="card-title fw-semibold text-light mb-1">Konverziós arány</h5>
+            <h3 class="display-5 fw-bold text-warning ">+{{ statConversion }}%</h3>
+            <h5 class="card-title fw-semibold text-light">Konverziós arány</h5>
             <p class="card-text text-light small">
               Átgondolt UI/UX és felépített bizalmi elemek hatására a látogatókból vásárlók/ügyfelek lesznek.
             </p>
@@ -26,8 +26,8 @@
       <div class="col-md-4 cormorant-garamond">
         <div class="card stat-card h-100 p-1 bg-dark- ">
           <div class="card-body">
-            <h3 class="display-3 fw-bold text-info mb-1">-{{ statTimeSaved }}%</h3>
-            <h5 class="card-title fw-semibold text-light mb-1">Operatív időveszteség</h5>
+            <h3 class="display-5 fw-bold text-warning">-{{ statTimeSaved }}%</h3>
+            <h5 class="card-title fw-semibold text-light">Operatív időveszteség</h5>
             <p class="card-text text-light small">
               Automatizált folyamatokkal és tiszta feladatkezeléssel (Jira/Asana) megszűnik a mikromenedzsment.
             </p>
@@ -38,8 +38,8 @@
       <div class="col-md-4 cormorant-garamond">
         <div class="card stat-card h-100 p-1 bg-dark- ">
           <div class="card-body">
-            <h3 class="display-3 fw-bold text-warning mb-1">+{{ statTraffic }}%</h3>
-            <h5 class="card-title fw-semibold text-light mb-1">Organikus elérés (SEO)</h5>
+            <h3 class="display-5 fw-bold text-warning ">+{{ statTraffic }}%</h3>
+            <h5 class="card-title fw-semibold text-light ">Organikus elérés (SEO)</h5>
             <p class="card-text text-light small">
               A gyors, technikailag optimális weboldal szárnyal a keresőkben hirdetési költség növelése nélkül is.
             </p>
@@ -53,15 +53,15 @@
       
       <!-- Interaktív Slider -->
       <div class="col-lg-6 cormorant-garamond">
-        <h3 class="h4 fw-bold text-light mb-1">Számolja ki a növekedési potenciált!</h3>
-        <p class="text-light mb-1">
+        <h3 class="h4 fw-bold text-light mb-0">Számolja ki a növekedési potenciált!</h3>
+        <p class="text-light mb-0">
           Állítsa be a havi marketing/fejlesztési keretet, és nézze meg a várható megtérülést:
         </p>
 
-        <div class="mb-1 cormorant-garamond">
+        <div class="mb-0 cormorant-garamond">
           <label for="budgetRange" class="form-label d-flex justify-content-between text-light fw-medium">
             <span>Havi befektetés:</span>
-            <span class="text-info fs-5">{{ monthlyBudget | number:'1.0-0' }} Ft</span>
+            <span class="text-warning fs-5">{{ monthlyBudget | number:'1.0-0' }} Ft</span>
           </label>
           <input 
             type="range" 
@@ -84,7 +84,7 @@
           <div class="col-6">
             <div class="p-1 bg-dark  ">
               <span class="d-block text-secondary small">Várható többletbevétel</span>
-              <strong class="fs-4 text-success">~{{ estimatedRevenue | number:'1.0-0' }} Ft</strong>
+              <strong class="fs-4 text-warning">~{{ estimatedRevenue | number:'1.0-0' }} Ft</strong>
             </div>
           </div>
         </div>
@@ -92,43 +92,43 @@
 
       <!-- Vizuális Progress Bar-ok (Hatékonysági tényezők) -->
       <div class="col-lg-6 ps-lg-5 mt-2 mt-lg-0 cormorant-garamond">
-        <h4 class="h5 text-light mb-2">Mely területeken hozzuk a legnagyobb javulást?</h4>
+        <h4 class="h5 text-light mb-0">Mely területeken hozzuk a legnagyobb javulást?</h4>
 
-        <div class="mb-1 cormorant-garamond">
-          <div class="d-flex justify-content-between text-light small mb-1">
+        <div class="mb-0 cormorant-garamond">
+          <div class="d-flex justify-content-between text-light small mb-0">
             <span>Tech Management & Folyamatok</span>
-            <span class="text-info fw-bold">95%</span>
+            <span class="text-warning fw-bold">95%</span>
           </div>
           <div class="progress progress-custom bg-dark">
-            <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: 95%"></div>
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 95%"></div>
           </div>
         </div>
 
-        <div class="mb-1 cormorant-garamond">
-          <div class="d-flex justify-content-between text-light small mb-1">
+        <div class="mb-0 cormorant-garamond">
+          <div class="d-flex justify-content-between text-light small mb-0">
             <span>Technikai SEO és Web Oldalsebesség</span>
-            <span class="text-primary fw-bold">90%</span>
+            <span class="text-warning fw-bold">90%</span>
           </div>
           <div class="progress progress-custom bg-dark">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 90%"></div>
           </div>
         </div>
 
-        <div class="mb-1 cormorant-garamond">
-          <div class="d-flex justify-content-between text-light small mb-1">
+        <div class="mb-1 cormorant-garamond pb-0 mb-0">
+          <div class="d-flex justify-content-between text-light small mb-0">
             <span>Konverzió-orientált Webdesign</span>
-            <span class="text-success fw-bold">85%</span>
+            <span class="text-warning fw-bold">85%</span>
           </div>
           <div class="progress progress-custom bg-dark">
             <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 85%"></div>
           </div>
         </div>
 
-        <div class="mt-2 text-center text-lg-start cormorant-garamond">
+        <!-- <div class="mt-2 text-center text-lg-start cormorant-garamond">
           <a href="#hero5" class="btn btn-outline-light btn-lg px-4  cta-btn">
             Hogyan alakítható ez át az Ön cégére? &rarr;
           </a>
-        </div>
+        </div> -->
       </div>
 
     </div>

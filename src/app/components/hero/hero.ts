@@ -38,10 +38,10 @@ import { AuthService } from '../../services/auth-service';
     ])
   ]
 })
+
 export class Hero implements OnInit, OnDestroy {
 
   currentLang: 'hu' | 'en' = 'hu';
-  // private cdr = inject(ChangeDetectorRef);
   articles: Article[] = [];
   playlists: Article[] = [];
    hero?: HeroModel;
@@ -150,5 +150,13 @@ ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
   }
 
+    scrollToTop(): void {
+  window.scrollTo(0, 0);
+  
+  const container = document.querySelector('.scroll-container');
+  if (container) {
+    container.scrollTop = 0;
+  }
+}
 
 }

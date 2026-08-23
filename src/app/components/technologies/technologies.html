@@ -1,28 +1,818 @@
-<div class="tools-grid ">
+<div class="tools-grid">
 
 
+    <!-- TECH 1 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techOneNameHu || hero?.techOneNameEn"
+        (click)="selectTool({
+            icon: hero?.techOneIcon,
+            name: currentLang === 'hu'
+                ? hero?.techOneNameHu
+                : hero?.techOneNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techOneDescriptionHu
+                : hero?.techOneDescriptionEn
+        })"
+    >
 
-    <button type="button" class="tool " *ngFor="let tool of tools" (click)="selectedTool = tool">
+        <img
+            [src]="hero?.techOneIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techOneNameHu
+                : hero?.techOneNameEn"
+        >
 
-        <img [src]="tool.icon" [alt]="tool.name">
-        <span class="text-warning cormorant-garamond fs-5">{{ tool.name }}</span>
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techOneNameHu
+                    : hero?.techOneNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 2 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techTwoNameHu || hero?.techTwoNameEn"
+        (click)="selectTool({
+            icon: hero?.techTwoIcon,
+            name: currentLang === 'hu'
+                ? hero?.techTwoNameHu
+                : hero?.techTwoNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techTwoDescriptionHu
+                : hero?.techTwoDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techTwoIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techTwoNameHu
+                : hero?.techTwoNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techTwoNameHu
+                    : hero?.techTwoNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 3 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techThreeNameHu || hero?.techThreeNameEn"
+        (click)="selectTool({
+            icon: hero?.techThreeIcon,
+            name: currentLang === 'hu'
+                ? hero?.techThreeNameHu
+                : hero?.techThreeNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techThreeDescriptionHu
+                : hero?.techThreeDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techThreeIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techThreeNameHu
+                : hero?.techThreeNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techThreeNameHu
+                    : hero?.techThreeNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 4 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techFourNameHu || hero?.techFourNameEn"
+        (click)="selectTool({
+            icon: hero?.techFourIcon,
+            name: currentLang === 'hu'
+                ? hero?.techFourNameHu
+                : hero?.techFourNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techFourDescriptionHu
+                : hero?.techFourDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techFourIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techFourNameHu
+                : hero?.techFourNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techFourNameHu
+                    : hero?.techFourNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 5 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techFiveNameHu || hero?.techFiveNameEn"
+        (click)="selectTool({
+            icon: hero?.techFiveIcon,
+            name: currentLang === 'hu'
+                ? hero?.techFiveNameHu
+                : hero?.techFiveNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techFiveDescriptionHu
+                : hero?.techFiveDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techFiveIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techFiveNameHu
+                : hero?.techFiveNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techFiveNameHu
+                    : hero?.techFiveNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 6 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techSixNameHu || hero?.techSixNameEn"
+        (click)="selectTool({
+            icon: hero?.techSixIcon,
+            name: currentLang === 'hu'
+                ? hero?.techSixNameHu
+                : hero?.techSixNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techSixDescriptionHu
+                : hero?.techSixDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techSixIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techSixNameHu
+                : hero?.techSixNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techSixNameHu
+                    : hero?.techSixNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 7 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techSevenNameHu || hero?.techSevenNameEn"
+        (click)="selectTool({
+            icon: hero?.techSevenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techSevenNameHu
+                : hero?.techSevenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techSevenDescriptionHu
+                : hero?.techSevenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techSevenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techSevenNameHu
+                : hero?.techSevenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techSevenNameHu
+                    : hero?.techSevenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 8 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techEightNameHu || hero?.techEightNameEn"
+        (click)="selectTool({
+            icon: hero?.techEightIcon,
+            name: currentLang === 'hu'
+                ? hero?.techEightNameHu
+                : hero?.techEightNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techEightDescriptionHu
+                : hero?.techEightDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techEightIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techEightNameHu
+                : hero?.techEightNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techEightNameHu
+                    : hero?.techEightNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 9 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techNineNameHu || hero?.techNineNameEn"
+        (click)="selectTool({
+            icon: hero?.techNineIcon,
+            name: currentLang === 'hu'
+                ? hero?.techNineNameHu
+                : hero?.techNineNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techNineDescriptionHu
+                : hero?.techNineDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techNineIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techNineNameHu
+                : hero?.techNineNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techNineNameHu
+                    : hero?.techNineNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 10 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techTenNameHu || hero?.techTenNameEn"
+        (click)="selectTool({
+            icon: hero?.techTenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techTenNameHu
+                : hero?.techTenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techTenDescriptionHu
+                : hero?.techTenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techTenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techTenNameHu
+                : hero?.techTenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techTenNameHu
+                    : hero?.techTenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 11 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techElevenNameHu || hero?.techElevenNameEn"
+        (click)="selectTool({
+            icon: hero?.techElevenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techElevenNameHu
+                : hero?.techElevenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techElevenDescriptionHu
+                : hero?.techElevenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techElevenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techElevenNameHu
+                : hero?.techElevenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techElevenNameHu
+                    : hero?.techElevenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 12 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techTwelveNameHu || hero?.techTwelveNameEn"
+        (click)="selectTool({
+            icon: hero?.techTwelveIcon,
+            name: currentLang === 'hu'
+                ? hero?.techTwelveNameHu
+                : hero?.techTwelveNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techTwelveDescriptionHu
+                : hero?.techTwelveDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techTwelveIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techTwelveNameHu
+                : hero?.techTwelveNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techTwelveNameHu
+                    : hero?.techTwelveNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 13 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techThirteenNameHu || hero?.techThirteenNameEn"
+        (click)="selectTool({
+            icon: hero?.techThirteenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techThirteenNameHu
+                : hero?.techThirteenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techThirteenDescriptionHu
+                : hero?.techThirteenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techThirteenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techThirteenNameHu
+                : hero?.techThirteenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techThirteenNameHu
+                    : hero?.techThirteenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 14 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techFourteenNameHu || hero?.techFourteenNameEn"
+        (click)="selectTool({
+            icon: hero?.techFourteenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techFourteenNameHu
+                : hero?.techFourteenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techFourteenDescriptionHu
+                : hero?.techFourteenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techFourteenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techFourteenNameHu
+                : hero?.techFourteenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techFourteenNameHu
+                    : hero?.techFourteenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 15 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techFifteenNameHu || hero?.techFifteenNameEn"
+        (click)="selectTool({
+            icon: hero?.techFifteenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techFifteenNameHu
+                : hero?.techFifteenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techFifteenDescriptionHu
+                : hero?.techFifteenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techFifteenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techFifteenNameHu
+                : hero?.techFifteenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techFifteenNameHu
+                    : hero?.techFifteenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 16 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techSixteenNameHu || hero?.techSixteenNameEn"
+        (click)="selectTool({
+            icon: hero?.techSixteenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techSixteenNameHu
+                : hero?.techSixteenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techSixteenDescriptionHu
+                : hero?.techSixteenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techSixteenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techSixteenNameHu
+                : hero?.techSixteenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techSixteenNameHu
+                    : hero?.techSixteenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 17 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techSeventeenNameHu || hero?.techSeventeenNameEn"
+        (click)="selectTool({
+            icon: hero?.techSeventeenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techSeventeenNameHu
+                : hero?.techSeventeenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techSeventeenDescriptionHu
+                : hero?.techSeventeenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techSeventeenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techSeventeenNameHu
+                : hero?.techSeventeenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techSeventeenNameHu
+                    : hero?.techSeventeenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 18 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techEighteenNameHu || hero?.techEighteenNameEn"
+        (click)="selectTool({
+            icon: hero?.techEighteenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techEighteenNameHu
+                : hero?.techEighteenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techEighteenDescriptionHu
+                : hero?.techEighteenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techEighteenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techEighteenNameHu
+                : hero?.techEighteenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techEighteenNameHu
+                    : hero?.techEighteenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 19 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techNineteenNameHu || hero?.techNineteenNameEn"
+        (click)="selectTool({
+            icon: hero?.techNineteenIcon,
+            name: currentLang === 'hu'
+                ? hero?.techNineteenNameHu
+                : hero?.techNineteenNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techNineteenDescriptionHu
+                : hero?.techNineteenDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techNineteenIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techNineteenNameHu
+                : hero?.techNineteenNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techNineteenNameHu
+                    : hero?.techNineteenNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 20 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techTwentyNameHu || hero?.techTwentyNameEn"
+        (click)="selectTool({
+            icon: hero?.techTwentyIcon,
+            name: currentLang === 'hu'
+                ? hero?.techTwentyNameHu
+                : hero?.techTwentyNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techTwentyDescriptionHu
+                : hero?.techTwentyDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techTwentyIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techTwentyNameHu
+                : hero?.techTwentyNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techTwentyNameHu
+                    : hero?.techTwentyNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 21 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techTwentyOneNameHu || hero?.techTwentyOneNameEn"
+        (click)="selectTool({
+            icon: hero?.techTwentyOneIcon,
+            name: currentLang === 'hu'
+                ? hero?.techTwentyOneNameHu
+                : hero?.techTwentyOneNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techTwentyOneDescriptionHu
+                : hero?.techTwentyOneDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techTwentyOneIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techTwentyOneNameHu
+                : hero?.techTwentyOneNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techTwentyOneNameHu
+                    : hero?.techTwentyOneNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 22 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techTwentyTwoNameHu || hero?.techTwentyTwoNameEn"
+        (click)="selectTool({
+            icon: hero?.techTwentyTwoIcon,
+            name: currentLang === 'hu'
+                ? hero?.techTwentyTwoNameHu
+                : hero?.techTwentyTwoNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techTwentyTwoDescriptionHu
+                : hero?.techTwentyTwoDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techTwentyTwoIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techTwentyTwoNameHu
+                : hero?.techTwentyTwoNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techTwentyTwoNameHu
+                    : hero?.techTwentyTwoNameEn
+            }}
+        </span>
+
+    </button>
+
+
+    <!-- TECH 23 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techTwentyThreeNameHu || hero?.techTwentyThreeNameEn"
+        (click)="selectTool({
+            icon: hero?.techTwentyThreeIcon,
+            name: currentLang === 'hu'
+                ? hero?.techTwentyThreeNameHu
+                : hero?.techTwentyThreeNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techTwentyThreeDescriptionHu
+                : hero?.techTwentyThreeDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techTwentyThreeIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techTwentyThreeNameHu
+                : hero?.techTwentyThreeNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techTwentyThreeNameHu
+                    : hero?.techTwentyThreeNameEn
+            }}
+        </span>
 
     </button>
 
 </div>
 
-<!-- Popup -->
 
-<div class="popup-backdrop" *ngIf="selectedTool" (click)="selectedTool = null">
+<!-- ========================= -->
+<!-- POPUP -->
+<!-- ========================= -->
 
-    <div class="popup" (click)="$event.stopPropagation()">
+<div
+    class="popup-backdrop"
+    *ngIf="selectedTool"
+    (click)="closePopup()"
+>
 
-        <button class="btn-close float-end btn-close-white" (click)="selectedTool = null">
+    <div
+        class="popup"
+        (click)="$event.stopPropagation()"
+    >
+
+        <button
+            class="btn-close float-end btn-close-white"
+            (click)="closePopup()"
+        >
         </button>
 
-        <h5 class="text-light fw-bold cormorant-garamond fs-4">{{ selectedTool.name }}</h5>
+        <h5 class="text-light fw-bold cormorant-garamond fs-4">
+            {{ selectedTool.name }}
+        </h5>
 
-        <p class="text-light cormorant-garamond text-justify fs-5">{{ selectedTool.description | space }}</p>
+        <p class="text-light cormorant-garamond text-justify fs-5">
+            {{ selectedTool.description | space }}
+        </p>
 
     </div>
 

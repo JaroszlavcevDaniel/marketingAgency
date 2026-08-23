@@ -454,3 +454,10 @@
         margin:0 0 1rem 0 !important;
     }
 }
+
+.btn-premium {
+    color: #decb94 !important;
+    &:hover {
+        border: 1px solid white;
+    }
+}

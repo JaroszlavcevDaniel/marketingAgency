@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class Services {
 
+  scrollToTop(): void {
+  window.scrollTo(0, 0);
+  
+  const container = document.querySelector('.scroll-container');
+  if (container) {
+    container.scrollTop = 0;
+  }
+}
+
 }

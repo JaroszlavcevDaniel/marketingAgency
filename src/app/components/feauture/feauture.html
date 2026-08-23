@@ -1,82 +1,803 @@
-<div class=" position-relative overflow-hidden cormorant-garamond" [class.animate-cards]="cardsVisible"   #featureSection>
+<div
+  class="position-relative overflow-hidden cormorant-garamond"
+  [class.animate-cards]="cardsVisible"
+  #featureSection
+>
   <!-- Háttér díszítő elemek a kreatív atmoszféráért -->
 
+  <div class="container position-relative z-1">
 
-  <div class=" container position-relative z-1">
-    
     <!-- Fejléc -->
     <div class="row mb-1 text-center">
- 
     </div>
 
 
     <div class="row g-3 justify-content-center px-2">
-      <div *ngFor="let service of services; let i = index" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="i" >
-        
+
+
+      <!-- ========================= -->
+      <!-- 1. KÁRTYA -->
+      <!-- ========================= -->
+
+      <div
+        *ngIf="hero"
+        class="col-xl-2 col-md-12 card-perspective"
+        [style.--card-index]="0"
+      >
+
         <!-- 3D Kártya konténer -->
-        <div class="card-inner" 
-             [class.is-flipped]="isFlipped(service.id)"
-             (click)="toggleCard(service.id)">
-          
-          <!-- ELŐLAP: Sötétkék-Lilás Gradiens -->
-       <div class="card-front d-flex flex-column p-0 overflow-hidden" style="height: 100%;">
-  
-  <!-- Kép a felső részen (75% magasság) -->
-  <img class="w-100" [src]="service.picture" alt="{{ service.title }}" style="height: 65%; object-fit: cover;">
+        <div
+          class="card-inner"
+          [class.is-flipped]="isFlipped(1)"
+          (click)="toggleCard(1)"
+        >
 
-  <!-- Szöveges tartalom az alsó részen (maradék 25%) -->
-  <div class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1">
-    <div class="front-content">
-      <!-- Cím -->
-      <h5 class="h5 text-white mb-1 card-heading text-uppercase">{{ service.title }}</h5>
-      <!-- Rövid leírás -->
-      <p class="text-light-50 mb-3">{{ service.shortDescription }}</p>
-    </div>
-    
-    <!-- Interakciós felirat -->
-    <div class="action-hint d-flex align-items-center justify-content-between text-violet">
-      <!-- <span class="small fw-semibold">☝</span> -->
-      <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
-    </div>
-  </div>
+          <!-- ELŐLAP -->
+          <div
+            class="card-front d-flex flex-column p-0 overflow-hidden"
+            style="height: 100%;"
+          >
 
-</div>
+            <!-- Kép -->
+            <img
+              class="w-100"
+              src="/image/111.jpg"
+              alt="Service"
+              style="height: 65%; object-fit: cover;"
+            >
 
-          <!-- HÁTLAP: Élénk Lila-Pink Gradiens (Kattintás után) -->
-          <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
+            <!-- Szöveges tartalom -->
+            <div
+              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
+            >
+
+              <div class="front-content">
+
+                <!-- Magyar -->
+                <h5
+                  *ngIf="currentLang === 'hu'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepOneHeadlineHu }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'hu'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextHu }}
+                </p>
+
+
+                <!-- Angol -->
+                <h5
+                  *ngIf="currentLang === 'en'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepOneHeadlineEn }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'en'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextEn }}
+                </p>
+
+              </div>
+
+              <!-- Interakciós felirat -->
+              <div
+                class="action-hint d-flex align-items-center justify-content-between text-violet"
+              >
+                <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- HÁTLAP -->
+          <div
+            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
+          >
+
             <div class="back-content">
-              <!-- Back Fejléc -->
+
               <div class="d-flex align-items-center mb-4">
+
                 <div class="mini-icon-wrapper me-1">
                   <span class="moveMove">✾</span>
                 </div>
-                <h6 class="h6 fw-bold text-white m-0">{{ service.title }}</h6>
+
+                <h6
+                  *ngIf="currentLang === 'hu'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepOneHeadlineHu }}
+                </h6>
+
+                <h6
+                  *ngIf="currentLang === 'en'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepOneHeadlineEn }}
+                </h6>
+
               </div>
-              
-              <p class="textJust text-white-75 mb-1 p-1">{{ service.longDescription }}</p>
-              
-              <!-- Al-szolgáltatások listája -->
+
+
+              <p
+                *ngIf="currentLang === 'hu'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepOneTextHu }}
+              </p>
+
+              <p
+                *ngIf="currentLang === 'en'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepOneTextEn }}
+              </p>
+
+
               <ul class="sub-services-list list-unstyled m-0">
-                <li *ngFor="let sub of service.subServices" 
-                    [class.highlight-item]="sub.highlighted" 
-                    class="d-flex align-items-center text-white mb-2 py-1 px-2 rounded">
-                  <i class="bi bi-patch-check-fill me-1 text-magenta"></i>
-                  <span class="small fw-medium">{{ sub.name }}</span>
-                </li>
               </ul>
+
             </div>
-            
-            <!-- Vissza gomb / záró rész -->
-            <div class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4">
-              <span class="small fw-semibold">Kattints a bezáráshoz</span>
+
+            <!-- Vissza -->
+            <div
+              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
+            >
+              <span
+                *ngIf="currentLang === 'hu'"
+                class="small fw-semibold"
+              >
+                     {{ hero.heroTwoHelpTextBackHu }}
+              </span>
+
+              <span
+                *ngIf="currentLang === 'en'"
+                class="small fw-semibold"
+              >
+                     {{ hero.heroTwoHelpTextBackEn }}
+              </span>
+
               <i class="bi bi-arrow-left-circle fs-4"></i>
             </div>
+
           </div>
-<!-- <p>Kattintson a megtekintéshez</p> -->
+
         </div>
-        
+
       </div>
+
+
+      <!-- ========================= -->
+      <!-- 2. KÁRTYA -->
+      <!-- ========================= -->
+
+      <div
+        *ngIf="hero"
+        class="col-xl-2 col-md-12 card-perspective"
+        [style.--card-index]="1"
+      >
+
+        <div
+          class="card-inner"
+          [class.is-flipped]="isFlipped(2)"
+          (click)="toggleCard(2)"
+        >
+
+          <!-- ELŐLAP -->
+          <div
+            class="card-front d-flex flex-column p-0 overflow-hidden"
+            style="height: 100%;"
+          >
+
+            <img
+              class="w-100"
+              src="/image/222.jpg"
+              alt="Service"
+              style="height: 65%; object-fit: cover;"
+            >
+
+            <div
+              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
+            >
+
+              <div class="front-content">
+
+                <h5
+                  *ngIf="currentLang === 'hu'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepTwoHeadlineHu }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'hu'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextHu }}
+                </p>
+
+
+                <h5
+                  *ngIf="currentLang === 'en'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepTwoHeadlineEn }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'en'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextEn }}
+                </p>
+
+              </div>
+
+              <div
+                class="action-hint d-flex align-items-center justify-content-between text-violet"
+              >
+                <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- HÁTLAP -->
+          <div
+            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
+          >
+
+            <div class="back-content">
+
+              <div class="d-flex align-items-center mb-4">
+
+                <div class="mini-icon-wrapper me-1">
+                  <span class="moveMove">✾</span>
+                </div>
+
+                <h6
+                  *ngIf="currentLang === 'hu'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepTwoHeadlineHu }}
+                </h6>
+
+                <h6
+                  *ngIf="currentLang === 'en'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepTwoHeadlineEn }}
+                </h6>
+
+              </div>
+
+
+              <p
+                *ngIf="currentLang === 'hu'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepTwoTextHu }}
+              </p>
+
+              <p
+                *ngIf="currentLang === 'en'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepTwoTextEn }}
+              </p>
+
+              <ul class="sub-services-list list-unstyled m-0">
+              </ul>
+
+            </div>
+
+            <div
+              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
+            >
+
+              <span
+                *ngIf="currentLang === 'hu'"
+                class="small fw-semibold"
+              >
+                {{ hero.heroTwoHelpTextBackHu }}
+              </span>
+
+              <span
+                *ngIf="currentLang === 'en'"
+                class="small fw-semibold"
+              >
+                {{ hero.heroTwoHelpTextBackEn}}
+              </span>
+
+              <i class="bi bi-arrow-left-circle fs-4"></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- 3. KÁRTYA -->
+      <!-- ========================= -->
+
+      <div
+        *ngIf="hero"
+        class="col-xl-2 col-md-12 card-perspective"
+        [style.--card-index]="2"
+      >
+
+        <div
+          class="card-inner"
+          [class.is-flipped]="isFlipped(3)"
+          (click)="toggleCard(3)"
+        >
+
+          <!-- ELŐLAP -->
+          <div
+            class="card-front d-flex flex-column p-0 overflow-hidden"
+            style="height: 100%;"
+          >
+
+            <img
+              class="w-100"
+              src="/image/333.jpg"
+              alt="Service"
+              style="height: 65%; object-fit: cover;"
+            >
+
+            <div
+              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
+            >
+
+              <div class="front-content">
+
+                <h5
+                  *ngIf="currentLang === 'hu'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepThreeHeadlineHu }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'hu'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextHu }}
+                </p>
+
+
+                <h5
+                  *ngIf="currentLang === 'en'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepThreeHeadlineEn }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'en'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextEn }}
+                </p>
+
+              </div>
+
+              <div
+                class="action-hint d-flex align-items-center justify-content-between text-violet"
+              >
+                <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- HÁTLAP -->
+          <div
+            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
+          >
+
+            <div class="back-content">
+
+              <div class="d-flex align-items-center mb-4">
+
+                <div class="mini-icon-wrapper me-1">
+                  <span class="moveMove">✾</span>
+                </div>
+
+                <h6
+                  *ngIf="currentLang === 'hu'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepThreeHeadlineHu }}
+                </h6>
+
+                <h6
+                  *ngIf="currentLang === 'en'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepThreeHeadlineEn }}
+                </h6>
+
+              </div>
+
+
+              <p
+                *ngIf="currentLang === 'hu'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepThreeTextHu }}
+              </p>
+
+              <p
+                *ngIf="currentLang === 'en'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepThreeTextEn }}
+              </p>
+
+              <ul class="sub-services-list list-unstyled m-0">
+              </ul>
+
+            </div>
+
+            <div
+              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
+            >
+
+              <span
+                *ngIf="currentLang === 'hu'"
+                class="small fw-semibold"
+              >
+                {{ hero.heroTwoHelpTextBackHu }}
+              </span>
+
+              <span
+                *ngIf="currentLang === 'en'"
+                class="small fw-semibold"
+              >
+                {{ hero.heroTwoHelpTextBackEn }}
+              </span>
+
+              <i class="bi bi-arrow-left-circle fs-4"></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- 4. KÁRTYA -->
+      <!-- ========================= -->
+
+      <div
+        *ngIf="hero"
+        class="col-xl-2 col-md-12 card-perspective"
+        [style.--card-index]="3"
+      >
+
+        <div
+          class="card-inner"
+          [class.is-flipped]="isFlipped(4)"
+          (click)="toggleCard(4)"
+        >
+
+          <!-- ELŐLAP -->
+          <div
+            class="card-front d-flex flex-column p-0 overflow-hidden"
+            style="height: 100%;"
+          >
+
+            <img
+              class="w-100"
+              src="/image/444.jpg"
+              alt="Service"
+              style="height: 65%; object-fit: cover;"
+            >
+
+            <div
+              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
+            >
+
+              <div class="front-content">
+
+                <h5
+                  *ngIf="currentLang === 'hu'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepFourHeadlineHu }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'hu'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextHu }}
+                </p>
+
+
+                <h5
+                  *ngIf="currentLang === 'en'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepFourHeadlineEn }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'en'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextEn }}
+                </p>
+
+              </div>
+
+              <div
+                class="action-hint d-flex align-items-center justify-content-between text-violet"
+              >
+                <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- HÁTLAP -->
+          <div
+            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
+          >
+
+            <div class="back-content">
+
+              <div class="d-flex align-items-center mb-4">
+
+                <div class="mini-icon-wrapper me-1">
+                  <span class="moveMove">✾</span>
+                </div>
+
+                <h6
+                  *ngIf="currentLang === 'hu'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepFourHeadlineHu }}
+                </h6>
+
+                <h6
+                  *ngIf="currentLang === 'en'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepFourHeadlineEn }}
+                </h6>
+
+              </div>
+
+
+              <p
+                *ngIf="currentLang === 'hu'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepFourTextHu }}
+              </p>
+
+              <p
+                *ngIf="currentLang === 'en'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepFourTextEn }}
+              </p>
+
+              <ul class="sub-services-list list-unstyled m-0">
+              </ul>
+
+            </div>
+
+            <div
+              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
+            >
+
+              <span
+                *ngIf="currentLang === 'hu'"
+                class="small fw-semibold"
+              >
+                {{ hero.heroTwoHelpTextBackHu }}
+              </span>
+
+              <span
+                *ngIf="currentLang === 'en'"
+                class="small fw-semibold"
+              >
+                {{ hero.heroTwoHelpTextBackEn}}
+              </span>
+
+              <i class="bi bi-arrow-left-circle fs-4"></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- 5. KÁRTYA -->
+      <!-- ========================= -->
+
+      <div
+        *ngIf="hero"
+        class="col-xl-2 col-md-12 card-perspective"
+        [style.--card-index]="4"
+      >
+
+        <div
+          class="card-inner"
+          [class.is-flipped]="isFlipped(5)"
+          (click)="toggleCard(5)"
+        >
+
+          <!-- ELŐLAP -->
+          <div
+            class="card-front d-flex flex-column p-0 overflow-hidden"
+            style="height: 100%;"
+          >
+
+            <img
+              class="w-100"
+              src="/image/555.jpg"
+              alt="Service"
+              style="height: 65%; object-fit: cover;"
+            >
+
+            <div
+              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
+            >
+
+              <div class="front-content">
+
+                <h5
+                  *ngIf="currentLang === 'hu'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepFiveHeadlineHu }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'hu'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextHu }}
+                </p>
+
+
+                <h5
+                  *ngIf="currentLang === 'en'"
+                  class="h5 text-white mb-1 card-heading text-uppercase"
+                >
+                  {{ hero.stepFiveHeadlineEn }}
+                </h5>
+
+                <p
+                  *ngIf="currentLang === 'en'"
+                  class="text-light-50 mb-3"
+                >
+                  {{ hero.heroTwoHelpTextEn }}
+                </p>
+
+              </div>
+
+              <div
+                class="action-hint d-flex align-items-center justify-content-between text-violet"
+              >
+                <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- HÁTLAP -->
+          <div
+            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
+          >
+
+            <div class="back-content">
+
+              <div class="d-flex align-items-center mb-4">
+
+                <div class="mini-icon-wrapper me-1">
+                  <span class="moveMove">✾</span>
+                </div>
+
+                <h6
+                  *ngIf="currentLang === 'hu'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepFiveHeadlineHu }}
+                </h6>
+
+                <h6
+                  *ngIf="currentLang === 'en'"
+                  class="h6 fw-bold text-white m-0"
+                >
+                  {{ hero.stepFiveHeadlineEn }}
+                </h6>
+
+              </div>
+
+
+              <p
+                *ngIf="currentLang === 'hu'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepFiveTextHu }}
+              </p>
+
+              <p
+                *ngIf="currentLang === 'en'"
+                class="textJust text-white-75 mb-1 p-1"
+              >
+                {{ hero.stepFiveTextEn }}
+              </p>
+
+              <ul class="sub-services-list list-unstyled m-0">
+              </ul>
+
+            </div>
+
+            <div
+              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
+            >
+
+              <span
+                *ngIf="currentLang === 'hu'"
+                class="small fw-semibold"
+              >
+                {{ hero.heroTwoHelpTextBackHu }}
+              </span>
+
+              <span
+                *ngIf="currentLang === 'en'"
+                class="small fw-semibold"
+              >
+                {{ hero.heroTwoHelpTextBackEn }}
+              </span>
+
+              <i class="bi bi-arrow-left-circle fs-4"></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
     </div>
 
   </div>
+
 </div>
