@@ -4,6 +4,7 @@ export interface HeroModel {
 
     id: number;
 
+    // HERO ONE
     ctaTextBigHu: string;
     ctaTextBigEn: string;
     ctaTextSecondHu: string;
@@ -13,6 +14,7 @@ export interface HeroModel {
     ctaTextButtonHu: string;
     ctaTextButtonEn: string;
 
+    // HERO TWO
     heroTwoHeadlineOneHu: string;
     heroTwoHeadlineOneEn: string;
     heroTwoHeadlineTwoHu: string;
@@ -57,6 +59,8 @@ export interface HeroModel {
     heroTwoCtaHu: string;
     heroTwoCtaEn: string;
 
+      // HERO THREE
+      
     techOneIcon: string;
     techOneNameHu: string;
     techOneNameEn: string;
@@ -195,4 +199,16 @@ export interface HeroModel {
     techTwentyThreeDescriptionHu: string;
     techTwentyThreeDescriptionEn: string;
 
+    heroThreeTextHu: string;
+    heroThreeTextEn: string;
+    heroThreeCtaHu: string;
+    heroThreeCtaEn: string;
+
+    techTwentyFourIcon: string;
+    techTwentyFourNameHu: string;
+    techTwentyFourNameEn: string;
+    techTwentyFourDescriptionHu: string;
+    techTwentyFourDescriptionEn: string;
+
 }
+

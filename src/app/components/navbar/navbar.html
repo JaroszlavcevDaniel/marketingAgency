@@ -193,22 +193,22 @@
                      <li class="nav-item d-flex justify-items-end">
                         <a (click)="closeMobileMenu()" class="fw-bold nav-link active cormorant-garamond text-uppercase btn-premium "
                             *ngIf="currentLang === 'hu'" routerLink="about" (click)="scrollToTop()">
-                            Rólunk
+                            {{navbar?.aboutHu}}
                         </a>
                         <a (click)="closeMobileMenu()" class="text-light nav-link active cormorant-garamond text-uppercase btn-premium "
                             *ngIf="currentLang === 'en'" routerLink="about" (click)="scrollToTop()">
-                            Rólunk
+                            {{navbar?.aboutEn}}
                         </a>
                     </li>
                     
                     <li  class="nav-item d-flex justify-items-end">
                         <a (click)="closeMobileMenu()" class="fw-bold nav-link active cormorant-garamond text-uppercase btn-premium "
                             *ngIf="currentLang === 'hu'" routerLink="references" (click)="scrollToTop()">
-                            Partnereink és Eredményeink
+                            {{navbar?.referenceHu}}
                         </a>
                         <a (click)="closeMobileMenu()" class="text-light nav-link active cormorant-garamond text-uppercase btn-premium "
                             *ngIf="currentLang === 'en'" routerLink="references" (click)="scrollToTop()">
-                            Partnereink és Eredményeink
+                            {{navbar?.referenceEn}}
                         </a>
                     </li>
 
@@ -377,6 +377,16 @@
                             [(ngModel)]="editModel.instagramLink"></div>
                     <div class="col-md-4 mb-2"><label>TikTok Link</label><input type="text" class="form-control"
                             [(ngModel)]="editModel.tiktokLink"></div>
+
+                            <hr>
+                            <div class="col-md-4 mb-2"><label>Rólunk hu</label><input type="text" class="form-control"
+                            [(ngModel)]="editModel.aboutHu"></div>
+                            <div class="col-md-4 mb-2"><label>Rólunk En</label><input type="text" class="form-control"
+                            [(ngModel)]="editModel.aboutEn"></div>
+                            <div class="col-md-4 mb-2"><label>Referenciák hu</label><input type="text" class="form-control"
+                            [(ngModel)]="editModel.referenceHu"></div>
+                            <div class="col-md-4 mb-2"><label>Referenciák en</label><input type="text" class="form-control"
+                            [(ngModel)]="editModel.referenceEn"></div>
                 </div>
             </div>
             <div class="modal-footer">

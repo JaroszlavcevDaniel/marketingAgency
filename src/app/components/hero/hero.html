@@ -7,7 +7,7 @@
 
         <div class="hero-content text-light" [@heroAnimation]>
             <div class="container-fluid px-md-5 h-100 d-flex flex-column justify-content-between py-5">
-                
+
                 <div class="text-center my-auto animate-item">
                     <h1 class="p-2 text-uppercase cormorant-garamond hero-title-massive typewriter"
                         *ngIf="currentLang === 'hu' && hero?.ctaTextBigHu">
@@ -19,7 +19,7 @@
                     </h1>
                 </div>
 
-                
+
 
                 <div class="row justify-content-between align-items-end gy-4 mb-5 animate-item">
                     <div class="col-lg-4 col-12">
@@ -55,10 +55,10 @@
                         {{hero?.ctaTextButtonEn}}
                     </a>
 
-                      <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
-                    data-bs-target="#editHeroTwoModal" (click)="openEditModal()">
-                    ✏️ Hero szekciók szerkesztése
-                </button>
+                    <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
+                        data-bs-target="#editHeroTwoModal" (click)="openEditModal()">
+                        ✏️ Hero szekciók szerkesztése
+                    </button>
 
                 </div>
 
@@ -86,8 +86,8 @@
                     <h5 *ngIf="currentLang === 'en' && hero?.heroTwoHeadlineTwoEn"
                         class="cormorant-garamond text-uppercase m-2">{{hero?.heroTwoHeadlineTwoEn}}</h5>
                 </div>
-              
-               
+
+
                 <app-feauture></app-feauture>
                 <div class="text-center">
                     <div class="animate-item d-flex justify-content-center mt-3">
@@ -116,106 +116,116 @@
         <div class="heroThree-overlay"></div>
 
         <div class="heroThree-content mt-5 pt-5" id="thirdHero">
-         
+
             <div class="mt-5 pt-5 mb-1 pb-1">
-            <h5 class="cormorant-garamond text-uppercase m-2 text-light mt-5">Technológiai ökoszisztémánk:
-                Eszközök a profizmus mögött</h5>
+                <h5 *ngIf="currentLang === 'hu' && hero?.heroThreeTextHu"
+                    class="cormorant-garamond text-uppercase m-2 text-light mt-5">
+                    {{hero?.heroThreeTextHu}} </h5>
+                <h5 *ngIf="currentLang === 'en' && hero?.heroThreeTextEn"
+                    class="cormorant-garamond text-uppercase m-2 text-light mt-5">
+                    {{hero?.heroThreeTextEn}} </h5>
             </div>
             <app-technologies class=""></app-technologies>
             <div class="animate-item d-flex justify-content-center mt-3">
-                        <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2 phoneDisplayNone"
-                            *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" href="#fourthHero">
-                            Miért van szüksége erre az Ön cégének?
-                        </a>
-                        <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2 phoneDisplayNone"
-                            *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" href="#fourthHero">
-                            {{hero?.ctaTextButtonEn}}
-                        </a>
+                <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2 phoneDisplayNone"
+                    *ngIf="currentLang === 'hu' && hero?.heroThreeCtaHu" href="#fourthHero">
+                    {{hero?.heroThreeCtaHu}}
+                </a>
+                <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2 phoneDisplayNone"
+                    *ngIf="currentLang === 'en' && hero?.heroThreeCtaEn" href="#fourthHero">
+                    {{hero?.heroThreeCtaEn}}
+                </a>
 
-                    </div>
+            </div>
         </div>
     </section>
 
-      <section class="snap-section heroFour mb-5 pb-5 mt-5 pt-5" id="someOtherId">
+    <!--  HERO FOUR -->
+
+    <section class="snap-section heroFour mb-5 pb-5 mt-5 pt-5" id="someOtherId">
         <div class="heroFour-bg pb-0 mb-0"></div>
         <div class="heroFour-overlay pb-0 mb-0"></div>
 
         <div class="heroFour-content mt-5 pt-5 pb-0 mb-0" id="fourthHero">
-         
-            
+
+
             <app-needs class="pb-0 mb-0"></app-needs>
             <div class="animate-item d-flex justify-content-center mt-0 pt-0 mb-5 pb-5">
-                        <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  phoneDisplayNone"
-                            *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" href="#fifthHero">
-                            Készen áll a mérhető növekedésre?
-                        </a>
-                        <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  phoneDisplayNone"
-                            *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" href="#fifthHero">
-                            {{hero?.ctaTextButtonEn}}
-                        </a>
+                <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  phoneDisplayNone"
+                    *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" href="#fifthHero">
+                    Készen áll a mérhető növekedésre?
+                </a>
+                <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  phoneDisplayNone"
+                    *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" href="#fifthHero">
+                    {{hero?.ctaTextButtonEn}}
+                </a>
 
-                    </div>
+            </div>
         </div>
     </section>
 
-    <p class="text-truncate mt-5 mb-5" id="fifthHero">.</p>
+    <p class="text-truncate mb-5 pb-5" id="fifthHero" >.</p>
 
-<section class="snap-section heroFive mt-5 ps-0 pe-0 ms-0 me-0" >
-   
+    <!-- HERO FIVE -->
+    <section class=" heroFive mt-5 ps-0 pe-0 ms-0 me-0" style="width: 100vw !important;">
 
-    <div class="heroFive-content container-fluid w-100 ps-0 pe-0 ms-0 me-0 h-100 d-flex flex-column justify-content-center align-items-center" style="width: 100% !important;">
-        
-        <div class="position-relative w-100 overflow-hidden" style="height: 75vh;">
-    
-    <video autoplay loop muted playsinline class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
-        <source src="image/14608193_1280_720_24fps.mp4" type="video/mp4">
-    </video>
 
-    <div class="position-relative z-1 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4 text-light">
-        
-        <ng-container *ngIf="currentLang === 'hu'">
-            <h2 class="cormorant-garamond text-uppercase display-4 fw-bold mb-3 text-shadow">
-                A város sosem alszik. A jól felépített rendszerek sem.
-            </h2>
-            <p class="cormorant-garamond fs-4 fst-italic text-light-50 max-w-75 text-shadow ">
-                Míg Ön pihen, a digitális ökoszisztémája folyamatosan dolgozik, konvertál és növekszik.
-            </p>
-        </ng-container>
+        <div class="heroFive-content container w-100 ps-0 pe-0 ms-0 me-0 h-100 d-flex flex-column justify-content-center align-items-center"
+            style="width: 100vw !important;">
 
-        <ng-container *ngIf="currentLang === 'en'">
-            <h2 class="cormorant-garamond text-uppercase display-4 fw-bold mb-3 text-shadow ">
-                The city never sleeps. Neither do well-built systems.
-            </h2>
-            <p class="cormorant-garamond fs-4 fst-italic text-light-50 max-w-75 text-shadow ">
-                While you rest, your digital ecosystem works, converts, and grows continuously.
-            </p>
-        </ng-container>
+            <div class="position-relative w-100 overflow-hidden" style="height: 75vh;">
 
-    </div>
-</div>
+                <video autoplay loop muted playsinline
+                    class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                    <source src="image/14608193_1280_720_24fps.mp4" type="video/mp4">
+                </video>
 
-         <div class="animate-item d-flex justify-content-center mt-0 pt-0">
-                        
-                        <a class="mx-2 cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  "
-                            *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" routerLink="services" (click)="scrollToTop()">
-                            bővebben a szolgáltatásainkról
-                        </a>
-                        <a class="mx-2 cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  "
-                            *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" routerLink="services" (click)="scrollToTop()">
-                            {{hero?.ctaTextButtonEn}}
-                        </a>
-                        <a class="mx-2 cta fs-6 text-warning btn rounded-0 text-uppercase cormorant-garamond hoviCtaThree  border border-warning"
-                            *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" routerLink="contact" (click)="scrollToTop()">
-                            jelentkezem a konzultációra
-                        </a>
-                        <a class="mx-2 cta fs-6 text-warning btn rounded-0 text-uppercase cormorant-garamond hoviCtaThree  border border-warning"
-                            *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" routerLink="contact" (click)="scrollToTop()">
-                            {{hero?.ctaTextButtonEn}}
-                        </a>
-                    </div>
+                <div
+                    class="position-relative z-1 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4 text-light">
 
-    </div>
-</section>
+                    <ng-container *ngIf="currentLang === 'hu'">
+                        <h2 class="cormorant-garamond text-uppercase display-4 fw-bold mb-3 text-shadow">
+                            A város sosem alszik. A jól felépített rendszerek sem.
+                        </h2>
+                        <p class="cormorant-garamond fs-4 fst-italic text-light-50 max-w-75 text-shadow ">
+                            Míg Ön pihen, a digitális ökoszisztémája folyamatosan dolgozik, konvertál és növekszik.
+                        </p>
+                    </ng-container>
+
+                    <ng-container *ngIf="currentLang === 'en'">
+                        <h2 class="cormorant-garamond text-uppercase display-4 fw-bold mb-3 text-shadow ">
+                            The city never sleeps. Neither do well-built systems.
+                        </h2>
+                        <p class="cormorant-garamond fs-4 fst-italic text-light-50 max-w-75 text-shadow ">
+                            While you rest, your digital ecosystem works, converts, and grows continuously.
+                        </p>
+                    </ng-container>
+
+                </div>
+            </div>
+
+            <div class="animate-item d-flex justify-content-center mt-0 pt-0">
+
+                <a class="mx-2 cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  "
+                    *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" routerLink="services" (click)="scrollToTop()">
+                    bővebben a szolgáltatásainkról
+                </a>
+                <a class="mx-2 cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  "
+                    *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" routerLink="services" (click)="scrollToTop()">
+                    {{hero?.ctaTextButtonEn}}
+                </a>
+                <a class="mx-2 cta fs-6 text-warning btn rounded-0 text-uppercase cormorant-garamond hoviCtaThree  border border-warning"
+                    *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" routerLink="contact" (click)="scrollToTop()">
+                    jelentkezem a konzultációra
+                </a>
+                <a class="mx-2 cta fs-6 text-warning btn rounded-0 text-uppercase cormorant-garamond hoviCtaThree  border border-warning"
+                    *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" routerLink="contact" (click)="scrollToTop()">
+                    {{hero?.ctaTextButtonEn}}
+                </a>
+            </div>
+
+        </div>
+    </section>
 
 
 
@@ -287,7 +297,7 @@
                         <label class="form-label fw-bolder">kisebb felírat angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHeadlineTwoEn">
                     </div>
-                      <hr>
+                    <hr>
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bolder">segítő szöveg elöl magyarul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHelpTextHu">
@@ -296,7 +306,7 @@
                         <label class="form-label fw-bolder">segítő szöveg elöl angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHelpTextEn">
                     </div>
-                     <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label fw-bolder">segítő szöveg hátúl magyarul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroTwoHelpTextBackHu">
                     </div>
@@ -420,10 +430,682 @@
                         <textarea rows="1" type="text" class="form-control"
                             [(ngModel)]="editModel.heroTwoCtaEn"></textarea>
                     </div>
+                    <hr>
+                    <h5 class="modal-title fw-bold text-uppercase">Hero három adatok szerkesztése</h5>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techOneIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techOneNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techOneNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techOneDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techOneDescriptionEn"></textarea>
+                    </div>
 
-                   
-                   
-                 
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwoIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwoNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwoNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwoDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwoDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThreeIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThreeNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThreeNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThreeDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThreeDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">4 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">4 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">4 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">4 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">4 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">5 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFiveIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">5 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFiveNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">5 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFiveNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">5 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFiveDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">5 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFiveDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">6 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">6 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">6 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">6 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">6 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">7 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSevenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">7 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSevenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">7 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSevenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">7 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSevenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">7 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSevenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">8 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEightIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">8 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEightNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">8 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEightNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">8 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEightDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">8 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEightDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">9 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">9 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">9 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">9 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">9 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">10 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">10 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">10 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">10 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">10 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">11 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techElevenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">11 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techElevenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">11 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techElevenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">11 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techElevenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">11 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techElevenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">12 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwelveIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">12 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwelveNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">12 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwelveNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">12 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwelveDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">12 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwelveDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">13 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThirteenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">13 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThirteenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">13 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThirteenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">13 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThirteenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">13 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techThirteenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">14 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourteenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">14 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourteenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">14 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourteenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">14 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourteenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">14 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFourteenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">15 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFifteenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">15 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFifteenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">15 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFifteenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">15 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFifteenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">15 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techFifteenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">16 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixteenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">16 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixteenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">16 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixteenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">16 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixteenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">16 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSixteenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">17 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSeventeenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">17 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSeventeenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">17 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSeventeenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">17 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSeventeenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">17 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techSeventeenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">18 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEighteenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">18 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEighteenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">18 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEighteenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">18 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEighteenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">18 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techEighteenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">19 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineteenIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">19 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineteenNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">19 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineteenNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">19 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineteenDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">19 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techNineteenDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">20 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">20 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">20 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">20 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">20 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">21 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyOneIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">21 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyOneNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">21 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyOneNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">21 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyOneDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">21 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyOneDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">22 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyTwoIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">22 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyTwoNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">22 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyTwoNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">22 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyTwoDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">22 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyTwoDescriptionEn"></textarea>
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">23 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyThreeIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">23 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyThreeNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">23 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyThreeNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">23 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyThreeDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">23 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyThreeDescriptionEn"></textarea>
+                    </div>
+
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">24 tool ikon url</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyFourIcon"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">24 tool neve magyarul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyFourNameHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">24 tool neve angolul</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyFourNameEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">24 tool leírás hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyFourDescriptionHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">24 tool leírás en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.techTwentyFourDescriptionEn"></textarea>
+                    </div>
+
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">hero 3 szöveg hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.heroThreeTextHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">hero 3 szöveg en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.heroThreeTextEn"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">hero 3 cta hu</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.heroThreeCtaHu"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">hero 3 cta en</label>
+                        <textarea rows="1" type="text" class="form-control"
+                            [(ngModel)]="editModel.heroThreeCtaEn"></textarea>
+                    </div>
+
+
+
                 </div>
             </div>
             <div class="modal-footer">

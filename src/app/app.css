@@ -1,0 +1,14 @@
+.floating-contact-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  z-index: 1050; /* Bootstrap modalok alatti, de minden más feletti réteg */
+  transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+/* Finom hover animáció */
+.floating-contact-btn:hover {
+  transform: scale(1.1);
+}

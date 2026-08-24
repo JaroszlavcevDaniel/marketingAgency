@@ -27,7 +27,15 @@ try {
         contactEn=:contactEn,
         facebookLink=:facebookLink,
         instagramLink=:instagramLink,
-        tiktokLink=:tiktokLink
+        tiktokLink=:tiktokLink,
+         aboutHu=:aboutHu,
+ aboutEn=:aboutEn,
+ referenceHu=:referenceHu,
+ referenceEn=:referenceEn;
+        use market;
+
+
+
     WHERE id=1
     ";
 
@@ -53,7 +61,13 @@ try {
         "contactEn"      => $data["contactEn"] ?? '',
         "facebookLink"   => $data["facebookLink"] ?? '',
         "instagramLink"  => $data["instagramLink"] ?? '',
-        "tiktokLink"     => $data["tiktokLink"] ?? ''
+        "tiktokLink"     => $data["tiktokLink"] ?? '',
+
+         "aboutHu"     => $data["aboutHu"] ?? '',
+          "aboutEn"     => $data["aboutEn"] ?? '',
+           "referenceHu"     => $data["referenceHu"] ?? '',
+            "referenceEn"     => $data["referenceEn"] ?? '',
+
     ]);
 
     echo json_encode([

@@ -9,6 +9,7 @@ try {
 
     $sql = "
     UPDATE heroOne SET
+    
         ctaTextBigHu=:ctaTextBigHu,
         ctaTextBigEn=:ctaTextBigEn,
         ctaTextSecondHu=:ctaTextSecondHu,
@@ -59,7 +60,156 @@ try {
                 heroTwoHelpTextBackEn=:heroTwoHelpTextBackEn,
 
                 heroTwoCtaHu=:heroTwoCtaHu,
-                heroTwoCtaEn=:heroTwoCtaEn
+                heroTwoCtaEn=:heroTwoCtaEn,
+
+    techOneIcon=:techOneIcon,
+    techOneNameHu=:techOneNameHu,
+    techOneNameEn=:techOneNameEn,
+    techOneDescriptionHu=:techOneDescriptionHu,
+    techOneDescriptionEn=:techOneDescriptionEn,
+
+    techTwoIcon=:techTwoIcon,
+    techTwoNameHu=:techTwoNameHu,
+    techTwoNameEn=:techTwoNameEn,
+    techTwoDescriptionHu=:techTwoDescriptionHu,
+    techTwoDescriptionEn=:techTwoDescriptionEn,
+
+    techThreeIcon=:techThreeIcon,
+    techThreeNameHu=:techThreeNameHu,
+    techThreeNameEn=:techThreeNameEn,
+    techThreeDescriptionHu=:techThreeDescriptionHu,
+    techThreeDescriptionEn=:techThreeDescriptionEn,
+
+    techFourIcon=:techFourIcon,
+    techFourNameHu=:techFourNameHu,
+    techFourNameEn=:techFourNameEn,
+    techFourDescriptionHu=:techFourDescriptionHu,
+    techFourDescriptionEn=:techFourDescriptionEn,
+
+    techFiveIcon=:techFiveIcon,
+    techFiveNameHu=:techFiveNameHu,
+    techFiveNameEn=:techFiveNameEn,
+    techFiveDescriptionHu=:techFiveDescriptionHu,
+    techFiveDescriptionEn=:techFiveDescriptionEn,
+
+    techSixIcon=:techSixIcon,
+    techSixNameHu=:techSixNameHu,
+    techSixNameEn=:techSixNameEn,
+    techSixDescriptionHu=:techSixDescriptionHu,
+    techSixDescriptionEn=:techSixDescriptionEn,
+
+    techSevenIcon=:techSevenIcon,
+    techSevenNameHu=:techSevenNameHu,
+    techSevenNameEn=:techSevenNameEn,
+    techSevenDescriptionHu=:techSevenDescriptionHu,
+    techSevenDescriptionEn=:techSevenDescriptionEn,
+
+    techEightIcon=:techEightIcon,
+    techEightNameHu=:techEightNameHu,
+    techEightNameEn=:techEightNameEn,
+    techEightDescriptionHu=:techEightDescriptionHu,
+    techEightDescriptionEn=:techEightDescriptionEn,
+
+    techNineIcon=:techNineIcon,
+    techNineNameHu=:techNineNameHu,
+    techNineNameEn=:techNineNameEn,
+    techNineDescriptionHu=:techNineDescriptionHu,
+    techNineDescriptionEn=:techNineDescriptionEn,
+
+    techTenIcon=:techTenIcon,
+    techTenNameHu=:techTenNameHu,
+    techTenNameEn=:techTenNameEn,
+    techTenDescriptionHu=:techTenDescriptionHu,
+    techTenDescriptionEn=:techTenDescriptionEn,
+
+    techElevenIcon=:techElevenIcon,
+    techElevenNameHu=:techElevenNameHu,
+    techElevenNameEn=:techElevenNameEn,
+    techElevenDescriptionHu=:techElevenDescriptionHu,
+    techElevenDescriptionEn=:techElevenDescriptionEn,
+
+    techTwelveIcon=:techTwelveIcon,
+    techTwelveNameHu=:techTwelveNameHu,
+    techTwelveNameEn=:techTwelveNameEn,
+    techTwelveDescriptionHu=:techTwelveDescriptionHu,
+    techTwelveDescriptionEn=:techTwelveDescriptionEn,
+
+    techThirteenIcon=:techThirteenIcon,
+    techThirteenNameHu=:techThirteenNameHu,
+    techThirteenNameEn=:techThirteenNameEn,
+    techThirteenDescriptionHu=:techThirteenDescriptionHu,
+    techThirteenDescriptionEn=:techThirteenDescriptionEn,
+
+    techFourteenIcon=:techFourteenIcon,
+    techFourteenNameHu=:techFourteenNameHu,
+    techFourteenNameEn=:techFourteenNameEn,
+    techFourteenDescriptionHu=:techFourteenDescriptionHu,
+    techFourteenDescriptionEn=:techFourteenDescriptionEn,
+
+    techFifteenIcon=:techFifteenIcon,
+    techFifteenNameHu=:techFifteenNameHu,
+    techFifteenNameEn=:techFifteenNameEn,
+    techFifteenDescriptionHu=:techFifteenDescriptionHu,
+    techFifteenDescriptionEn=:techFifteenDescriptionEn,
+
+    techSixteenIcon=:techSixteenIcon,
+    techSixteenNameHu=:techSixteenNameHu,
+    techSixteenNameEn=:techSixteenNameEn,
+    techSixteenDescriptionHu=:techSixteenDescriptionHu,
+    techSixteenDescriptionEn=:techSixteenDescriptionEn,
+
+    techSeventeenIcon=:techSeventeenIcon,
+    techSeventeenNameHu=:techSeventeenNameHu,
+    techSeventeenNameEn=:techSeventeenNameEn,
+    techSeventeenDescriptionHu=:techSeventeenDescriptionHu,
+    techSeventeenDescriptionEn=:techSeventeenDescriptionEn,
+
+    techEighteenIcon=:techEighteenIcon,
+    techEighteenNameHu=:techEighteenNameHu,
+    techEighteenNameEn=:techEighteenNameEn,
+    techEighteenDescriptionHu=:techEighteenDescriptionHu,
+    techEighteenDescriptionEn=:techEighteenDescriptionEn,
+
+    techNineteenIcon=:techNineteenIcon,
+    techNineteenNameHu=:techNineteenNameHu,
+    techNineteenNameEn=:techNineteenNameEn,
+    techNineteenDescriptionHu=:techNineteenDescriptionHu,
+    techNineteenDescriptionEn=:techNineteenDescriptionEn,
+
+    techTwentyIcon=:techTwentyIcon,
+    techTwentyNameHu=:techTwentyNameHu,
+    techTwentyNameEn=:techTwentyNameEn,
+    techTwentyDescriptionHu=:techTwentyDescriptionHu,
+    techTwentyDescriptionEn=:techTwentyDescriptionEn,
+
+    techTwentyOneIcon=:techTwentyOneIcon,
+    techTwentyOneNameHu=:techTwentyOneNameHu,
+    techTwentyOneNameEn=:techTwentyOneNameEn,
+    techTwentyOneDescriptionHu=:techTwentyOneDescriptionHu,
+    techTwentyOneDescriptionEn=:techTwentyOneDescriptionEn,
+
+    techTwentyTwoIcon=:techTwentyTwoIcon,
+    techTwentyTwoNameHu=:techTwentyTwoNameHu,
+    techTwentyTwoNameEn=:techTwentyTwoNameEn,
+    techTwentyTwoDescriptionHu=:techTwentyTwoDescriptionHu,
+    techTwentyTwoDescriptionEn=:techTwentyTwoDescriptionEn,
+
+    techTwentyThreeIcon=:techTwentyThreeIcon,
+    techTwentyThreeNameHu=:techTwentyThreeNameHu,
+    techTwentyThreeNameEn=:techTwentyThreeNameEn,
+    techTwentyThreeDescriptionHu=:techTwentyThreeDescriptionHu,
+    techTwentyThreeDescriptionEn=:techTwentyThreeDescriptionEn,
+
+    techTwentyFourIcon=:techTwentyFourIcon,
+    techTwentyFourNameHu=:techTwentyFourNameHu,
+    techTwentyFourNameEn=:techTwentyFourNameEn,
+    techTwentyFourDescriptionHu=:techTwentyFourDescriptionHu,
+    techTwentyFourDescriptionEn=:techTwentyFourDescriptionEn,
+
+    heroThreeTextHu=:heroThreeTextHu,
+    heroThreeTextEn=:heroThreeTextEn,
+    heroThreeCtaHu=:heroThreeCtaHu,
+    heroThreeCtaEn=:heroThreeCtaEn
 
     WHERE id=1
     ";
@@ -119,7 +269,157 @@ try {
         "heroTwoHelpTextBackEn" => $data["heroTwoHelpTextBackEn"] ?? '',
 
         "heroTwoCtaHu" => $data["heroTwoCtaHu"] ?? '',
-        "heroTwoCtaEn" => $data["heroTwoCtaEn"] ?? ''
+        "heroTwoCtaEn" => $data["heroTwoCtaEn"] ?? '',
+
+
+    "techOneIcon" => $data["techOneIcon"] ?? '',
+    "techOneNameHu" => $data["techOneNameHu"] ?? '',
+    "techOneNameEn" => $data["techOneNameEn"] ?? '',
+    "techOneDescriptionHu" => $data["techOneDescriptionHu"] ?? '',
+    "techOneDescriptionEn" => $data["techOneDescriptionEn"] ?? '',
+
+    "techTwoIcon" => $data["techTwoIcon"] ?? '',
+    "techTwoNameHu" => $data["techTwoNameHu"] ?? '',
+    "techTwoNameEn" => $data["techTwoNameEn"] ?? '',
+    "techTwoDescriptionHu" => $data["techTwoDescriptionHu"] ?? '',
+    "techTwoDescriptionEn" => $data["techTwoDescriptionEn"] ?? '',
+
+    "techThreeIcon" => $data["techThreeIcon"] ?? '',
+    "techThreeNameHu" => $data["techThreeNameHu"] ?? '',
+    "techThreeNameEn" => $data["techThreeNameEn"] ?? '',
+    "techThreeDescriptionHu" => $data["techThreeDescriptionHu"] ?? '',
+    "techThreeDescriptionEn" => $data["techThreeDescriptionEn"] ?? '',
+
+    "techFourIcon" => $data["techFourIcon"] ?? '',
+    "techFourNameHu" => $data["techFourNameHu"] ?? '',
+    "techFourNameEn" => $data["techFourNameEn"] ?? '',
+    "techFourDescriptionHu" => $data["techFourDescriptionHu"] ?? '',
+   "techFourDescriptionEn" => $data["techFourDescriptionEn"] ?? '',
+
+    "techFiveIcon" => $data["techFiveIcon"] ?? '',
+    "techFiveNameHu" => $data["techFiveNameHu"] ?? '',
+    "techFiveNameEn" => $data["techFiveNameEn"] ?? '',
+    "techFiveDescriptionHu" => $data["techFiveDescriptionHu"] ?? '',
+    "techFiveDescriptionEn" => $data["techFiveDescriptionEn"] ?? '',
+
+    "techSixIcon" => $data["techSixIcon"] ?? '',
+    "techSixNameHu" => $data["techSixNameHu"] ?? '',
+    "techSixNameEn" => $data["techSixNameEn"] ?? '',
+    "techSixDescriptionHu" => $data["techSixDescriptionHu"] ?? '',
+    "techSixDescriptionEn" => $data["techSixDescriptionEn"] ?? '',
+
+    "techSevenIcon" => $data["techSevenIcon"] ?? '',
+    "techSevenNameHu" => $data["techSevenNameHu"] ?? '',
+    "techSevenNameEn" => $data["techSevenNameEn"] ?? '',
+    "techSevenDescriptionHu" => $data["techSevenDescriptionHu"] ?? '',
+    "techSevenDescriptionEn" => $data["techSevenDescriptionEn"] ?? '',
+
+    "techEightIcon" => $data["techEightIcon"] ?? '',
+    "techEightNameHu" => $data["techEightNameHu"] ?? '',
+    "techEightNameEn" => $data["techEightNameEn"] ?? '',
+    "techEightDescriptionHu" => $data["techEightDescriptionHu"] ?? '',
+    "techEightDescriptionEn" => $data["techEightDescriptionEn"] ?? '',
+
+    "techNineIcon" => $data["techNineIcon"] ?? '',
+    "techNineNameHu" => $data["techNineNameHu"] ?? '',
+    "techNineNameEn" => $data["techNineNameEn"] ?? '',
+    "techNineDescriptionHu" => $data["techNineDescriptionHu"] ?? '',
+    "techNineDescriptionEn" => $data["techNineDescriptionEn"] ?? '',
+
+    "techTenIcon" => $data["techTenIcon"] ?? '',
+    "techTenNameHu" => $data["techTenNameHu"] ?? '',
+    "techTenNameEn" => $data["techTenNameEn"] ?? '',
+    "techTenDescriptionHu" => $data["techTenDescriptionHu"] ?? '',
+    "techTenDescriptionEn" => $data["techTenDescriptionEn"] ?? '',
+
+    "techElevenIcon" => $data["techElevenIcon"] ?? '',
+    "techElevenNameHu" => $data["techElevenNameHu"] ?? '',
+    "techElevenNameEn" => $data["techElevenNameEn"] ?? '',
+    "techElevenDescriptionHu" => $data["techElevenDescriptionHu"] ?? '',
+    "techElevenDescriptionEn" => $data["techElevenDescriptionEn"] ?? '',
+
+    "techTwelveIcon" => $data["techTwelveIcon"] ?? '',
+    "techTwelveNameHu" => $data["techTwelveNameHu"] ?? '',
+    "techTwelveNameEn" => $data["techTwelveNameEn"] ?? '',
+    "techTwelveDescriptionHu" => $data["techTwelveDescriptionHu"] ?? '',
+    "techTwelveDescriptionEn" => $data["techTwelveDescriptionEn"] ?? '',
+
+    "techThirteenIcon" => $data["techThirteenIcon"] ?? '',
+    "techThirteenNameHu" => $data["techThirteenNameHu"] ?? '',
+    "techThirteenNameEn" => $data["techThirteenNameEn"] ?? '',
+    "techThirteenDescriptionHu" => $data["techThirteenDescriptionHu"] ?? '',
+    "techThirteenDescriptionEn" => $data["techThirteenDescriptionEn"] ?? '',
+
+    "techFourteenIcon" => $data["techFourteenIcon"] ?? '',
+    "techFourteenNameHu" => $data["techFourteenNameHu"] ?? '',
+    "techFourteenNameEn" => $data["techFourteenNameEn"] ?? '',
+    "techFourteenDescriptionHu" => $data["techFourteenDescriptionHu"] ?? '',
+    "techFourteenDescriptionEn" => $data["techFourteenDescriptionEn"] ?? '',
+
+    "techFifteenIcon" => $data["techFifteenIcon"] ?? '',
+    "techFifteenNameHu" => $data["techFifteenNameHu"] ?? '',
+    "techFifteenNameEn" => $data["techFifteenNameEn"] ?? '',
+    "techFifteenDescriptionHu" => $data["techFifteenDescriptionHu"] ?? '',
+    "techFifteenDescriptionEn" => $data["techFifteenDescriptionEn"] ?? '',
+
+    "techSixteenIcon" => $data["techSixteenIcon"] ?? '',
+    "techSixteenNameHu" => $data["techSixteenNameHu"] ?? '',
+    "techSixteenNameEn" => $data["techSixteenNameEn"] ?? '',
+    "techSixteenDescriptionHu" => $data["techSixteenDescriptionHu"] ?? '',
+    "techSixteenDescriptionEn" => $data["techSixteenDescriptionEn"] ?? '',
+
+    "techSeventeenIcon" => $data["techSeventeenIcon"] ?? '',
+    "techSeventeenNameHu" => $data["techSeventeenNameHu"] ?? '',
+    "techSeventeenNameEn" => $data["techSeventeenNameEn"] ?? '',
+    "techSeventeenDescriptionHu" => $data["techSeventeenDescriptionHu"] ?? '',
+    "techSeventeenDescriptionEn" => $data["techSeventeenDescriptionEn"] ?? '',
+
+    "techEighteenIcon" => $data["techEighteenIcon"] ?? '',
+    "techEighteenNameHu" => $data["techEighteenNameHu"] ?? '',
+    "techEighteenNameEn" => $data["techEighteenNameEn"] ?? '',
+    "techEighteenDescriptionHu" => $data["techEighteenDescriptionHu"] ?? '',
+    "techEighteenDescriptionEn" => $data["techEighteenDescriptionEn"] ?? '',
+
+    "techNineteenIcon" => $data["techNineteenIcon"] ?? '',
+    "techNineteenNameHu" => $data["techNineteenNameHu"] ?? '',
+    "techNineteenNameEn" => $data["techNineteenNameEn"] ?? '',
+    "techNineteenDescriptionHu" => $data["techNineteenDescriptionHu"] ?? '',
+    "techNineteenDescriptionEn" => $data["techNineteenDescriptionEn"] ?? '',
+
+    "techTwentyIcon" => $data["techTwentyIcon"] ?? '',
+    "techTwentyNameHu" => $data["techTwentyNameHu"] ?? '',
+    "techTwentyNameEn" => $data["techTwentyNameEn"] ?? '',
+    "techTwentyDescriptionHu" => $data["techTwentyDescriptionHu"] ?? '',
+    "techTwentyDescriptionEn" => $data["techTwentyDescriptionEn"] ?? '',
+
+    "techTwentyOneIcon" => $data["techTwentyOneIcon"] ?? '',
+    "techTwentyOneNameHu" => $data["techTwentyOneNameHu"] ?? '',
+    "techTwentyOneNameEn" => $data["techTwentyOneNameEn"] ?? '',
+    "techTwentyOneDescriptionHu" => $data["techTwentyOneDescriptionHu"] ?? '',
+    "techTwentyOneDescriptionEn" => $data["techTwentyOneDescriptionEn"] ?? '',
+
+    "techTwentyTwoIcon" => $data["techTwentyTwoIcon"] ?? '',
+    "techTwentyTwoNameHu" => $data["techTwentyTwoNameHu"] ?? '',
+    "techTwentyTwoNameEn" => $data["techTwentyTwoNameEn"] ?? '',
+    "techTwentyTwoDescriptionHu" => $data["techTwentyTwoDescriptionHu"] ?? '',
+    "techTwentyTwoDescriptionEn" => $data["techTwentyTwoDescriptionEn"] ?? '',
+
+    "techTwentyThreeIcon" => $data["techTwentyThreeIcon"] ?? '',
+    "techTwentyThreeNameHu" => $data["techTwentyThreeNameHu"] ?? '',
+    "techTwentyThreeNameEn" => $data["techTwentyThreeNameEn"] ?? '',
+    "techTwentyThreeDescriptionHu" => $data["techTwentyThreeDescriptionHu"] ?? '',
+    "techTwentyThreeDescriptionEn" => $data["techTwentyThreeDescriptionEn"] ?? '',
+
+    "techTwentyFourIcon" => $data["techTwentyFourIcon"] ?? '',
+    "techTwentyFourNameHu" => $data["techTwentyFourNameHu"] ?? '',
+    "techTwentyFourNameEn" => $data["techTwentyFourNameEn"] ?? '',
+    "techTwentyFourDescriptionHu" => $data["techTwentyFourDescriptionHu"] ?? '',
+    "techTwentyFourDescriptionEn" => $data["techTwentyFourDescriptionEn"] ?? '',
+
+    "heroThreeTextHu" => $data["heroThreeTextHu"] ?? '',
+    "heroThreeTextEn" => $data["heroThreeTextEn"] ?? '',
+    "heroThreeCtaHu" => $data["heroThreeCtaHu"] ?? '',
+    "heroThreeCtaEn" => $data["heroThreeCtaEn"] ?? ''
 
     ]);
 

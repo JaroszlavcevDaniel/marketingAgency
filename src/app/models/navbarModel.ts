@@ -30,4 +30,9 @@ export interface NavbarModel {
   instagramLink:string;
   tiktokLink:string;
 
+  aboutHu: string;
+aboutEn: string;
+referenceHu: string;
+referenceEn: string;
+
 }

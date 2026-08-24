@@ -651,30 +651,30 @@
     <button
         type="button"
         class="tool"
-        *ngIf="hero?.techTwentyNameHu || hero?.techTwentyNameEn"
+        *ngIf="hero?.techTwentyFourNameHu || hero?.techTwentyFourNameEn"
         (click)="selectTool({
-            icon: hero?.techTwentyIcon,
+            icon: hero?.techTwentyFourIcon,
             name: currentLang === 'hu'
-                ? hero?.techTwentyNameHu
-                : hero?.techTwentyNameEn,
+                ? hero?.techTwentyFourNameHu
+                : hero?.techTwentyFourNameEn,
             description: currentLang === 'hu'
-                ? hero?.techTwentyDescriptionHu
-                : hero?.techTwentyDescriptionEn
+                ? hero?.techTwentyFourDescriptionHu
+                : hero?.techTwentyFourDescriptionEn
         })"
     >
 
         <img
-            [src]="hero?.techTwentyIcon"
+            [src]="hero?.techTwentyFourIcon"
             [alt]="currentLang === 'hu'
-                ? hero?.techTwentyNameHu
-                : hero?.techTwentyNameEn"
+                ? hero?.techTwentyFourNameHu
+                : hero?.techTwentyFourNameEn"
         >
 
         <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
             {{
                 currentLang === 'hu'
-                    ? hero?.techTwentyNameHu
-                    : hero?.techTwentyNameEn
+                    ? hero?.techTwentyFourNameHu
+                    : hero?.techTwentyFourNameEn
             }}
         </span>
 
@@ -777,6 +777,39 @@
                 currentLang === 'hu'
                     ? hero?.techTwentyThreeNameHu
                     : hero?.techTwentyThreeNameEn
+            }}
+        </span>
+
+    </button>
+
+    <!-- TECH 5 -->
+    <button
+        type="button"
+        class="tool"
+        *ngIf="hero?.techFiveNameHu || hero?.techFiveNameEn"
+        (click)="selectTool({
+            icon: hero?.techFiveIcon,
+            name: currentLang === 'hu'
+                ? hero?.techFiveNameHu
+                : hero?.techFiveNameEn,
+            description: currentLang === 'hu'
+                ? hero?.techFiveDescriptionHu
+                : hero?.techFiveDescriptionEn
+        })"
+    >
+
+        <img
+            [src]="hero?.techFiveIcon"
+            [alt]="currentLang === 'hu'
+                ? hero?.techFiveNameHu
+                : hero?.techFiveNameEn"
+        >
+
+        <span class="text-warning cormorant-garamond fs-5 fw-bold text-shadow">
+            {{
+                currentLang === 'hu'
+                    ? hero?.techFiveNameHu
+                    : hero?.techFiveNameEn
             }}
         </span>
 
