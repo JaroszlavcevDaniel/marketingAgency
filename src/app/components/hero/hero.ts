@@ -146,6 +146,108 @@ export class Hero implements OnInit, OnDestroy {
   });
 }
 
+ saveHeroTwo() {
+  if (!this.editModel) return;
+
+  this.heroService.saveHero(this.editModel).subscribe({
+    next: (response) => {
+      if (response && response.success) {
+        
+
+         const closeBtnTwo = document.getElementById('closeEditModalBtnFour') as HTMLButtonElement;
+        if (closeBtnTwo) {
+          closeBtnTwo.click();
+        }
+
+        if (response.data) {
+          this.hero = response.data;
+        } else {
+          this.hero = { ...this.editModel } as HeroModel;
+        }
+
+        setTimeout(() => {
+          this.cdr.detectChanges();
+        }, 300);
+
+      } else {
+        alert('Hiba történt a mentés során.');
+      }
+    },
+    error: (err) => {
+      console.error(err);
+      alert('Szerver hiba a mentéskor.');
+    }
+  });
+}
+
+saveHeroThree() {
+  if (!this.editModel) return;
+
+  this.heroService.saveHero(this.editModel).subscribe({
+    next: (response) => {
+      if (response && response.success) {
+        
+
+         const closeBtnTwo = document.getElementById('closeEditModalBtnFive') as HTMLButtonElement;
+        if (closeBtnTwo) {
+          closeBtnTwo.click();
+        }
+
+        if (response.data) {
+          this.hero = response.data;
+        } else {
+          this.hero = { ...this.editModel } as HeroModel;
+        }
+
+        setTimeout(() => {
+          this.cdr.detectChanges();
+        }, 300);
+
+      } else {
+        alert('Hiba történt a mentés során.');
+      }
+    },
+    error: (err) => {
+      console.error(err);
+      alert('Szerver hiba a mentéskor.');
+    }
+  });
+}
+
+saveHeroFour() {
+  if (!this.editModel) return;
+
+  this.heroService.saveHero(this.editModel).subscribe({
+    next: (response) => {
+      if (response && response.success) {
+        
+
+         const closeBtnTwo = document.getElementById('closeEditModalBtnSix') as HTMLButtonElement;
+        if (closeBtnTwo) {
+          closeBtnTwo.click();
+        }
+
+        if (response.data) {
+          this.hero = response.data;
+        } else {
+          this.hero = { ...this.editModel } as HeroModel;
+        }
+
+        setTimeout(() => {
+          this.cdr.detectChanges();
+        }, 300);
+
+      } else {
+        alert('Hiba történt a mentés során.');
+      }
+    },
+    error: (err) => {
+      console.error(err);
+      alert('Szerver hiba a mentéskor.');
+    }
+  });
+}
+
 ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
   }

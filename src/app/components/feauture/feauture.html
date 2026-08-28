@@ -1,8 +1,4 @@
-<div
-  class="position-relative overflow-hidden cormorant-garamond"
-  [class.animate-cards]="cardsVisible"
-  #featureSection
->
+<div class="position-relative overflow-hidden cormorant-garamond" [class.animate-cards]="cardsVisible" #featureSection>
   <!-- Háttér díszítő elemek a kreatív atmoszféráért -->
 
   <div class="container position-relative z-1">
@@ -19,77 +15,45 @@
       <!-- 1. KÁRTYA -->
       <!-- ========================= -->
 
-      <div
-        *ngIf="hero"
-        class="col-xl-2 col-md-12 card-perspective"
-        [style.--card-index]="0"
-      >
+      <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="0">
 
         <!-- 3D Kártya konténer -->
-        <div
-          class="card-inner"
-          [class.is-flipped]="isFlipped(1)"
-          (click)="toggleCard(1)"
-        >
+        <div class="card-inner" [class.is-flipped]="isFlipped(1)" (click)="toggleCard(1)">
 
           <!-- ELŐLAP -->
-          <div
-            class="card-front d-flex flex-column p-0 overflow-hidden"
-            style="height: 100%;"
-          >
+          <div class="card-front d-flex flex-column p-0 overflow-hidden" style="height: 100%;">
 
             <!-- Kép -->
-            <img
-              class="w-100"
-              src="/image/111.jpg"
-              alt="Service"
-              style="height: 65%; object-fit: cover;"
-            >
+            <img class="w-100" src="/image/111.jpg" alt="Service" style="height: 65%; object-fit: cover;">
 
             <!-- Szöveges tartalom -->
-            <div
-              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
-            >
+            <div class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1">
 
               <div class="front-content">
 
                 <!-- Magyar -->
-                <h5
-                  *ngIf="currentLang === 'hu'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'hu'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepOneHeadlineHu }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'hu'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'hu'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextHu }}
                 </p>
 
 
                 <!-- Angol -->
-                <h5
-                  *ngIf="currentLang === 'en'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'en'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepOneHeadlineEn }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'en'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'en'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextEn }}
                 </p>
 
               </div>
 
               <!-- Interakciós felirat -->
-              <div
-                class="action-hint d-flex align-items-center justify-content-between text-violet"
-              >
+              <div class="action-hint d-flex align-items-center justify-content-between text-violet">
                 <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
               </div>
 
@@ -99,9 +63,7 @@
 
 
           <!-- HÁTLAP -->
-          <div
-            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
-          >
+          <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
 
@@ -111,34 +73,22 @@
                   <span class="moveMove">✾</span>
                 </div>
 
-                <h6
-                  *ngIf="currentLang === 'hu'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'hu'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepOneHeadlineHu }}
                 </h6>
 
-                <h6
-                  *ngIf="currentLang === 'en'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'en'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepOneHeadlineEn }}
                 </h6>
 
               </div>
 
 
-              <p
-                *ngIf="currentLang === 'hu'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'hu'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepOneTextHu }}
               </p>
 
-              <p
-                *ngIf="currentLang === 'en'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'en'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepOneTextEn }}
               </p>
 
@@ -149,21 +99,13 @@
             </div>
 
             <!-- Vissza -->
-            <div
-              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
-            >
-              <span
-                *ngIf="currentLang === 'hu'"
-                class="small fw-semibold"
-              >
-                     {{ hero.heroTwoHelpTextBackHu }}
+            <div class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4">
+              <span *ngIf="currentLang === 'hu'" class="small fw-semibold">
+                {{ hero.heroTwoHelpTextBackHu }}
               </span>
 
-              <span
-                *ngIf="currentLang === 'en'"
-                class="small fw-semibold"
-              >
-                     {{ hero.heroTwoHelpTextBackEn }}
+              <span *ngIf="currentLang === 'en'" class="small fw-semibold">
+                {{ hero.heroTwoHelpTextBackEn }}
               </span>
 
               <i class="bi bi-arrow-left-circle fs-4"></i>
@@ -180,71 +122,39 @@
       <!-- 2. KÁRTYA -->
       <!-- ========================= -->
 
-      <div
-        *ngIf="hero"
-        class="col-xl-2 col-md-12 card-perspective"
-        [style.--card-index]="1"
-      >
+      <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="1">
 
-        <div
-          class="card-inner"
-          [class.is-flipped]="isFlipped(2)"
-          (click)="toggleCard(2)"
-        >
+        <div class="card-inner" [class.is-flipped]="isFlipped(2)" (click)="toggleCard(2)">
 
           <!-- ELŐLAP -->
-          <div
-            class="card-front d-flex flex-column p-0 overflow-hidden"
-            style="height: 100%;"
-          >
+          <div class="card-front d-flex flex-column p-0 overflow-hidden" style="height: 100%;">
 
-            <img
-              class="w-100"
-              src="/image/222.jpg"
-              alt="Service"
-              style="height: 65%; object-fit: cover;"
-            >
+            <img class="w-100" src="/image/222.jpg" alt="Service" style="height: 65%; object-fit: cover;">
 
-            <div
-              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
-            >
+            <div class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1">
 
               <div class="front-content">
 
-                <h5
-                  *ngIf="currentLang === 'hu'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'hu'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepTwoHeadlineHu }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'hu'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'hu'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextHu }}
                 </p>
 
 
-                <h5
-                  *ngIf="currentLang === 'en'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'en'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepTwoHeadlineEn }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'en'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'en'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextEn }}
                 </p>
 
               </div>
 
-              <div
-                class="action-hint d-flex align-items-center justify-content-between text-violet"
-              >
+              <div class="action-hint d-flex align-items-center justify-content-between text-violet">
                 <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
               </div>
 
@@ -254,9 +164,7 @@
 
 
           <!-- HÁTLAP -->
-          <div
-            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
-          >
+          <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
 
@@ -266,34 +174,22 @@
                   <span class="moveMove">✾</span>
                 </div>
 
-                <h6
-                  *ngIf="currentLang === 'hu'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'hu'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepTwoHeadlineHu }}
                 </h6>
 
-                <h6
-                  *ngIf="currentLang === 'en'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'en'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepTwoHeadlineEn }}
                 </h6>
 
               </div>
 
 
-              <p
-                *ngIf="currentLang === 'hu'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'hu'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepTwoTextHu }}
               </p>
 
-              <p
-                *ngIf="currentLang === 'en'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'en'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepTwoTextEn }}
               </p>
 
@@ -302,21 +198,13 @@
 
             </div>
 
-            <div
-              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
-            >
+            <div class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4">
 
-              <span
-                *ngIf="currentLang === 'hu'"
-                class="small fw-semibold"
-              >
+              <span *ngIf="currentLang === 'hu'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackHu }}
               </span>
 
-              <span
-                *ngIf="currentLang === 'en'"
-                class="small fw-semibold"
-              >
+              <span *ngIf="currentLang === 'en'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackEn}}
               </span>
 
@@ -335,71 +223,39 @@
       <!-- 3. KÁRTYA -->
       <!-- ========================= -->
 
-      <div
-        *ngIf="hero"
-        class="col-xl-2 col-md-12 card-perspective"
-        [style.--card-index]="2"
-      >
+      <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="2">
 
-        <div
-          class="card-inner"
-          [class.is-flipped]="isFlipped(3)"
-          (click)="toggleCard(3)"
-        >
+        <div class="card-inner" [class.is-flipped]="isFlipped(3)" (click)="toggleCard(3)">
 
           <!-- ELŐLAP -->
-          <div
-            class="card-front d-flex flex-column p-0 overflow-hidden"
-            style="height: 100%;"
-          >
+          <div class="card-front d-flex flex-column p-0 overflow-hidden" style="height: 100%;">
 
-            <img
-              class="w-100"
-              src="/image/333.jpg"
-              alt="Service"
-              style="height: 65%; object-fit: cover;"
-            >
+            <img class="w-100" src="/image/333.jpg" alt="Service" style="height: 65%; object-fit: cover;">
 
-            <div
-              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
-            >
+            <div class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1">
 
               <div class="front-content">
 
-                <h5
-                  *ngIf="currentLang === 'hu'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'hu'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepThreeHeadlineHu }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'hu'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'hu'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextHu }}
                 </p>
 
 
-                <h5
-                  *ngIf="currentLang === 'en'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'en'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepThreeHeadlineEn }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'en'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'en'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextEn }}
                 </p>
 
               </div>
 
-              <div
-                class="action-hint d-flex align-items-center justify-content-between text-violet"
-              >
+              <div class="action-hint d-flex align-items-center justify-content-between text-violet">
                 <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
               </div>
 
@@ -409,9 +265,7 @@
 
 
           <!-- HÁTLAP -->
-          <div
-            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
-          >
+          <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
 
@@ -421,34 +275,22 @@
                   <span class="moveMove">✾</span>
                 </div>
 
-                <h6
-                  *ngIf="currentLang === 'hu'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'hu'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepThreeHeadlineHu }}
                 </h6>
 
-                <h6
-                  *ngIf="currentLang === 'en'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'en'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepThreeHeadlineEn }}
                 </h6>
 
               </div>
 
 
-              <p
-                *ngIf="currentLang === 'hu'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'hu'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepThreeTextHu }}
               </p>
 
-              <p
-                *ngIf="currentLang === 'en'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'en'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepThreeTextEn }}
               </p>
 
@@ -457,21 +299,13 @@
 
             </div>
 
-            <div
-              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
-            >
+            <div class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4">
 
-              <span
-                *ngIf="currentLang === 'hu'"
-                class="small fw-semibold"
-              >
+              <span *ngIf="currentLang === 'hu'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackHu }}
               </span>
 
-              <span
-                *ngIf="currentLang === 'en'"
-                class="small fw-semibold"
-              >
+              <span *ngIf="currentLang === 'en'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackEn }}
               </span>
 
@@ -490,71 +324,39 @@
       <!-- 4. KÁRTYA -->
       <!-- ========================= -->
 
-      <div
-        *ngIf="hero"
-        class="col-xl-2 col-md-12 card-perspective"
-        [style.--card-index]="3"
-      >
+      <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="3">
 
-        <div
-          class="card-inner"
-          [class.is-flipped]="isFlipped(4)"
-          (click)="toggleCard(4)"
-        >
+        <div class="card-inner" [class.is-flipped]="isFlipped(4)" (click)="toggleCard(4)">
 
           <!-- ELŐLAP -->
-          <div
-            class="card-front d-flex flex-column p-0 overflow-hidden"
-            style="height: 100%;"
-          >
+          <div class="card-front d-flex flex-column p-0 overflow-hidden" style="height: 100%;">
 
-            <img
-              class="w-100"
-              src="/image/444.jpg"
-              alt="Service"
-              style="height: 65%; object-fit: cover;"
-            >
+            <img class="w-100" src="/image/444.jpg" alt="Service" style="height: 65%; object-fit: cover;">
 
-            <div
-              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
-            >
+            <div class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1">
 
               <div class="front-content">
 
-                <h5
-                  *ngIf="currentLang === 'hu'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'hu'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepFourHeadlineHu }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'hu'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'hu'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextHu }}
                 </p>
 
 
-                <h5
-                  *ngIf="currentLang === 'en'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'en'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepFourHeadlineEn }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'en'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'en'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextEn }}
                 </p>
 
               </div>
 
-              <div
-                class="action-hint d-flex align-items-center justify-content-between text-violet"
-              >
+              <div class="action-hint d-flex align-items-center justify-content-between text-violet">
                 <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
               </div>
 
@@ -564,9 +366,7 @@
 
 
           <!-- HÁTLAP -->
-          <div
-            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
-          >
+          <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
 
@@ -576,34 +376,22 @@
                   <span class="moveMove">✾</span>
                 </div>
 
-                <h6
-                  *ngIf="currentLang === 'hu'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'hu'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepFourHeadlineHu }}
                 </h6>
 
-                <h6
-                  *ngIf="currentLang === 'en'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'en'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepFourHeadlineEn }}
                 </h6>
 
               </div>
 
 
-              <p
-                *ngIf="currentLang === 'hu'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'hu'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepFourTextHu }}
               </p>
 
-              <p
-                *ngIf="currentLang === 'en'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'en'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepFourTextEn }}
               </p>
 
@@ -612,21 +400,13 @@
 
             </div>
 
-            <div
-              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
-            >
+            <div class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4">
 
-              <span
-                *ngIf="currentLang === 'hu'"
-                class="small fw-semibold"
-              >
+              <span *ngIf="currentLang === 'hu'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackHu }}
               </span>
 
-              <span
-                *ngIf="currentLang === 'en'"
-                class="small fw-semibold"
-              >
+              <span *ngIf="currentLang === 'en'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackEn}}
               </span>
 
@@ -645,71 +425,39 @@
       <!-- 5. KÁRTYA -->
       <!-- ========================= -->
 
-      <div
-        *ngIf="hero"
-        class="col-xl-2 col-md-12 card-perspective"
-        [style.--card-index]="4"
-      >
+      <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="4">
 
-        <div
-          class="card-inner"
-          [class.is-flipped]="isFlipped(5)"
-          (click)="toggleCard(5)"
-        >
+        <div class="card-inner" [class.is-flipped]="isFlipped(5)" (click)="toggleCard(5)">
 
           <!-- ELŐLAP -->
-          <div
-            class="card-front d-flex flex-column p-0 overflow-hidden"
-            style="height: 100%;"
-          >
+          <div class="card-front d-flex flex-column p-0 overflow-hidden" style="height: 100%;">
 
-            <img
-              class="w-100"
-              src="/image/555.jpg"
-              alt="Service"
-              style="height: 65%; object-fit: cover;"
-            >
+            <img class="w-100" src="/image/555.jpg" alt="Service" style="height: 65%; object-fit: cover;">
 
-            <div
-              class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1"
-            >
+            <div class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1">
 
               <div class="front-content">
 
-                <h5
-                  *ngIf="currentLang === 'hu'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'hu'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepFiveHeadlineHu }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'hu'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'hu'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextHu }}
                 </p>
 
 
-                <h5
-                  *ngIf="currentLang === 'en'"
-                  class="h5 text-white mb-1 card-heading text-uppercase"
-                >
+                <h5 *ngIf="currentLang === 'en'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepFiveHeadlineEn }}
                 </h5>
 
-                <p
-                  *ngIf="currentLang === 'en'"
-                  class="text-light-50 mb-3"
-                >
+                <p *ngIf="currentLang === 'en'" class="text-light-50 mb-3">
                   {{ hero.heroTwoHelpTextEn }}
                 </p>
 
               </div>
 
-              <div
-                class="action-hint d-flex align-items-center justify-content-between text-violet"
-              >
+              <div class="action-hint d-flex align-items-center justify-content-between text-violet">
                 <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
               </div>
 
@@ -719,9 +467,7 @@
 
 
           <!-- HÁTLAP -->
-          <div
-            class="card-back d-flex flex-column justify-content-between p-1 p-lg-1"
-          >
+          <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
 
@@ -731,34 +477,22 @@
                   <span class="moveMove">✾</span>
                 </div>
 
-                <h6
-                  *ngIf="currentLang === 'hu'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'hu'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepFiveHeadlineHu }}
                 </h6>
 
-                <h6
-                  *ngIf="currentLang === 'en'"
-                  class="h6 fw-bold text-white m-0"
-                >
+                <h6 *ngIf="currentLang === 'en'" class="h6 fw-bold text-white m-0">
                   {{ hero.stepFiveHeadlineEn }}
                 </h6>
 
               </div>
 
 
-              <p
-                *ngIf="currentLang === 'hu'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'hu'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepFiveTextHu }}
               </p>
 
-              <p
-                *ngIf="currentLang === 'en'"
-                class="textJust text-white-75 mb-1 p-1"
-              >
+              <p *ngIf="currentLang === 'en'" class="textJust text-white-75 mb-1 p-1">
                 {{ hero.stepFiveTextEn }}
               </p>
 
@@ -767,21 +501,13 @@
 
             </div>
 
-            <div
-              class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4"
-            >
+            <div class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4">
 
-              <span
-                *ngIf="currentLang === 'hu'"
-                class="small fw-semibold"
-              >
+              <span *ngIf="currentLang === 'hu'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackHu }}
               </span>
 
-              <span
-                *ngIf="currentLang === 'en'"
-                class="small fw-semibold"
-              >
+              <span *ngIf="currentLang === 'en'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackEn }}
               </span>
 

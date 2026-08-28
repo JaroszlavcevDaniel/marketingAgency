@@ -1,4 +1,8 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { HeroModel } from '../../models/heroModel';
+import { Subscription } from 'rxjs';
+import { HeroService } from '../../services/hero-service';
+import { LanguageService } from '../../services/language-service';
 
 @Component({
   selector: 'app-needs',
@@ -6,7 +10,7 @@ import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
   templateUrl: './needs.html',
   styleUrl: './needs.css',
 })
-export class Needs implements OnInit {
+export class Needs implements OnInit, OnDestroy {
 
   // Animált statisztikai adatok
   countersAnimated = false;
@@ -20,10 +24,56 @@ export class Needs implements OnInit {
   estimatedLeads: number = 25;
   estimatedRevenue: number = 2500000;
 
-  constructor(private el: ElementRef) {}
+  currentLang: 'hu' | 'en' = 'hu';
+  
+    hero?: HeroModel;
+  
+    private subs: Subscription[] = [];
+
+  constructor(
+    private el: ElementRef,
+    private cd: ChangeDetectorRef,
+    private heroService: HeroService,
+    private languageService: LanguageService
+  ) {}
 
   ngOnInit(): void {
     this.calculateImpact();
+
+     const langSub = this.languageService.lang$.subscribe(lang => {
+
+      this.currentLang = lang;
+
+      this.cd.detectChanges();
+
+    });
+
+    this.subs.push(langSub);
+
+    // Hero / Feature adatok betöltése SQL adatbázisból
+    this.loadHero();
+  }
+
+    loadHero(): void {
+
+    this.heroService.getHero().subscribe({
+
+      next: (response) => {
+
+        this.hero = response.data;
+
+        this.cd.detectChanges();
+
+      },
+
+      error: (err) => {
+
+        console.error('Feature adatok betöltési hiba:', err);
+
+      }
+
+    });
+
   }
 
   // Amikor a felhasználó odagördül, elindul az animáció
@@ -68,5 +118,11 @@ export class Needs implements OnInit {
     // Becsült kalkuláció a megadott büdzsé alapján
     this.estimatedLeads = Math.round((this.monthlyBudget / 20000) * 1.5);
     this.estimatedRevenue = Math.round(this.monthlyBudget * 4.8);
+  }
+
+   ngOnDestroy(): void {
+
+    this.subs.forEach(sub => sub.unsubscribe());
+
   }
 }

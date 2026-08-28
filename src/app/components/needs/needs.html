@@ -1,11 +1,23 @@
 <section class="mt-1 impact-section mt-5 pb-0 bg-dark text-light position-relative overflow-hidden cormorant-garamond">
   <div class="container py-5 cormorant-garamond">
-    
+
     <!-- Címsor -->
     <div class="text-start mb-0 cormorant-garamond">
-      <h4 class="display-5 fw-bold text-gradient mb-0 fs-3 text-uppercase">Miért van szüksége erre az Ön cégének?</h4>
-      <p class="lead text-light cormorant-garamond text-uppercase fs-6" style="max-width: 700px;">
-        A strukturálatlan működés és a technológia hiánya csendben emészti fel a profitot. Nézze meg, mit jelent a rend a számok nyelvén!
+
+      <h4 *ngIf="currentLang === 'hu'" class="display-5 fw-bold text-gradient mb-0 fs-3 text-uppercase">
+        {{ hero?.heroFourBigTextHu }}
+      </h4>
+      <h4 *ngIf="currentLang === 'en'" class="display-5 fw-bold text-gradient mb-0 fs-3 text-uppercase">
+        {{ hero?.heroFourBigTextEn }}
+      </h4>
+
+      <p *ngIf="currentLang === 'hu'" class="lead text-light cormorant-garamond text-uppercase fs-6"
+        style="max-width: 700px;">
+        {{ hero?.heroFourSmallTextHu }}
+      </p>
+      <p *ngIf="currentLang === 'en'" class="lead text-light cormorant-garamond text-uppercase fs-6"
+        style="max-width: 700px;">
+        {{ hero?.heroFourSmallTextEn }}
       </p>
     </div>
 
@@ -15,22 +27,34 @@
         <div class="card stat-card h-100 p-1 bg-dark-subtle  ">
           <div class="card-body">
             <h3 class="display-5 fw-bold text-warning ">+{{ statConversion }}%</h3>
-            <h5 class="card-title fw-semibold text-light">Konverziós arány</h5>
-            <p class="card-text text-light small">
-              Átgondolt UI/UX és felépített bizalmi elemek hatására a látogatókból vásárlók/ügyfelek lesznek.
-            </p>
+            <h5 class="card-title fw-semibold text-light" *ngIf="currentLang === 'hu'"> {{
+              hero?.heroFourCardOneTextOneHu }}</h5>
+            <h5 class="card-title fw-semibold text-light" *ngIf="currentLang === 'en'"> {{
+              hero?.heroFourCardOneTextOneEn }}</h5>
+            <p *ngIf="currentLang === 'hu'" class="card-text text-light small">
+              {{
+              hero?.heroFourCardOneTextTwoHu }} </p>
+            <p *ngIf="currentLang === 'en'" class="card-text text-light small">
+              {{
+              hero?.heroFourCardOneTextTwoEn }} </p>
           </div>
         </div>
       </div>
- 
+
       <div class="col-md-4 cormorant-garamond">
         <div class="card stat-card h-100 p-1 bg-dark- ">
           <div class="card-body">
             <h3 class="display-5 fw-bold text-warning">-{{ statTimeSaved }}%</h3>
-            <h5 class="card-title fw-semibold text-light">Operatív időveszteség</h5>
-            <p class="card-text text-light small">
-              Automatizált folyamatokkal és tiszta feladatkezeléssel (Jira/Asana) megszűnik a mikromenedzsment.
-            </p>
+            <h5 *ngIf="currentLang === 'hu'" class="card-title fw-semibold text-light"> {{
+              hero?.heroFourCardTwoTextOneHu }}</h5>
+            <h5 *ngIf="currentLang === 'en'" class="card-title fw-semibold text-light"> {{
+              hero?.heroFourCardTwoTextOneEn }}</h5>
+            <p *ngIf="currentLang === 'hu'" class="card-text text-light small">
+              {{
+              hero?.heroFourCardTwoTextTwoHu }} </p>
+            <p *ngIf="currentLang === 'en'" class="card-text text-light small">
+              {{
+              hero?.heroFourCardTwoTextTwoEn }} </p>
           </div>
         </div>
       </div>
@@ -39,9 +63,17 @@
         <div class="card stat-card h-100 p-1 bg-dark- ">
           <div class="card-body">
             <h3 class="display-5 fw-bold text-warning ">+{{ statTraffic }}%</h3>
-            <h5 class="card-title fw-semibold text-light ">Organikus elérés (SEO)</h5>
-            <p class="card-text text-light small">
-              A gyors, technikailag optimális weboldal szárnyal a keresőkben hirdetési költség növelése nélkül is.
+            <h5 *ngIf="currentLang === 'hu'" class="card-title fw-semibold text-light ">{{
+              hero?.heroFourCardThreeTextOneHu }}</h5>
+            <h5 *ngIf="currentLang === 'en'" class="card-title fw-semibold text-light ">{{
+              hero?.heroFourCardThreeTextOneEn }}</h5>
+            <p *ngIf="currentLang === 'hu'" class="card-text text-light small">
+              {{
+              hero?.heroFourCardThreeTextTwoHu }}
+            </p>
+            <p *ngIf="currentLang === 'en'" class="card-text text-light small">
+              {{
+              hero?.heroFourCardThreeTextTwoEn }}
             </p>
           </div>
         </div>
@@ -50,40 +82,42 @@
 
     <!-- 2. Interaktív Növekedési Kalkulátor & Progress Barok -->
     <div class="row g-4 align-items-center p-2 p-md-2   cormorant-garamond">
-      
+
       <!-- Interaktív Slider -->
       <div class="col-lg-6 cormorant-garamond">
-        <h3 class="h4 fw-bold text-light mb-0">Számolja ki a növekedési potenciált!</h3>
-        <p class="text-light mb-0">
-          Állítsa be a havi marketing/fejlesztési keretet, és nézze meg a várható megtérülést:
-        </p>
+        <h3 *ngIf="currentLang === 'hu'" class="h4 fw-bold text-light mb-0">{{
+          hero?.heroFourCountextBigHu }}</h3>
+        <h3 *ngIf="currentLang === 'en'" class="h4 fw-bold text-light mb-0">{{
+          hero?.heroFourCountextBigEn }}</h3>
+        <p *ngIf="currentLang === 'hu'" class="text-light mb-0">
+          {{
+          hero?.heroFourCountextSmallHu }} </p>
+           <p *ngIf="currentLang === 'en'" class="text-light mb-0">
+          {{
+          hero?.heroFourCountextSmallEn }} </p>
 
         <div class="mb-0 cormorant-garamond">
           <label for="budgetRange" class="form-label d-flex justify-content-between text-light fw-medium">
-            <span>Havi befektetés:</span>
+            <!-- <span>Havi befektetés:</span> -->
             <span class="text-warning fs-5">{{ monthlyBudget | number:'1.0-0' }} Ft</span>
           </label>
-          <input 
-            type="range" 
-            class="form-range custom-range" 
-            id="budgetRange" 
-            min="200000" 
-            max="2000000" 
-            step="100000" 
-            [(ngModel)]="monthlyBudget" 
-            (input)="onBudgetChange()">
+          <input type="range" class="form-range custom-range" id="budgetRange" min="200000" max="2000000" step="100000"
+            [(ngModel)]="monthlyBudget" (input)="onBudgetChange()">
         </div>
 
         <div class="row g-3 text-center cormorant-garamond">
           <div class="col-6">
             <div class="p-1 bg-dark  ">
-              <span class="d-block text-secondary small">Becsült új megkeresés</span>
-              <strong class="fs-4 text-light">~{{ estimatedLeads }} db / hó</strong>
+              <span *ngIf="currentLang === 'hu'" class="d-block text-secondary small">Becsült új megkeresés</span>
+              <span *ngIf="currentLang === 'en'" class="d-block text-secondary small">Estimated new inquiries</span>
+              <strong *ngIf="currentLang === 'hu'"  class="fs-4 text-light">~{{ estimatedLeads }} db / hó</strong>
+              <strong *ngIf="currentLang === 'en'"  class="fs-4 text-light">~{{ estimatedLeads }} pcs / month</strong>
             </div>
           </div>
           <div class="col-6">
             <div class="p-1 bg-dark  ">
-              <span class="d-block text-secondary small">Várható többletbevétel</span>
+              <span *ngIf="currentLang === 'hu'" class="d-block text-secondary small">Várható többletbevétel</span>
+              <span *ngIf="currentLang === 'en'" class="d-block text-secondary small">Expected additional income</span>
               <strong class="fs-4 text-warning">~{{ estimatedRevenue | number:'1.0-0' }} Ft</strong>
             </div>
           </div>
@@ -92,11 +126,15 @@
 
       <!-- Vizuális Progress Bar-ok (Hatékonysági tényezők) -->
       <div class="col-lg-6 ps-lg-5 mt-2 mt-lg-0 cormorant-garamond">
-        <h4 class="h5 text-light mb-0">Mely területeken hozzuk a legnagyobb javulást?</h4>
+        <h4 *ngIf="currentLang === 'hu'" class="h5 text-light mb-0">
+          {{ hero?.heroFourResultBigTextHu }}</h4>
+           <h4 *ngIf="currentLang === 'en'" class="h5 text-light mb-0">
+          {{ hero?.heroFourResultBigTextEn }}</h4>
 
         <div class="mb-0 cormorant-garamond">
           <div class="d-flex justify-content-between text-light small mb-0">
-            <span>Tech Management & Folyamatok</span>
+            <span *ngIf="currentLang === 'hu'">{{ hero?.heroFourResultSmallTextOneHu }}</span>
+              <span *ngIf="currentLang === 'en'">{{ hero?.heroFourResultSmallTextOneEn }}</span>
             <span class="text-warning fw-bold">95%</span>
           </div>
           <div class="progress progress-custom bg-dark">
@@ -106,7 +144,8 @@
 
         <div class="mb-0 cormorant-garamond">
           <div class="d-flex justify-content-between text-light small mb-0">
-            <span>Technikai SEO és Web Oldalsebesség</span>
+            <span *ngIf="currentLang === 'hu'">{{ hero?.heroFourResultSmallTextTwoHu }}</span>
+             <span *ngIf="currentLang === 'en'">{{ hero?.heroFourResultSmallTextTwoEn }}</span>
             <span class="text-warning fw-bold">90%</span>
           </div>
           <div class="progress progress-custom bg-dark">
@@ -116,7 +155,8 @@
 
         <div class="mb-1 cormorant-garamond pb-0 mb-0">
           <div class="d-flex justify-content-between text-light small mb-0">
-            <span>Konverzió-orientált Webdesign</span>
+            <span *ngIf="currentLang === 'hu'">{{ hero?.heroFourResultSmallTextThreeHu }}</span>
+            <span *ngIf="currentLang === 'en'">{{ hero?.heroFourResultSmallTextThreeEn }}</span>
             <span class="text-warning fw-bold">85%</span>
           </div>
           <div class="progress progress-custom bg-dark">

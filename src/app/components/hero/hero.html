@@ -56,8 +56,8 @@
                     </a>
 
                     <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
-                        data-bs-target="#editHeroTwoModal" (click)="openEditModal()">
-                        ✏️ Hero szekciók szerkesztése
+                        data-bs-target="#editHeroOneModal" (click)="openEditModal()">
+                        ✏️ Hero one szerkesztése
                     </button>
 
                 </div>
@@ -65,6 +65,62 @@
             </div>
         </div>
     </section>
+
+<!-- EDIT HERO ONE  -->
+<div class="modal fade" id="editHeroOneModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase">Hero egy adatok szerkesztése</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnFour"></button>
+            </div>
+            <div class="modal-body" *ngIf="editModel">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Nagy felírat (első) magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextBigHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Nagy felírat (első) angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextBigEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kisebb felírat (első) magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextSecondHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kisebb felírat (első) angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextSecondEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kisebb felírat (második) magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextThirdHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kisebb felírat (második) angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextThirdEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">CTA gomb magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextButtonHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">CTA gomb angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextButtonEn">
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                <button type="button" class="btn btn-success" (click)="saveHeroTwo()">Mentés</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- HERO TWO -->
     <section class="snap-section heroTwo mt-5 pt-5 mb-5 pb-5" id="answer">
@@ -89,6 +145,7 @@
 
 
                 <app-feauture></app-feauture>
+                  
                 <div class="text-center">
                     <div class="animate-item d-flex justify-content-center mt-3">
                         <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta px-4 py-2"
@@ -100,7 +157,10 @@
                             {{hero?.heroTwoCtaEn}}
                         </a>
 
-
+                        <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
+                        data-bs-target="#editHeroThreeModal" (click)="openEditModal()">
+                        ✏️ Hero two szerkesztése
+                    </button>
                     </div>
                 </div>
             </section>
@@ -135,7 +195,10 @@
                     *ngIf="currentLang === 'en' && hero?.heroThreeCtaEn" href="#fourthHero">
                     {{hero?.heroThreeCtaEn}}
                 </a>
-
+                 <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
+                        data-bs-target="#editHeroTwoModal" (click)="openEditModal()">
+                        ✏️ Hero three szerkesztése
+                    </button>
             </div>
         </div>
     </section>
@@ -153,18 +216,177 @@
             <div class="animate-item d-flex justify-content-center mt-0 pt-0 mb-5 pb-5">
                 <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  phoneDisplayNone"
                     *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" href="#fifthHero">
-                    Készen áll a mérhető növekedésre?
+                    {{hero?.heroFourCtaHu}}
                 </a>
-                <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  phoneDisplayNone"
-                    *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" href="#fifthHero">
-                    {{hero?.ctaTextButtonEn}}
+                 <a class="cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  phoneDisplayNone"
+                    *ngIf="currentLang === 'en' && hero?.ctaTextButtonHu" href="#fifthHero">
+                    {{hero?.heroFourCtaEn}}
                 </a>
 
+                  <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
+                        data-bs-target="#editHeroFourthModal" (click)="openEditModal()">
+                        ✏️ Hero four szerkesztése
+                    </button>
             </div>
         </div>
     </section>
 
     <p class="text-truncate mb-5 pb-5" id="fifthHero" >.</p>
+
+    <div class="modal fade" id="editHeroFourthModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase">Hero four adatok szerkesztése</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnSix"></button>
+            </div>
+            <div class="modal-body" *ngIf="editModel">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Nagy felírat (első) magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourBigTextHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Nagy felírat (első) angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourBigTextEn">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Kisebb felírat magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourSmallTextHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Kisebb felírat angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourSmallTextEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 kártya felírat nagy magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardOneTextOneHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 kártya felírat nagy angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardOneTextOneEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 kártya felírat kisebb magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardOneTextTwoHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">1 kártya felírat kisebb angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardOneTextTwoEn">
+                    </div>
+                     <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 kártya felírat nagy magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardTwoTextOneHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 kártya felírat nagy angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardTwoTextOneEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 kártya felírat kisebb magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardTwoTextTwoHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">2 kártya felírat kisebb angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardTwoTextTwoEn">
+                    </div>
+                     <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 kártya felírat nagy magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardThreeTextOneHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 kártya felírat nagy angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardThreeTextOneEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 kártya felírat kisebb magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardThreeTextTwoHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">3 kártya felírat kisebb angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCardThreeTextTwoEn">
+                    </div>
+
+                     <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">számoló felírat nagy magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCountextBigHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder"> számoló felírat nagy angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCountextBigEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">számoló felírat kis magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCountextSmallHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">számoló felírat kis angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCountextSmallEn">
+                    </div>
+
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">eredmény felírat nagy magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourResultBigTextHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder"> eredmény felírat nagy angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourResultBigTextEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">eredmény felírat 1 kis magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourResultSmallTextOneHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">eredmény felírat 1 kis angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourResultSmallTextOneEn">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">eredmény felírat 2 kis magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourResultSmallTextTwoHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder"> eredmény felírat 2 kis angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourResultSmallTextTwoEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">eredmény felírat 3 kis magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourResultSmallTextThreeHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">eredmény felírat 3 kis angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourResultSmallTextThreeEn">
+                    </div>
+
+                     <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">CTA magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCtaHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">CTA angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCtaEn">
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                <button type="button" class="btn btn-success" (click)="saveHeroFour()">Mentés</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- HERO FIVE -->
     <section class=" heroFive mt-5 ps-0 pe-0 ms-0 me-0" style="width: 100vw !important;">
@@ -233,52 +455,16 @@
 
 <!-- KEZDŐDIK AZ ADMIN PANEL !!!!!!! -->
 
-<div class="modal fade" id="editHeroTwoModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="editHeroThreeModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content text-dark">
             <div class="modal-header">
-                <h5 class="modal-title fw-bold text-uppercase">Hero egy adatok szerkesztése</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnThree"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnFive"></button>
             </div>
             <div class="modal-body" *ngIf="editModel">
                 <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Nagy felírat (első) magyarul</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextBigHu">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Nagy felírat (első) angolul</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextBigEn">
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">kisebb felírat (első) magyarul</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextSecondHu">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">kisebb felírat (első) angolul</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextSecondEn">
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">kisebb felírat (második) magyarul</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextThirdHu">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">kisebb felírat (második) angolul</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextThirdEn">
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">CTA gomb magyarul</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextButtonHu">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">CTA gomb angolul</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModel.ctaTextButtonEn">
-                    </div>
+                
                     <h5 class="fw-bold">Hero two szerkesztése</h5>
-                    <hr>
                     <hr>
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bolder">Nagy felírat magyarul</label>
@@ -430,7 +616,28 @@
                         <textarea rows="1" type="text" class="form-control"
                             [(ngModel)]="editModel.heroTwoCtaEn"></textarea>
                     </div>
-                    <hr>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                <button type="button" class="btn btn-success" (click)="saveHeroThree()">Mentés</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="editHeroTwoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase">Hero egy adatok szerkesztése</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnThree"></button>
+            </div>
+            <div class="modal-body" *ngIf="editModel">
+                <div class="row">
+                
                     <h5 class="modal-title fw-bold text-uppercase">Hero három adatok szerkesztése</h5>
                     <hr>
                     <div class="col-md-6 mb-3">

@@ -210,5 +210,56 @@ export interface HeroModel {
     techTwentyFourDescriptionHu: string;
     techTwentyFourDescriptionEn: string;
 
+    // HERO FOUR
+    heroFourBigTextHu: string;
+    heroFourBigTextEn: string;
+
+    heroFourSmallTextHu: string;
+    heroFourSmallTextEn: string;
+
+    heroFourCardOneTextOneHu: string;
+    heroFourCardOneTextOneEn: string;
+     heroFourCardOneTextTwoHu: string;
+    heroFourCardOneTextTwoEn: string;
+
+    heroFourCardTwoTextOneHu: string;
+    heroFourCardTwoTextOneEn: string;
+    heroFourCardTwoTextTwoHu: string;
+    heroFourCardTwoTextTwoEn: string;
+
+    heroFourCardThreeTextOneHu: string;
+    heroFourCardThreeTextOneEn: string;
+    heroFourCardThreeTextTwoHu: string;
+    heroFourCardThreeTextTwoEn: string;
+
+    heroFourCountextBigHu: string;
+    heroFourCountextBigEn: string;
+    heroFourCountextSmallHu: string;
+    heroFourCountextSmallEn: string;
+
+    heroFourResultBigTextHu: string;
+    heroFourResultBigTextEn: string;
+    heroFourResultSmallTextOneHu: string;
+    heroFourResultSmallTextOneEn: string;
+    heroFourResultSmallTextTwoHu: string;
+    heroFourResultSmallTextTwoEn: string;
+    heroFourResultSmallTextThreeHu: string;
+    heroFourResultSmallTextThreeEn: string;
+
+    heroFourCtaHu: string;
+    heroFourCtaEn: string;
+
+    // HERO FIVE
+
+    heroFiveBigTextHu: string;
+    heroFiveBigTextEn: string;
+    heroFiveSmallTextHu: string;
+    heroFiveSmallTextEn: string;
+    heroFiveCtaOneHu: string;
+    heroFiveCtaOneEn: string;
+    heroFiveCtaTwoHu: string;
+    heroFiveCtaTwoEn: string;
+
 }
 
+    

@@ -209,7 +209,54 @@ try {
     heroThreeTextHu=:heroThreeTextHu,
     heroThreeTextEn=:heroThreeTextEn,
     heroThreeCtaHu=:heroThreeCtaHu,
-    heroThreeCtaEn=:heroThreeCtaEn
+    heroThreeCtaEn=:heroThreeCtaEn,
+
+    heroFourBigTextHu=:heroFourBigTextHu,
+    heroFourBigTextEn=:heroFourBigTextEn,
+
+    heroFourCardOneTextOneHu=:heroFourCardOneTextOneHu,
+    heroFourCardOneTextOneEn=:heroFourCardOneTextOneEn,
+     heroFourCardOneTextTwoHu=:heroFourCardOneTextTwoHu,
+    heroFourCardOneTextTwoEn=:heroFourCardOneTextTwoEn,
+
+    heroFourCardTwoTextOneHu=:heroFourCardTwoTextOneHu,
+    heroFourCardTwoTextOneEn=:heroFourCardTwoTextOneEn,
+    heroFourCardTwoTextTwoHu=:heroFourCardTwoTextTwoHu,
+    heroFourCardTwoTextTwoEn=:heroFourCardTwoTextTwoEn,
+
+    heroFourCardThreeTextOneHu=:heroFourCardThreeTextOneHu,
+    heroFourCardThreeTextOneEn=:heroFourCardThreeTextOneEn,
+    heroFourCardThreeTextTwoHu=:heroFourCardThreeTextTwoHu,
+    heroFourCardThreeTextTwoEn=:heroFourCardThreeTextTwoEn,
+
+    heroFourCountextBigHu=:heroFourCountextBigHu,
+    heroFourCountextBigEn=:heroFourCountextBigEn,
+    heroFourCountextSmallHu=:heroFourCountextSmallHu,
+    heroFourCountextSmallEn=:heroFourCountextSmallEn,
+
+    heroFourResultBigTextHu=:heroFourResultBigTextHu,
+    heroFourResultBigTextEn=:heroFourResultBigTextEn,
+    heroFourResultSmallTextOneHu=:heroFourResultSmallTextOneHu,
+    heroFourResultSmallTextOneEn=:heroFourResultSmallTextOneEn,
+    heroFourResultSmallTextTwoHu=:heroFourResultSmallTextTwoHu,
+    heroFourResultSmallTextTwoEn=:heroFourResultSmallTextTwoEn,
+    heroFourResultSmallTextThreeHu=:heroFourResultSmallTextThreeHu,
+    heroFourResultSmallTextThreeEn=:heroFourResultSmallTextThreeEn,
+
+    heroFourCtaHu=:heroFourCtaHu,
+    heroFourCtaEn=:heroFourCtaEn,
+
+    heroFiveBigTextHu=:heroFiveBigTextHu,
+    heroFiveBigTextEn=:heroFiveBigTextEn,
+    heroFiveSmallTextHu=:heroFiveSmallTextHu,
+    heroFiveSmallTextEn=:heroFiveSmallTextEn,
+    heroFiveCtaOneHu=:heroFiveCtaOneHu,
+    heroFiveCtaOneEn=:heroFiveCtaOneEn,
+    heroFiveCtaTwoHu=:heroFiveCtaTwoHu,
+    heroFiveCtaTwoEn=:heroFiveCtaTwoEn,
+
+    heroFourSmallTextHu=:heroFourSmallTextHu,
+    heroFourSmallTextEn=:heroFourSmallTextEn
 
     WHERE id=1
     ";
@@ -270,7 +317,6 @@ try {
 
         "heroTwoCtaHu" => $data["heroTwoCtaHu"] ?? '',
         "heroTwoCtaEn" => $data["heroTwoCtaEn"] ?? '',
-
 
     "techOneIcon" => $data["techOneIcon"] ?? '',
     "techOneNameHu" => $data["techOneNameHu"] ?? '',
@@ -419,7 +465,54 @@ try {
     "heroThreeTextHu" => $data["heroThreeTextHu"] ?? '',
     "heroThreeTextEn" => $data["heroThreeTextEn"] ?? '',
     "heroThreeCtaHu" => $data["heroThreeCtaHu"] ?? '',
-    "heroThreeCtaEn" => $data["heroThreeCtaEn"] ?? ''
+    "heroThreeCtaEn" => $data["heroThreeCtaEn"] ?? '',
+
+    "heroFourBigTextHu" => $data["heroFourBigTextHu"] ?? '',
+    "heroFourBigTextEn" => $data["heroFourBigTextEn"] ?? '',
+
+    "heroFourCardOneTextOneHu" => $data["heroFourCardOneTextOneHu"] ?? '',
+    "heroFourCardOneTextOneEn" => $data["heroFourCardOneTextOneEn"] ?? '',
+     "heroFourCardOneTextTwoHu" => $data["heroFourCardOneTextTwoHu"] ?? '',
+    "heroFourCardOneTextTwoEn" => $data["heroFourCardOneTextTwoEn"] ?? '',
+
+    "heroFourCardTwoTextOneHu" => $data["heroFourCardTwoTextOneHu"] ?? '',
+    "heroFourCardTwoTextOneEn" => $data["heroFourCardTwoTextOneEn"] ?? '',
+    "heroFourCardTwoTextTwoHu" => $data["heroFourCardTwoTextTwoHu"] ?? '',
+    "heroFourCardTwoTextTwoEn" => $data["heroFourCardTwoTextTwoEn"] ?? '',
+
+    "heroFourCardThreeTextOneHu" => $data["heroFourCardThreeTextOneHu"] ?? '',
+    "heroFourCardThreeTextOneEn" => $data["heroFourCardThreeTextOneEn"] ?? '',
+    "heroFourCardThreeTextTwoHu" => $data["heroFourCardThreeTextTwoHu"] ?? '',
+    "heroFourCardThreeTextTwoEn" => $data["heroFourCardThreeTextTwoEn"] ?? '',
+
+    "heroFourCountextBigHu" => $data["heroFourCountextBigHu"] ?? '',
+    "heroFourCountextBigEn" => $data["heroFourCountextBigEn"] ?? '',
+    "heroFourCountextSmallHu" => $data["heroFourCountextSmallHu"] ?? '',
+    "heroFourCountextSmallEn" => $data["heroFourCountextSmallEn"] ?? '',
+
+    "heroFourResultBigTextHu" => $data["heroFourResultBigTextHu"] ?? '',
+    "heroFourResultBigTextEn" => $data["heroFourResultBigTextEn"] ?? '',
+    "heroFourResultSmallTextOneHu" => $data["heroFourResultSmallTextOneHu"] ?? '',
+    "heroFourResultSmallTextOneEn" => $data["heroFourResultSmallTextOneEn"] ?? '',
+    "heroFourResultSmallTextTwoHu" => $data["heroFourResultSmallTextTwoHu"] ?? '',
+    "heroFourResultSmallTextTwoEn" => $data["heroFourResultSmallTextTwoEn"] ?? '',
+    "heroFourResultSmallTextThreeHu" => $data["heroFourResultSmallTextThreeHu"] ?? '',
+    "heroFourResultSmallTextThreeEn" => $data["heroFourResultSmallTextThreeEn"] ?? '',
+
+    "heroFourCtaHu" => $data["heroFourCtaHu"] ?? '',
+    "heroFourCtaEn" => $data["heroFourCtaEn"] ?? '',
+
+    "heroFiveBigTextHu" => $data["heroFiveBigTextHu"] ?? '',
+    "heroFiveBigTextEn" => $data["heroFiveBigTextEn"] ?? '',
+    "heroFiveSmallTextHu" => $data["heroFiveSmallTextHu"] ?? '',
+    "heroFiveSmallTextEn" => $data["heroFiveSmallTextEn"] ?? '',
+    "heroFiveCtaOneHu" => $data["heroFiveCtaOneHu"] ?? '',
+    "heroFiveCtaOneEn" => $data["heroFiveCtaOneEn"] ?? '',
+    "heroFiveCtaTwoHu" => $data["heroFiveCtaTwoHu"] ?? '',
+    "heroFiveCtaTwoEn" => $data["heroFiveCtaTwoEn"] ?? '',
+        "heroFourSmallTextHu" => $data["heroFourSmallTextHu"] ?? '',
+            "heroFourSmallTextEn" => $data["heroFourSmallTextEn"] ?? ''
+
 
     ]);
 
@@ -429,7 +522,7 @@ try {
 
     echo json_encode([
         "success" => true,
-        "data" => $updatedHero // <-- Így az Angular azonnal megkapja az új állapotot!
+        "data" => $updatedHero 
     ]);
 } catch (PDOException $e) {
     http_response_code(500);
