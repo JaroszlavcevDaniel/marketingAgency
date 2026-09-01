@@ -34,7 +34,7 @@ export class Feauture implements AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
 
-    // Aktuális nyelv figyelése
+   
     const langSub = this.languageService.lang$.subscribe(lang => {
 
       this.currentLang = lang;
@@ -45,7 +45,7 @@ export class Feauture implements AfterViewInit, OnDestroy {
 
     this.subs.push(langSub);
 
-    // Hero / Feature adatok betöltése SQL adatbázisból
+    
     this.loadHero();
 
   }
@@ -96,14 +96,14 @@ export class Feauture implements AfterViewInit, OnDestroy {
 
     }
 
-    // Első ellenőrzés
+   
     this.checkCards();
 
     scroll.addEventListener('scroll', () => this.checkCards());
 
   }
 
-  // Kártya átfordulásának indítása
+  
   toggleCard(serviceId: number): void {
 
     this.flippedCards[serviceId] =
