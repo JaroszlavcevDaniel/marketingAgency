@@ -57,14 +57,23 @@
             <!-- 2. Oszlop: Szolgáltatások Linkek -->
             <div class="col-lg-3 col-sm-6 col-12">
                 <h5 *ngIf="currentLang === 'hu'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerServicesHu }}</h5>
-                <h5 *ngIf="currentLang === 'en'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerServicesen }}</h5>
+                <h5 *ngIf="currentLang === 'en'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerServicesEn }}</h5>
 
                 <ul class="list-unstyled footer-links">
-                    <li><a class="cormorant-garamond" routerLink="services">Marketing</a></li>
-                    <li><a class="cormorant-garamond" routerLink="services">Management</a></li>
-                    <li><a class="cormorant-garamond" routerLink="services">Keresőoptimalizálás (SEO)</a></li>
-                    <li><a class="cormorant-garamond" routerLink="services">Professzionális Videógyártás</a></li>
-                    <li><a class="cormorant-garamond" routerLink="services">Prémium Webfejlesztés</a></li>
+                    <li><a *ngIf="currentLang === 'hu'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceOneHu }}</a></li>
+                    <li><a *ngIf="currentLang === 'en'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceOneEn }}</a></li>
+
+                    <li><a *ngIf="currentLang === 'hu'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceTwoHu }}</a></li>
+                    <li><a *ngIf="currentLang === 'en'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceTwoEn }}</a></li>
+
+                    <li><a *ngIf="currentLang === 'hu'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceThreeHu }}</a></li>
+                    <li><a *ngIf="currentLang === 'en'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceThreeEn }}</a></li>
+
+                    <li><a *ngIf="currentLang === 'hu'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceFourHu }}</a></li>
+                    <li><a *ngIf="currentLang === 'en'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceFourEn }}</a></li>
+
+                    <li><a *ngIf="currentLang === 'hu'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceFiveHu }}</a></li>
+                    <li><a *ngIf="currentLang === 'en'" class="cormorant-garamond" routerLink="services">{{ footer?.footerServiceFiveEn }}</a></li>
                 </ul>
                 <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
                     data-bs-target="#editFooterModal" (click)="openEditModalFooter()">
@@ -74,14 +83,20 @@
 
             <!-- 3. Oszlop: Kapcsolati adatok nagy méretben -->
             <div class="col-lg-4 col-sm-6 col-12">
-                <h5 class="footer-title cormorant-garamond text-uppercase mb-4">Kapcsolat</h5>
-                <div class="footer-contact-info">
-                    <p class="mb-2 text-light text-uppercase small letter-spacing-wide">Együttműködés:</p>
-                    <a href="mailto:info@ugynokseg.hu"
-                        class="footer-mail d-block mb-4 cormorant-garamond">info@ugynokseg.hu</a>
+                <h5 *ngIf="currentLang === 'hu'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerContactHu }}</h5>
+                <h5 *ngIf="currentLang === 'en'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerContactEn }}</h5>
 
-                    <p class="mb-2 text-light text-uppercase small letter-spacing-wide">Hívjon minket:</p>
-                    <a href="tel:+36301234567" class="footer-phone d-block cormorant-garamond">+36 30 123 4567</a>
+                <div class="footer-contact-info">
+                    <p *ngIf="currentLang === 'hu'" class="mb-2 text-light text-uppercase small letter-spacing-wide">{{ footer?.footerWorkTogetherHu }}:</p>
+                    <p *ngIf="currentLang === 'en'" class="mb-2 text-light text-uppercase small letter-spacing-wide">{{ footer?.footerWorkTogetherEn }}:</p>
+
+                    <a href="mailto:{{ footer?.footerEmail }}"
+                        class="footer-mail d-block mb-4 cormorant-garamond">{{ footer?.footerEmail }}</a>
+
+                    <p *ngIf="currentLang === 'hu'" class="mb-2 text-light text-uppercase small letter-spacing-wide">{{ footer?.footerCallUsHu }}</p>
+                    <p *ngIf="currentLang === 'en'" class="mb-2 text-light text-uppercase small letter-spacing-wide">{{ footer?.footerCallUsEn}}</p>
+
+                    <a  href="tel:{{ footer?.footerPhone }}" class="footer-phone d-block cormorant-garamond">{{ footer?.footerPhone }}</a>
                 </div>
             </div>
 
@@ -90,11 +105,15 @@
         <!-- Alsó finom copyright sáv -->
         <div class="footer-bottom row pt-5 mt-5 border-top border-secondary border-opacity-20 align-items-center">
             <div class="col-md-6 col-12 text-center text-md-start mb-3 mb-md-0">
-                <span class="text-light small">&copy; 2026 Marketing Ügynökség. Minden jog fenntartva.</span>
+                <span *ngIf="currentLang === 'hu'" class="text-light small">&copy; {{ footer?.footerInfoHu }}</span>
+                <span *ngIf="currentLang === 'en'" class="text-light small">&copy; {{ footer?.footerInfoEn }}</span>
             </div>
             <div class="col-md-6 col-12 text-center text-md-end">
-                <a href="#privacy" class="text-light small text-decoration-none mx-2">Adatkezelés</a>
-                <a href="#terms" class="text-light small text-decoration-none mx-2">ÁSZF</a>
+                <a *ngIf="currentLang === 'hu'" href="#privacy" class="text-light small text-decoration-none mx-2">{{ footer?.footerDataHu }}</a>
+                <a *ngIf="currentLang === 'en'" href="#privacy" class="text-light small text-decoration-none mx-2">{{ footer?.footerDataEn }}</a>
+
+                <a *ngIf="currentLang === 'hu'" href="#terms" class="text-light small text-decoration-none mx-2">{{ footer?.footerASZFHu }}</a>
+                <a *ngIf="currentLang === 'en'" href="#terms" class="text-light small text-decoration-none mx-2">{{ footer?.footerASZFEn }}</a>
             </div>
         </div>
     </div>
@@ -211,12 +230,12 @@
                     </div>
                     <hr>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Dolgozzon velünk hu</label>
+                        <label class="form-label fw-bolder">Hívjön minket hu</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.footerCallUsHu">
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Dolgozzon velünk en</label>
+                        <label class="form-label fw-bolder">Hívjön minket en</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.footerCallUsEn">
                     </div>
                     <hr>

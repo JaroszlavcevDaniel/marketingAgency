@@ -225,19 +225,19 @@
 
                   <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
                         data-bs-target="#editHeroFourthModal" (click)="openEditModal()">
-                        ✏️ Hero four szerkesztése
+                        ✏️ Hero four és five szerkesztése
                     </button>
             </div>
         </div>
     </section>
 
     <p class="text-truncate mb-5 pb-5" id="fifthHero" >.</p>
-
+<!-- EDIT HERO FOUR AND FIVE  -->
     <div class="modal fade" id="editHeroFourthModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content text-dark">
             <div class="modal-header">
-                <h5 class="modal-title fw-bold text-uppercase">Hero four adatok szerkesztése</h5>
+                <h5 class="modal-title fw-bold text-uppercase">Hero four adatok szerkesztése (hero five lejebb)</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnSix"></button>
             </div>
             <div class="modal-body" *ngIf="editModel">
@@ -377,7 +377,44 @@
                         <label class="form-label fw-bolder">CTA angolul</label>
                         <input type="text" class="form-control" [(ngModel)]="editModel.heroFourCtaEn">
                     </div>
-                  
+
+                    
+
+                    <hr>
+                    <h4>HERO FIVE </h4>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Nagy felírat magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFiveBigTextHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Nagy felírat angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFiveBigTextEn">
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Kis felírat magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFiveSmallTextHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Kis felírat angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFiveSmallTextEn">
+                    </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder"> CTA 1 magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFiveCtaOneHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder"> CTA 1 angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFiveCtaOneEn">
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">CTA 2 magyarul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFiveCtaTwoHu">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">CTA 2 angolul</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModel.heroFiveCtaTwoEn">
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -407,19 +444,19 @@
 
                     <ng-container *ngIf="currentLang === 'hu'">
                         <h2 class="cormorant-garamond text-uppercase display-4 fw-bold mb-3 text-shadow">
-                            A város sosem alszik. A jól felépített rendszerek sem.
+                           {{hero?.heroFiveBigTextHu}}
                         </h2>
                         <p class="cormorant-garamond fs-4 fst-italic text-light-50 max-w-75 text-shadow ">
-                            Míg Ön pihen, a digitális ökoszisztémája folyamatosan dolgozik, konvertál és növekszik.
+                            {{hero?.heroFiveSmallTextHu}}
                         </p>
                     </ng-container>
 
                     <ng-container *ngIf="currentLang === 'en'">
                         <h2 class="cormorant-garamond text-uppercase display-4 fw-bold mb-3 text-shadow ">
-                            The city never sleeps. Neither do well-built systems.
+                            {{hero?.heroFiveBigTextEn}}
                         </h2>
                         <p class="cormorant-garamond fs-4 fst-italic text-light-50 max-w-75 text-shadow ">
-                            While you rest, your digital ecosystem works, converts, and grows continuously.
+                            {{hero?.heroFiveSmallTextEn}}
                         </p>
                     </ng-container>
 
@@ -430,19 +467,19 @@
 
                 <a class="mx-2 cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  "
                     *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" routerLink="services" (click)="scrollToTop()">
-                    bővebben a szolgáltatásainkról
+                   {{hero?.heroFiveCtaOneHu}}
                 </a>
                 <a class="mx-2 cta fs-6 text-light btn rounded-0 text-uppercase cormorant-garamond hoviCta  "
                     *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" routerLink="services" (click)="scrollToTop()">
-                    {{hero?.ctaTextButtonEn}}
+                    {{hero?.heroFiveCtaOneEn}}
                 </a>
                 <a class="mx-2 cta fs-6 text-warning btn rounded-0 text-uppercase cormorant-garamond hoviCtaThree  border border-warning"
                     *ngIf="currentLang === 'hu' && hero?.ctaTextButtonHu" routerLink="contact" (click)="scrollToTop()">
-                    jelentkezem a konzultációra
+                    {{hero?.heroFiveCtaTwoHu}}
                 </a>
                 <a class="mx-2 cta fs-6 text-warning btn rounded-0 text-uppercase cormorant-garamond hoviCtaThree  border border-warning"
                     *ngIf="currentLang === 'en' && hero?.ctaTextButtonEn" routerLink="contact" (click)="scrollToTop()">
-                    {{hero?.ctaTextButtonEn}}
+                    {{hero?.heroFiveCtaTwoEn}}
                 </a>
             </div>
 

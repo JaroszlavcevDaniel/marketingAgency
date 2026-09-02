@@ -23,9 +23,9 @@
 } */
 
 .feature-item:hover {
-  background-color: #4c4c4d !important;
+  /* background-color: #3b3b65 !important;
   transform: scale(1.01);
-  color: black !important;
+  color: black !important; */
 }
 
 .custom-service-video {
