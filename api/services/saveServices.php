@@ -40,55 +40,55 @@ try {
 
 
     $sql = "
-    UPDATE servies SET
+    UPDATE services SET
         
-    serviceOneNameHu=:serviceOneNameHu;
-    serviceOneNameEn=:serviceOneNameEn;
-    serviceOneShortDescriptionHu=:serviceOneShortDescriptionHu;
-    serviceOneShortDescriptionEn=:serviceOneShortDescriptionEn;
-    serviceOneLongDescriptionOneHu=:serviceOneLongDescriptionOneHu;
-    serviceOneLongDescriptionOneEn=:serviceOneLongDescriptionOneEn;
-    serviceOneLongDescriptionTwoHu=:serviceOneLongDescriptionTwoHu;
-    serviceOneLongDescriptionTwoEn=:serviceOneLongDescriptionTwoEn;
+    serviceOneNameHu=:serviceOneNameHu,
+    serviceOneNameEn=:serviceOneNameEn,
+    serviceOneShortDescriptionHu=:serviceOneShortDescriptionHu,
+    serviceOneShortDescriptionEn=:serviceOneShortDescriptionEn,
+    serviceOneLongDescriptionOneHu=:serviceOneLongDescriptionOneHu,
+    serviceOneLongDescriptionOneEn=:serviceOneLongDescriptionOneEn,
+    serviceOneLongDescriptionTwoHu=:serviceOneLongDescriptionTwoHu,
+    serviceOneLongDescriptionTwoEn=:serviceOneLongDescriptionTwoEn,
 
-    serviceTwoNameHu=:serviceTwoNameHu;
-    serviceTwoNameEn=:serviceTwoNameEn;
-    serviceTwoShortDescriptionHu=:serviceTwoShortDescriptionHu;
-    serviceTwoShortDescriptionEn=:serviceTwoShortDescriptionEn;
-    serviceTwoLongDescriptionOneHu=:serviceTwoLongDescriptionOneHu;
-    serviceTwoLongDescriptionOneEn=:serviceTwoLongDescriptionOneEn;
-    serviceTwoLongDescriptionTwoHu=:serviceTwoLongDescriptionTwoHu;
-    serviceTwoLongDescriptionTwoEn=:serviceTwoLongDescriptionTwoEn;
+    serviceTwoNameHu=:serviceTwoNameHu,
+    serviceTwoNameEn=:serviceTwoNameEn,
+    serviceTwoShortDescriptionHu=:serviceTwoShortDescriptionHu,
+    serviceTwoShortDescriptionEn=:serviceTwoShortDescriptionEn,
+    serviceTwoLongDescriptionOneHu=:serviceTwoLongDescriptionOneHu,
+    serviceTwoLongDescriptionOneEn=:serviceTwoLongDescriptionOneEn,
+    serviceTwoLongDescriptionTwoHu=:serviceTwoLongDescriptionTwoHu,
+    serviceTwoLongDescriptionTwoEn=:serviceTwoLongDescriptionTwoEn,
 
-    serviceThreeNameHu=:serviceThreeNameHu;
-    serviceThreeNameEn=:serviceThreeNameEn;
-    serviceThreeShortDescriptionHu=:serviceThreeShortDescriptionHu;
-    serviceThreeShortDescriptionEn=:serviceThreeShortDescriptionEn;
-    serviceThreeLongDescriptionOneHu=:serviceThreeLongDescriptionOneHu;
-    serviceThreeLongDescriptionOneEn=:serviceThreeLongDescriptionOneEn;
-    serviceThreeLongDescriptionTwoHu=:serviceThreeLongDescriptionTwoHu;
-    serviceThreeLongDescriptionTwoEn=:serviceThreeLongDescriptionTwoEn;
+    serviceThreeNameHu=:serviceThreeNameHu,
+    serviceThreeNameEn=:serviceThreeNameEn,
+    serviceThreeShortDescriptionHu=:serviceThreeShortDescriptionHu,
+    serviceThreeShortDescriptionEn=:serviceThreeShortDescriptionEn,
+    serviceThreeLongDescriptionOneHu=:serviceThreeLongDescriptionOneHu,
+    serviceThreeLongDescriptionOneEn=:serviceThreeLongDescriptionOneEn,
+    serviceThreeLongDescriptionTwoHu=:serviceThreeLongDescriptionTwoHu,
+    serviceThreeLongDescriptionTwoEn=:serviceThreeLongDescriptionTwoEn,
 
-    serviceFourNameHu=:serviceFourNameHu;
-    serviceFourNameEn=:serviceFourNameEn;
-    serviceFourShortDescriptionHu=:serviceFourShortDescriptionHu;
-    serviceFourShortDescriptionEn=:serviceFourShortDescriptionEn;
-    serviceFourLongDescriptionOneHu=:serviceFourLongDescriptionOneHu;
-    serviceFourLongDescriptionOneEn=:serviceFourLongDescriptionOneEn;
-    serviceFourLongDescriptionTwoHu=:serviceFourLongDescriptionTwoHu;
-    serviceFourLongDescriptionTwoEn=:serviceFourLongDescriptionTwoEn;
+    serviceFourNameHu=:serviceFourNameHu,
+    serviceFourNameEn=:serviceFourNameEn,
+    serviceFourShortDescriptionHu=:serviceFourShortDescriptionHu,
+    serviceFourShortDescriptionEn=:serviceFourShortDescriptionEn,
+    serviceFourLongDescriptionOneHu=:serviceFourLongDescriptionOneHu,
+    serviceFourLongDescriptionOneEn=:serviceFourLongDescriptionOneEn,
+    serviceFourLongDescriptionTwoHu=:serviceFourLongDescriptionTwoHu,
+    serviceFourLongDescriptionTwoEn=:serviceFourLongDescriptionTwoEn,
 
-    serviceFiveNameHu=:serviceFiveNameHu;
-    serviceFiveNameEn=:serviceFiveNameEn;
-    serviceFiveShortDescriptionHu=:serviceFiveShortDescriptionHu;
-    serviceFiveShortDescriptionEn=:serviceFiveShortDescriptionEn;
-    serviceFiveLongDescriptionOneHu=:serviceFiveLongDescriptionOneHu;
-    serviceFiveLongDescriptionOneEn=:serviceFiveLongDescriptionOneEn;
-    serviceFiveLongDescriptionTwoHu=:serviceFiveLongDescriptionTwoHu;
-    serviceFiveLongDescriptionTwoEn=:serviceFiveLongDescriptionTwoEn;
+    serviceFiveNameHu=:serviceFiveNameHu,
+    serviceFiveNameEn=:serviceFiveNameEn,
+    serviceFiveShortDescriptionHu=:serviceFiveShortDescriptionHu,
+    serviceFiveShortDescriptionEn=:serviceFiveShortDescriptionEn,
+    serviceFiveLongDescriptionOneHu=:serviceFiveLongDescriptionOneHu,
+    serviceFiveLongDescriptionOneEn=:serviceFiveLongDescriptionOneEn,
+    serviceFiveLongDescriptionTwoHu=:serviceFiveLongDescriptionTwoHu,
+    serviceFiveLongDescriptionTwoEn=:serviceFiveLongDescriptionTwoEn,
 
-    serviceCTAHu=:serviceCTAHu;
-    serviceCTAEn=:serviceCTAEn;
+    serviceCTAHu=:serviceCTAHu,
+    serviceCTAEn=:serviceCTAEn
      
     WHERE id = :id
     ";
@@ -96,7 +96,7 @@ try {
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([
-  
+    "id" => $targetId,
     "serviceOneNameHu"         => $data["serviceOneNameHu"] ?? '',
     "serviceOneNameEn"         => $data["serviceOneNameEn"] ?? '',
     "serviceOneShortDescriptionHu"         => $data["serviceOneShortDescriptionHu"] ?? '',

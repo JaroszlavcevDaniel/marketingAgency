@@ -41,3 +41,32 @@
     inset 0 0 0 5px rgb(228, 195, 2), 
     6px 6px 0px rgba(0, 0, 0, 0.15);
 }
+
+.text-justify {
+  text-align: justify;
+}
+
+.cormorant-garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.my-cta-btn {
+    display: inline-block !important;
+    border: solid rgb(115, 98, 5) 2px !important;
+    background: transparent !important;
+    color: rgb(241, 235, 205) !important;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-radius: 0 !important; 
+    padding: 8px 16px;
+    transition: all 0.4s ease !important;
+}
+
+.my-cta-btn:hover {
+    background-color: #0d0e2d !important; 
+    color: #ffffff !important;    
+    border: solid rgb(246, 210, 7) 2px !important;       
+}

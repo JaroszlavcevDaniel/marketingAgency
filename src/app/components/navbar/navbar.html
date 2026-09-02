@@ -190,18 +190,11 @@
                         </div>
                     </li>
 
-                     <li class="nav-item d-flex justify-items-end">
-                        <a (click)="closeMobileMenu()" class="fw-bold nav-link active cormorant-garamond text-uppercase btn-premium "
-                            *ngIf="currentLang === 'hu'" routerLink="about" (click)="scrollToTop()">
-                            {{navbar?.aboutHu}}
-                        </a>
-                        <a (click)="closeMobileMenu()" class="text-light nav-link active cormorant-garamond text-uppercase btn-premium "
-                            *ngIf="currentLang === 'en'" routerLink="about" (click)="scrollToTop()">
-                            {{navbar?.aboutEn}}
-                        </a>
+                     <li class="nav-item d-flex">
+                      
                     </li>
                     
-                    <li  class="nav-item d-flex justify-items-end">
+                    <!-- <li  class="nav-item d-flex justify-items-end">
                         <a (click)="closeMobileMenu()" class="fw-bold nav-link active cormorant-garamond text-uppercase btn-premium "
                             *ngIf="currentLang === 'hu'" routerLink="references" (click)="scrollToTop()">
                             {{navbar?.referenceHu}}
@@ -210,20 +203,31 @@
                             *ngIf="currentLang === 'en'" routerLink="references" (click)="scrollToTop()">
                             {{navbar?.referenceEn}}
                         </a>
-                    </li>
+                    </li> -->
 
                      
 
 
                     <li (click)="closeMobileMenu()" class="nav-item text-center text-lg-end my-2 my-lg-0">
-                        <a class="fw-bold nav-link active cormorant-garamond text-uppercase my-cta-btn btn-premium px-4 py-2"
+                            <a (click)="closeMobileMenu()" class="fw-bold nav-link active cormorant-garamond text-uppercase my-cta-btn  mx-2"
+                            *ngIf="currentLang === 'hu'" routerLink="about" (click)="scrollToTop()">
+                            {{navbar?.aboutHu}}
+                        </a>
+                        <a (click)="closeMobileMenu()" class="text-light nav-link active cormorant-garamond text-uppercase my-cta-btn  mx-2"
+                            *ngIf="currentLang === 'en'" routerLink="about" (click)="scrollToTop()">
+                            {{navbar?.aboutEn}}
+                        </a>
+                        
+                        <a class="fw-bold nav-link active cormorant-garamond text-uppercase my-cta-btn btn-premium mx-2 px-4 py-2"
                             *ngIf="currentLang === 'hu'" routerLink="contact" (click)="scrollToTop()">
                             {{navbar?.contactHu}}
                         </a>
-                        <a (click)="closeMobileMenu()" class="text-light nav-link active cormorant-garamond text-uppercase my-cta-btn btn-premium px-4 py-2"
+                        <a (click)="closeMobileMenu()" class="text-light  mx-2 nav-link active cormorant-garamond text-uppercase my-cta-btn btn-premium px-4 py-2"
                             *ngIf="currentLang === 'en'" routerLink="contact" (click)="scrollToTop()">
                             {{navbar?.contactEn}}
                         </a>
+
+                      
 
                     </li>
                 </ul>
