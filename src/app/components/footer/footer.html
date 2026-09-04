@@ -108,16 +108,22 @@
                 <span *ngIf="currentLang === 'hu'" class="text-light small">&copy; {{ footer?.footerInfoHu }}</span>
                 <span *ngIf="currentLang === 'en'" class="text-light small">&copy; {{ footer?.footerInfoEn }}</span>
             </div>
-            <div class="col-md-6 col-12 text-center text-md-end">
-                <a *ngIf="currentLang === 'hu'" href="#privacy" class="text-light small text-decoration-none mx-2">{{ footer?.footerDataHu }}</a>
-                <a *ngIf="currentLang === 'en'" href="#privacy" class="text-light small text-decoration-none mx-2">{{ footer?.footerDataEn }}</a>
+            <div class="col-md-6 col-12 text-center text-md-end ">
+                <a *ngIf="currentLang === 'hu'" href="#privacy" class="text-light small text-decoration-none mx-2 ">{{ footer?.footerDataHu }}</a>
+                <a *ngIf="currentLang === 'en'" href="#privacy" class="text-light small text-decoration-none mx-2 ">{{ footer?.footerDataEn }}</a>
 
-                <a *ngIf="currentLang === 'hu'" href="#terms" class="text-light small text-decoration-none mx-2">{{ footer?.footerASZFHu }}</a>
-                <a *ngIf="currentLang === 'en'" href="#terms" class="text-light small text-decoration-none mx-2">{{ footer?.footerASZFEn }}</a>
+                <a *ngIf="currentLang === 'hu'" href="#terms" class="text-light small text-decoration-none mx-2 ">{{ footer?.footerASZFHu }}</a>
+                <a *ngIf="currentLang === 'en'" href="#terms" class="text-light small text-decoration-none mx-2 ">{{ footer?.footerASZFEn }}</a>
             </div>
         </div>
     </div>
+
+
+
+    
 </footer>
+
+<p class="m-5 text-dark">.</p>
 
 <div class="modal fade" id="editFooterModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">

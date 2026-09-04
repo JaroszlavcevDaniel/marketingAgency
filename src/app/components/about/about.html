@@ -14,49 +14,144 @@
       <div class="col-12 col-lg-7 text-light cormorant-garamond">
         
         <!-- Magyar nyelvű tartalom -->
-        <ng-container *ngIf="currentLang === 'hu'">
-          <h5 class="text-uppercase text-warning letter-spacing-2 mb-2 text-shadow">Rólunk & Munkásságunk</h5>
-          <!-- <h2 class="display-5 fw-bold mb-3 text-uppercase">Aetheris Konzorcium</h2> -->
-          
-          <p class="fs-5 text-light opacity-90 leading-relaxed mb-3 text-justify text-shadow">
-            Az Aetheris egy éveken át formálódott, több szakterületet átölelő stratégiai konzorcium. Csapatunk cégvezetőket, marketingstratégákat, frontend- és backend-fejlesztőket, filmrendezőket, operatőröket, színészeket és szinkronszínészeket tömörít egyetlen, szervesen együttműködő ökoszisztémába.
-          </p>
+        <div >
+          <h5 *ngIf="currentLang === 'hu'" class="text-uppercase text-warning letter-spacing-2 mb-2 text-shadow">{{ about?.aboutTextHu }}</h5>
+                    <h5 *ngIf="currentLang === 'en'" class="text-uppercase text-warning letter-spacing-2 mb-2 text-shadow">{{ about?.aboutTextEn }}</h5>
 
-          <p class="fs-5 text-light opacity-90 leading-relaxed mb-4 text-justify text-shadow">
-            Munkánk alapját a sziklaszilárd elvek alkotják: a barátság, egyenesség, őszinteség és nyitottság vezérel bennünket minden partnerségben. Ezt a humán értékrendet ötvözzük a legmodernebb technológiai eszköztárral — a vállalatirányítási és stratégiai szoftverektől kezdve, az élenjáró webes keretrendszereken és videógyártási technikákon át, egészen a professzionális beszéd- és színésztréningekig.
-          </p>
+           <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
+                    data-bs-target="#editAboutModal" (click)="openEditModalAbout()">
+                    ✏️ About szerkesztése
+                </button>
+          
+          <p *ngIf="currentLang === 'hu'" class="fs-5 text-light opacity-90 leading-relaxed mb-3 text-justify text-shadow">
+{{ about?.aboutLongTextHu }}          </p>
+<p *ngIf="currentLang === 'en'" class="fs-5 text-light opacity-90 leading-relaxed mb-3 text-justify text-shadow">
+{{ about?.aboutLongTextEn }}          </p>
+
+         <p *ngIf="currentLang === 'hu'" class="fs-5 text-light opacity-90 leading-relaxed mb-3 text-justify text-shadow">
+{{ about?.aboutLongTextTwoHu }}          </p>
+<p *ngIf="currentLang === 'en'" class="fs-5 text-light opacity-90 leading-relaxed mb-3 text-justify text-shadow">
+{{ about?.aboutLongTextTwoEn }}          </p>
 
           <div class="d-flex flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-25">
-            <span class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">Vállalatirányítás & Stratégia</span>
-            <span class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">Full-Stack Fejlesztés</span>
-            <span class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">Cinematográfia & Szinkron</span>
-            <span class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">Performance Marketing</span>
+            <span *ngIf="currentLang === 'hu'" class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">{{ about?.aboutLittleOneHu }} </span>
+            <span *ngIf="currentLang === 'hu'" class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">{{ about?.aboutLittleTwoHu }} </span>
+            <span *ngIf="currentLang === 'hu'" class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">{{ about?.aboutLittleThreeHu }} </span>
+            <span *ngIf="currentLang === 'hu'" class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">{{ about?.aboutLittleFourHu }} </span>
+            <span *ngIf="currentLang === 'en'" class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">{{ about?.aboutLittleOneEn }} </span>
+            <span *ngIf="currentLang === 'en'" class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">{{ about?.aboutLittleTwoEn }} </span>
+            <span *ngIf="currentLang === 'en'" class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">{{ about?.aboutLittleThreeEn }} </span>
+            <span *ngIf="currentLang === 'en'" class="badge bg-dark border border-light text-warning px-3 py-2 fs-6 fw-normal">{{ about?.aboutLittleFourEn }} </span>
           </div>
-        </ng-container>
+        </div>
 
-        <!-- Angol nyelvű tartalom -->
-        <ng-container *ngIf="currentLang === 'en'">
-          <h5 class="text-uppercase text-warning letter-spacing-2 mb-2">About Us</h5>
-          <h2 class="display-5 fw-bold mb-3 text-uppercase">Aetheris Consortium</h2>
-          
-          <p class="fs-5 text-light opacity-90 leading-relaxed mb-3">
-            **Aetheris** is a multi-disciplinary strategic consortium built over years of close collaboration. We bring together entrepreneurs, marketing strategists, senior full-stack developers, directors, cinematographers, actors, and voice talents into a unified digital ecosystem.
-          </p>
-
-          <p class="fs-5 text-light opacity-90 leading-relaxed mb-4">
-            Our foundation relies on unyielding core values: **friendship, integrity, transparency, and adaptability**. We combine this human-centric ethic with cutting-edge technology — ranging from enterprise strategy software and high-level web frameworks to advanced video production and professional voice and speech training.
-          </p>
-
-          <div class="d-flex flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-25">
-            <span class="badge bg-dark border border-warning text-warning px-3 py-2 fs-6 fw-normal">Enterprise Strategy</span>
-            <span class="badge bg-dark border border-warning text-warning px-3 py-2 fs-6 fw-normal">Full-Stack Web Tech</span>
-            <span class="badge bg-dark border border-warning text-warning px-3 py-2 fs-6 fw-normal">Cinematography & Voice</span>
-            <span class="badge bg-dark border border-warning text-warning px-3 py-2 fs-6 fw-normal">Marketing Systems</span>
-          </div>
-        </ng-container>
+    
 
       </div>
 
     </div>
   </div>
 </section>
+
+
+
+
+
+<div class="modal fade" id="editAboutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase">About adatok szerkesztése</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnAbout"></button>
+            </div>
+            <div class="modal-body" *ngIf="editModelAbout">
+                <div class="row">
+                    <hr>
+
+      
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Cím hu</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutTextHu">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Cím en</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutTextEn">
+                    </div>
+                    <hr>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Leírás 1. szöveg hu</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLongTextHu">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Leírás 1. szöveg en</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLongTextEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Leírás 2. szöveg hu</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLongTextTwoHu">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">Leírás 1. szöveg en</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLongTextTwoEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kis szöveg 1 hu</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLittleOneHu">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kis szöveg 1 hu en</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLittleOneEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kis szöveg 2 hu</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLittleTwoHu">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kis szöveg 2 en</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLittleTwoEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kis szöveg 3 hu</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLittleThreeHu">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kis szöveg 3 en</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLittleThreeEn">
+                    </div>
+                    <hr>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kis szöveg 4 hu</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLittleFourHu">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bolder">kis szöveg 4 en</label>
+                        <input type="text" class="form-control" [(ngModel)]="editModelAbout.aboutLittleFourEn">
+                    </div>
+                    <hr>
+                    
+
+                   
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                <button type="button" class="btn btn-success" (click)="saveAbout()">Mentés</button>
+            </div>
+        </div>
+    </div>
+</div>
