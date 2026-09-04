@@ -2,8 +2,8 @@
 
 require_once("config.php");
 
-$username = "admin";
-$password = "123";
+$username = "boss";
+$password = "777";
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
