@@ -12,14 +12,12 @@ import { LanguageService } from '../../services/language-service';
 })
 export class Needs implements OnInit, OnDestroy {
 
-  // Animált statisztikai adatok
   countersAnimated = false;
   
   statConversion = 0;   // Cél: +180% (Konverzió növekedés)
   statTimeSaved = 0;    // Cél: -45% (Káosz/Kapacitásveszteség csökkenés)
   statTraffic = 0;      // Cél: +220% (SEO & Forgalom)
 
-  // Interaktív kalkulátor változók
   monthlyBudget: number = 500000; // Ft
   estimatedLeads: number = 25;
   estimatedRevenue: number = 2500000;
@@ -50,7 +48,6 @@ export class Needs implements OnInit, OnDestroy {
 
     this.subs.push(langSub);
 
-    // Hero / Feature adatok betöltése SQL adatbázisból
     this.loadHero();
   }
 
@@ -76,7 +73,6 @@ export class Needs implements OnInit, OnDestroy {
 
   }
 
-  // Amikor a felhasználó odagördül, elindul az animáció
   @HostListener('window:scroll', [])
   onWindowScroll() {
     if (!this.countersAnimated && this.isElementInViewport()) {
@@ -109,13 +105,11 @@ export class Needs implements OnInit, OnDestroy {
     window.requestAnimationFrame(step);
   }
 
-  // Slider kalkuláció
   onBudgetChange(): void {
     this.calculateImpact();
   }
 
   private calculateImpact(): void {
-    // Becsült kalkuláció a megadott büdzsé alapján
     this.estimatedLeads = Math.round((this.monthlyBudget / 20000) * 1.5);
     this.estimatedRevenue = Math.round(this.monthlyBudget * 4.8);
   }

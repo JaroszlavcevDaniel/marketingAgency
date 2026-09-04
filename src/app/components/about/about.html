@@ -2,7 +2,6 @@
   <div class="container my-auto">
     <div class="row align-items-center g-4 g-lg-5 mt-5">
       
-      <!-- Bal oldal: Kép (kb. 30%-os szélesség desktopon) -->
       <div class="col-12 col-lg-5 text-center">
         <div class="about-image-wrapper shadow-lg rounded-3 overflow-hidden border border-secondary border-opacity-25 position-relative">
           <img src="/image/erverv.jpg" alt="Aetheris Konzorcium" class="img-fluid object-fit-cover w-100 h-100">
@@ -10,10 +9,8 @@
         </div>
       </div>
 
-      <!-- Jobb oldal: Szöveges tartalom -->
       <div class="col-12 col-lg-7 text-light cormorant-garamond">
         
-        <!-- Magyar nyelvű tartalom -->
         <div >
           <h5 *ngIf="currentLang === 'hu'" class="text-uppercase text-warning letter-spacing-2 mb-2 text-shadow">{{ about?.aboutTextHu }}</h5>
                     <h5 *ngIf="currentLang === 'en'" class="text-uppercase text-warning letter-spacing-2 mb-2 text-shadow">{{ about?.aboutTextEn }}</h5>

@@ -2,9 +2,7 @@
     <div class="container-fluid px-md-5 w-100">
         <div class="row gy-5 justify-content-between align-items-start">
 
-            <!-- 1. Oszlop: Brand és Céginfó -->
             <div class="col-lg-4 col-12 footer-brand-section">
-                <!-- Integrált prémium logó -->
                 <a class="navbar-brand text-light fs-4 cormorant-garamond text-uppercase sotet-gomb premium-brand mb-4 d-inline-flex"
                     href="#heroFirst">
                     <span class="brand-icon">✾</span>
@@ -21,7 +19,6 @@
                     {{ footer?.footerDescEn }}
                 </p>
 
-                <!-- Integrált Social Ikonok Wrapper -->
                 <div class="top-right-actions d-flex align-items-center gap-3 mt-4">
                     <div class="social-icons-wrapper d-flex gap-2">
                         <a href="https://www.facebook.com/profile.php?id=61590437648284" target="_blank"
@@ -54,7 +51,6 @@
                 </div>
             </div>
 
-            <!-- 2. Oszlop: Szolgáltatások Linkek -->
             <div class="col-lg-3 col-sm-6 col-12">
                 <h5 *ngIf="currentLang === 'hu'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerServicesHu }}</h5>
                 <h5 *ngIf="currentLang === 'en'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerServicesEn }}</h5>
@@ -81,7 +77,6 @@
                 </button>
             </div>
 
-            <!-- 3. Oszlop: Kapcsolati adatok nagy méretben -->
             <div class="col-lg-4 col-sm-6 col-12">
                 <h5 *ngIf="currentLang === 'hu'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerContactHu }}</h5>
                 <h5 *ngIf="currentLang === 'en'" class="footer-title cormorant-garamond text-uppercase mb-4">{{ footer?.footerContactEn }}</h5>
@@ -102,7 +97,6 @@
 
         </div>
 
-        <!-- Alsó finom copyright sáv -->
         <div class="footer-bottom row pt-5 mt-5 border-top border-secondary border-opacity-20 align-items-center">
             <div class="col-md-6 col-12 text-center text-md-start mb-3 mb-md-0">
                 <span *ngIf="currentLang === 'hu'" class="text-light small">&copy; {{ footer?.footerInfoHu }}</span>

@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. NAVBAR ALAPOK ÉS ELRENDEZÉS (ASZTALI NÉZET)
-   ========================================================================== */
+
 .double-nav {
     padding-top: 0;
     padding-bottom: 0;
@@ -13,9 +11,6 @@
     color: #ffffff !important;
 }
 
-/* ==========================================================================
-   2. BRAND / LOGÓ STÍLUSOK (PREMIUM BRAND - ASZTALI)
-   ========================================================================== */
 .premium-brand {
     display: flex !important;
     align-items: center !important;
@@ -69,9 +64,7 @@
     100% { text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 12px rgba(0, 123, 255, 0.4), 0 0 18px rgba(138, 75, 245, 0.3), 0 0 35px rgba(0, 198, 255, 0.2); }
 }
 
-/* ==========================================================================
-   3. KÖZÖSSÉGI IKONOK (ASZTALI)
-   ========================================================================== */
+
 .social-icon, .social-icon-nav {
     width: 32px;
     height: 32px;
@@ -89,9 +82,7 @@
 .social-icon.instagram:hover, .social-icon-nav.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; }
 .social-icon.tiktok:hover, .social-icon-nav.tiktok:hover { background: #000000 !important; color: #25f4ee !important; }
 
-/* ==========================================================================
-   4. SZOLGÁLTATÁSOK SZALAG (ASZTALI)
-   ========================================================================== */
+
 .service-horizontal-center {
     display: flex;
     justify-content: center;
@@ -144,10 +135,7 @@
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
     text-transform: uppercase;
-    /* font-size: 1.05rem; */
-    /* letter-spacing: 1px; */
     color: #ffffff;
-    /* font-weight: 500; */
     white-space: nowrap;
     opacity: 0.25; 
     transform: scale(0.85); 
@@ -177,9 +165,7 @@
 @keyframes hl-infinite-4 { 60%, 75% { color: #f3c739; opacity: 1; transform: scale(1.15); } }
 @keyframes hl-infinite-5 { 80%, 95% { color: #f3c739; opacity: 1; transform: scale(1.15); } }
 
-/* ==========================================================================
-   5. PREMIUM CTA GOMB (ASZTALI)
-   ========================================================================== */
+
 .my-cta-btn {
     display: inline-block !important;
     border: solid rgb(115, 98, 5) 2px !important;
@@ -198,7 +184,6 @@
     border: solid rgb(246, 210, 7) 2px !important;       
 }
 
-/* Kisebb asztali kijelzők finomhangolása */
 @media (max-width: 1199.98px) {
     .horizontal-scroller-container, .scroller-viewport-horizontal { width: 390px !important; }
     .scroller-track-horizontal { width: calc(130px * 8) !important; animation-name: jumpScrollInfiniteMD !important; }
@@ -216,12 +201,7 @@
 }
 
 
-/* ==========================================================================
-   MOBIL NÉZET - EGYSZERŰ BOOTSTRAP NAVBAR
-   ========================================================================== */
-/* ==========================================================================
-   MOBIL NÉZET - EGYSZERŰ BOOTSTRAP NAVBAR
-   ========================================================================== */
+
 @media (max-width: 991.98px) {
 
     *{
@@ -256,10 +236,6 @@
         padding:.5rem 0 !important;
     }
 
-    /* =======================
-       LOGÓ
-    ======================= */
-
     .premium-brand{
         display:flex !important;
         align-items:center;
@@ -285,17 +261,9 @@
         text-overflow:ellipsis;
     }
 
-    /* =======================
-       HAMBURGER
-    ======================= */
-
     .navbar-toggler{
         margin-left:auto;
     }
-
-    /* =======================
-       LENYÍLÓ MENÜ
-    ======================= */
 
     .navbar-collapse{
         width:100% !important;
@@ -380,27 +348,22 @@
 
 @keyframes mobileWords{
 
-    /* marketing */
     0%,16%{
         transform:translateY(0);
     }
 
-    /* management */
     20%,36%{
         transform:translateY(-32px);
     }
 
-    /* SEO */
     40%,56%{
         transform:translateY(-64px);
     }
 
-    /* videó gyártás */
     60%,76%{
         transform:translateY(-96px);
     }
 
-    /* webfejlesztés */
     80%,96%{
         transform:translateY(-128px);
     }
@@ -410,20 +373,12 @@
     }
 }
 
-    /* =======================
-       CTA
-    ======================= */
-
     .my-cta-btn{
         display:block !important;
         width:100%;
         max-width:330px;
         margin:0 auto;
     }
-
-    /* =======================
-       SOCIAL
-    ======================= */
 
     .social-icon,
     .social-icon-nav{

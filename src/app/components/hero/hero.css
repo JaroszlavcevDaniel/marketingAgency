@@ -4,7 +4,6 @@
   overflow: hidden;
 }
 
-/* --- Eredeti stílusok megtartása asztali nézetre --- */
 .heroTwo {
   position: relative;
   height: 100vh;
@@ -13,21 +12,20 @@
 }
 
 
-/* --- MOBILOS JAVÍTÁS (991px szélesség alatt) --- */
 @media (max-width: 991px) {
   .heroTwo {
-    height: auto !important;     /* Engedjük, hogy a tartalom nyújtsa a szekciót */
-    min-height: 100vh;           /* De legalább egy képernyőnyi legyen */
-    overflow: visible !important; /* Ne vágja le a kilógó kártyákat */
-    padding-bottom: 50px;        /* Kis extra hely az alján */
+    height: auto !important;     
+    min-height: 100vh;           
+    overflow: visible !important; 
+    padding-bottom: 50px;        
   }
 
   .heroTwo-content {
-    position: relative !important; /* Abszolút pozíció helyett kövesse a dokumentum folyamát */
+    position: relative !important; 
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    padding: 20px;               /* Hogy ne érjen ki a telefon szélére a szöveg */
+    padding: 20px;               
   }
 }
 
@@ -53,13 +51,12 @@
   top: 0;
   left: 0;
   width: 100%;       
-  height: 100%; /* Kitölti a teljes hero szekciót */
+  height: 100%; 
   z-index: 5;       
   display: flex;
   flex-direction: column;
 }
 
-/* Mobilos finomhangolás, hogy ne csússzanak össze a szövegek */
 @media (max-width: 991px) {
   .hero-content {
     position: relative;
@@ -70,10 +67,9 @@
   
   .hero-content .container-fluid {
     height: auto !important;
-    gap: 3rem; /* Mobilon szellős távolság egymás alatt */
+    gap: 3rem; 
   }
 
-  /* Mobilon minden szöveg igazodjon középre a jobb olvashatóságért */
   .text-lg-end {
     text-align: center !important;
   }
@@ -430,14 +426,9 @@ h1.typewriter {
 }
 
 .blur-background {
-  /* A homályosítás mértéke */
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari támogatáshoz */
+  -webkit-backdrop-filter: blur(10px); 
 
-  /* Áttetsző háttérszín szükséges, hogy látszódjon a mögötte lévő tartalom */
   background-color: rgba(255, 255, 255, 0.2); 
 
-  /* Opcionális: szép kontúr és lekerekítés az opálüveg hatáshoz */
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  /* border-radius: 12px; */
 }

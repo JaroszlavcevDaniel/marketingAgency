@@ -13,11 +13,10 @@ try {
     ");
 
     $stmt->execute();
-    // Kizárólag asociatív tömbként kérjük le az adatokat
     $footer = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$footer) {
-        $footer = new stdClass(); // Ha üres a tábla, üres JSON objektumot adunk vissza
+        $footer = new stdClass(); 
     }
 
     echo json_encode([

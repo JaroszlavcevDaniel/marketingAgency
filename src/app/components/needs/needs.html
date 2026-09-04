@@ -1,7 +1,6 @@
 <section class="mt-1 impact-section mt-5 pb-0 bg-dark text-light position-relative overflow-hidden cormorant-garamond">
   <div class="container py-5 cormorant-garamond">
 
-    <!-- Címsor -->
     <div class="text-start mb-0 cormorant-garamond">
 
       <h4 *ngIf="currentLang === 'hu'" class="display-5 fw-bold text-gradient mb-0 fs-3 text-uppercase">
@@ -21,7 +20,6 @@
       </p>
     </div>
 
-    <!-- 1. Animált Statisztikai Kártyák -->
     <div class="row g-4 mb-0 text-center cormorant-garamond">
       <div class="col-md-4">
         <div class="card stat-card h-100 p-1 bg-dark-subtle  ">
@@ -80,10 +78,8 @@
       </div>
     </div>
 
-    <!-- 2. Interaktív Növekedési Kalkulátor & Progress Barok -->
     <div class="row g-4 align-items-center p-2 p-md-2   cormorant-garamond">
 
-      <!-- Interaktív Slider -->
       <div class="col-lg-6 cormorant-garamond">
         <h3 *ngIf="currentLang === 'hu'" class="h4 fw-bold text-light mb-0">{{
           hero?.heroFourCountextBigHu }}</h3>
@@ -98,7 +94,6 @@
 
         <div class="mb-0 cormorant-garamond">
           <label for="budgetRange" class="form-label d-flex justify-content-between text-light fw-medium">
-            <!-- <span>Havi befektetés:</span> -->
             <span class="text-warning fs-5">{{ monthlyBudget | number:'1.0-0' }} Ft</span>
           </label>
           <input type="range" class="form-range custom-range" id="budgetRange" min="200000" max="2000000" step="100000"
@@ -124,7 +119,6 @@
         </div>
       </div>
 
-      <!-- Vizuális Progress Bar-ok (Hatékonysági tényezők) -->
       <div class="col-lg-6 ps-lg-5 mt-2 mt-lg-0 cormorant-garamond">
         <h4 *ngIf="currentLang === 'hu'" class="h5 text-light mb-0">
           {{ hero?.heroFourResultBigTextHu }}</h4>
@@ -164,11 +158,7 @@
           </div>
         </div>
 
-        <!-- <div class="mt-2 text-center text-lg-start cormorant-garamond">
-          <a href="#hero5" class="btn btn-outline-light btn-lg px-4  cta-btn">
-            Hogyan alakítható ez át az Ön cégére? &rarr;
-          </a>
-        </div> -->
+
       </div>
 
     </div>

@@ -9,7 +9,6 @@ export class AuthService {
 
   private api = "http://localhost:3000/api/auth/";
 
-  // Ez tárolja a bejelentkezési állapotot, amire a komponensek feliratkoznak
   isLoggedIn$ = new BehaviorSubject<boolean>(false);
 
   constructor(
@@ -25,10 +24,8 @@ export class AuthService {
   }
 
   logout(): void {
-    // 1. Azonnal átállítjuk a frontend állapotot hamisra, hogy a gombok eltűnjenek
     this.isLoggedIn$.next(false);
 
-    // 2. Szólunk a PHP backendnek is (ha van logout.php), hogy törölje a sütit/session-t
     this.http.post<any>(this.api + "logout.php", {}, { withCredentials: true }).subscribe({
       next: (res) => {
         console.log('Sikeres szerveroldali kijelentkezés.');

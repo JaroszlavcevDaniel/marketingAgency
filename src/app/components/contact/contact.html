@@ -2,7 +2,6 @@
     <div class="container-fluid px-md-5 my-auto mt-5">
         <div class="row gy-2 justify-content-between">
 
-            <!-- BAL OLDAL: KAPCSOLATFELVÉTELI FORM -->
             <div class="col-lg-6 col-12">
                 <div class="contact-form-container">
                     <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
@@ -22,7 +21,6 @@
 
                     <form [formGroup]="contactForm" #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)" novalidate>
 
-                        <!-- Név -->
                         <div *ngIf="currentLang === 'hu'" class="mb-4 position-relative">
                             <label class="form-label text-uppercase text-light cormorant-garamond">{{
                                 contact?.contactNameHu }}*</label>
@@ -42,7 +40,6 @@
                         </div>
 
                         <div class="row">
-                            <!-- Email -->
                             <div *ngIf="currentLang === 'hu'" class="col-md-6 col-12 mb-4">
                                 <label class="form-label text-uppercase text-light cormorant-garamond">{{
                                     contact?.contactEmailHu }}
@@ -60,7 +57,6 @@
                                     [ngClass]="{'is-invalid': contactForm.get('email')?.touched && contactForm.get('email')?.invalid}">
                             </div>
 
-                            <!-- Telefonszám -->
                             <div *ngIf="currentLang === 'hu'" class="col-md-6 col-12 mb-1">
                                 <label class="form-label text-uppercase text-light cormorant-garamond">{{
                                     contact?.contactPhoneHu }}</label>
@@ -75,7 +71,6 @@
                             </div>
                         </div>
 
-                        <!-- Üzenet -->
                         <div *ngIf="currentLang === 'hu'" class="mb-4">
                             <label class="form-label text-uppercase text-light cormorant-garamond">{{
                                 contact?.contactSendMessageHu }} *</label>
@@ -91,7 +86,6 @@
                                 [ngClass]="{'is-invalid': contactForm.get('message')?.touched && contactForm.get('message')?.invalid}"></textarea>
                         </div>
 
-                        <!-- MATEMATIKAI CAPTCHA -->
                         <div *ngIf="currentLang === 'hu'"
                             class="mb-1 captcha-wrapper p-1 d-flex align-items-center gap-1 bg-dark bg-opacity-50 border border-secondary border-opacity-20 rounded-0">
                             <span class="captcha-question cormorant-garamond text-light fs-5">
@@ -112,7 +106,6 @@
                                 [ngClass]="{'is-invalid': contactForm.get('captcha')?.touched && (contactForm.get('captcha')?.invalid || !isCaptchaCorrect())}">
                         </div>
 
-                        <!-- ÁSZF Checkbox -->
                         <div class="form-check mb-1 d-flex align-items-start gap-1">
                             <input class="form-check-input mt-1 rounded-0 checkbox-premium" type="checkbox"
                                 formControlName="acceptTerms" id="flexCheckDefault"
@@ -127,7 +120,6 @@
                             </label>
                         </div>
 
-                        <!-- Küldés Gomb -->
                         <button *ngIf="currentLang === 'hu'" type="submit"
                             [disabled]="contactForm.invalid || !isCaptchaCorrect() || isSending"
                             class="btn btn-premium-submit w-100 text-uppercase cormorant-garamond py-3 fs-5">
@@ -144,7 +136,6 @@
                 </div>
             </div>
 
-            <!-- JOBB OLDAL: INFÓK & GOOGLE MAPS -->
             <div class="col-lg-5 col-12 d-flex flex-column justify-content-between">
                 <div class="contact-info-block mb-1">
                     <h4 *ngIf="currentLang === 'hu'"
@@ -168,7 +159,6 @@
                             contact?.contactEmail }}</a>
                     </div>
 
-                    <!-- Social Ikonok -->
                     <div class="social-icons-wrapper d-flex gap-1">
                         <a href="https://www.facebook.com/profile.php?id=61590437648284" target="_blank"
                             class="social-icon-nav facebook">
@@ -199,17 +189,16 @@
                     </div>
                 </div>
 
-                <!-- GOOGLE TÉRKÉP BEÁGYAZÁS -->
                 <div class="map-container border border-secondary border-opacity-20">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.499753250754!2d19.213782076503048!3d47.48017697117859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c392ad4817fd%3A0x6660a9a5adc9c5c6!2sBudapest%2C%20534.%20u.%2019%2C%201173!5e0!3m2!1shu!2shu!4v1783198319680!5m2!1shu!2shu"
                         width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
-            </div> <!-- col-lg-5 lezárása -->
+            </div> 
 
-        </div> <!-- row lezárása -->
-    </div> <!-- container-fluid lezárása -->
+        </div> 
+    </div> 
 </section>
 
 

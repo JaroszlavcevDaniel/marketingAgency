@@ -4,10 +4,9 @@ session_start();
 require_once("../cors.php");
 require_once("../config.php");
 
-// JSON adatok beolvasása
+
 $data = json_decode(file_get_contents("php://input"), true);
 
-// BIZTONSÁGI ELLENŐRZÉS: Ha üresen jönne az adat az Angulartól
 if (!$data || !isset($data["username"]) || !isset($data["password"])) {
     http_response_code(400);
     echo json_encode([
@@ -17,7 +16,6 @@ if (!$data || !isset($data["username"]) || !isset($data["password"])) {
     exit;
 }
 
-// Innen mehet tovább a te kódod...
 $stmt = $pdo->prepare("
     SELECT *
     FROM admin

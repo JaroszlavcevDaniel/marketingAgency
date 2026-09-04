@@ -24,7 +24,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
 
   private animationId = 0;
 
-  // ---------------- INIT ----------------
   ngAfterViewInit(): void {
     this.initThree();
     this.createStars();
@@ -41,7 +40,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     this.renderer.dispose();
   }
 
-  // ---------------- CORE ----------------
   private initThree(): void {
     this.scene = new THREE.Scene();
 
@@ -72,7 +70,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     this.scene.add(sun);
   }
 
-  // ---------------- STARS ----------------
   private createStars(): void {
     const geo = new THREE.BufferGeometry();
     const pos: number[] = [];
@@ -100,7 +97,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     this.scene.add(this.stars);
   }
 
-  // ---------------- NEBULA ----------------
   private createCleanNebula(): void {
     const geo = new THREE.PlaneGeometry(30, 20);
     
@@ -133,11 +129,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     this.scene.add(this.spaceNebula);
   }
 
-  // ---------------- EARTH & SZÉLES, DIFFÚZ NEON GLOW ----------------
-  // ---------------- EARTH & TÖKÉLETESÍTETT DIFFÚZ NEON GLOW ----------------
-// ---------------- EARTH & NAPIRÁNYHOZ KÖTÖTT TÖKÉLETES GLOW ----------------
- // ---------------- EARTH & NAPIRÁNYHOZ KÖTÖTT VIBRÁLÓ LILÁSKÉK GLOW ----------------
-// ---------------- EARTH & NAPIRÁNYHOZ KÖTÖTT VIBRÁLÓ LILÁSKÉK GLOW ----------------
   private createEarthAndGlow(): void {
     const loader = new THREE.TextureLoader();
 
@@ -147,7 +138,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     earthTex.colorSpace = THREE.SRGBColorSpace;
     cloudTex.colorSpace = THREE.SRGBColorSpace;
 
-    // 1. A Föld test (Sugár: 2.0)
     this.earth = new THREE.Mesh(
       new THREE.SphereGeometry(2, 64, 64),
       new THREE.MeshStandardMaterial({
@@ -159,7 +149,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     this.earth.position.set(0, 0, -1); 
     this.scene.add(this.earth);
 
-    // 2. A Felhők (Sugár: 2.015)
     this.clouds = new THREE.Mesh(
       new THREE.SphereGeometry(2.015, 64, 64),
       new THREE.MeshPhongMaterial({
@@ -171,7 +160,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     this.clouds.position.copy(this.earth.position);
     this.scene.add(this.clouds);
 
-    // 3. BELSŐ ATMOSZFÉRA (Finom belső derítés a peremeken)
     const innerGlowGeo = new THREE.SphereGeometry(2.02, 64, 64);
     const innerGlowMat = new THREE.ShaderMaterial({
       transparent: true,
@@ -197,20 +185,17 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     innerGlow.position.copy(this.earth.position);
     this.scene.add(innerGlow);
 
-    // 4. KÜLSŐ, SZELES ÉS FINOM DIFFÚZ NEON GLÓRIA (Sprite alapú megoldás - Szűkített verzió)
     const glowCanvas = document.createElement('canvas');
     glowCanvas.width = 512;
     glowCanvas.height = 512;
     const glowCtx = glowCanvas.getContext('2d');
     
     if (glowCtx) {
-      // A belső kört (ahol a Föld van) picit kijjebb toltuk (40 -> 140), 
-      // a külső sugarat pedig 250-en hagytuk, így sokkal rövidebb szakaszon (kompaktabban) mosódik el.
       const grad = glowCtx.createRadialGradient(256, 256, 140, 256, 256, 250);
-      grad.addColorStop(0, 'rgba(0, 0, 255, 1.0)');     // Tiszta RGB kék a Föld mögött
-      grad.addColorStop(0.1, 'rgba(0, 0, 255, 0.8)');   // Éles neon ragyogás közvetlenül a peremen
-      grad.addColorStop(0.5, 'rgba(0, 0, 255, 0.2)');   // Gyorsan lecsengő, finom köd
-      grad.addColorStop(1, 'rgba(0, 0, 0, 0)');         // Tökéletes eltűnés a semmibe
+      grad.addColorStop(0, 'rgba(0, 0, 255, 1.0)');     
+      grad.addColorStop(0.1, 'rgba(0, 0, 255, 0.8)');   
+      grad.addColorStop(0.5, 'rgba(0, 0, 255, 0.2)');   
+      grad.addColorStop(1, 'rgba(0, 0, 0, 0)');        
       
       glowCtx.fillStyle = grad;
       glowCtx.fillRect(0, 0, 512, 512);
@@ -225,8 +210,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
       depthWrite: false
     });
 
-    // 👇 ITT CSÖKKENTETTÜK A MÉRETET: 6.5-ről 4.8-ra vettem vissza a skálázást, 
-    // így a glória sokkal közelebb simul a Földhöz (aminek a sugara 2.0, azaz az átmérője 4.0)
     const glowSprite = new THREE.Sprite(spriteMat);
     glowSprite.scale.set(4.8, 4.8, 1.0); 
     
@@ -236,7 +219,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     this.scene.add(this.neonGlow);
   }
 
-  // ---------------- ANIMATION ----------------
   private animate = (): void => {
     this.animationId = requestAnimationFrame(this.animate);
 
@@ -249,7 +231,6 @@ export class SpaceBackground implements AfterViewInit, OnDestroy {
     this.renderer.render(this.scene, this.camera);
   };
 
-  // ---------------- RESIZE ----------------
   private onResize = (): void => {
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();

@@ -5,8 +5,7 @@
 }
 
 .about-image-wrapper {
-  /* max-width: 380px; */
-  /* height: 420px; */
+
   
   img {
     filter: brightness(1) contrast(1.05);

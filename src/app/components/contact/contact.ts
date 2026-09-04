@@ -159,8 +159,8 @@ export class Contact implements OnInit, OnDestroy {
   }
 
   generateCaptcha(): void {
-    this.captchaNum1 = Math.floor(Math.random() * 10) + 1; // 1 és 10 között
-    this.captchaNum2 = Math.floor(Math.random() * 10) + 1; // 1 és 10 között
+    this.captchaNum1 = Math.floor(Math.random() * 10) + 1; 
+    this.captchaNum2 = Math.floor(Math.random() * 10) + 1; 
     this.captchaAnswer = this.captchaNum1 + this.captchaNum2;
   }
 
@@ -173,12 +173,10 @@ export class Contact implements OnInit, OnDestroy {
     if (this.contactForm.valid && this.isCaptchaCorrect() && !this.isSending) {
       this.isSending = true;
 
-      // TODO: Cseréld ki ezeket a saját azonosítóidra az EmailJS fiókodból!
       const SERVICE_ID = 'YOUR_SERVICE_ID';
       const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
       const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
 
-      // Az objektum kulcsai egyezzenek az EmailJS sablonodban megadott {{változókkal}}
       const templateParams = {
         name: formValues.name,
         email: formValues.email,
@@ -201,7 +199,6 @@ export class Contact implements OnInit, OnDestroy {
         });
 
     } else {
-      // Ha érvénytelen, pirossal kiemeljük a hibás mezőket
       this.contactForm.markAllAsTouched();
     }
   }

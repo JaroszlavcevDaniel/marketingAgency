@@ -75,16 +75,13 @@ export class Navbar implements  OnInit {
       next: (response) => {
         if (response && response.success) {
           
-          // 1. Elsőként bezárjuk a modalt, amíg a DOM még érintetlen
           const closeBtn = document.getElementById('closeEditModalBtn') as HTMLButtonElement;
           if (closeBtn) {
             closeBtn.click();
           }
 
-          // 2. Frissítjük a lokális modellt az editModel alapján az azonnali reakcióért
           this.navbar = { ...this.editModel } as NavbarModel;
 
-          // 3. Várunk egy kicsit a Bootstrap animációra, mielőtt újratöltenénk az adatokat a szerverről
           setTimeout(() => {
             this.loadNavbar();
           }, 300);

@@ -13,25 +13,20 @@ import { AuthService } from '../../services/auth-service';
   standalone: false,
   templateUrl: './hero.html',
   styleUrl: './hero.css',
-  // Az új animációs beállítások
   animations: [
     trigger('heroAnimation', [
       transition(':enter', [
-        // 1. lépés: Az ÖSSZES animált elemet elrejtjük az elején
         query('.animate-item', [
           style({ opacity: 0, transform: 'translateY(15px)' })
         ], { optional: true }),
 
-        // 2. lépés: Az ELSŐ elemet (Írógép) azonnal megjelenítjük, hogy elindulhasson a CSS gépelés
         query('.animate-item:nth-child(1)', [
           animate('10ms', style({ opacity: 1, transform: 'translateY(0)' }))
         ], { optional: true }),
 
-        // 3. lépés: Megvárjuk a gépelést (3500ms), majd a többi elemet (2., 3., CTA) lépcsőzetesen beúsztatjuk
         query('.animate-item:not(:nth-child(1))', [
-          stagger(1000, [ // 1 másodperc különbség a 2., 3. szöveg és a CTA között
+          stagger(1000, [ 
             animate('800ms 3500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-            // A '3500ms' a fenti sorban a késleltetés (delay) -> megvárja a gépelést!
           ])
         ], { optional: true })
       ])
@@ -50,7 +45,6 @@ export class Hero implements OnInit, OnDestroy {
   
     editModel?: HeroModel;
   
-  // Egy tömbbe gyűjtjük a feliratkozásokat a biztonságos leiratkozáshoz
   private subs: Subscription[] = [];
 
   constructor(
@@ -68,13 +62,11 @@ export class Hero implements OnInit, OnDestroy {
   });
   this.subs.push(langSub);
 
-  // Az admin státusz követése
   this.authService.isLoggedIn$.subscribe(logged => {
     this.isAdmin = logged;
     this.cdr.detectChanges();
   });
 
-  // A session betöltését tegyük be egy setTimeout-ba, hogy ne zavarja meg a kezdeti renderelést
   if (typeof this.authService.loadSession === 'function') {
     setTimeout(() => {
       this.authService.loadSession();

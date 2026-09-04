@@ -29,17 +29,14 @@ export class Login  {
 
         if (response.success) {
 
-          // Angular értesítése
           this.authService.isLoggedIn$.next(true);
 
-          // Modal bezárása
           const closeBtn = document.getElementById('closeLoginModal') as HTMLButtonElement;
 
           if (closeBtn) {
             closeBtn.click();
           }
 
-          // Mezők ürítése
           this.username = '';
           this.password = '';
 

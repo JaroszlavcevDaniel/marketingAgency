@@ -14,7 +14,6 @@
     font-family: "Cormorant Garamond", serif;
 }
 
-/* Premium Form Input mezők stílusai */
 .contact-form-container {
     .form-control {
         background-color: rgba(255, 255, 255, 0.03);
@@ -44,12 +43,10 @@
     }
 }
 
-/* Captcha mező méretezése */
 .captcha-input {
     max-width: 100px;
 }
 
-/* Premium Checkbox */
 .checkbox-premium {
     background-color: transparent !important;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
@@ -64,7 +61,6 @@
     }
 }
 
-/* Premium Küldés Gomb */
 .btn-premium-submit {
     background: transparent;
     color: #ffffff;
@@ -86,7 +82,6 @@
     }
 }
 
-/* Jobb oldali közösségi ikonok */
 .social-icon-nav {
     width: 36px;
     height: 36px;
@@ -111,7 +106,6 @@
     }
 }
 
-/* Térkép konténer */
 .map-container {
     overflow: hidden;
     position: relative;
@@ -128,15 +122,13 @@
     }
 }
 
-/* Általános placeholder stílus az összes input és textarea mezőhöz */
 input::placeholder,
 textarea::placeholder {
-  color: #515626; /* Vagy amilyen színt szeretnél (pl. #e0e0e0) */
-  opacity: 1;     /* Eltávolítja az alapértelmezett elhalványítást/átlátszóságot */
-  font-weight: 500; /* Szükség esetén a betűvastagsággal is növelhető az élesség */
+  color: #515626; 
+  opacity: 1;    
+  font-weight: 500; 
 }
 
-/* Keresztböngészős kompatibilitás (régebbi WebKit / MS böngészőkhöz) */
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #515626;

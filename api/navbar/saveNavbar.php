@@ -41,7 +41,6 @@ try {
 
     $stmt = $pdo->prepare($sql);
 
-    // Kifejezetten csak azokat a mezőket adjuk át, amiket a SQL vár! Így az 'id' nem zavar be.
     $stmt->execute([
         "companyName"    => $data["companyName"] ?? '',
         "emailAddress"   => $data["emailAddress"] ?? '',

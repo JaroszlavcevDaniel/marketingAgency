@@ -1,7 +1,6 @@
-/* --- Monumentális Footer Alapok --- */
 .massive-footer {
-    background-color: #0d0d0d; /* Sötét, prémium háttér */
-    min-height: 70vh;          /* A képernyő 70%-a magasság asztali gépen */
+    background-color: #0d0d0d; 
+    min-height: 70vh;          
     padding: 80px 0 40px 0;
     color: #ffffff;
     position: relative;
@@ -9,13 +8,12 @@
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* --- Tipográfia és Linkek --- */
 .footer-title {
     font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     color: #ffffff;
-    border-left: 2px solid #f3c739; /* Finom arany/sárga accent vonal a címek mellett */
+    border-left: 2px solid #f3c739; 
     padding-left: 12px;
 }
 
@@ -33,10 +31,9 @@
 
 .footer-links li a:hover {
     color: #f3c739;
-    transform: translateX(5px); /* Finom elmozdulás hoverre */
+    transform: translateX(5px); 
 }
 
-/* --- Kapcsolati elemek kiemelése --- */
 .letter-spacing-wide {
     letter-spacing: 0.15em;
     font-size: 0.8rem;
@@ -54,9 +51,8 @@
     color: #f3c739;
 }
 
-/* --- Meglévő Social Ikonok Stílusai (Megtartva/Beépítve) --- */
 .social-icon, .social-icon-nav {
-    width: 36px; /* Kicsit megnövelve a monumentális footerhez */
+    width: 36px; 
     height: 36px;
     border-radius: 50%;
     display: flex;
@@ -72,7 +68,6 @@
 .social-icon.instagram:hover, .social-icon-nav.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; }
 .social-icon.tiktok:hover, .social-icon-nav.tiktok:hover { background: #000000 !important; color: #25f4ee !important; }
 
-/* --- Meglévő Prémium Logó Animációk és Stílusok (Megtartva) --- */
 .cormorant-garamond {
     font-family: "Cormorant Garamond", serif;
 }
@@ -130,16 +125,15 @@
     100% { text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 12px rgba(0, 123, 255, 0.4), 0 0 18px rgba(138, 75, 245, 0.3), 0 0 35px rgba(0, 198, 255, 0.2); }
 }
 
-/* --- Reszponzív Finomhangolás (Mobil) --- */
 @media (max-width: 991px) {
     .massive-footer {
-        min-height: auto; /* Mobilon ne erőltessük a vh-t, folyjon a tartalom szerint */
+        min-height: auto; 
         padding: 60px 0 30px 0;
     }
     .footer-title {
         margin-top: 15px;
     }
     .footer-mail, .footer-phone {
-        font-size: 1.6rem; /* Mobilon picit kisebb betűméret az overflow ellen */
+        font-size: 1.6rem; 
     }
 }

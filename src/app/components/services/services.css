@@ -5,35 +5,25 @@
 }
 
 .service-card:hover {
-  /* transform: translateY(-4px); */
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08) !important;
    color: black !important;
 }
 
-/* Kényszeríti a videót, hogy torzulás nélkül töltse ki a széles arányt */
 .object-fit-cover {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-/* A kis belső funkció-blokkok finom reakciója érintésre/egérre */
-/* .feature-item {
-  transition: background-color 0.2s ease, transform 0.2s ease;
-} */
 
-.feature-item:hover {
-  /* background-color: #3b3b65 !important;
-  transform: scale(1.01);
-  color: black !important; */
-}
+
 
 .custom-service-video {
   width: 100%;
-  height: 220px;        /* <--- Itt állítsd be, milyen alacsony legyen! (pl. 150px vagy 180px) */
-  object-fit: cover;    /* Nem engedi eltorzulni a videót, levágja a felesleget */
+  height: 220px;        
+  object-fit: cover;    
   object-position: center;
-  display: block;       /* Eltünteti az alatta lévő üres réseket */
+  display: block;       
 }
 
 .hoviCtaThree:hover {

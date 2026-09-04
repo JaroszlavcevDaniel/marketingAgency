@@ -11,26 +11,20 @@ export class ContentService {
 
   constructor(private http: HttpClient) {}
 
-  // Csak a cikkek letöltése
   getArticles(): Observable<Article[]> {
     return this.http.get<Article[]>(this.apiUrl).pipe(
-      // Az 'items' után odaírjuk, hogy : Article[]
       map((items: Article[]) => items.filter(item => item.isArticle))
     );
   }
 
-  // Csak a lejátszási listák letöltése
   getPlaylists(): Observable<Article[]> {
     return this.http.get<Article[]>(this.apiUrl).pipe(
-      // Itt is megadjuk a típust
       map((items: Article[]) => items.filter(item => item.isPlaylist))
     );
   }
 
-  // Egy konkrét elem lekérése ID alapján
   getItemById(id: number): Observable<Article | undefined> {
     return this.http.get<Article[]>(this.apiUrl).pipe(
-      // Itt is megadjuk a típust
       map((items: Article[]) => items.find(item => item.id === id))
     );
   }

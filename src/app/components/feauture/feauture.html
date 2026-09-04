@@ -1,9 +1,8 @@
 <div class="position-relative overflow-hidden cormorant-garamond" [class.animate-cards]="cardsVisible" #featureSection>
-  <!-- Háttér díszítő elemek a kreatív atmoszféráért -->
 
   <div class="container position-relative z-1">
 
-    <!-- Fejléc -->
+
     <div class="row mb-1 text-center">
     </div>
 
@@ -11,27 +10,19 @@
     <div class="row g-3 justify-content-center px-2">
 
 
-      <!-- ========================= -->
-      <!-- 1. KÁRTYA -->
-      <!-- ========================= -->
-
+    
       <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="0">
 
-        <!-- 3D Kártya konténer -->
         <div class="card-inner" [class.is-flipped]="isFlipped(1)" (click)="toggleCard(1)">
 
-          <!-- ELŐLAP -->
           <div class="card-front d-flex flex-column p-0 overflow-hidden" style="height: 100%;">
 
-            <!-- Kép -->
             <img class="w-100" src="/image/111.jpg" alt="Service" style="height: 65%; object-fit: cover;">
 
-            <!-- Szöveges tartalom -->
             <div class="card-body-content d-flex flex-column justify-content-between p-3 flex-grow-1">
 
               <div class="front-content">
 
-                <!-- Magyar -->
                 <h5 *ngIf="currentLang === 'hu'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepOneHeadlineHu }}
                 </h5>
@@ -41,7 +32,7 @@
                 </p>
 
 
-                <!-- Angol -->
+                <!-- -->
                 <h5 *ngIf="currentLang === 'en'" class="h5 text-white mb-1 card-heading text-uppercase">
                   {{ hero.stepOneHeadlineEn }}
                 </h5>
@@ -52,7 +43,6 @@
 
               </div>
 
-              <!-- Interakciós felirat -->
               <div class="action-hint d-flex align-items-center justify-content-between text-violet">
                 <i class="bi bi-arrow-right-circle-fill fs-6 animate-arrow"></i>
               </div>
@@ -62,7 +52,6 @@
           </div>
 
 
-          <!-- HÁTLAP -->
           <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
@@ -98,7 +87,6 @@
 
             </div>
 
-            <!-- Vissza -->
             <div class="action-hint d-flex align-items-center justify-content-between text-white-50 mt-4">
               <span *ngIf="currentLang === 'hu'" class="small fw-semibold">
                 {{ hero.heroTwoHelpTextBackHu }}
@@ -118,15 +106,11 @@
       </div>
 
 
-      <!-- ========================= -->
-      <!-- 2. KÁRTYA -->
-      <!-- ========================= -->
-
+    
       <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="1">
 
         <div class="card-inner" [class.is-flipped]="isFlipped(2)" (click)="toggleCard(2)">
 
-          <!-- ELŐLAP -->
           <div class="card-front d-flex flex-column p-0 overflow-hidden" style="height: 100%;">
 
             <img class="w-100" src="/image/222.jpg" alt="Service" style="height: 65%; object-fit: cover;">
@@ -163,7 +147,6 @@
           </div>
 
 
-          <!-- HÁTLAP -->
           <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
@@ -219,10 +202,7 @@
       </div>
 
 
-      <!-- ========================= -->
-      <!-- 3. KÁRTYA -->
-      <!-- ========================= -->
-
+  
       <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="2">
 
         <div class="card-inner" [class.is-flipped]="isFlipped(3)" (click)="toggleCard(3)">
@@ -264,7 +244,6 @@
           </div>
 
 
-          <!-- HÁTLAP -->
           <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
@@ -320,10 +299,7 @@
       </div>
 
 
-      <!-- ========================= -->
-      <!-- 4. KÁRTYA -->
-      <!-- ========================= -->
-
+     
       <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="3">
 
         <div class="card-inner" [class.is-flipped]="isFlipped(4)" (click)="toggleCard(4)">
@@ -365,7 +341,6 @@
           </div>
 
 
-          <!-- HÁTLAP -->
           <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">
@@ -421,10 +396,6 @@
       </div>
 
 
-      <!-- ========================= -->
-      <!-- 5. KÁRTYA -->
-      <!-- ========================= -->
-
       <div *ngIf="hero" class="col-xl-2 col-md-12 card-perspective" [style.--card-index]="4">
 
         <div class="card-inner" [class.is-flipped]="isFlipped(5)" (click)="toggleCard(5)">
@@ -466,7 +437,6 @@
           </div>
 
 
-          <!-- HÁTLAP -->
           <div class="card-back d-flex flex-column justify-content-between p-1 p-lg-1">
 
             <div class="back-content">

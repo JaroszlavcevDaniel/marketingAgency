@@ -30,7 +30,6 @@ export class Technologies  implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    // Nyelv figyelése
     const langSub = this.languageService.lang$.subscribe(lang => {
 
       this.currentLang = lang;
@@ -41,7 +40,6 @@ export class Technologies  implements OnInit, OnDestroy {
 
     this.subs.push(langSub);
 
-    // Technológiák betöltése adatbázisból
     this.loadTechnologies();
 
   }
@@ -72,7 +70,6 @@ export class Technologies  implements OnInit, OnDestroy {
   }
 
 
-  // Kiválasztott technológia
   selectTool(tool: any): void {
 
     this.selectedTool = tool;
@@ -80,7 +77,6 @@ export class Technologies  implements OnInit, OnDestroy {
   }
 
 
-  // Popup bezárása
   closePopup(): void {
 
     this.selectedTool = null;

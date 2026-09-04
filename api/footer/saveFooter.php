@@ -18,7 +18,7 @@ if (!is_array($data)) {
 }
 
 try {
-    // 1. Megkeressük a meglévő rekord ID-ját, ha az Angular nem küldött ID-t
+    
     $targetId = $data['id'] ?? null;
 
     if (!$targetId) {
@@ -29,7 +29,7 @@ try {
         }
     }
 
-    // Ha még egyáltalán nincs rekord a táblában, akkor beszúrjuk (INSERT)
+   
     if (!$targetId) {
         $sql = "INSERT INTO footer (companyNameHu) VALUES (:companyNameHu)";
         $stmt = $pdo->prepare($sql);
@@ -39,7 +39,6 @@ try {
         exit;
     }
 
-    // 2. Ha van rekord, frissítjük az adott ID-jú sort
     $sql = "
     UPDATE footer SET
         companyNameHu = :companyNameHu,
