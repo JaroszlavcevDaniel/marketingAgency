@@ -1,417 +1,770 @@
 <section class="contact-section mt-5 pt-5 d-flex align-items-center cormorant-garamond">
-    <div class="container-fluid px-md-5 my-auto mt-5">
-        <div class="row gy-2 justify-content-between">
 
-            <div class="col-lg-6 col-12">
-                <div class="contact-form-container">
-                    <button *ngIf="isAdmin" class="btn btn-outline-warning btn-sm ms-2" data-bs-toggle="modal"
-                        data-bs-target="#editContactModal" (click)="openEditModalContact()">
-                        ✏️ Contact szerkesztése
-                    </button>
-                    <h4 *ngIf="currentLang === 'hu'"
-                        class="fs-2 cormorant-garamond text-uppercase mb-1 text-warning section-title fw-bolder"> {{
-                        contact?.contactHu }}
-                    </h4>
-                    <h4 *ngIf="currentLang === 'en'"
-                        class="fs-2 cormorant-garamond text-uppercase mb-1 text-warning section-title fw-bolder"> {{
-                        contact?.contactEn }}
-                    </h4>
-                    <p *ngIf="currentLang === 'hu'" class="text-light mb-1 fs-6">{{ contact?.contactMessageHu }}</p>
-                    <p *ngIf="currentLang === 'en'" class="text-light mb-1 fs-6">{{ contact?.contactMessageEn }}</p>
+  <div class="container-fluid px-md-5 my-auto mt-5">
 
-                    <form [formGroup]="contactForm" #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)" novalidate>
+    <div class="row gy-2 justify-content-between">
 
-                        <div *ngIf="currentLang === 'hu'" class="mb-4 position-relative">
-                            <label class="form-label text-uppercase text-light cormorant-garamond">{{
-                                contact?.contactNameHu }}*</label>
-                            <input type="text" formControlName="name" name="name"
-                                class="form-control opacity-100 text-light"
-                                placeholder="{{ contact?.contactNamePlaceholderHu }}"
-                                [ngClass]="{'is-invalid': contactForm.get('name')?.touched && contactForm.get('name')?.invalid}">
-                        </div>
 
-                        <div *ngIf="currentLang === 'en'" class="mb-4 position-relative">
-                            <label class="form-label text-uppercase text-light cormorant-garamond">{{
-                                contact?.contactNameEn }}*</label>
-                            <input type="text" formControlName="name" name="name"
-                                class="form-control opacity-100 text-light"
-                                placeholder="{{ contact?.contactNamePlaceholderEn }}"
-                                [ngClass]="{'is-invalid': contactForm.get('name')?.touched && contactForm.get('name')?.invalid}">
-                        </div>
+      <div class="col-lg-6 col-12">
 
-                        <div class="row">
-                            <div *ngIf="currentLang === 'hu'" class="col-md-6 col-12 mb-4">
-                                <label class="form-label text-uppercase text-light cormorant-garamond">{{
-                                    contact?.contactEmailHu }}
-                                    *</label>
-                                <input type="email" formControlName="email" name="email" class="form-control"
-                                    placeholder="{{ contact?.contactEmailPlaceholderHu }}"
-                                    [ngClass]="{'is-invalid': contactForm.get('email')?.touched && contactForm.get('email')?.invalid}">
-                            </div>
-                            <div *ngIf="currentLang === 'en'" class="col-md-6 col-12 mb-4">
-                                <label class="form-label text-uppercase text-light cormorant-garamond">{{
-                                    contact?.contactEmailEn }}
-                                    *</label>
-                                <input type="email" formControlName="email" name="email" class="form-control"
-                                    placeholder="{{ contact?.contactEmailPlaceholderEn }}"
-                                    [ngClass]="{'is-invalid': contactForm.get('email')?.touched && contactForm.get('email')?.invalid}">
-                            </div>
+        <div class="contact-form-container">
 
-                            <div *ngIf="currentLang === 'hu'" class="col-md-6 col-12 mb-1">
-                                <label class="form-label text-uppercase text-light cormorant-garamond">{{
-                                    contact?.contactPhoneHu }}</label>
-                                <input type="tel" formControlName="phone" name="phone" class="form-control"
-                                    placeholder="+36 30 123 4567">
-                            </div>
-                            <div *ngIf="currentLang === 'en'" class="col-md-6 col-12 mb-1">
-                                <label class="form-label text-uppercase text-light cormorant-garamond">{{
-                                    contact?.contactPhoneEn }}</label>
-                                <input type="tel" formControlName="phone" name="phone" class="form-control"
-                                    placeholder="+36 30 123 4567">
-                            </div>
-                        </div>
 
-                        <div *ngIf="currentLang === 'hu'" class="mb-4">
-                            <label class="form-label text-uppercase text-light cormorant-garamond">{{
-                                contact?.contactSendMessageHu }} *</label>
-                            <textarea formControlName="message" name="message" class="form-control" rows="3"
-                                placeholder="{{ contact?.contactMessagePlaceholderHu }}"
-                                [ngClass]="{'is-invalid': contactForm.get('message')?.touched && contactForm.get('message')?.invalid}"></textarea>
-                        </div>
-                        <div *ngIf="currentLang === 'en'" class="mb-4">
-                            <label class="form-label text-uppercase text-light cormorant-garamond">{{
-                                contact?.contactSendMessageEn }} *</label>
-                            <textarea formControlName="message" name="message" class="form-control" rows="3"
-                                placeholder="{{ contact?.contactMessagePlaceholderEn }}"
-                                [ngClass]="{'is-invalid': contactForm.get('message')?.touched && contactForm.get('message')?.invalid}"></textarea>
-                        </div>
+          <button *ngIf="isAdmin" type="button" class="btn btn-outline-warning btn-sm ms-2 mb-3" data-bs-toggle="modal"
+            data-bs-target="#editContactModal" (click)="openEditModalContact()">
+            ✏️ Contact szerkesztése
+          </button>
 
-                        <div *ngIf="currentLang === 'hu'"
-                            class="mb-1 captcha-wrapper p-1 d-flex align-items-center gap-1 bg-dark bg-opacity-50 border border-secondary border-opacity-20 rounded-0">
-                            <span class="captcha-question cormorant-garamond text-light fs-5">
-                                {{ contact?.contactQuestionHu }} {{ captchaNum1 }} + {{ captchaNum2 }} =
-                            </span>
-                            <input type="number" formControlName="captcha"
-                                class="form-control captcha-input text-center ms-auto" placeholder="?"
-                                [ngClass]="{'is-invalid': contactForm.get('captcha')?.touched && (contactForm.get('captcha')?.invalid || !isCaptchaCorrect())}">
-                        </div>
 
-                        <div *ngIf="currentLang === 'en'"
-                            class="mb-1 captcha-wrapper p-1 d-flex align-items-center gap-1 bg-dark bg-opacity-50 border border-secondary border-opacity-20 rounded-0">
-                            <span class="captcha-question cormorant-garamond text-light fs-5">
-                                {{ contact?.contactQuestionEn }} {{ captchaNum1 }} + {{ captchaNum2 }} =
-                            </span>
-                            <input type="number" formControlName="captcha"
-                                class="form-control captcha-input text-center ms-auto" placeholder="?"
-                                [ngClass]="{'is-invalid': contactForm.get('captcha')?.touched && (contactForm.get('captcha')?.invalid || !isCaptchaCorrect())}">
-                        </div>
 
-                        <div class="form-check mb-1 d-flex align-items-start gap-1">
-                            <input class="form-check-input mt-1 rounded-0 checkbox-premium" type="checkbox"
-                                formControlName="acceptTerms" id="flexCheckDefault"
-                                [ngClass]="{'is-invalid': contactForm.get('acceptTerms')?.touched && contactForm.get('acceptTerms')?.invalid}">
-                            <label *ngIf="currentLang === 'hu'"
-                                class="form-check-label text-light small user-select-none" for="flexCheckDefault">
-                                {{ contact?.acceptRulesHu }}*
-                            </label>
-                            <label *ngIf="currentLang === 'en'"
-                                class="form-check-label text-light small user-select-none" for="flexCheckDefault">
-                                {{ contact?.acceptRulesEn }}*
-                            </label>
-                        </div>
+          <h4 *ngIf="currentLang === 'hu'"
+            class="fs-2 cormorant-garamond text-uppercase mb-1 text-warning section-title fw-bolder">
+            {{ contact?.contactHu }}
+          </h4>
 
-                        <button *ngIf="currentLang === 'hu'" type="submit"
-                            [disabled]="contactForm.invalid || !isCaptchaCorrect() || isSending"
-                            class="btn btn-premium-submit w-100 text-uppercase cormorant-garamond py-3 fs-5">
-                            {{ isSending ? 'folyamatban ' : 'küldés' }}
-                        </button>
 
-                        <button *ngIf="currentLang === 'en'" type="submit"
-                            [disabled]="contactForm.invalid || !isCaptchaCorrect() || isSending"
-                            class="btn btn-premium-submit w-100 text-uppercase cormorant-garamond py-3 fs-5">
-                            {{ isSending ? 'in process ' : 'sending' }}
-                        </button>
+          <h4 *ngIf="currentLang === 'en'"
+            class="fs-2 cormorant-garamond text-uppercase mb-1 text-warning section-title fw-bolder">
+            {{ contact?.contactEn }}
+          </h4>
 
-                    </form>
-                </div>
+          <p *ngIf="currentLang === 'hu'" class="text-light mb-1 fs-6">
+            {{ contact?.contactMessageHu }}
+          </p>
+
+
+          <p *ngIf="currentLang === 'en'" class="text-light mb-1 fs-6">
+            {{ contact?.contactMessageEn }}
+          </p>
+
+          <form [formGroup]="presentForm" (ngSubmit)="onSubmit()" novalidate>
+
+
+            <div class="mb-4 position-relative">
+
+              <label class="form-label text-uppercase text-light cormorant-garamond">
+
+                <span *ngIf="currentLang === 'hu'">
+                  {{ contact?.contactNameHu }}
+                </span>
+
+                <span *ngIf="currentLang === 'en'">
+                  {{ contact?.contactNameEn }}
+                </span>
+
+                *
+
+              </label>
+
+
+              <input type="text" formControlName="yourName" name="yourName" class="form-control opacity-100 text-light"
+                [placeholder]="
+                  currentLang === 'hu'
+                    ? contact?.contactNamePlaceholderHu
+                    : contact?.contactNamePlaceholderEn
+                " [ngClass]="{
+                  'is-invalid':
+                    presentForm.get('yourName')?.touched &&
+                    presentForm.get('yourName')?.invalid
+                }">
+
+
+              <div class="invalid-feedback" *ngIf="
+                  presentForm.get('yourName')?.touched &&
+                  presentForm.get('yourName')?.invalid
+                ">
+                {{
+                currentLang === 'hu'
+                ? 'A név megadása kötelező.'
+                : 'Name is required.'
+                }}
+              </div>
+
             </div>
 
-            <div class="col-lg-5 col-12 d-flex flex-column justify-content-between">
-                <div class="contact-info-block mb-1">
-                    <h4 *ngIf="currentLang === 'hu'"
-                        class="fs-4 cormorant-garamond text-uppercase mb-4 text-light section-title">{{
-                        contact?.contactElerHu }}
-                    </h4>
-                    <h4 *ngIf="currentLang === 'en'"
-                        class="fs-4 cormorant-garamond text-uppercase mb-4 text-light section-title">{{
-                        contact?.contactElerEn }}
-                    </h4>
 
-                    <h5 class="text-warning cormorant-garamond mb-1"> {{ contact?.contactCompany }}</h5>
-                    <p class="text-light mb-1 fs-6">{{ contact?.contactAdress }}</p>
 
-                    <div class="d-flex flex-column gap-1 mb-1 fs-5">
-                        <a href="tel:+36301234567"
-                            class="info-link cormorant-garamond text-light text-decoration-none">{{
-                            contact?.contactPhone }}</a>
-                        <a href="mailto:info@ugynokseg.hu"
-                            class="info-link cormorant-garamond text-light text-decoration-none">{{
-                            contact?.contactEmail }}</a>
-                    </div>
+            <div class="row">
 
-                    <div class="social-icons-wrapper d-flex gap-1">
-                        <a href="https://www.facebook.com/profile.php?id=61590437648284" target="_blank"
-                            class="social-icon-nav facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8.049C16 3.603 12.418 0 8 0S0 3.603 0 8.049c0 4.017 2.926 7.347 6.75 7.951v-5.625H4.719V8.049H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/olahthommywood/" target="_blank"
-                            class="social-icon-nav instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.087 3.269.222 2.76.42a5.92 5.92 0 0 0-2.14 1.4A5.92 5.92 0 0 0 .42 2.76c-.198.509-.333 1.09-.372 1.943C.01 5.556 0 5.829 0 8c0 2.171.01 2.444.048 3.297.039.853.174 1.434.372 1.943a5.92 5.92 0 0 0 1.4 2.14 5.92 5.92 0 0 0 2.14 1.4c.509.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16c2.171 0 2.444-.01 3.297-.048.853-.039 1.434-.174 1.943-.372a5.92 5.92 0 0 0 2.14-1.4 5.92 5.92 0 0 0 1.4-2.14c.198-.509.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8c0-2.171-.01-2.444-.048-3.297-.039-.853-.174-1.434-.372-1.943a5.92 5.92 0 0 0-1.4-2.14 5.92 5.92 0 0 0-2.14-1.4c-.509-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0m0 1.441c2.136 0 2.389.008 3.232.046.78.036 1.204.166 1.486.276.374.145.64.319.92.599.28.28.454.546.599.92.11.282.24.706.276 1.486.038.843.046 1.096.046 3.232s-.008 2.389-.046 3.232c-.036.78-.166 1.204-.276 1.486a4.48 4.48 0 0 1-.599.92 4.48 4.48 0 0 1-.92.599c-.282.11-.706.24-1.486.276-.843.038-1.096.046-3.232.046s-2.389-.008-3.232-.046c-.78-.036-1.204-.166-1.486-.276a4.48 4.48 0 0 1-.92-.599 4.48 4.48 0 0 1-.599-.92c-.11-.282-.24-.706-.276-1.486C1.449 10.389 1.441 10.136 1.441 8s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.374.319-.64.599-.92.28-.28.546-.454.92-.599.282-.11.706-.24 1.486-.276C5.611 1.449 5.864 1.441 8 1.441" />
-                                <path
-                                    d="M8 3.892A4.108 4.108 0 1 0 8 12.108 4.108 4.108 0 0 0 8 3.892m0 6.765A2.657 2.657 0 1 1 8 5.343a2.657 2.657 0 0 1 0 5.314m4.271-6.845a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0" />
-                            </svg>
-                        </a>
-                        <a href="https://www.tiktok.com/@thommy_wood_house" target="_blank"
-                            class="social-icon-nav tiktok">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.204V2h-3.193v13.766c0 1.303-1.066 2.363-2.372 2.363a2.37 2.37 0 0 1-2.369-2.363 2.37 2.37 0 0 1 2.369-2.363c.288 0 .563.051.818.144V10.3a5.61 5.61 0 0 0-.818-.059A5.567 5.567 0 0 0 4.69 15.8 5.567 5.567 0 0 0 10.254 21a5.567 5.567 0 0 0 5.565-5.2V8.687a8.018 8.018 0 0 0 4.691 1.516V7.014a4.782 4.782 0 0 1-.921-.328" />
-                            </svg>
-                        </a>
-                    </div>
+
+              <div class="col-md-6 col-12 mb-4">
+
+                <label class="form-label text-uppercase text-light cormorant-garamond">
+
+                  <span *ngIf="currentLang === 'hu'">
+                    {{ contact?.contactEmailHu }}
+                  </span>
+
+                  <span *ngIf="currentLang === 'en'">
+                    {{ contact?.contactEmailEn }}
+                  </span>
+
+                  *
+
+                </label>
+
+
+                <input type="email" formControlName="yourEmail" name="yourEmail" class="form-control" [placeholder]="
+                    currentLang === 'hu'
+                      ? contact?.contactEmailPlaceholderHu
+                      : contact?.contactEmailPlaceholderEn
+                  " [ngClass]="{
+                    'is-invalid':
+                      presentForm.get('yourEmail')?.touched &&
+                      presentForm.get('yourEmail')?.invalid
+                  }">
+
+
+                <div class="invalid-feedback" *ngIf="
+                    presentForm.get('yourEmail')?.touched &&
+                    presentForm.get('yourEmail')?.invalid
+                  ">
+
+                  <span *ngIf="presentForm.get('yourEmail')?.errors?.['required']">
+                    {{
+                    currentLang === 'hu'
+                    ? 'Az email cím megadása kötelező.'
+                    : 'Email address is required.'
+                    }}
+                  </span>
+
+
+                  <span *ngIf="presentForm.get('yourEmail')?.errors?.['email']">
+                    {{
+                    currentLang === 'hu'
+                    ? 'Érvénytelen email cím.'
+                    : 'Invalid email address.'
+                    }}
+                  </span>
+
                 </div>
 
-                <div class="map-container border border-secondary border-opacity-20">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.499753250754!2d19.213782076503048!3d47.48017697117859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c392ad4817fd%3A0x6660a9a5adc9c5c6!2sBudapest%2C%20534.%20u.%2019%2C%201173!5e0!3m2!1shu!2shu!4v1783198319680!5m2!1shu!2shu"
-                        width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
-            </div> 
+              </div>
 
-        </div> 
-    </div> 
+
+              <div class="col-md-6 col-12 mb-4">
+
+                <label class="form-label text-uppercase text-light cormorant-garamond">
+
+                  <span *ngIf="currentLang === 'hu'">
+                    {{ contact?.contactPhoneHu }}
+                  </span>
+
+                  <span *ngIf="currentLang === 'en'">
+                    {{ contact?.contactPhoneEn }}
+                  </span>
+
+                  *
+
+                </label>
+
+
+                <input type="tel" formControlName="phone" name="phone" class="form-control" [placeholder]="
+                    currentLang === 'hu'
+                      ? contact?.contactPhonePlaceholderHu
+                      : contact?.contactPhonePlaceholderEn
+                  " [ngClass]="{
+                    'is-invalid':
+                      presentForm.get('phone')?.touched &&
+                      presentForm.get('phone')?.invalid
+                  }">
+
+
+                <div class="invalid-feedback" *ngIf="
+                    presentForm.get('phone')?.touched &&
+                    presentForm.get('phone')?.invalid
+                  ">
+
+                  {{
+                  currentLang === 'hu'
+                  ? 'A telefonszám megadása kötelező.'
+                  : 'Phone number is required.'
+                  }}
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="mb-4">
+
+              <label class="form-label text-uppercase text-light cormorant-garamond">
+
+                <span *ngIf="currentLang === 'hu'">
+                  {{ contact?.contactSendMessageHu }}
+                </span>
+
+                <span *ngIf="currentLang === 'en'">
+                  {{ contact?.contactSendMessageEn }}
+                </span>
+
+                *
+
+              </label>
+
+
+              <textarea formControlName="yourMessage" name="yourMessage" class="form-control" rows="4" [placeholder]="
+                  currentLang === 'hu'
+                    ? contact?.contactMessagePlaceholderHu
+                    : contact?.contactMessagePlaceholderEn
+                " [ngClass]="{
+                  'is-invalid':
+                    presentForm.get('yourMessage')?.touched &&
+                    presentForm.get('yourMessage')?.invalid
+                }"></textarea>
+
+
+              <div class="invalid-feedback" *ngIf="
+                  presentForm.get('yourMessage')?.touched &&
+                  presentForm.get('yourMessage')?.invalid
+                ">
+
+                {{
+                currentLang === 'hu'
+                ? 'Az üzenet megadása kötelező.'
+                : 'Message is required.'
+                }}
+
+              </div>
+
+            </div>
+
+
+            <div class="form-check mb-3 d-flex align-items-start gap-2">
+
+              <input class="form-check-input mt-1 rounded-0 checkbox-premium" type="checkbox"
+                formControlName="acceptTerms" id="acceptTerms">
+
+
+              <label *ngIf="currentLang === 'hu'" class="form-check-label text-light small user-select-none"
+                for="acceptTerms">
+                {{ contact?.acceptRulesHu }}*
+              </label>
+
+
+              <label *ngIf="currentLang === 'en'" class="form-check-label text-light small user-select-none"
+                for="acceptTerms">
+                {{ contact?.acceptRulesEn }}*
+              </label>
+
+            </div>
+
+
+            <div class="text-danger small mb-3" *ngIf="
+                presentForm.get('acceptTerms')?.touched &&
+                presentForm.get('acceptTerms')?.invalid
+              ">
+
+              {{
+              currentLang === 'hu'
+              ? 'Az üzenet elküldéséhez el kell fogadnod a feltételeket.'
+              : 'You must accept the terms before sending the message.'
+              }}
+
+            </div>
+
+            <div *ngIf="success" class="alert alert-success rounded-0 mb-3">
+
+              {{
+              currentLang === 'hu'
+              ? 'Az üzenetet sikeresen elküldtük. Köszönjük!'
+              : 'Your message has been sent successfully. Thank you!'
+              }}
+
+            </div>
+
+
+            <button type="submit" [disabled]="presentForm.invalid || sending"
+              class="btn btn-premium-submit w-100 text-uppercase cormorant-garamond py-3 fs-5">
+
+              <span *ngIf="!sending">
+
+                {{
+                currentLang === 'hu'
+                ? (contact?.contactSendBtnHu || 'Küldés')
+                : (contact?.contactSendBtnEn || 'Sending')
+                }}
+
+              </span>
+
+
+              <span *ngIf="sending">
+
+                {{
+                currentLang === 'hu'
+                ? 'Folyamatban...'
+                : 'Sending...'
+                }}
+
+              </span>
+
+            </button>
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-5 col-12 d-flex flex-column justify-content-between">
+
+        <div class="contact-info-block mb-1">
+
+
+          <h4 *ngIf="currentLang === 'hu'" class="fs-4 cormorant-garamond text-uppercase mb-4 text-light section-title">
+            {{ contact?.contactElerHu }}
+          </h4>
+
+
+          <h4 *ngIf="currentLang === 'en'" class="fs-4 cormorant-garamond text-uppercase mb-4 text-light section-title">
+            {{ contact?.contactElerEn }}
+          </h4>
+
+
+          <h5 class="text-warning roboto mb-1">
+            {{ contact?.contactCompany }}
+          </h5>
+
+
+          <p class="text-light mb-1 fs-6">
+            {{ contact?.contactAdress }}
+          </p>
+
+
+          <div class="d-flex flex-column gap-1 mb-1 fs-5">
+
+            <a href="tel:+36301234567" class="info-link cormorant-garamond text-light text-decoration-none">
+              {{ contact?.contactPhone }}
+            </a>
+
+
+            <a href="mailto:info@ugynokseg.hu" class="info-link cormorant-garamond text-light text-decoration-none">
+              {{ contact?.contactEmail }}
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="map-container border border-secondary border-opacity-20">
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.499753250754!2d19.213782076503048!3d47.48017697117859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c392ad4817fd%3A0x6660a9a5adc9c5c6!2sBudapest%2C%20534.%20u.%2019%2C%201173!5e0!3m2!1shu!2shu!4v1783198319680!5m2!1shu!2shu"
+            width="500" height="350" style="border:0;" allowfullscreen loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
+<!-- ========================= -->
+<!-- ADMIN CONTACT EDIT MODAL -->
+<!-- ========================= -->
+
+<div class="modal fade" id="editContactModal" tabindex="-1" aria-labelledby="editContactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+    <div class="modal-content bg-dark text-light border border-secondary">
+
+      <!-- HEADER -->
+      <div class="modal-header border-secondary">
+
+        <h5 class="modal-title text-warning cormorant-garamond" id="editContactModalLabel">
+          ✏️ Contact szerkesztése
+        </h5>
+
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
 
 
+      <!-- BODY -->
+      <div class="modal-body">
 
-<div class="modal fade" id="editContactModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content text-dark">
-            <div class="modal-header">
-                <h5 class="modal-title fw-bold text-uppercase">Contact adatok szerkesztése</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeEditModalBtnContact"></button>
+        <div *ngIf="editModelContact">
+
+          <div class="row g-3">
+
+            <!-- ================= HU ================= -->
+
+            <div class="col-12">
+              <h5 class="text-warning border-bottom border-secondary pb-2">
+                Magyar
+              </h5>
             </div>
-            <div class="modal-body" *ngIf="editModelContact">
-                <div class="row">
-                    <hr>
 
+            <div class="col-md-6">
 
+              <label class="form-label">
+                Contact cím
+              </label>
 
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Kontakt hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactHu">
-                    </div>
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactHu">
 
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Kontakt en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEn">
-                    </div>
-                    <hr>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Leírás 1. szöveg hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactMessageHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Leírás 1. szöveg en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactMessageEn">
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">teljes név hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNameHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">teljes név en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNameEn">
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">név placeholder hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNamePlaceholderHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">név placeholder en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNamePlaceholderEn">
-                    </div>
-
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">email hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">email en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailEn">
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">email placeholder hu</label>
-                        <input type="text" class="form-control"
-                            [(ngModel)]="editModelContact.contactEmailPlaceholderHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">email placeholder en</label>
-                        <input type="text" class="form-control"
-                            [(ngModel)]="editModelContact.contactEmailPlaceholderEn">
-                    </div>
-
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">telefon hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhoneHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">telefon en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhoneEn">
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">telefon placeholder hu</label>
-                        <input type="text" class="form-control"
-                            [(ngModel)]="editModelContact.contactPhonePlaceholderHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">telefon placeholder en</label>
-                        <input type="text" class="form-control"
-                            [(ngModel)]="editModelContact.contactPhonePlaceholderEn">
-                    </div>
-
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">üzenet hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendMessageHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">üzenet en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendMessageEn">
-                    </div>
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">üzenet placeholder hu</label>
-                        <input type="text" class="form-control"
-                            [(ngModel)]="editModelContact.contactMessagePlaceholderHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">üzenet placeholder en</label>
-                        <input type="text" class="form-control"
-                            [(ngModel)]="editModelContact.contactMessagePlaceholderEn">
-                    </div>
-
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">gomb küldés hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendBtnHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">gomb küldés en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendBtnEn">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">gomb küldés 2 hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.sendBtnAfterHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">gomb küldés 2 en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.sendBtnAfterEn">
-                    </div>
-
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">ellenörző kérdés hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactQuestionHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">ellenörző kérdés en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactQuestionEn">
-                    </div>
-
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Elfogadom a szabályokat szöveg hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.acceptRulesHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">Elfogadom a szabályokat szöveg en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.acceptRulesEn">
-                    </div>
-
-                    <hr>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">elérhetőségeink hu</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactElerHu">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">elérhetőségeink en</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactElerEn">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">cégnév</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactCompany">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">cím</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactAdress">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">telefonszám</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhone">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bolder">email cím</label>
-                        <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmail">
-                    </div>
-
-
-
-
-
-
-
-                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
-                <button type="button" class="btn btn-success" (click)="saveContact()">Mentés</button>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Contact cím EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEn">
+
             </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Üzenet szöveg HU
+              </label>
+
+              <textarea class="form-control" rows="3" [(ngModel)]="editModelContact.contactMessageHu"></textarea>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Üzenet szöveg EN
+              </label>
+
+              <textarea class="form-control" rows="3" [(ngModel)]="editModelContact.contactMessageEn"></textarea>
+
+            </div>
+
+
+            <!-- ================= FORM LABELS ================= -->
+
+            <div class="col-12 mt-4">
+              <h5 class="text-warning border-bottom border-secondary pb-2">
+                Űrlap mezők
+              </h5>
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Név HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNameHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Név EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNameEn">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Név placeholder HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNamePlaceholderHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Név placeholder EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNamePlaceholderEn">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Email HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Email EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailEn">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Email placeholder HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailPlaceholderHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Email placeholder EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailPlaceholderEn">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Telefon HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhoneHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Telefon EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhoneEn">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Telefon placeholder HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhonePlaceholderHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Telefon placeholder EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhonePlaceholderEn">
+
+            </div>
+
+
+            <!-- ================= MESSAGE ================= -->
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Üzenet mező HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendMessageHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Üzenet mező EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendMessageEn">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Üzenet placeholder HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactMessagePlaceholderHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Üzenet placeholder EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactMessagePlaceholderEn">
+
+            </div>
+
+
+            <!-- ================= RULES ================= -->
+
+            <div class="col-12 mt-4">
+
+              <h5 class="text-warning border-bottom border-secondary pb-2">
+                Feltételek
+              </h5>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Feltételek HU
+              </label>
+
+              <textarea class="form-control" rows="3" [(ngModel)]="editModelContact.acceptRulesHu"></textarea>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Feltételek EN
+              </label>
+
+              <textarea class="form-control" rows="3" [(ngModel)]="editModelContact.acceptRulesEn"></textarea>
+
+            </div>
+
+
+            <!-- ================= CONTACT INFO ================= -->
+
+            <div class="col-12 mt-4">
+
+              <h5 class="text-warning border-bottom border-secondary pb-2">
+                Kapcsolati adatok
+              </h5>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Elérhetőség HU
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactElerHu">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Elérhetőség EN
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactElerEn">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Cég
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactCompany">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Cím
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactAdress">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Telefon
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhone">
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label">
+                Email
+              </label>
+
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmail">
+
+            </div>
+
+          </div>
+
         </div>
+
+      </div>
+
+
+      <!-- FOOTER -->
+      <div class="modal-footer border-secondary">
+
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Mégse
+        </button>
+
+        <button type="button" class="btn btn-warning" (click)="saveContact()">
+          💾 Mentés
+        </button>
+
+        <button id="closeEditModalBtnContact" type="button" class="d-none" data-bs-dismiss="modal"></button>
+
+      </div>
+
     </div>
+
+  </div>
 </div>

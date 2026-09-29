@@ -21,6 +21,7 @@ import { Technologies } from './components/technologies/technologies';
 import { Needs } from './components/needs/needs';
 import { References } from './components/references/references';
 import { About } from './components/about/about';
+import { Cookie } from './components/cookie/cookie';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { About } from './components/about/about';
     Technologies,
     Needs,
     References,
-    About
+    About,
+    Cookie
   ],
   imports: [
     BrowserModule,

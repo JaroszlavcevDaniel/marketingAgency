@@ -1,0 +1,171 @@
+@if (showBanner) {
+<div class="cookie-banner">
+
+    <div class="cookie-content">
+
+        
+
+        <div class="cookie-text">
+            <h6 *ngIf="currentLang === 'hu'">Cookie beállítások</h6>
+            <h6 *ngIf="currentLang === 'en'">Cookie settings</h6>
+
+            <small *ngIf="currentLang === 'hu'">
+                Weboldalunk cookie-kat használ a működés biztosításához,
+                valamint – hozzájárulásod esetén – a látogatottság elemzéséhez.
+                <a *ngIf="currentLang === 'hu'" target="_blank" href="/docs/Data_N17.pdf" class="cookie-link">
+                További információ
+            </a>
+            </small> 
+            <small *ngIf="currentLang === 'en'">
+                Our website uses cookies to ensure its operation and—subject to your consent—to analyze traffic.
+                <a *ngIf="currentLang === 'en'" target="_blank" href="/docs/Data_en_N17.pdf" class="cookie-link">
+                Further information
+            </a>
+            </small>
+
+            
+             
+        </div>
+
+        <div class="cookie-actions">
+
+            <button *ngIf="currentLang === 'hu'" type="button" class="btn btn-outline-secondary btn-sm"
+                (click)="acceptNecessary()">
+                Csak szükséges
+            </button>
+             <button *ngIf="currentLang === 'en'" type="button" class="btn btn-outline-secondary btn-sm"
+                (click)="acceptNecessary()">
+                Only what is necessary
+            </button>
+
+            <button *ngIf="currentLang === 'hu'" type="button" class="btn btn-dark btn-sm" (click)="acceptAll()">
+                Összes elfogadása
+            </button>
+             <button *ngIf="currentLang === 'en'" type="button" class="btn btn-dark btn-sm" (click)="acceptAll()">
+                Accept all
+            </button>
+
+            <button *ngIf="currentLang === 'hu'" type="button" class="cookie-settings-button" (click)="openSettings()">
+                Beállítások
+            </button>
+            <button *ngIf="currentLang === 'en'" type="button" class="cookie-settings-button" (click)="openSettings()">
+                Settings
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+}
+
+
+@if (showSettings) {
+<div class="cookie-overlay" (click)="closeSettings()">
+
+    <div class="cookie-settings" (click)="$event.stopPropagation()">
+
+        <div class="settings-header">
+
+            <div>
+                <h4 *ngIf="currentLang === 'hu'">Cookie beállítások</h4>
+                <h4 *ngIf="currentLang === 'en'">Cookie settings</h4>
+
+                <p *ngIf="currentLang === 'hu'">
+                    Válaszd ki, milyen típusú cookie-k használatához járulsz hozzá.
+                </p>
+
+                <p *ngIf="currentLang === 'en'">
+                    Select the types of cookies you consent to using.
+                </p>
+            </div>
+
+            <button type="button" class="close-button" aria-label="Bezárás" (click)="closeSettings()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="cookie-category">
+
+            <div class="category-header">
+
+                <div>
+                    <h6 *ngIf="currentLang === 'hu'">Szükséges cookie-k</h6>
+                    <h6 *ngIf="currentLang === 'en'">Necessary cookies</h6>
+
+                    <p *ngIf="currentLang === 'hu'">
+                        Ezek a cookie-k a weboldal alapvető működéséhez szükségesek.
+                    </p>
+                    <p *ngIf="currentLang === 'hu'">
+                        These cookies are necessary for the basic operation of the website.
+                    </p>
+                </div>
+
+                <span class="always-active" *ngIf="currentLang === 'hu'">
+                    Mindig aktív
+                </span>
+                 <span class="always-active" *ngIf="currentLang === 'en'">
+                    Always active
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cookie-category">
+
+            <div class="category-header">
+
+                <div>
+                    <h6 *ngIf="currentLang === 'hu'">Statisztikai cookie-k</h6>
+                    <h6 *ngIf="currentLang === 'en'">Statistical cookies</h6>
+
+                    <p *ngIf="currentLang === 'hu'">
+                        Segítenek megérteni, hogyan használják a látogatók
+                        a weboldalt.
+                    </p>
+                    <p *ngIf="currentLang === 'en'">
+                     They help understand how visitors use the website.
+                    </p>
+                </div>
+
+                <label class="switch">
+
+                    <input type="checkbox" [(ngModel)]="statisticsCookies">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <div class="settings-footer">
+
+            <button *ngIf="currentLang === 'hu'" type="button" class="btn btn-outline-secondary"
+                (click)="saveSettings()">
+                Beállítások mentése
+            </button>
+               <button *ngIf="currentLang === 'en'" type="button" class="btn btn-outline-secondary"
+                (click)="saveSettings()">
+               Save settings
+            </button>
+
+            <button *ngIf="currentLang === 'hu'" type="button" class="btn btn-dark" (click)="acceptAll()">
+                Összes elfogadása
+            </button>
+             <button *ngIf="currentLang === 'en'" type="button" class="btn btn-dark" (click)="acceptAll()">
+                Accept all
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+}

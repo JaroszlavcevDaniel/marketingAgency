@@ -6,6 +6,7 @@
 
 <div class="container overflow-hidden position-relative">
   <router-outlet></router-outlet>
+  <app-cookie class=""></app-cookie>
   <a (click)="scrollToTop()" *ngIf="!isContactPage" 
    routerLink="/contact" 
    class="floating-contact-btn btn btn-dark bg-transparent rounded-circle d-flex align-items-center justify-content-center shadow-lg text-secondary"
