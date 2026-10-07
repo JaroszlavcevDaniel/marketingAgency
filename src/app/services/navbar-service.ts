@@ -8,7 +8,7 @@ import { NavbarModel } from '../models/navbarModel';
 })
 export class NavbarService {
 
-  private api = "http://localhost:3000/api/navbar/";
+  private api = "https://n17.hu/api/navbar/";
 
   constructor(
     private http: HttpClient

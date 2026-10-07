@@ -365,36 +365,25 @@ export class Contact implements OnInit, OnDestroy {
 
   }
 
-  scrollToTop(): void {
-
-    if (!this.isBrowser) {
+scrollToTop(): void {
+   
+    if (!isPlatformBrowser(this.platformId)) {
       return;
     }
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'instant'
-    });
-
-
-    const container =
-      document.querySelector(
-        '.scroll-container'
-      ) as HTMLElement | null;
-
-
-    if (container) {
-
-      container.scrollTo({
+    setTimeout(() => {
+      window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'instant'
       });
 
-    }
-
-  }
+      const container = document.querySelector('.scroll-container') as HTMLElement | null;
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }, 0);
+}
 
   ngOnDestroy(): void {
 

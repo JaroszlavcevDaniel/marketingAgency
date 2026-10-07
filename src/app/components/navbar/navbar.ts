@@ -1,8 +1,9 @@
-import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { LanguageService } from '../../services/language-service';
 import { NavbarService } from '../../services/navbar-service';
 import { NavbarModel } from '../../models/navbarModel';
 import { AuthService } from '../../services/auth-service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -28,7 +29,8 @@ export class Navbar implements  OnInit {
     private languageService: LanguageService,
     private navbarService: NavbarService,
     private authService: AuthService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
   ngOnInit(): void {
@@ -117,14 +119,26 @@ export class Navbar implements  OnInit {
     this.cdr.detectChanges();
   }
 
-  scrollToTop(): void {
-  window.scrollTo(0, 0);
-  
-  const container = document.querySelector('.scroll-container');
-  if (container) {
-    container.scrollTop = 0;
-  }
+scrollToTop(): void {
+   
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+
+      const container = document.querySelector('.scroll-container') as HTMLElement | null;
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }, 0);
 }
+
 
 closeMobileMenu(): void {
   this.isMenuCollapsed = true;

@@ -4,24 +4,19 @@
 
     <div class="row gy-2 justify-content-between">
 
-
       <div class="col-lg-6 col-12">
 
         <div class="contact-form-container">
-
 
           <button *ngIf="isAdmin" type="button" class="btn btn-outline-warning btn-sm ms-2 mb-3" data-bs-toggle="modal"
             data-bs-target="#editContactModal" (click)="openEditModalContact()">
             ✏️ Contact szerkesztése
           </button>
 
-
-
           <h4 *ngIf="currentLang === 'hu'"
             class="fs-2 cormorant-garamond text-uppercase mb-1 text-warning section-title fw-bolder">
             {{ contact?.contactHu }}
           </h4>
-
 
           <h4 *ngIf="currentLang === 'en'"
             class="fs-2 cormorant-garamond text-uppercase mb-1 text-warning section-title fw-bolder">
@@ -32,30 +27,18 @@
             {{ contact?.contactMessageHu }}
           </p>
 
-
           <p *ngIf="currentLang === 'en'" class="text-light mb-1 fs-6">
             {{ contact?.contactMessageEn }}
           </p>
 
           <form [formGroup]="presentForm" (ngSubmit)="onSubmit()" novalidate>
 
-
             <div class="mb-4 position-relative">
-
               <label class="form-label text-uppercase text-light cormorant-garamond">
-
-                <span *ngIf="currentLang === 'hu'">
-                  {{ contact?.contactNameHu }}
-                </span>
-
-                <span *ngIf="currentLang === 'en'">
-                  {{ contact?.contactNameEn }}
-                </span>
-
+                <span *ngIf="currentLang === 'hu'">{{ contact?.contactNameHu }}</span>
+                <span *ngIf="currentLang === 'en'">{{ contact?.contactNameEn }}</span>
                 *
-
               </label>
-
 
               <input type="text" formControlName="yourName" name="yourName" class="form-control opacity-100 text-light"
                 [placeholder]="
@@ -68,41 +51,21 @@
                     presentForm.get('yourName')?.invalid
                 }">
 
-
               <div class="invalid-feedback" *ngIf="
                   presentForm.get('yourName')?.touched &&
                   presentForm.get('yourName')?.invalid
                 ">
-                {{
-                currentLang === 'hu'
-                ? 'A név megadása kötelező.'
-                : 'Name is required.'
-                }}
+                {{ currentLang === 'hu' ? 'A név megadása kötelező.' : 'Name is required.' }}
               </div>
-
             </div>
 
-
-
             <div class="row">
-
-
               <div class="col-md-6 col-12 mb-4">
-
                 <label class="form-label text-uppercase text-light cormorant-garamond">
-
-                  <span *ngIf="currentLang === 'hu'">
-                    {{ contact?.contactEmailHu }}
-                  </span>
-
-                  <span *ngIf="currentLang === 'en'">
-                    {{ contact?.contactEmailEn }}
-                  </span>
-
+                  <span *ngIf="currentLang === 'hu'">{{ contact?.contactEmailHu }}</span>
+                  <span *ngIf="currentLang === 'en'">{{ contact?.contactEmailEn }}</span>
                   *
-
                 </label>
-
 
                 <input type="email" formControlName="yourEmail" name="yourEmail" class="form-control" [placeholder]="
                     currentLang === 'hu'
@@ -114,50 +77,25 @@
                       presentForm.get('yourEmail')?.invalid
                   }">
 
-
                 <div class="invalid-feedback" *ngIf="
                     presentForm.get('yourEmail')?.touched &&
                     presentForm.get('yourEmail')?.invalid
                   ">
-
                   <span *ngIf="presentForm.get('yourEmail')?.errors?.['required']">
-                    {{
-                    currentLang === 'hu'
-                    ? 'Az email cím megadása kötelező.'
-                    : 'Email address is required.'
-                    }}
+                    {{ currentLang === 'hu' ? 'Az email cím megadása kötelező.' : 'Email address is required.' }}
                   </span>
-
-
                   <span *ngIf="presentForm.get('yourEmail')?.errors?.['email']">
-                    {{
-                    currentLang === 'hu'
-                    ? 'Érvénytelen email cím.'
-                    : 'Invalid email address.'
-                    }}
+                    {{ currentLang === 'hu' ? 'Érvénytelen email cím.' : 'Invalid email address.' }}
                   </span>
-
                 </div>
-
               </div>
 
-
               <div class="col-md-6 col-12 mb-4">
-
                 <label class="form-label text-uppercase text-light cormorant-garamond">
-
-                  <span *ngIf="currentLang === 'hu'">
-                    {{ contact?.contactPhoneHu }}
-                  </span>
-
-                  <span *ngIf="currentLang === 'en'">
-                    {{ contact?.contactPhoneEn }}
-                  </span>
-
+                  <span *ngIf="currentLang === 'hu'">{{ contact?.contactPhoneHu }}</span>
+                  <span *ngIf="currentLang === 'en'">{{ contact?.contactPhoneEn }}</span>
                   *
-
                 </label>
-
 
                 <input type="tel" formControlName="phone" name="phone" class="form-control" [placeholder]="
                     currentLang === 'hu'
@@ -169,40 +107,21 @@
                       presentForm.get('phone')?.invalid
                   }">
 
-
                 <div class="invalid-feedback" *ngIf="
                     presentForm.get('phone')?.touched &&
                     presentForm.get('phone')?.invalid
                   ">
-
-                  {{
-                  currentLang === 'hu'
-                  ? 'A telefonszám megadása kötelező.'
-                  : 'Phone number is required.'
-                  }}
-
+                  {{ currentLang === 'hu' ? 'A telefonszám megadása kötelező.' : 'Phone number is required.' }}
                 </div>
-
               </div>
-
             </div>
 
             <div class="mb-4">
-
               <label class="form-label text-uppercase text-light cormorant-garamond">
-
-                <span *ngIf="currentLang === 'hu'">
-                  {{ contact?.contactSendMessageHu }}
-                </span>
-
-                <span *ngIf="currentLang === 'en'">
-                  {{ contact?.contactSendMessageEn }}
-                </span>
-
+                <span *ngIf="currentLang === 'hu'">{{ contact?.contactSendMessageHu }}</span>
+                <span *ngIf="currentLang === 'en'">{{ contact?.contactSendMessageEn }}</span>
                 *
-
               </label>
-
 
               <textarea formControlName="yourMessage" name="yourMessage" class="form-control" rows="4" [placeholder]="
                   currentLang === 'hu'
@@ -214,93 +133,69 @@
                     presentForm.get('yourMessage')?.invalid
                 }"></textarea>
 
-
               <div class="invalid-feedback" *ngIf="
                   presentForm.get('yourMessage')?.touched &&
                   presentForm.get('yourMessage')?.invalid
                 ">
-
-                {{
-                currentLang === 'hu'
-                ? 'Az üzenet megadása kötelező.'
-                : 'Message is required.'
-                }}
-
+                {{ currentLang === 'hu' ? 'Az üzenet megadása kötelező.' : 'Message is required.' }}
               </div>
-
             </div>
 
-
             <div class="form-check mb-3 d-flex align-items-start gap-2">
-
               <input class="form-check-input mt-1 rounded-0 checkbox-premium" type="checkbox"
                 formControlName="acceptTerms" id="acceptTerms">
-
 
               <label *ngIf="currentLang === 'hu'" class="form-check-label text-light small user-select-none"
                 for="acceptTerms">
                 {{ contact?.acceptRulesHu }}*
               </label>
 
-
               <label *ngIf="currentLang === 'en'" class="form-check-label text-light small user-select-none"
                 for="acceptTerms">
                 {{ contact?.acceptRulesEn }}*
               </label>
-
             </div>
-
 
             <div class="text-danger small mb-3" *ngIf="
                 presentForm.get('acceptTerms')?.touched &&
                 presentForm.get('acceptTerms')?.invalid
               ">
-
               {{
-              currentLang === 'hu'
-              ? 'Az üzenet elküldéséhez el kell fogadnod a feltételeket.'
-              : 'You must accept the terms before sending the message.'
+                currentLang === 'hu'
+                  ? 'Az üzenet elküldéséhez el kell fogadnod a feltételeket.'
+                  : 'You must accept the terms before sending the message.'
               }}
-
             </div>
 
             <div *ngIf="success" class="alert alert-success rounded-0 mb-3">
-
               {{
-              currentLang === 'hu'
-              ? 'Az üzenetet sikeresen elküldtük. Köszönjük!'
-              : 'Your message has been sent successfully. Thank you!'
+                currentLang === 'hu'
+                  ? 'Az üzenetet sikeresen elküldtük. Köszönjük!'
+                  : 'Your message has been sent successfully. Thank you!'
               }}
-
             </div>
 
-
+            <!-- JAVÍTOTT GOMB -->
             <button type="submit" [disabled]="presentForm.invalid || sending"
               class="btn btn-premium-submit w-100 text-uppercase cormorant-garamond py-3 fs-5">
 
               <span *ngIf="!sending">
-
                 {{
-                currentLang === 'hu'
-                ? (contact?.contactSendBtnHu || 'Küldés')
-                : (contact?.contactSendBtnEn || 'Sending')
+                  currentLang === 'hu'
+                    ? (contact?.contactSendBtnHu || 'Küldés')
+                    : (contact?.contactSendBtnEn || 'Send')
                 }}
-
               </span>
 
-
               <span *ngIf="sending">
-
                 {{
-                currentLang === 'hu'
-                ? 'Folyamatban...'
-                : 'Sending...'
+                  currentLang === 'hu'
+                    ? 'Folyamatban...'
+                    : 'Sending...'
                 }}
-
               </span>
 
             </button>
-
 
           </form>
 
@@ -309,55 +204,40 @@
       </div>
 
       <div class="col-lg-5 col-12 d-flex flex-column justify-content-between">
-
         <div class="contact-info-block mb-1">
-
-
           <h4 *ngIf="currentLang === 'hu'" class="fs-4 cormorant-garamond text-uppercase mb-4 text-light section-title">
             {{ contact?.contactElerHu }}
           </h4>
-
 
           <h4 *ngIf="currentLang === 'en'" class="fs-4 cormorant-garamond text-uppercase mb-4 text-light section-title">
             {{ contact?.contactElerEn }}
           </h4>
 
-
           <h5 class="text-warning roboto mb-1">
             {{ contact?.contactCompany }}
           </h5>
-
 
           <p class="text-light mb-1 fs-6">
             {{ contact?.contactAdress }}
           </p>
 
-
           <div class="d-flex flex-column gap-1 mb-1 fs-5">
-
             <a href="tel:+36301234567" class="info-link cormorant-garamond text-light text-decoration-none">
               {{ contact?.contactPhone }}
             </a>
 
-
             <a href="mailto:info@ugynokseg.hu" class="info-link cormorant-garamond text-light text-decoration-none">
               {{ contact?.contactEmail }}
             </a>
-
           </div>
-
         </div>
 
-
         <div class="map-container border border-secondary border-opacity-20">
-
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.499753250754!2d19.213782076503048!3d47.48017697117859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c392ad4817fd%3A0x6660a9a5adc9c5c6!2sBudapest%2C%20534.%20u.%2019%2C%201173!5e0!3m2!1shu!2shu!4v1783198319680!5m2!1shu!2shu"
             width="500" height="350" style="border:0;" allowfullscreen loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"></iframe>
-
         </div>
-
       </div>
 
     </div>
@@ -375,78 +255,42 @@
 
     <div class="modal-content bg-dark text-light border border-secondary">
 
-      <!-- HEADER -->
       <div class="modal-header border-secondary">
-
         <h5 class="modal-title text-warning cormorant-garamond" id="editContactModalLabel">
           ✏️ Contact szerkesztése
         </h5>
-
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-
       </div>
 
-
-      <!-- BODY -->
       <div class="modal-body">
-
         <div *ngIf="editModelContact">
-
           <div class="row g-3">
-
-            <!-- ================= HU ================= -->
 
             <div class="col-12">
               <h5 class="text-warning border-bottom border-secondary pb-2">
-                Magyar
+                Magyar / Angol Címek
               </h5>
             </div>
 
             <div class="col-md-6">
-
-              <label class="form-label">
-                Contact cím
-              </label>
-
+              <label class="form-label">Contact cím HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Contact cím EN
-              </label>
-
+              <label class="form-label">Contact cím EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEn">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Üzenet szöveg HU
-              </label>
-
+              <label class="form-label">Üzenet szöveg HU</label>
               <textarea class="form-control" rows="3" [(ngModel)]="editModelContact.contactMessageHu"></textarea>
-
             </div>
-
 
             <div class="col-md-6">
-
-              <label class="form-label">
-                Üzenet szöveg EN
-              </label>
-
+              <label class="form-label">Üzenet szöveg EN</label>
               <textarea class="form-control" rows="3" [(ngModel)]="editModelContact.contactMessageEn"></textarea>
-
             </div>
-
-
-            <!-- ================= FORM LABELS ================= -->
 
             <div class="col-12 mt-4">
               <h5 class="text-warning border-bottom border-secondary pb-2">
@@ -454,317 +298,169 @@
               </h5>
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Név HU
-              </label>
-
+              <label class="form-label">Név HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNameHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Név EN
-              </label>
-
+              <label class="form-label">Név EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNameEn">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Név placeholder HU
-              </label>
-
+              <label class="form-label">Név placeholder HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNamePlaceholderHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Név placeholder EN
-              </label>
-
+              <label class="form-label">Név placeholder EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactNamePlaceholderEn">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Email HU
-              </label>
-
+              <label class="form-label">Email HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Email EN
-              </label>
-
+              <label class="form-label">Email EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailEn">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Email placeholder HU
-              </label>
-
+              <label class="form-label">Email placeholder HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailPlaceholderHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Email placeholder EN
-              </label>
-
+              <label class="form-label">Email placeholder EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmailPlaceholderEn">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Telefon HU
-              </label>
-
+              <label class="form-label">Telefon HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhoneHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Telefon EN
-              </label>
-
+              <label class="form-label">Telefon EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhoneEn">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Telefon placeholder HU
-              </label>
-
+              <label class="form-label">Telefon placeholder HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhonePlaceholderHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Telefon placeholder EN
-              </label>
-
+              <label class="form-label">Telefon placeholder EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhonePlaceholderEn">
-
             </div>
 
-
-            <!-- ================= MESSAGE ================= -->
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Üzenet mező HU
-              </label>
-
+              <label class="form-label">Üzenet mező HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendMessageHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Üzenet mező EN
-              </label>
-
+              <label class="form-label">Üzenet mező EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendMessageEn">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Üzenet placeholder HU
-              </label>
-
+              <label class="form-label">Üzenet placeholder HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactMessagePlaceholderHu">
-
             </div>
-
 
             <div class="col-md-6">
-
-              <label class="form-label">
-                Üzenet placeholder EN
-              </label>
-
+              <label class="form-label">Üzenet placeholder EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactMessagePlaceholderEn">
-
             </div>
 
+            <!-- GOMB FELIRATOK SZERKESZTÉSE (ÚJ) -->
+            <div class="col-12 mt-4">
+              <h5 class="text-warning border-bottom border-secondary pb-2">
+                Gomb Feliratok
+              </h5>
+            </div>
 
-            <!-- ================= RULES ================= -->
+            <div class="col-md-6">
+              <label class="form-label">Küldés gomb szöveg HU</label>
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendBtnHu">
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Küldés gomb szöveg EN</label>
+              <input type="text" class="form-control" [(ngModel)]="editModelContact.contactSendBtnEn">
+            </div>
 
             <div class="col-12 mt-4">
-
               <h5 class="text-warning border-bottom border-secondary pb-2">
                 Feltételek
               </h5>
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Feltételek HU
-              </label>
-
+              <label class="form-label">Feltételek HU</label>
               <textarea class="form-control" rows="3" [(ngModel)]="editModelContact.acceptRulesHu"></textarea>
-
             </div>
-
 
             <div class="col-md-6">
-
-              <label class="form-label">
-                Feltételek EN
-              </label>
-
+              <label class="form-label">Feltételek EN</label>
               <textarea class="form-control" rows="3" [(ngModel)]="editModelContact.acceptRulesEn"></textarea>
-
             </div>
-
-
-            <!-- ================= CONTACT INFO ================= -->
 
             <div class="col-12 mt-4">
-
               <h5 class="text-warning border-bottom border-secondary pb-2">
                 Kapcsolati adatok
               </h5>
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Elérhetőség HU
-              </label>
-
+              <label class="form-label">Elérhetőség HU</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactElerHu">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Elérhetőség EN
-              </label>
-
+              <label class="form-label">Elérhetőség EN</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactElerEn">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Cég
-              </label>
-
+              <label class="form-label">Cég</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactCompany">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Cím
-              </label>
-
+              <label class="form-label">Cím</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactAdress">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Telefon
-              </label>
-
+              <label class="form-label">Telefon</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactPhone">
-
             </div>
 
-
             <div class="col-md-6">
-
-              <label class="form-label">
-                Email
-              </label>
-
+              <label class="form-label">Email</label>
               <input type="text" class="form-control" [(ngModel)]="editModelContact.contactEmail">
-
             </div>
 
           </div>
-
         </div>
-
       </div>
 
-
-      <!-- FOOTER -->
       <div class="modal-footer border-secondary">
-
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Mégse
         </button>
-
         <button type="button" class="btn btn-warning" (click)="saveContact()">
           💾 Mentés
         </button>
-
         <button id="closeEditModalBtnContact" type="button" class="d-none" data-bs-dismiss="modal"></button>
-
       </div>
 
     </div>
-
   </div>
 </div>

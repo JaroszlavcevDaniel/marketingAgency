@@ -9,7 +9,7 @@ import { AboutModel } from '../models/aboutModel';
 export class AboutService {
   
 
-  private api = "http://localhost:3000/api/about/";
+  private api = "https://n17.hu/api/about/";
 
   constructor(
     private http: HttpClient

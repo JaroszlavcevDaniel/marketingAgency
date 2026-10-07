@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
 import { Article } from '../../models/articleModel';
 import { Subscription } from 'rxjs';
@@ -7,6 +7,7 @@ import { ContentService } from '../../services/content-service';
 import { HeroModel } from '../../models/heroModel';
 import { HeroService } from '../../services/hero-service';
 import { AuthService } from '../../services/auth-service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
@@ -52,7 +53,8 @@ export class Hero implements OnInit, OnDestroy {
     private contentService: ContentService,
      private heroService: HeroService,
         private authService: AuthService,
-        private cdr: ChangeDetectorRef
+        private cdr: ChangeDetectorRef,
+         @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
  ngOnInit(): void {
@@ -244,13 +246,24 @@ ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
   }
 
-    scrollToTop(): void {
-  window.scrollTo(0, 0);
-  
-  const container = document.querySelector('.scroll-container');
-  if (container) {
-    container.scrollTop = 0;
-  }
+scrollToTop(): void {
+   
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+
+      const container = document.querySelector('.scroll-container') as HTMLElement | null;
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }, 0);
 }
 
 }

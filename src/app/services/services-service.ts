@@ -8,7 +8,7 @@ import { ServicesModel } from '../models/servicesModel';
 })
 export class ServicesService {
   
-   private api = "http://localhost:3000/api/services/";
+   private api = "https://n17.hu/api/services/";
 
   constructor(
     private http: HttpClient

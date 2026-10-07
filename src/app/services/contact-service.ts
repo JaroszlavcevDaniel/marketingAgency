@@ -9,7 +9,7 @@ import { ContactModel } from '../models/contactModel';
 export class ContactService {
   
 
-  private api = "http://localhost:3000/api/contact/";
+  private api = "https://n17.hu/api/contact/";
 
   constructor(
     private http: HttpClient

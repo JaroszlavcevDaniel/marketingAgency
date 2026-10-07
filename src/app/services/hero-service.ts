@@ -8,7 +8,7 @@ import { HeroModel } from '../models/heroModel';
 })
 export class HeroService {
 
-  private api = "http://localhost:3000/api/hero/";
+  private api = "https://n17.hu/api/hero/";
 
   constructor(
     private http: HttpClient

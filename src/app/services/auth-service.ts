@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private api = "http://localhost:3000/api/auth/";
+  private api = "https://n17.hu/api/auth/";
 
   isLoggedIn$ = new BehaviorSubject<boolean>(false);
 

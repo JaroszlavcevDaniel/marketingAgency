@@ -7,7 +7,7 @@ import { Article } from '../models/articleModel';
   providedIn: 'root',
 })
 export class ContentService {
-  private apiUrl = 'http://localhost:3000/articles-api.php';
+  private apiUrl = 'https://n17.hu/articles-api.php';
 
   constructor(private http: HttpClient) {}
 

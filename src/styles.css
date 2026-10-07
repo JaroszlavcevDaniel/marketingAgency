@@ -1,6 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
+
 body {
      background: black !important;
 }
@@ -22,17 +20,15 @@ body {
 .sotet-gomb {
     color: #ffffff;
     border: none;
-    /* padding: 12px 24px; */
+  
     cursor: pointer;
     
-    /* Ez kell, hogy az animáció lágy legyen */
+  
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* HOVER EFFEKT */
 .sotet-gomb:hover {
     transform: translateY(-2px); /* Picit megemelkedik */
-    /* Finom, sötétszürke/neon izzás a gomb körül (a színét átírhatod pl. a lila neonodra is: rgba(155, 38, 182, 0.5)) */
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15); 
 }
 
@@ -58,10 +54,10 @@ html, body {
 }
 
 .card-img-uniform {
-  height: 200px;        /* 1. Fix magasság beállítása (ízlés szerint módosíthatod pl. 250px-re) */
-  width: 100%;          /* 2. Teljes szélesség kitöltése */
-  object-fit: cover;    /* 3. A legfontosabb: Körbevágja a képet torzítás nélkül, mint a háttérképeknél */
-  object-position: center; /* 4. Opcionális: Mindig a kép közepe maradjon fókuszban */
+  height: 200px;        
+  width: 100%;          
+  object-fit: cover;    
+  object-position: center; 
 }
 
 
@@ -92,4 +88,23 @@ html, body {
 .roboto {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
+}
+
+@media (max-width: 768px) {
+
+  #needer {
+    margin-top: 400px !important;
+  }
+  #viderr {
+    margin-top: 500px !important;
+  }
+
+  #techerr {
+    margin-bottom: 200px !important;
+  }
+
+  #heroCtaTwoNear {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }

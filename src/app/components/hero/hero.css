@@ -383,10 +383,10 @@ h1.typewriter {
 }
 @media (max-width: 768px) {
   h1.typewriter {
-    /* Nagyon pici alapméret, maximum 1.3rem (kb. 20px) */
     font-size: clamp(0.85rem, 4.5vw, 1.3rem) !important;
     letter-spacing: -0.03em !important; /* Összébb húzzuk a betűket */
   }
+
 }
 
 @media (max-width: 375px) {

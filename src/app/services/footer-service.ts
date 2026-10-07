@@ -8,7 +8,7 @@ import { FooterModel } from '../models/footerModel';
 })
 export class FooterService {
   
-  private api = "http://localhost:3000/api/footer/";
+  private api = "https://n17.hu/api/footer/";
 
   constructor(
     private http: HttpClient

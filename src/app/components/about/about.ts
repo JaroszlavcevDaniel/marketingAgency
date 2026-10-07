@@ -1,9 +1,10 @@
-import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { AboutModel } from '../../models/aboutModel';
 import { Subscription } from 'rxjs';
 import { AboutService } from '../../services/about-service';
 import { AuthService } from '../../services/auth-service';
 import { LanguageService } from '../../services/language-service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -28,6 +29,7 @@ export class About implements OnInit, OnDestroy {
     private aboutService: AboutService,
         private authService: AuthService,
     private languageService: LanguageService,
+      @Inject(PLATFORM_ID) private platformId: Object
     
   ) { }
 
@@ -126,13 +128,24 @@ export class About implements OnInit, OnDestroy {
 
   }
 
-  scrollToTop(): void {
-  window.scrollTo(0, 0);
-  
-  const container = document.querySelector('.scroll-container');
-  if (container) {
-    container.scrollTop = 0;
-  }
+scrollToTop(): void {
+   
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+
+      const container = document.querySelector('.scroll-container') as HTMLElement | null;
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }, 0);
 }
 
 }

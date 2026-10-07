@@ -1,9 +1,13 @@
 <?php
+header("Access-Control-Allow-Origin: https://n17.hu");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Content-Type: text/html; charset=UTF-8");
 
-$host = "127.0.0.1";
-$dbname = "market";      
-$username = "root";
-$password = "";
+$host = "localhost";
+$dbname = "n17hu000_market";      
+$username = "n17hu000_boss";
+$password = "UIBfw124214nk";
 
 try {
 

@@ -9,16 +9,15 @@ import { filter } from 'rxjs';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('marketingAgency');
+  protected readonly title = signal('N17');
 
   isContactPage = false;
 
   constructor(private router: Router) {
-    // Figyeljük az útvonal változásait
+   
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      // Elrejtjük, ha a /contact (vagy a te kapcsolat útvonalad) aktív
       this.isContactPage = event.urlAfterRedirects.includes('/contact');
     });
   }
